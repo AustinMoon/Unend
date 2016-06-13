@@ -1,0 +1,88 @@
+
+h1, h2, h3, h4, h5, h6, p, ul{
+	font-family: sans-serif;
+}
+
+
+ul{
+	list-style: none;
+
+}
+a{
+	text-decoration: none;
+	color:#FA5858;
+
+}
+
+
+#wrap{
+	width:100%;
+	height:100%;
+
+}
+.wrap_header{
+	background:white;
+	width:100%;
+	height: 100px;
+
+}
+
+
+
+.header_logo{
+	width:30%;
+	float: left;
+}
+.head_menu{
+	float: right;
+	padding-top: 25px;
+}
+ul.menu_list li{
+	display: inline;
+	height:100px;
+	padding-right: 50px;
+
+}
+
+
+.main_background{
+	background: gray;
+	height: 500px;
+}
+.main_intro{
+	text-align: center;
+	padding-top: 200px
+}
+.overview{
+	background: white;
+	height: 200px;
+}
+.generalquestion{
+	background: blue;
+	height: 200px;
+
+}
+.pronoun{
+	background: white;
+	overflow: auto;
+
+
+}
+.pronoun_img{
+	float:left;
+}
+.pro_img{
+	width:130%;
+}
+.pronoun_des{
+	float:right;
+	text-align: center;
+	padding-right: 200px;
+}
+.footer{
+	background: white;
+	height: 100px;
+
+}
+
+.
