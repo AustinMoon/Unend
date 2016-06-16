@@ -259,168 +259,70 @@
             </ul>
             <!-- /.navbar-top-links -->
 
-          
+           
+            <!-- /.navbar-static-side -->
         </nav>
 
         <!-- Page Content -->
-        <div class="container-fluid">
+            <div class="container-fluid">
                 <div class="row">
                     <div class="col-lg-12">
-                        <h1 class="page-header text-center">Are you a non-native English speaker?
-                         </br>Use us! It's Easy!
-                         </br>Our native English tutors will help you QUICKLY!</h1>
+                        <h1 class="page-header">Blank</h1>
                     </div>
                     <!-- /.col-lg-12 -->
                 </div>
-                <div class="row">
-                    <div class="col-lg-6">
-                    <div class="panel-default">
-                        <h2>Do you want to correct your English sentence(s) QUICKLY?</h2>
-                        <h3>Check your sentence(s)!</h3>
-                        <a href="" class="btn btn-danger">Sentence Correction</a>
-                        <!-- .panel-body -->
-                    </div>
-                    <!-- /.panel -->
-                </div>
-                <div class="col-lg-6">
-                     <div class="panel-default">
-                        <h2>Do you have any questions about using English in your daily lives?</h2>
-                        <h3>Ask a question about English!</h3>
-                        <a href="" class="btn btn-danger">Question About English</a>
-                        <!-- .panel-body -->
-                    </div>
-                    <!-- /.panel -->
-                </div>
-
-               </div>
-                <div class="row">
-                    <div class="col-lg-6">
-                     <div class="panel-default">
-                        <h2>Record your English, and check our native tutor’s feedback!</h2>
-                        <h3>Check your English pronunciation!<h3>
-                        <a href="" class="btn btn-danger">Pronunciation Correction</a>
-                        <!-- .panel-body -->
-                    </div>
-                    <!-- /.panel -->
-                </div>
-                <div class="col-lg-6">
-                     <div class="panel-default">
-                        <h2>Our professional editors will proofread your papers, theses, essays, or all kinds of articles.</h2>
-                       <h3>Submit your papers for proofreading (MS Word Format)<h3>
-                        <a href="" class="btn btn-danger">Proofreading</a>
-                        <!-- .panel-body -->
-                    </div>
-                    <!-- /.panel -->
-                </div>
-
-
-                </div>
                 <!-- /.row -->
-<<<<<<< HEAD
-=======
             </div>
-            
-            
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                            Kitchen Sink
-                        </div>
-                        <!-- /.panel-heading -->
-                        <div class="panel-body">
-                            <div class="table-responsive">
-                                <table class="table table-striped table-bordered table-hover">
-                                    <thead>
-                                        <tr>
-                                            <th>#</th>
-                                            <th>First Name</th>
-                                            <th>Last Name</th>
-                                            <th>Username</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td>1</td>
-                                            <td>Mark</td>
-                                            <td>Otto</td>
-                                            <td>@mdo</td>
-                                        </tr>
-                                        <tr>
-                                            <td>2</td>
-                                            <td>Jacob</td>
-                                            <td>Thornton</td>
-                                            <td>@fat</td>
-                                        </tr>
-                                        <tr>
-                                            <td>3</td>
-                                            <td>Larry</td>
-                                            <td>the Bird</td>
-                                            <td>@twitter</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                            <!-- /.table-responsive -->
-                        </div>
-                        <!-- /.panel-body -->
-                    </div>
-                    <!-- /.panel -->
-             
-                </div>
-                
-                <div class="col-md-6">
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                            Kitchen Sink
-                        </div>
-                        <!-- /.panel-heading -->
-                        <div class="panel-body">
-                            <div class="table-responsive">
-                                <table class="table table-striped table-bordered table-hover">
-                                    <thead>
-                                        <tr>
-                                            <th>#</th>
-                                            <th>First Name</th>
-                                            <th>Last Name</th>
-                                            <th>Username</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td>1</td>
-                                            <td>Mark</td>
-                                            <td>Otto</td>
-                                            <td>@mdo</td>
-                                        </tr>
-                                        <tr>
-                                            <td>2</td>
-                                            <td>Jacob</td>
-                                            <td>Thornton</td>
-                                            <td>@fat</td>
-                                        </tr>
-                                        <tr>
-                                            <td>3</td>
-                                            <td>Larry</td>
-                                            <td>the Bird</td>
-                                            <td>@twitter</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                            <!-- /.table-responsive -->
-                        </div>
-                        <!-- /.panel-body -->
-                    </div>
-                    <!-- /.panel -->
-                </div>
-            
-            </div>            
-            
             <!-- /.container-fluid -->
->>>>>>> 4a8a297df572101f93a41b6df692a4ed5144bd03
+            
+           
+                <div class="container">
+		<div class="row">
+             <div class="col-md-8">
+			<div class="panel panel-primary">
+				<div class="panel-body">
+					<form method="POST" action="#" role="form">
+						<div class="form-group">
+							<h2>Create account</h2>
+						</div>
+						<div class="form-group">
+							<label class="control-label" for="signupName">Your name</label>
+							<input id="signupName" type="text" maxlength="50" class="form-control">
+						</div>
+						<div class="form-group">
+							<label class="control-label" for="signupEmail">Email</label>
+							<input id="signupEmail" type="email" maxlength="50" class="form-control">
+						</div>
+						<div class="form-group">
+							<label class="control-label" for="signupEmailagain">Email again</label>
+							<input id="signupEmailagain" type="email" maxlength="50" class="form-control">
+						</div>
+						<div class="form-group">
+							<label class="control-label" for="signupPassword">Password</label>
+							<input id="signupPassword" type="password" maxlength="25" class="form-control" placeholder="at least 6 characters" length="40">
+						</div>
+						<div class="form-group">
+							<label class="control-label" for="signupPasswordagain">Password again</label>
+							<input id="signupPasswordagain" type="password" maxlength="25" class="form-control">
+						</div>
+						<div class="form-group">
+							<button id="signupSubmit" type="submit" class="btn btn-info btn-block">Create your account</button>
+						</div>
+						<p class="form-group">By creating an account, you agree to our <a href="#">Terms of Use</a> and our <a href="#">Privacy Policy</a>.</p>
+						<hr>
+						<p></p>Already have an account? <a href="#">Sign in</a></p>
+					</form>
+				</div>
+			</div>
+		</div>
+                    
         </div>
-            <!-- /.container-fluid -->
+	</div>
+
+            
+            
+            
+            
         
         <!-- /#page-wrapper -->
 
