@@ -5,7 +5,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12 col-md-offset-2">
-        <div class="row">
+        <div class="row ">
             <div class="col-md-4 ">
                 <div class="login-panel panel panel-default">
                     <div class="panel-heading">
@@ -19,16 +19,7 @@
                                 <i class="fa fa-facebook"></i> Sign in with Facebook
                             </a>
                                 </div>
-                                <div class="form-group">
-                                    <a class="btn btn-block btn-social btn-twitter">
-                                <i class="fa fa-twitter"></i> Sign in with Twitter
-                            </a>
-                                </div>
-                                <div class="form-group">
-                                    <a class="btn btn-block btn-social btn-google-plus">
-                                <i class="fa fa-google-plus"></i> Sign in with Google
-                            </a>
-                                </div>
+                               
                                 
                                 
                                
@@ -54,9 +45,7 @@
                                 <div class="form-group">
                                     <input class="form-control" placeholder="E-mail" name="email" type="email" autofocus>
                                 </div>
-                                <div class="form-group">
-                                    <input class="form-control" placeholder="E-mail Again" name="email" type="email" autofocus>
-                                </div>
+                                
                                 <div class="form-group">
                                     <input class="form-control" placeholder="Password" name="password" type="password" value="">
                                 </div>
@@ -65,7 +54,7 @@
                                 </div>
                                
                                 <!-- Change this to a button or input when using this as a form -->
-                                <a href="index.html" class="btn btn-lg btn-success btn-block">Sign Up</a>
+                                <a href="index.html" class="btn btn-lg btn-danger btn-success btn-block">Sign Up</a>
                             </fieldset>
                         </form>
                     </div>
