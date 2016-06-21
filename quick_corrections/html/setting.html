@@ -45,13 +45,14 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="" href="main.html"><img src="../img/qc_logo.jpg" alt="recorder" width="300"></a>
+                <a class="navbar-brand" href="index.html">SB Admin v2.0</a>
             </div>
-           
-
             <!-- /.navbar-header -->
 
             <ul class="nav navbar-top-links navbar-right">
+                <li>
+                    <h6>what is?</h6>
+                </li>
                 <li class="dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#">
                         <i class="fa fa-envelope fa-fw"></i>  <i class="fa fa-caret-down"></i>
@@ -262,95 +263,107 @@
             <!-- /.navbar-top-links -->
 
           
+         <div class="navbar-default sidebar" role="navigation">
+                <div class="sidebar-nav navbar-collapse text-center">
+                    <ul class="nav" id="side-menu">
+                        <li>
+                            <div class="input-group">
+                                <div class="circle" style=" margin-top: 10px; background-image: url('../img/dfimage.png');  width:150px; height:149px"></div> 
+                                <h3 class="text-center">unend</h3>
+                            </span>
+                            </div>
+                            <!-- /input-group -->
+                        </li>
+                        <li>
+                            <a href=""><i class=""></i> Account</a>
+                        </li>
+                       
+                        <li>
+                            <a href=""><i class=""></i> Notifications</a>
+                        </li>
+                        <li>
+                            <a href=""><i class=""></i> Buy Point</a>
+                        </li>
+                    
+                    </ul>
+                </div>
+                <!-- /.sidebar-collapse -->
+            </div>
+            <!-- /.navbar-static-side -->
         </nav>
 
         <!-- Page Content -->
-        <div class="container-fluid">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div class="panel panel-red">
-                            <div class="panel-heading">
-                        <h1 class="text-center" style="font-family:avenir; font-size:60px" ><b>Are you a Non-Native in English?</b></h1>
-                        <h1 class="page-header text-center " style="font-family:avenir" >Our native English tutors will help you QUICKLY!</h1>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- /.col-lg-12 -->
-                </div>
-        </div>
-        <div class="container-fluid">
-
-            <div class="row">
-                <div class="col-lg-6" >
-                    <div class="panel-default">
-                        <div class="col-lg-10" style="float:right">
-
-                            <h4>Do you want to check your sentence?</h4>
-                            <div class="panel panel-red text-center">
-                                <h3>Check your sentence! <button href="" class="btn btn-danger">Click Here!</button></a> </h3>
-                            </div>
-                        </div>
-                        <!-- .panel-body -->
-                    </div>
-                    <!-- /.panel -->
-                </div>
-                <div class="col-lg-6">
-                     <div class="panel-default">
-                        <div class="col-lg-10" style="float:left">
-
-                        <h4>Do you have any questions about English?</h4>
-                        <div class="panel panel-red text-center">
-                         <h3>Ask a question! <button href="" class="btn btn-danger">Click Here!</button></a> </h3>
-                        <!-- .panel-body -->
-                    </div>
-                    </div>
-                    </div>
-                    <!-- /.panel -->
-                </div>
-
-               </div>
-                <div class="row">
-                    <div class="col-lg-6">
-                     <div class="panel-default">
-                        <div class="col-lg-10" style="float:right">
-
-                            <h4>Are you curious about your using pronunciation?</h4>
-                            <div class="panel panel-red text-center">
-                             <h3>Check your pronunciation! <button href="" class="btn btn-danger">Click Here!</button></a> </h3>
-                             </div>
-                        </div>
-                        <!-- .panel-body -->
-                    </div>
-                    <!-- /.panel -->
-                </div>
-                <div class="col-lg-6">
-                     <div class="panel-default">
-                        <div class="col-lg-10" style="float:left">
-
-                        <h4>Do you want your paper to be Proofread?</h4>
-                        <div class="panel panel-red text-center">
-                        <h3>Submit your papers! <button href="" class="btn btn-danger">Click Here! </button></a> </h3>
-                        </div>
-                    </div>
-                        <!-- .panel-body -->
-                    </div>
-                    <!-- /.panel -->
+        <div class="container-fluid" id="page-wrapper">
+            <div class="row" >
+                 <div class="col-lg-12 page-header text-center">
+                    <h1 style="font-family:avenir; font-size:50px">ACCOUNT SETTING</h1>
                 </div>
             </div>
-        </div>
+            
+           <div class="row">
+                <h5>Profile</h5>
+                <hr/>
+                <form class="form-horizontal" role="form" method="post" action="index.php">
+                    <div class="form-group">
+                        <div class="col-sm-8 col-md-offset-1">
+                            <div class="circle" style=" margin-top: 10px; background-image: url('../img/dfimage.png');  width:150px; height:149px">
+                           <input type="file">
 
+                            </div> 
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="name" class="col-sm-2 control-label">Email</label>
+                        <div class="col-sm-6">
+                            <input type="text" class="form-control" id="name" name="name" placeholder="Email" value=""></div>
+                    </div>
+                   
+                    <div class="form-group">
+                        <label for="email" class="col-sm-2 control-label">Name</label>
+                        <div class="col-sm-6">
+                            <input type="email" class="form-control" id="email" name="email" placeholder="Name" value="">
+                        </div>
+                    </div>
+                    <div class="col-lg-10 col-sm-offset-1" >
 
-        <div class="container-fluid">
-              <div class="row">
-                <div class="text-center">
-                    <h3><img src="../img/logo.jpg" width="30px">We Beautify Your English!</h3>
-                    <h4>Copyright, UNEND LLC</h4>
-                </div>
-              </div>
+                    <button type="button" class="btn btn-danger">SAVE</button> 
                 
-        </div>
+                    </div>
+                </br>
+                </br>
+               
+                
+                <h5>Password</h5>
+                
+                <hr/>
+                <div class="form-group">
+                        <label for="name" class="col-sm-2 control-label">Old Passwords</label>
+                        <div class="col-sm-6">
+                            <input type="text" class="form-control" id="name" name="name" placeholder="********" value=""></div>
+                    </div>
+
+                  <div class="form-group">
+                        <label for="name" class="col-sm-2 control-label">Passwords</label>
+                        <div class="col-sm-6">
+                            <input type="text" class="form-control" id="name" name="name" placeholder="Passwords" value=""></div>
+                    </div>
+                   
+                    <div class="form-group">
+                        <label for="email" class="col-sm-2 control-label">Confirm</label>
+                        <div class="col-sm-6">
+                            <input type="email" class="form-control" id="email" name="email" placeholder="Confirm" value="">
+                        </div>
+                    </div>
+                    <div class="col-lg-10 col-sm-offset-1" >
+
+                    <button type="button" class="btn btn-danger">SAVE</button> 
+                </form> 
+                </div>
+            <hr/>
+           <br/>
+            
             <!-- /.container-fluid -->
-        
+        </div>
         <!-- /#page-wrapper -->
 
     </div>
