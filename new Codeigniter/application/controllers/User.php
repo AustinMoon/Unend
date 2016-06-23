@@ -105,6 +105,11 @@ class User extends CI_Controller {
         
         
     }}
+    
+    public function payment(){
+        $this->load->view('user/payment/payment_page');
+          
+    }
 	public function login() {
 		
 		// create the data object
