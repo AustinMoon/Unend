@@ -110,7 +110,13 @@ class User extends CI_Controller {
         $this->load->view('user/payment/payment_page');
           
     }
-	public function login() {
+    public function payment_success(){
+        $data->points=$_POST['points'];
+        $this->db->insert('users', $data);
+        $this->load->view('user/payment/payment_success', $data); 
+    }
+    
+    public function login() {
 		
 		// create the data object
 		$data = new stdClass();

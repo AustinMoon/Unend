@@ -56,13 +56,14 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-md-12">
-                        <input type="radio" name="10pts"> 10 Points.<br>
-                        <input type="radio" name="20pts"> 20 Points.<br>
-                        <input type="radio" name="30pts"> 30 Points.<br><br>
-						
-                        <input type="submit" name="submit" value="Submit"><br>
+                        <form action="payment_success" method="post">
+                        <input type="radio" name="points" value="10"> 10 Points<br>
+                        <input type="radio" name="points" value="20"> 20 Points<br>
+                        <input type="radio" name="points" value="30"> 30 Points<br><br>
+                        <input type="submit" name="submit" value="submit"><br>
+                        </form>
 					</div>
-				</div><!-- .row -->
-			</div><!-- .container -->
+				</div>
+			</div>
 		<?php endif; ?>
 		
