@@ -271,10 +271,7 @@
                 <h5>list of users</h5>
                 <hr/>
                
-               
-{
-        echo $row->title;
-}
+
                <table class="table">
   <thead>
     <tr>

@@ -98,7 +98,7 @@ class User extends CI_Controller {
     
     public function admin(){
         $this->load->model('user_model');
-        $data->users= show_users(); 
+        $data->users= $this->user_model->show_users(); 
         $this->load->view('admin/admin',$data);
         
         
