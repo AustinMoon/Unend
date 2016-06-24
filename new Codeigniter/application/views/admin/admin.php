@@ -1,36 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
-
-    <title>QuickCorrections</title>
-
-    <!-- Bootstrap Core CSS -->
-    <link href="../css/bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- MetisMenu CSS -->
-    <link href="../css/bower_components/metisMenu/dist/metisMenu.min.css" rel="stylesheet">
-
-    <!-- Custom CSS -->
-    <link href="../css/dist/css/sb-admin-2.css" rel="stylesheet">
-
-    <!-- Custom Fonts -->
-    <link href="../css/bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
-
-</head>
 
 <body>
 
@@ -296,69 +263,39 @@
         <div class="container-fluid" id="page-wrapper">
             <div class="row" >
                  <div class="col-lg-12 page-header text-center">
-                    <h1 style="font-family:avenir; font-size:50px">ACCOUNT SETTING</h1>
+                    <h1 style="font-family:avenir; font-size:50px">ADMIN PANNEL</h1>
                 </div>
             </div>
             
            <div class="row">
-                <h5>Profile</h5>
+                <h5>list of users</h5>
                 <hr/>
-                <form class="form-horizontal" role="form" method="post" action="index.php">
-                    <div class="form-group">
-                        <div class="col-sm-8 col-md-offset-1">
-                            <div class="circle" style=" margin-top: 10px; background-image: url('../img/dfimage.png');  width:150px; height:149px">
-                           <input type="file">
-
-                            </div> 
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label for="name" class="col-sm-2 control-label">Email</label>
-                        <div class="col-sm-6">
-                            <input type="text" class="form-control" id="name" name="name" placeholder="Email" value=""></div>
-                    </div>
-                   
-                    <div class="form-group">
-                        <label for="email" class="col-sm-2 control-label">Name</label>
-                        <div class="col-sm-6">
-                            <input type="email" class="form-control" id="email" name="email" placeholder="Name" value="">
-                        </div>
-                    </div>
-                    <div class="col-lg-10 col-sm-offset-1" >
-
-                    <button type="button" class="btn btn-danger">SAVE</button> 
-                
-                    </div>
-                </br>
-                </br>
                
-                
-                <h5>Password</h5>
-                
-                <hr/>
-                <div class="form-group">
-                        <label for="name" class="col-sm-2 control-label">Old Passwords</label>
-                        <div class="col-sm-6">
-                            <input type="text" class="form-control" id="name" name="name" placeholder="********" value=""></div>
-                    </div>
-
-                  <div class="form-group">
-                        <label for="name" class="col-sm-2 control-label">Passwords</label>
-                        <div class="col-sm-6">
-                            <input type="text" class="form-control" id="name" name="name" placeholder="Passwords" value=""></div>
-                    </div>
-                   
-                    <div class="form-group">
-                        <label for="email" class="col-sm-2 control-label">Confirm</label>
-                        <div class="col-sm-6">
-                            <input type="email" class="form-control" id="email" name="email" placeholder="Confirm" value="">
-                        </div>
-                    </div>
-                    <div class="col-lg-10 col-sm-offset-1" >
-
-                    <button type="button" class="btn btn-danger">SAVE</button> 
-                </form> 
-                </div>
+               
+{
+        echo $row->title;
+}
+               <table class="table">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th> Name</th>
+      <th>Registeration Date</th>
+      <th>Class</th>
+    </tr>
+  </thead>
+  <tbody>
+      <?php foreach ($users->result() as $row){ ?>
+    <tr>
+      <th scope="row"><?= $row->id; ?></th>
+      <td><?= $row->username; ?></td>
+        <td><?= $row->created_at; ?></td>
+        <td><?= $row->group; ?></td></tr>
+               
+    <?php } ?>
+                   </tbody></table>
+               
+            </div>
             <hr/>
            <br/>
             

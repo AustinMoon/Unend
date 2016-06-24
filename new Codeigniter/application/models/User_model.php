@@ -30,6 +30,7 @@ class User_model extends CI_Model {
 	 * @param mixed $password
 	 * @return bool true on success, false on failure
 	 */
+    
 	public function create_user($username, $email, $password) {
 		date_default_timezone_set("America/New_York");
 		$data = array(
@@ -37,7 +38,7 @@ class User_model extends CI_Model {
 			'email'      => $email,
 			'password'   => sha1($password),
 			'created_at' => date_default_timezone_get(),
-            'class'      => 'student',
+            'group'      => 'student',
 		);
 		
 		return $this->db->insert('users', $data);
@@ -125,5 +126,10 @@ class User_model extends CI_Model {
 		return password_verify($password, $hash);
 		
 	}
+    
+    public function show_users(){
+        return $this->db->get('users');
+        
+    }
 	
 }
