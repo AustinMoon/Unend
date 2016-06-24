@@ -279,6 +279,7 @@
       <th> Name</th>
       <th>Registeration Date</th>
       <th>Class</th>
+    <th>Edit</th>
     </tr>
   </thead>
   <tbody>
@@ -287,7 +288,9 @@
       <th scope="row"><?= $row->id; ?></th>
       <td><?= $row->username; ?></td>
         <td><?= $row->created_at; ?></td>
-        <td><?= $row->group; ?></td></tr>
+        <td><?= $row->group; ?></td>
+      <td><button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal<?= $row->id ?>">
+  Edit user </button></td></tr>
                
     <?php } ?>
                    </tbody></table>
@@ -302,7 +305,54 @@
 
     </div>
     <!-- /#wrapper -->
+<?php foreach ($users->result() as $row){
+    ?>
+    <div class="modal fade" id="myModal<?= $row->id ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+      </div>
+      <div class="modal-body">
+        
+          
+          
+          <form id="signin" class="navbar-form " role="form">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                            <input id="username" type="text" class="form-control" name="username" value="<?= $row->username; ?>" placeholder="Username">                                        
+                        </div>
 
+                        <div class="input-group">
+                            <label class="radio-inline">
+                            <input name="radioGroup" id="radio1" value="option1" type="radio"> Student
+                            </label>  
+                            <label class="radio-inline">
+                            <input name="radioGroup" id="radio1" value="option1" type="radio"> Totur
+                            </label>  
+                            <label class="radio-inline">
+                            <input name="radioGroup" id="radio1" value="option1" type="radio"> Admin
+                            </label>  
+                            
+                        </div>
+
+                        <button type="submit" class="btn btn-primary">Login</button>
+                   </form>
+          
+          
+          
+          
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+    
+<?php } ?>
     <!-- jQuery -->
     <script src="../css/bower_components/jquery/dist/jquery.min.js"></script>
 
