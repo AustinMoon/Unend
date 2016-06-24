@@ -5,36 +5,37 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Site title</title>
+	<title>Quick Correction</title>
 	<meta name="description" content="">
 	<meta name="keywords" content="">
 	<meta name="author" content="">
 
 	<!-- css -->
-	<link href="../css/bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="../css/font-awesome.css" rel="stylesheet">
+    
+	<link href="http://quickcorrection.com/qc/login3/css/bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="http://quickcorrection.com/qc/login3/css/font-awesome.css" rel="stylesheet">
 
     <!-- MetisMenu CSS -->
-    <link href="../css/bower_components/metisMenu/dist/metisMenu.min.css" rel="stylesheet">
+    <link href="http://quickcorrection.com/qc/login3/css/bower_components/metisMenu/dist/metisMenu.min.css" rel="stylesheet">
 
     <!-- Social Buttons CSS -->
-    <link href="../css/bower_components/bootstrap-social/bootstrap-social.css" rel="stylesheet">
+    <link href="http://quickcorrection.com/qc/login3/css/bower_components/bootstrap-social/bootstrap-social.css" rel="stylesheet">
 
     <!-- Custom CSS -->
-    <link href="../css/dist/css/sb-admin-2.css" rel="stylesheet">
+    <link href="http://quickcorrection.com/qc/login3/css/dist/css/sb-admin-2.css" rel="stylesheet">
 
     <!-- Custom Fonts -->
-    <link href="../css/bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <script src="../css/bower_components/jquery/dist/jquery.min.js"></script>
+    <link href="http://quickcorrection.com/qc/login3/css/bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <script src="http://quickcorrection.com/qc/login3/css/bower_components/jquery/dist/jquery.min.js"></script>
 
     <!-- Bootstrap Core JavaScript -->
-    <script src="../css/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="http://quickcorrection.com/qc/login3/css/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 
     <!-- Metis Menu Plugin JavaScript -->
-    <script src="../css/bower_components/metisMenu/dist/metisMenu.min.js"></script>
+    <script src="http://quickcorrection.com/qc/login3/css/bower_components/metisMenu/dist/metisMenu.min.js"></script>
 
     <!-- Custom Theme JavaScript -->
-    <script src="../css/dist/js/sb-admin-2.js"></script>
+    <script src="http://quickcorrection.com/qc/login3/css/dist/js/sb-admin-2.js"></script>
 
 
 	<!--[if lt IE 9]>
