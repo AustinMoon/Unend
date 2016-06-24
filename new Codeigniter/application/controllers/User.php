@@ -95,6 +95,13 @@ class User extends CI_Controller {
 	 * @access public
 	 * @return void
 	 */
+    
+    public function admin(){
+        
+        $this->load->view('admin/admin');
+        
+        
+    }
     public function test1(){
         
                 

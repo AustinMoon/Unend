@@ -64,10 +64,10 @@ $query_builder = TRUE;
 
 $db['default'] = array(
 	'dsn'	=> '',
-	'hostname' => 'localhost',
-	'username' => 'root',
-	'password' => 'root',
-	'database' => 'ci_template',
+	'hostname' => 'db631757459.db.1and1.com',
+	'username' => 'dbo631757459',
+	'password' => 'Unend123!',
+	'database' => 'db631757459',
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
 	'pconnect' => FALSE,

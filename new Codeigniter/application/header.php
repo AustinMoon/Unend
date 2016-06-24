@@ -25,7 +25,6 @@
 
     <!-- Custom Fonts -->
     <link href="../css/bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-
     <script src="../css/bower_components/jquery/dist/jquery.min.js"></script>
 
     <!-- Bootstrap Core JavaScript -->
@@ -60,7 +59,6 @@
 				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 					<ul class="nav navbar-nav navbar-right">
 						<?php if (isset($_SESSION['username']) && $_SESSION['logged_in'] === true) : ?>
-							<?php if (isset($_SESSION['username']) && $_SESSION['logged_in'] === true) : ?>
 						<li class="dropdown">
 	                   	 <a class="dropdown-toggle" data-toggle="dropdown" href="#">
 	                        <i class="fa fa-bell fa-fw"></i>  <i class="fa fa-caret-down"></i>
