@@ -131,5 +131,13 @@ class User_model extends CI_Model {
         return $this->db->get('users');
         
     }
+    public function edit_user($id,$username,$group){
+        $data = array(
+        'username' => $username,
+        'group' => $group
+);
+        $this->db->where('id', $id);
+        $this->db->update('users', $data);
+    }
 	
 }
