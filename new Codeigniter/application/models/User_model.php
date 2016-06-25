@@ -138,6 +138,11 @@ class User_model extends CI_Model {
 );
         $this->db->where('id', $id);
         $this->db->update('users', $data);
+        if ($this->db->affected_rows() == 1) {
+    return true; 
+} else {
+    return false; 
+}
     }
 	
 }

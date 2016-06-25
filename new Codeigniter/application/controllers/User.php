@@ -106,12 +106,12 @@ class User extends CI_Controller {
         
     }
     public function admin_user_edited(){
-        
+        $this->load->model('user_model');
         $id = $this->input->post('id');
         $username = $this->input->post('username');
-        $group = $this->input->post('group');
+        $group = $this->input->post('Group');
         if ($this->user_model->edit_user($id,$username,$group)){
-            
+            echo "edited";
             
         }
     }
