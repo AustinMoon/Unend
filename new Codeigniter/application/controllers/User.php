@@ -97,13 +97,23 @@ class User extends CI_Controller {
 	 */
     
     public function admin(){
-        
+        $data = new stdClass();
         $this->load->model('user_model');
         $data->users= $this->user_model->show_users(); 
         $this->load->view('header');
         $this->load->view('admin/admin',$data);
         
         
+    }
+    public function admin_user_edited(){
+        
+        $id = $this->input->post('id');
+        $username = $this->input->post('username');
+        $group = $this->input->post('group');
+        if ($this->user_model->edit_user($id,$username,$group)){
+            
+            
+        }
     }
     public function test1(){
         
@@ -162,7 +172,7 @@ class User extends CI_Controller {
 				$_SESSION['username']     = (string)$user->username;
 				$_SESSION['logged_in']    = (bool)true;
 				//$_SESSION['is_confirmed'] = (bool)$user->is_confirmed;
-				$_SESSION['class']     = $user->class;
+				$_SESSION['group']     = $user->group;
 				
 				// user login ok
 				$this->load->view('header');

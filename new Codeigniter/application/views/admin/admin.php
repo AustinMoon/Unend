@@ -318,27 +318,33 @@
         
           
           
-          <form id="signin" class="navbar-form " role="form">
-                        <div class="input-group">
+          <form  class="navbar-form" role="form" action="admin_user_edited">
+              <div class="row">
+              <div class="col-md-6">
+                  <div class="input-group">
                             <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
                             <input id="username" type="text" class="form-control" name="username" value="<?= $row->username; ?>" placeholder="Username">                                        
                         </div>
-
-                        <div class="input-group">
+                  </div>
+              <div class="col-md-6">
+                  <div class="input-group">
+                      
                             <label class="radio-inline">
-                            <input name="radioGroup" id="radio1" value="option1" type="radio"> Student
+                            <input name="Group" id="radio1" value="Student" type="radio"> Student
                             </label>  
                             <label class="radio-inline">
-                            <input name="radioGroup" id="radio1" value="option1" type="radio"> Totur
+                            <input name="Group" id="radio1" value="Tutor" type="radio"> Tutor
                             </label>  
                             <label class="radio-inline">
-                            <input name="radioGroup" id="radio1" value="option1" type="radio"> Admin
+                            <input name="Group" id="radio1" value="Admin" type="radio"> Admin
                             </label>  
-                            
+                            <input type="hidden" name="id" value="<?= $row->id; ?>">
                         </div>
+                  </div>
+                  </div>
 
-                        <button type="submit" class="btn btn-primary">Login</button>
-                   </form>
+                        
+                  
           
           
           
@@ -346,8 +352,8 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
-      </div>
+        <button type="submit" class="btn btn-primary">Save changes</button>
+      </div> </form>
     </div>
   </div>
 </div>
