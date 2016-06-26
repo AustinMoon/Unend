@@ -138,6 +138,7 @@ class User_model extends CI_Model {
         'group' => $group
 );
         $this->db->where('id', $id);
+        $this->db->limit(1);
         $this->db->update('users', $data);
         if ($this->db->affected_rows() == 1) {
     return true; 
