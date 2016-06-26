@@ -32,12 +32,13 @@ class User_model extends CI_Model {
 	 */
     
 	public function create_user($username, $email, $password) {
-		date_default_timezone_set("America/New_York");
+        $this->load->helper('date');
+        date_default_timezone_set("America/New_York");
 		$data = array(
 			'username'   => $username,
 			'email'      => $email,
 			'password'   => sha1($password),
-			'created_at' => date_default_timezone_get(),
+			'created_at' => date('Y-m-d H:i:s'),
             'group'      => 'student',
 		);
 		

@@ -318,7 +318,7 @@
         
           
           
-          <form  class="navbar-form" role="form" action="admin_user_edited" method="post">
+          <form  class="navbar-form" role="form"  method="post">
               <div class="row">
               <div class="col-md-6">
                   <div class="input-group">

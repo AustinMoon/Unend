@@ -97,12 +97,25 @@ class User extends CI_Controller {
 	 */
     
     public function admin(){
+        if (!isset($_POST['id'])){
         $data = new stdClass();
         $this->load->model('user_model');
         $data->users= $this->user_model->show_users(); 
         $this->load->view('header');
         $this->load->view('admin/admin',$data);
+            }
+        else{
         
+        $data = new stdClass();
+        $this->load->model('user_model');
+        $id = $this->input->post('id');
+        $username = $this->input->post('username');
+        $group = $this->input->post('Group');
+        $this->user_model->edit_user($id,$username,$group);
+        $data->users= $this->user_model->show_users(); 
+        $this->load->view('header');
+        $this->load->view('admin/admin',$data);
+        }
         
     }
     public function admin_user_edited(){
