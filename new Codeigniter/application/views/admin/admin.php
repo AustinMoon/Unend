@@ -330,13 +330,13 @@
                   <div class="input-group">
                       
                             <label class="radio-inline">
-                            <input name="Group" id="radio1" value="Student" type="radio"> Student
+                            <input name="Group" id="radio1" value="student" type="radio" <?php if ($row->group=="student"){echo "checked";}  ?> > Student
                             </label>  
                             <label class="radio-inline">
-                            <input name="Group" id="radio1" value="Tutor" type="radio"> Tutor
+                            <input name="Group" id="radio1" value="tutor" type="radio" <?php if ($row->group=="tutor"){echo "checked";}  ?> > Tutor
                             </label>  
                             <label class="radio-inline">
-                            <input name="Group" id="radio1" value="Admin" type="radio"> Admin
+                            <input name="Group" id="radio1" value="admin" type="radio" <?php if ($row->group=="admin"){echo "checked";}  ?> > Admin
                             </label>  
                             <input type="hidden" name="id" value="<?= $row->id; ?>">
                         </div>

@@ -111,9 +111,11 @@ class User extends CI_Controller {
         $username = $this->input->post('username');
         $group = $this->input->post('Group');
         if ($this->user_model->edit_user($id,$username,$group)){
-            $this->load->view('admin/edited');
+            //echo"edited";
+           $this->load->view('admin/edited');
             
-        }
+        }else {echo"not edited";
+              }
     }
     public function test1(){
         

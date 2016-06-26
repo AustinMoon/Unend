@@ -133,7 +133,7 @@ class User_model extends CI_Model {
     }
     public function edit_user($id,$username,$group){
         $data = array(
-        'username' => $username,
+        'username' => trim($username),
         'group' => $group
 );
         $this->db->where('id', $id);
