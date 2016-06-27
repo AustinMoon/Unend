@@ -35,6 +35,8 @@ class Auth extends CI_Controller {
 		{
 			// redirect them to the login page
 			redirect('auth/login', 'refresh');
+            //$this->view->('html/header.html');
+            //$this->view->('html/login.html');
 		}
 		elseif (!$this->ion_auth->is_admin()) // remove this elseif if you want to enable this for non-admins
 		{
@@ -535,7 +537,7 @@ class Auth extends CI_Controller {
                 'value' => $this->form_validation->set_value('password_confirm'),
                 'class' => 'form-control',
             );
-            $this->_render_page('header');
+            $this->_render_page('html/header.html');
             $this->_render_page('auth/create_user', $this->data);
         }
     }
