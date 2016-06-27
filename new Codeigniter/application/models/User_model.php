@@ -38,8 +38,8 @@ class User_model extends CI_Model {
 			'username'   => $username,
 			'email'      => $email,
 			'password'   => sha1($password),
-			'created_at' => date('Y-m-d H:i:s'),
-            'group'      => 'student',
+			'created_on' => date('Y-m-d H:i:s'),
+            'groups'      => 'student',
 		);
 		
 		return $this->db->insert('users', $data);
