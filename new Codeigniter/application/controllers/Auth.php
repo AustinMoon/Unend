@@ -1,7 +1,8 @@
 <?php defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Auth extends CI_Controller {
-
+    
+    //runs before every function
 	function __construct()
 	{
 		parent::__construct();
@@ -13,7 +14,19 @@ class Auth extends CI_Controller {
 
 		$this->lang->load('auth');
 	}
-
+    
+    public function payment(){
+        $this->load->view('user/payment/payment_page');
+          
+    }
+    public function payment_success(){
+        error_reporting(E_ERROR | E_PARSE | E_CORE_ERROR | E_CORE_WARNING | E_COMPILE_ERROR | E_COMPILE_WARNING);
+        $data->points=$_POST['points'];
+        $this->db->insert('users', $data);
+        $this->load->view('user/payment/payment_success', $data); 
+    }
+    
+    //defualt page
 	// redirect if needed, otherwise display the user list
 	function index()
 	{
