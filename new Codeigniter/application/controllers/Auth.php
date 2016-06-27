@@ -26,6 +26,26 @@ class Auth extends CI_Controller {
         $this->load->view('user/payment/payment_success', $data); 
     }
     
+    
+    public function proofread(){
+        
+        if (isset($_POST['words']))
+        {
+            $data = new stdClass();
+            $data->words=$_POST['words'];
+            $this->db->insert('words', $data);
+          
+            if ($this->db->affected_rows() == 1) {
+              $this->load->view('proofread/proofread_success');
+          }
+        }
+        else
+        {
+            $this->load->view('proofread/proofread');
+        }
+          
+    }
+    
     //defualt page
 	// redirect if needed, otherwise display the user list
 	function index()
