@@ -295,6 +295,8 @@
             <!-- /.navbar-static-side -->
         </nav>
     
+    <main id="site-content" role="main">
+
     <?php if (isset($_SESSION)) : ?>
         <!-- Page Content -->
        <div id= "page-wrapper"class="container-fluid">
@@ -302,31 +304,30 @@
                     <div class="col-lg-12">
                         <h1 class="page-header text-center">English Question</h1>
                     </div>
-                    <!-- /.col-lg-12 -->
                 </div>
-           <form action="proofread" method="post">
-                <div class= "row">
-                    
+           
+           <form action="english_question" method="post">
+                <div class= "row"> 
                     <div class="form-group col-md-8">
                         <label><h2>Do you have any questions about using English in your daily lives?</h2></label>
                         <p>We only answer questions about using English in your daily lives. We are not responsible for our responses.</p>
-                        <textarea class="form-control" rows="5"placeholder="Type your question..." autofocus></textarea>
+                        <textarea class="form-control" rows="5" placeholder="Type your question..." autofocus></textarea>
                         <h5>1 word = 2.5 point / Limit = 300 words</h5>
-
                     </div>
                 </div>
                 <div class"row">
                     <div class="">
-                    <a href="" class="btn btn-danger">Submit</a>
+                    <button href="" class="btn btn-danger">Submit</a>
                     </div>
 
                 </div>
+           </form>
 
         </div>
-   
+
     </div>
-    </form>
-<?php endif; ?>
+   <?php endif; ?>
+
   
     <script src="../css/bower_components/jquery/dist/jquery.min.js"></script>
 

@@ -291,7 +291,7 @@
         <div id= "page-wrapper"class="container-fluid">
                 <div class="row">
                     <div class="col-lg-12">
-                        <h1 class="page-header text-center" style="font-family:avenir">PROOFREADING</h1>
+                        <h1 class="page-header text-center" style="font-family:avenir">Proofreading</h1>
                     </div>
                     <!-- /.col-lg-12 -->
                 </div>
