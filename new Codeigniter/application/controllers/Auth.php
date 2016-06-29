@@ -29,10 +29,18 @@ class Auth extends CI_Controller {
     
     public function proofread(){
         
+        if (!$this->ion_auth->logged_in())
+		{
+			// redirect them to the login page
+			redirect('auth/login', 'refresh');
+		}
+        
         if (isset($_POST['words']))
         {
+            $user = $this->ion_auth->user()->row();
             $data = new stdClass();
             $data->words=$_POST['words'];
+            $data->user_id =$user->id;
             $this->db->insert('words', $data);
           
             if ($this->db->affected_rows() == 1) {
