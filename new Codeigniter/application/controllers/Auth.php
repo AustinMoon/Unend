@@ -40,8 +40,8 @@ class Auth extends CI_Controller {
             $user = $this->ion_auth->user()->row();
             $data = new stdClass();
             $data->words=$_POST['words'];
-            $data->user_id =$user->id;
             $this->db->insert('words', $data);
+            $data->user_id =$user->id;
           
             if ($this->db->affected_rows() == 1) {
               $this->load->view('english_questions/english_success');
