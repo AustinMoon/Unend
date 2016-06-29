@@ -308,8 +308,8 @@
                 <div class= "row">
                     
                     <div class="form-group col-md-8">
-                        <label><h2>Ask your Question here!</h2></label>
-                        <p>Please be aware that won't be able to answer if you ask any professional, legal, or irrelevant questions.</p>
+                        <label><h2>Do you have any questions about using English in your daily lives?</h2></label>
+                        <p>We only answer questions about using English in your daily lives. We are not responsible for our responses.</p>
                         <textarea class="form-control" rows="5"placeholder="Type your question..." autofocus></textarea>
                         <h5>1 word = 2.5 point / Limit = 300 words</h5>
 
