@@ -1032,6 +1032,7 @@ class CI_Email {
 	 */
 	protected function _set_date()
 	{
+        date_default_timezone_set("America/New_York");
 		$timezone = date('Z');
 		$operator = ($timezone[0] === '-') ? '-' : '+';
 		$timezone = abs($timezone);

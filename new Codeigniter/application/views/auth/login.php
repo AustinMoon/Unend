@@ -1,18 +1,21 @@
-<!DOCTYPE html>
-<html lang="en">
 
-<body>
 
     <div class="container">
         <div class="row">
             <div class="col-md-4 col-md-offset-4">
-                <?php echo $message;?>
                 <div class="login-panel panel panel-default">
                     <div class="panel-heading">
                         <h3 class="panel-title">Please Sign In</h3>
                     </div>
                     <div class="panel-body">
-                        <form role="form">
+                        <?php
+                        if (isset($message))
+                        {
+                            echo '<div class="alert alert-danger" role="alert">';
+                            echo $message;
+                            echo '</div>';
+                        }?>
+                        <form  action="login" method="post">
                             <fieldset>
                                 <div class="form-group">
                                     <?php echo form_input($identity);?>
@@ -25,8 +28,13 @@
                                         <?php echo form_checkbox('remember', '1', FALSE, 'id="remember"');?> Remember Me
                                     </label>
                                 </div>
+                                <div class="form-group">
+                                    <label>
+                                        Forgot your Password?
+                                    </label>
+                                </div>
                                 <!-- Change this to a button or input when using this as a form -->
-                                <a href="index.html" class="btn btn-lg btn-success btn-block btn-danger">Login</a>
+                                <button type="submit" class="btn btn-lg btn-success btn-block btn-danger">Login</button>
                             </fieldset>
                         </form>
                     </div>

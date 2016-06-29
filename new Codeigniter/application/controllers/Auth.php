@@ -55,8 +55,8 @@ class Auth extends CI_Controller {
 		{
 			// redirect them to the login page
 			redirect('auth/login', 'refresh');
-            //$this->view->('html/header.html');
-            //$this->view->('html/login.html');
+            //$this->load->view('html/header.html');
+            //$this->load->view('html/login.html');
 		}
 		elseif (!$this->ion_auth->is_admin()) // remove this elseif if you want to enable this for non-admins
 		{
@@ -82,6 +82,12 @@ class Auth extends CI_Controller {
 	// log the user in
 	function login()
 	{
+        if ($this->ion_auth->logged_in())
+		{
+			// redirect them to the admin page
+			redirect('auth/', 'refresh');
+          
+		}
 		$this->data['title'] = $this->lang->line('login_heading');
 
 		//validate form input
@@ -119,12 +125,16 @@ class Auth extends CI_Controller {
 				'id'    => 'identity',
 				'type'  => 'text',
 				'value' => $this->form_validation->set_value('identity'),
+                'placeholder' => 'Username',
+                'class' => 'form-control',
 			);
 			$this->data['password'] = array('name' => 'password',
 				'id'   => 'password',
 				'type' => 'password',
+                'placeholder' => 'Password',
+                'class'=> 'form-control',
 			);
-
+            $this->load->view('html/header.html');
 			$this->_render_page('auth/login', $this->data);
 		}
 	}
