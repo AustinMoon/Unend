@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -23,6 +22,13 @@
     <!-- Custom Fonts -->
     <link href="../css/bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
 </head>
 
 <body>
@@ -43,6 +49,9 @@
             <!-- /.navbar-header -->
 
             <ul class="nav navbar-top-links navbar-right">
+                <li>
+                    <h6>what is?</h6>
+                </li>
                 <li class="dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#">
                         <i class="fa fa-envelope fa-fw"></i>  <i class="fa fa-caret-down"></i>
@@ -254,12 +263,12 @@
 
           
          <div class="navbar-default sidebar" role="navigation">
-                <div class="sidebar-nav navbar-collapse">
+                <div class="sidebar-nav navbar-collapse text-center">
                     <ul class="nav" id="side-menu">
-                        <li class="sidebar-search">
-                            <div class="input-group custom-search-form">
-                                <div class="circle" style="margin-top: 10px; background-image: url('../img/dfimage.png'); width:120px; height:110px"></div> 
-                                <h3 class="text-center">Unend</h3>
+                        <li>
+                            <div class="input-group">
+                                <div class="circle" style="margin-top: 10px; background-image: url('../img/dfimage.png'); width:150px; height:150px"></div> 
+                                <h3 class="text-center">unend</h3>
                             </span>
                             </div>
                             <!-- /input-group -->
@@ -285,44 +294,40 @@
             </div>
             <!-- /.navbar-static-side -->
         </nav>
-	<main id="site-content" role="main">
-        <?php if (isset($_SESSION)) : ?>
-
-        <div id= "page-wrapper"class="container-fluid">
+    
+    <?php if (isset($_SESSION)) : ?>
+        <!-- Page Content -->
+       <div id= "page-wrapper"class="container-fluid">
                 <div class="row">
                     <div class="col-lg-12">
-                        <h1 class="page-header text-center" style="font-family:avenir">PROOFREADING</h1>
+                        <h1 class="page-header text-center">English Question</h1>
                     </div>
                     <!-- /.col-lg-12 -->
                 </div>
-            <form action="proofread" method="post">
+           <form action="proofread" method="post">
                 <div class= "row">
+                    
                     <div class="form-group col-md-8">
-                        <label><h2>Submit your Papers! (MS Word Format)</h2></label>
-                        <div class="panel panel-red">
-                        <h4> To upload! <button href="" class="btn btn-danger">Upload</button></h4>
-                        
-                    </div>
-                    <h5> 1 word = 1.5 or more point</h5>
-                        
+                        <label><h2>Ask your Question here!</h2></label>
+                        <p>Please be aware that won't be able to answer if you ask any professional, legal, or irrelevant questions.</p>
+                        <textarea class="form-control" rows="5"placeholder="Type your question..." autofocus></textarea>
+                        <h5>1 word = 2.5 point / Limit = 300 words</h5>
+
                     </div>
                 </div>
                 <div class"row">
-                    <div class="form-group col-md-8">
-                        <h4>What do you need? Please let us know (Optional)</h4>
-                        <textarea name="words" class="form-control" rows="5"placeholder="Type Sentence here..." ></textarea>
-                        <h5> 1 word = free / Limit = 100 words</h5>
-                    </br>
-                                                                  
-                         <button href="" class="btn btn-danger">Submit</button>
+                    <div class="">
+                    <a href="" class="btn btn-danger">Submit</a>
                     </div>
-            </form>
+
+                </div>
+
         </div>
-        </div>
+   
     </div>
-		<?php endif; ?>
-
-
+    </form>
+<?php endif; ?>
+  
     <script src="../css/bower_components/jquery/dist/jquery.min.js"></script>
 
     <!-- Bootstrap Core JavaScript -->

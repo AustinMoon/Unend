@@ -27,7 +27,7 @@ class Auth extends CI_Controller {
     }
     
     
-    public function proofread(){
+    public function english_question(){
         
         if (isset($_POST['words']))
         {
@@ -36,12 +36,12 @@ class Auth extends CI_Controller {
             $this->db->insert('words', $data);
           
             if ($this->db->affected_rows() == 1) {
-              $this->load->view('proofread/proofread_success');
+              $this->load->view('english_questions/english_success');
           }
         }
         else
         {
-            $this->load->view('proofread/proofread');
+            $this->load->view('english_question/english_question');
         }
           
     }
