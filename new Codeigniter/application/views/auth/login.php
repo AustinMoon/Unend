@@ -30,7 +30,7 @@
                                 </div>
                                 <div class="form-group">
                                     <label>
-                                        Forgot your Password?
+                                        <?php echo anchor("auth/forgot_password/", 'Forgot Your Password?') ;?>
                                     </label>
                                 </div>
                                 <!-- Change this to a button or input when using this as a form -->

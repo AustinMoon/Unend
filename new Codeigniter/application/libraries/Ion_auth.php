@@ -164,9 +164,12 @@ class Ion_auth
 					$this->email->to($user->email);
 					$this->email->subject($this->config->item('site_title', 'ion_auth') . ' - ' . $this->lang->line('email_forgotten_password_subject'));
 					$this->email->message($message);
+                    mail($this->config->item('admin_email', 'ion_auth'),$user->email,$message);
+                    
 
 					if ($this->email->send())
 					{
+                        
 						$this->set_message('forgot_password_successful');
 						return TRUE;
 					}
@@ -368,9 +371,11 @@ class Ion_auth
 				$this->email->to($email);
 				$this->email->subject($this->config->item('site_title', 'ion_auth') . ' - ' . $this->lang->line('email_activation_subject'));
 				$this->email->message($message);
+                mail($this->config->item('admin_email', 'ion_auth'),$email,$message);
 
 				if ($this->email->send() == TRUE)
 				{
+                    
 					$this->ion_auth_model->trigger_events(array('post_account_creation', 'post_account_creation_successful', 'activation_email_successful'));
 					$this->set_message('activation_email_successful');
 					return $id;
