@@ -59,7 +59,7 @@ class Auth extends CI_Controller {
     public function proofread(){
          if (!$this->ion_auth->logged_in())
 		{
-			// redirect them to the login page
+			//redirect them to the login page
 			redirect('auth/login', 'refresh');
 		}
         
@@ -82,17 +82,17 @@ class Auth extends CI_Controller {
                  $this->load->library('ftp');
                  
                  //FTP config.
-                $ftp_config['hostname'] = ' sftp://u78264342.1and1-data.host';
-                $ftp_config['username'] = 'u78264342-unend';
-                $ftp_config['password'] = 'Unend123!';
-                $ftp_config['debug'] = TRUE;
-                $ftp_config['port'] = 22;
+                 $ftp_config['hostname'] = 'u78264342.1and1-data.host';
+                 $ftp_config['username'] = 'u78264342-unend';
+                 $ftp_config['password'] = 'Unend123!';
+                 $ftp_config['debug'] = TRUE;
+                 $ftp_config['port'] = 21;
                  
                  //Connect to the remote server
                  $this->ftp->connect($ftp_config);
                  
                  //File upload path of remote server
-                 $destination = '/assets'.$fileName;
+                 $destination = '/qc/login3/application/uploads/'.$fileName;
                  
                  //Upload file to the remote server
                  $this->ftp->upload($source, ".".$destination);
@@ -101,22 +101,16 @@ class Auth extends CI_Controller {
                  $this->ftp->close();
                  
                  //Delete file from local server
-                 @unlink($source);
+                 @unlink($source);  
             
              }
              $this->load->view('proofread/proofread_success');
-          }
-             
+          } 
         
-       
     else
         {
             $this->load->view('proofread/proofread');
-        }
-        
-        
-        
-        
+        } 
     }
     
     //defualt page
