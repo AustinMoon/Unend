@@ -51,6 +51,8 @@ class Auth extends CI_Controller {
         {
             $this->load->view('english_question/english_question');
         }
+        
+        //if($this->ion_auth->tutor()){...}
           
     }
     
@@ -60,6 +62,57 @@ class Auth extends CI_Controller {
 			// redirect them to the login page
 			redirect('auth/login', 'refresh');
 		}
+        
+        if ($this->input->post('submit'))
+        {
+             //upload to the local server
+             $config['upload_path'] = './uploads/';
+             $config['allowed_types'] = '*';
+             $this->load->library('upload', $config);
+             
+             if($this->upload->do_upload('file')){
+                 //Get uploaded file information
+                 $upload_data = $this->upload->data();
+                 $fileName = $upload_data['filename'];
+                 
+                 //file path at local server
+                 $source = 'uploads/'.$fileName;
+                 
+                 //Load codeigniter FTP class
+                 $this->load->library('ftp');
+                 
+                 //FTP config.
+                $ftp_config['hostname'] = ' sftp://u78264342.1and1-data.host';
+                $ftp_config['username'] = 'u78264342-unend';
+                $ftp_config['password'] = 'Unend123!';
+                $ftp_config['debug'] = TRUE;
+                $ftp_config['port'] = 22;
+                 
+                 //Connect to the remote server
+                 $this->ftp->connect($ftp_config);
+                 
+                 //File upload path of remote server
+                 $destination = '/assets'.$fileName;
+                 
+                 //Upload file to the remote server
+                 $this->ftp->upload($source, ".".$destination);
+                 
+                 //close FTP connection
+                 $this->ftp->close();
+                 
+                 //Delete file from local server
+                 @unlink($source);
+            
+             }
+             $this->load->view('proofread/proofread_success');
+          }
+             
+        
+       
+    else
+        {
+            $this->load->view('proofread/proofread');
+        }
         
         
         

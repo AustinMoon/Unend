@@ -268,7 +268,7 @@
                         <li>
                             <div class="input-group">
                                 <div class="circle" style="margin-top: 10px; background-image: url('../img/dfimage.png'); width:150px; height:150px"></div> 
-                                <h3 class="text-center">unend</h3>
+                                <h3 class="text-center">Unend</h3>
                             </span>
                             </div>
                             <!-- /input-group -->
@@ -290,9 +290,7 @@
                     
                     </ul>
                 </div>
-                <!-- /.sidebar-collapse -->
             </div>
-            <!-- /.navbar-static-side -->
         </nav>
     
     <main id="site-content" role="main">
@@ -311,7 +309,7 @@
                     <div class="form-group col-md-8">
                         <label><h2>Do you have any questions about using English in your daily lives?</h2></label>
                         <p>We only answer questions about using English in your daily lives. We are not responsible for our responses.</p>
-                        <textarea class="form-control" rows="5" placeholder="Type your question..." autofocus></textarea>
+                        <textarea class="form-control" rows="5" name="words" placeholder="Type your question..." autofocus></textarea>
                         <h5>1 word = 2.5 point / Limit = 300 words</h5>
                     </div>
                 </div>
