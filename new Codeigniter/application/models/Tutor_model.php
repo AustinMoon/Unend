@@ -25,8 +25,15 @@ class Tutor_model extends CI_Model {
         
         $this->db->where('is_assigned', 'false');
         $query = $this->db->get('sentence_correct');
-        return $query->row;
-		
+        return $query;
+    }
+    
+    public function list_of_requests($id){
+        
+        $this->db->where('is_assigned', 'true');
+        $this->db->where('tutor_id',$id);
+        $query = $this->db->get('sentence_correct');
+        return $query;
         
     }
         

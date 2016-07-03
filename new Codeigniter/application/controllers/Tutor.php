@@ -20,7 +20,13 @@ class Tutor extends CI_Controller {
         $this->load->model('tutor_model');
         $data = new stdClass();
         $data->content= $this->tutor_model->open_requests();
+        $data->group = $this->ion_auth->get_users_groups(5)->result(); 
         $this->load->view('tutor/index',$data);
+    }
+    
+    function assigned_requests(){
+        
+        
     }
     
     

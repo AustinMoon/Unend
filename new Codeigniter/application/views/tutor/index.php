@@ -308,7 +308,36 @@
             <div class="row">
                
                 <div class="panel panel-default">
-    <div class="panel-body">A Basic Panel <?php print_r($content); ?></div>
+    <div class="panel-body">
+        <table class="table table-hover">
+    <thead>
+      <tr>
+        <th>Request ID</th>
+        <th>TEXT</th>
+        <th>User</th>
+        <th>Select</th>
+        
+      </tr>
+    </thead>
+    <tbody>
+        <?php 
+        
+        foreach ($content->result() as $row)
+{
+            echo '<tr>';
+            echo '<td>';
+            echo $row->request_id;
+            echo '</td><td>';
+            echo $row->text;
+            echo '</td><td>';
+            echo $row->user_id;
+            echo '</td><td>';
+            echo var_dump($group);
+            echo '</td></tr>';
+       
+}?>
+             </tbody></table>
+                    </div>
                     </div>
             </div>
             <!-- /.row -->
