@@ -302,11 +302,11 @@
                     <!-- /.col-lg-12 -->
                 </div>
             
-            <form action="sen_correct_student" method="post" target="correct/correct_student">
+            <form action="sen_correct_student" method="post">
                 <div class= "row">
                     <div class="form-group col-md-8">
                         <label><h2>Check your Sentence!</h2></label>
-                             <textarea class="form-control" rows="5"placeholder="Type your question..." name="correct" autofocus></textarea>
+                             <textarea class="form-control" rows="5"placeholder="Type your question..." name="sentence" autofocus></textarea>
                         <h5>1 word = 1.5 point / Limit = 100 words</h5>
                     </div>
                 </div>
