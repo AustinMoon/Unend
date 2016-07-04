@@ -19,9 +19,10 @@ class Correct extends CI_Controller {
         if(isset($_POST['sentence'])){
             $user = $this->ion_auth->user()->row();
             $data = new stdClass();
-            $data->type='sentence';
-            $data->words=$_POST['sentence'];
-            $this->db->insert('words', $data);
+            //$data->type='sentence';
+            $data->user_id= $user->id;
+            $data->text=$_POST['sentence'];
+            $this->db->insert('sentence_correct', $data);
             $data->user_id =$user->id;
           
             if ($this->db->affected_rows() == 1) {

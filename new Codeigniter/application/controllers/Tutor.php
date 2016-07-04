@@ -19,13 +19,21 @@ class Tutor extends CI_Controller {
         
         $this->load->model('tutor_model');
         $data = new stdClass();
+        $user = $this->ion_auth->user()->row();
         $data->content= $this->tutor_model->open_requests();
+        $data->assigned_reuests= $this->tutor_model->assigned_requests($user->id);
         $data->group = $this->ion_auth->get_users_groups(5)->result(); 
         $this->load->view('tutor/index',$data);
     }
     
-    function assigned_requests(){
+    function assign($tutor_id, $request_id){
         
+        $this->db->set('tutor_id', $tutor_id);
+        $this->db->set('is_assigned', 1);
+        $this->db->where('request_id',$request_id);
+        $this->db->update('sentence_correct');
+        
+        redirect('tutor/', 'refresh');
         
     }
     

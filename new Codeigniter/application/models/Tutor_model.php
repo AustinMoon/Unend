@@ -23,18 +23,17 @@ class Tutor_model extends CI_Model {
     
     public function open_requests(){
         
-        $this->db->where('is_assigned', 'false');
+        $this->db->where('is_assigned', 0);
         $query = $this->db->get('sentence_correct');
         return $query;
     }
     
-    public function list_of_requests($id){
+    public function assigned_requests ($id){
         
-        $this->db->where('is_assigned', 'true');
+        $this->db->where('is_assigned', 1);
         $this->db->where('tutor_id',$id);
         $query = $this->db->get('sentence_correct');
         return $query;
-        
     }
         
     
