@@ -56,3 +56,4 @@ $route['logout'] = 'user/logout';
 $route['default_controller'] = 'forum';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
+$route['upload'] = 'Upload';
