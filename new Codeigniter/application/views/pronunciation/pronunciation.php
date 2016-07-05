@@ -293,7 +293,7 @@
             <!-- /.navbar-static-side -->
         </nav>
         <!-- Page Content -->
-    
+        <?php if (isset($_SESSION)) : ?>
       <div id= "page-wrapper"class="container-fluid">
                 <div class="row">
                     <div class="col-lg-12">
@@ -319,26 +319,16 @@
                     
                    <button id="pauseButton"type="button" class="btn btn-outline btn-danger btn-lg">Pause</button> 
                 </div>
-            </br>
+
                 <div class="row">
                     <div class="form-group">
                                     
                     <a href="" class="btn btn-danger">Submit</a>
                     </div>
 
-                </div>
+                </div></div></div>
+<?php endif; ?>
 
-
-
-              
-                <!-- /.row -->
-        </div>
-            <!-- /.container-fluid -->
-        
-        <!-- /#page-wrapper -->
-
-    </div>
-    <!-- /#wrapper -->
 
     <!-- jQuery -->
     <script src="../css/bower_components/jquery/dist/jquery.min.js"></script>
