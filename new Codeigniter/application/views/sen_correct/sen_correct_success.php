@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<?php date_default_timezone_set("America/New_York"); ?>
 <html lang="en">
 
 <head>
@@ -17,9 +16,6 @@
 
     <!-- MetisMenu CSS -->
     <link href="../css/bower_components/metisMenu/dist/metisMenu.min.css" rel="stylesheet">
-
-    <!-- Social Buttons CSS -->
-    <link href="../css/bower_components/bootstrap-social/bootstrap-social.css" rel="stylesheet">
 
     <!-- Custom CSS -->
     <link href="../css/dist/css/sb-admin-2.css" rel="stylesheet">
@@ -263,7 +259,8 @@
             </ul>
             <!-- /.navbar-top-links -->
 
-            <div class="navbar-default sidebar" role="navigation">
+          
+       <div class="navbar-default sidebar" role="navigation">
                 <div class="sidebar-nav navbar-collapse">
                     <ul class="nav" id="side-menu">
                         <li class="sidebar-search">
@@ -275,18 +272,18 @@
                             <!-- /input-group -->
                         </li>
                         <li>
-                            <a href="index.html"><i class=""></i> Account</a>
+                            <a href=""><i class=""></i> Account</a>
                         </li>
                         <li>
-                            <a href="#"><i class=""></i> Setting</a>
+                            <a href=""><i class=""></i> Setting</a>
                             
                             <!-- /.nav-second-level -->
                         </li>
                         <li>
-                            <a href="tables.html"><i class=""></i> Notifications</a>
+                            <a href=""><i class=""></i> Notifications</a>
                         </li>
                         <li>
-                            <a href="forms.html"><i class=""></i> Buy Point</a>
+                            <a href=""><i class=""></i> Buy Point</a>
                         </li>
                     
                     </ul>
@@ -297,95 +294,44 @@
         </nav>
 
         <!-- Page Content -->
-        <div id="page-wrapper">
-            <div class="row">
-                <div class="col-lg-12">
-                    <h1 class="page-header text-center" style="font-family:avenir">TUTOR PAGE</h1>
+        <div id= "page-wrapper"class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h1 class="page-header text-center" style="font-family:avenir">THANK YOU!</h1>
+                    </div>
+                    <!-- /.col-lg-12 -->
                 </div>
+
+                <div class= "row">
+                    
+                <div class="col-lg-6 col-lg-offset-3">
+                    <div class="panel panel-red">
+                        <div class="panel-heading text-center">
+                            <h2>
+                           We've received your inquiry. Once we are done, we will let you know. 
+                           Please check your email as well.
+                       </br>
+                        <i>- Thank you for your business -</i>
+                    </h2>
+                        </div>
+                      
+                    </div>
+                    <!-- /.col-lg-4 -->
+                    <div class="form-group col-md-8 col-lg-offset-10"> 
+                        <button href="" class="btn btn-outline btn-danger">Next</button>
+                    </div>
+                </div>
+                    
+              </div>
+
+               
+
+
                 
-                <!-- /.col-lg-12 -->
-            </div>
-            <!-- /.row -->
-            <div class="row">
-               
-                <div class="panel panel-default">
-                     <div class="panel-heading">Open requests</div>
-    <div class="panel-body">
-        <table class="table table-hover">
-    <thead>
-      <tr>
-        <th>Request ID</th>
-        <th>TEXT</th>
-        <th>User</th>
-        <th>Select</th>
-        
-      </tr>
-    </thead>
-    <tbody>
-        <?php 
-        
-        foreach ($content->result() as $row)
-{
-            echo '<tr>';
-            echo '<td>';
-            echo $row->request_id;
-            echo '</td><td>';
-            echo substr($row->text, 0, 10);
-            echo '</td><td>';
-            echo $row->user_id;
-            echo '</td><td>';
-            echo '<a href="tutor/assign/'. $row->user_id .'/'. $row->request_id .'"><button class="btn btn-primary" type="button">Assign this request</button></a>';
-            echo '</td></tr>';
-       
-}?>
-             </tbody></table>
-                    </div>
-                    </div>
-            </div>
-            <!-- /.row -->
-             <!-- /.row -->
-            <div class="row">
-               
-                <div class="panel panel-default">
-                     <div class="panel-heading">Assigned requests to you</div>
-    <div class="panel-body">
-        <table class="table table-hover">
-    <thead>
-      <tr>
-        <th>Request ID</th>
-        <th>TEXT</th>
-        <th>User</th>
-        <th>Assign time</th>
-        <th>Select</th>
-        
-      </tr>
-    </thead>
-    <tbody>
-        <?php 
-        
-        foreach ($assigned_reuests->result() as $row)
-{
-            echo '<tr>';
-            echo '<td>';
-            echo $row->request_id;
-            echo '</td><td>';
-            (strlen($row->text)>10)? substr($row->text, 0, 10).'...':$row->text;
-            
-            echo '</td><td>';
-            echo $row->user_id;
-            echo '</td><td>';
-            echo date('m/d/Y',htmlspecialchars($row->assign_date,ENT_QUOTES,'UTF-8'));
-            echo '</td><td>';
-            echo '<a href="tutor/open/'. $row->request_id .'"><button class="btn btn-primary" type="button">open</button></a>';
-            echo '</td></tr>';
-       
-}?>
-             </tbody></table>
-                    </div>
-                    </div>
-            </div>
-            <!-- /.row -->
+                <!-- /.row -->
         </div>
+            <!-- /.container-fluid -->
+        
         <!-- /#page-wrapper -->
 
     </div>

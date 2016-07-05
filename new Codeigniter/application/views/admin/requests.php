@@ -365,11 +365,15 @@ function humanTiming ($time)
             echo '</td><td>';
             echo ($row->is_assigned==1)?'Yes':'No';
             echo '</td><td>';
-            if(isset($row->tutor_id))
+            if(!empty($row->tutor_id))
             {$user = $this->ion_auth->user($row->tutor_id)->row();
             echo $user->email;}
+            else{
+            echo 'Not Assigned Yet';}
             echo '</td><td>';
-            echo humanTiming($row->assign_date). ' ago';
+            if ($row->assign_date >0){
+            echo humanTiming($row->assign_date). ' ago';}
+            else { echo '---';}
             echo '</td><td>';
             echo 'dd';
             echo '</td></tr>';
