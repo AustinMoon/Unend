@@ -296,18 +296,23 @@
                     <!-- /.col-lg-12 -->
                 </div>
             
-            <form action="proofread" method="post" name="proof">
+           <?php echo $error;?> 
+      <?php echo form_open_multipart('upload/do_upload');?> 
+		
+      <form action = "" method = "">
                 <div class= "row">
+                   
                     <div class="form-group col-md-8">
                         <label><h2>Submit your Papers! (MS Word Format)</h2></label>
                         <div class="panel panel-red">
-                        <input type="file" name="file" />
-                            <input type="submit" name="submit" value="Upload">
+                        <input type = "file" name = "userfile" size = "20" /> 
+                           <input type = "submit" value = "upload" /> 
                         
                     </div>
                     <h5> 1 word = 1.5 or more point</h5>
                         
                     </div>
+                    
                 </div>
                 <div class"row">
                     <div class="form-group col-md-8">

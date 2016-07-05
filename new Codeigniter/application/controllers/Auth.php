@@ -65,46 +65,22 @@ class Auth extends CI_Controller {
         
         if ($this->input->post('submit'))
         {
-             //upload to the local server
-             $config['upload_path'] = './uploads/';
-             $config['allowed_types'] = '*';
-             $this->load->library('upload', $config);
-             
-             if($this->upload->do_upload('file')){
-                 //Get uploaded file information
-                 $upload_data = $this->upload->data();
-                 $fileName = $upload_data['filename'];
-                 
-                 //file path at local server
-                 $source = 'uploads/'.$fileName;
-                 
-                 //Load codeigniter FTP class
-                 $this->load->library('ftp');
-                 
-                 //FTP config.
-                 $ftp_config['hostname'] = 'u78264342.1and1-data.host';
-                 $ftp_config['username'] = 'u78264342-unend';
-                 $ftp_config['password'] = 'Unend123!';
-                 $ftp_config['debug'] = TRUE;
-                 $ftp_config['port'] = 21;
-                 
-                 //Connect to the remote server
-                 $this->ftp->connect($ftp_config);
-                 
-                 //File upload path of remote server
-                 $destination = '/qc/login3/application/uploads/'.$fileName;
-                 
-                 //Upload file to the remote server
-                 $this->ftp->upload($source, ".".$destination);
-                 
-                 //close FTP connection
-                 $this->ftp->close();
-                 
-                 //Delete file from local server
-                 @unlink($source);  
-            
-             }
-             $this->load->view('proofread/proofread_success');
+             $config['upload_path']   = './uploads/'; 
+         $config['allowed_types'] = 'gif|jpg|png|pdf'; 
+         $config['max_size']      = 5000; 
+         $config['max_width']     = 11024; 
+         $config['max_height']    = 1768;  
+         $this->load->library('upload', $config);
+			
+         if ( ! $this->upload->do_upload()) {
+            $error = array('error' => $this->upload->display_errors()); 
+            $this->load->view('user/upload/upload_form', $error); 
+         }
+			
+         else { 
+            $data = array('upload_data' => $this->upload->data()); 
+            $this->load->view('user/upload/upload_success', $data); 
+         } 
           } 
         
     else

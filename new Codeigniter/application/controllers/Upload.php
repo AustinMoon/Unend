@@ -8,7 +8,7 @@
       }
 		
       public function index() { 
-         $this->load->view('user/upload/upload_form', array('error' => ' ' )); 
+         $this->load->view('proofread/proofread', array('error' => ' ' )); 
       } 
 		
       public function do_upload() { 
