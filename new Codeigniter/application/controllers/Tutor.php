@@ -32,9 +32,10 @@ class Tutor extends CI_Controller {
     }
     
     function assign($tutor_id, $request_id){
-        
+        $this->load->helper('date');
         $this->db->set('tutor_id', $tutor_id);
         $this->db->set('is_assigned', 1);
+        $this->db->set('assign_date', time());
         $this->db->where('request_id',$request_id);
         $this->db->update('sentence_correct');
         

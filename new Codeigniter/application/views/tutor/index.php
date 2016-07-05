@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<?php date_default_timezone_set("America/New_York"); ?>
 <html lang="en">
 
 <head>
@@ -354,6 +355,7 @@
         <th>Request ID</th>
         <th>TEXT</th>
         <th>User</th>
+        <th>Assign time</th>
         <th>Select</th>
         
       </tr>
@@ -371,7 +373,9 @@
             echo '</td><td>';
             echo $row->user_id;
             echo '</td><td>';
-            echo var_dump($group);
+            echo date('m/d/Y',htmlspecialchars($row->assign_date,ENT_QUOTES,'UTF-8'));
+            echo '</td><td>';
+            echo '<a href="tutor/open/'. $row->request_id .'"><button class="btn btn-primary" type="button">open</button></a>';
             echo '</td></tr>';
        
 }?>
