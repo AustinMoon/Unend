@@ -26,7 +26,8 @@
 			
          else { 
             $data = array('upload_data' => $this->upload->data()); 
-            $this->load->view('user/upload/upload_success', $data); 
+            //$this->load->view('user/upload/upload_success', $data); 
+             echo $this->upload->data('file_name');  ;
          } 
       } 
    } 

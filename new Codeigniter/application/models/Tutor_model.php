@@ -35,6 +35,11 @@ class Tutor_model extends CI_Model {
         $query = $this->db->get('sentence_correct');
         return $query;
     }
+    
+    public function all_requests(){
+        $query = $this->db->get('sentence_correct');
+        return $query;
+    }
         
     
 }
