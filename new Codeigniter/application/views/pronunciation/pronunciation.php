@@ -1,30 +1,4 @@
 <!DOCTYPE html>
-<?php
-
-function humanTiming ($time)
-{
-
-    $time = time() - $time; // to get the time since that moment
-    $time = ($time<1)? 1 : $time;
-    $tokens = array (
-        31536000 => 'year',
-        2592000 => 'month',
-        604800 => 'week',
-        86400 => 'day',
-        3600 => 'hour',
-        60 => 'minute',
-        1 => 'second'
-    );
-
-    foreach ($tokens as $unit => $text) {
-        if ($time < $unit) continue;
-        $numberOfUnits = floor($time / $unit);
-        return $numberOfUnits.' '.$text.(($numberOfUnits>1)?'s':'');
-    }
-
-}
-?>
-<?php date_default_timezone_set("America/New_York"); ?>
 <html lang="en">
 
 <head>
@@ -42,9 +16,6 @@ function humanTiming ($time)
 
     <!-- MetisMenu CSS -->
     <link href="../css/bower_components/metisMenu/dist/metisMenu.min.css" rel="stylesheet">
-
-    <!-- Social Buttons CSS -->
-    <link href="../css/bower_components/bootstrap-social/bootstrap-social.css" rel="stylesheet">
 
     <!-- Custom CSS -->
     <link href="../css/dist/css/sb-admin-2.css" rel="stylesheet">
@@ -288,7 +259,8 @@ function humanTiming ($time)
             </ul>
             <!-- /.navbar-top-links -->
 
-            <div class="navbar-default sidebar" role="navigation">
+          
+         <div class="navbar-default sidebar" role="navigation">
                 <div class="sidebar-nav navbar-collapse">
                     <ul class="nav" id="side-menu">
                         <li class="sidebar-search">
@@ -300,18 +272,18 @@ function humanTiming ($time)
                             <!-- /input-group -->
                         </li>
                         <li>
-                            <a href="index.html"><i class=""></i> Account</a>
+                            <a href=""><i class=""></i> Account</a>
                         </li>
                         <li>
-                            <a href="#"><i class=""></i> Setting</a>
+                            <a href=""><i class=""></i> Setting</a>
                             
                             <!-- /.nav-second-level -->
                         </li>
                         <li>
-                            <a href="tables.html"><i class=""></i> Notifications</a>
+                            <a href=""><i class=""></i> Notifications</a>
                         </li>
                         <li>
-                            <a href="forms.html"><i class=""></i> Buy Point</a>
+                            <a href=""><i class=""></i> Buy Point</a>
                         </li>
                     
                     </ul>
@@ -320,75 +292,43 @@ function humanTiming ($time)
             </div>
             <!-- /.navbar-static-side -->
         </nav>
-
         <!-- Page Content -->
-        <div id="page-wrapper">
-            <div class="row">
-                <div class="col-lg-12">
-                    <h1 class="page-header text-center" style="font-family:avenir">Requests List</h1>
+        <?php if (isset($_SESSION)) : ?>
+      <div id= "page-wrapper"class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h1 class="page-header text-center" style="font-family:avenir">PRONUNCIATION</h1>
+                    </div>
+                    <!-- /.col-lg-12 -->
                 </div>
-                
-                <!-- /.col-lg-12 -->
-            </div>
-            <!-- /.row -->
-            <div class="row">
-               
-                <div class="panel panel-default">
-                     <div class="panel-heading">List of Requests</div>
-    <div class="panel-body">
-        <table class="table table-hover">
-    <thead>
-      <tr>
-        <th>Request ID</th>
-        <th>TEXT</th>
-        <th>User</th>
-        <th>Is Assigned To Tutor?</th>
-        <th>Assigned Tutor</th>
-        <th> Time Since Assigned</th>
-        <th>Action</th>
-        
-      </tr>
-    </thead>
-    <tbody>
-        <?php 
-        
-        foreach ($all_requests->result() as $row)
-{
-            echo '<tr>';
-            echo '<td>';
-            echo $row->request_id;
-            echo '</td><td>';
-            echo $row->text;
-            echo '</td><td>';
-            $user = $this->ion_auth->user($row->user_id)->row();
-            echo $user->email;
-            echo '</td><td>';
-            echo ($row->is_assigned==1)?'Yes':'No';
-            echo '</td><td>';
-            if(!empty($row->tutor_id))
-            {$user = $this->ion_auth->user($row->tutor_id)->row();
-            echo $user->email;}
-            else{
-            echo 'Not Assigned Yet';}
-            echo '</td><td>';
-            if ($row->assign_date >0){
-            echo humanTiming($row->assign_date). ' ago';}
-            else { echo '---';}
-            echo '</td><td>';
-            echo 'dd';
-            echo '</td></tr>';
-       
-}?>
-             </tbody></table>
+                <div class= "row">
+                    <div class="form-group col-md-8">
+                        <label><h2>New Pronunciation</h2></label>
+                       
                     </div>
+                </div>
+                <div class="row">
+                    <div class="form-group">
+                         <a href="" class=""><img src="../img/voice.png" alt="recorder" ></a>
+                     
                     </div>
-            </div>
-            <!-- /.row -->
-        </div>
-        <!-- /#page-wrapper -->
+                </div>
+                <div>
+                    <button id="recordButton"type="button" class="btn btn-outline btn-danger btn-lg">Start</button> 
+                     </button>
+                    
+                   <button id="pauseButton"type="button" class="btn btn-outline btn-danger btn-lg">Pause</button> 
+                </div>
 
-    </div>
-    <!-- /#wrapper -->
+                <div class="row">
+                    <div class="form-group">
+                                    
+                    <a href="" class="btn btn-danger">Submit</a>
+                    </div>
+
+                </div></div></div>
+<?php endif; ?>
+
 
     <!-- jQuery -->
     <script src="../css/bower_components/jquery/dist/jquery.min.js"></script>

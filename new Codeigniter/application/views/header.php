@@ -59,7 +59,7 @@
 				</div>
 				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 					<ul class="nav navbar-nav navbar-right">
-						<?php if (isset($_SESSION['username']) && $_SESSION['logged_in'] === true) : ?>
+						<?php if ($this->ion_auth->logged_in()) : ?>
 						<li class="dropdown">
 	                   	 <a class="dropdown-toggle" data-toggle="dropdown" href="#">
 	                        <i class="fa fa-bell fa-fw"></i>  <i class="fa fa-caret-down"></i>

@@ -346,7 +346,7 @@
             echo '<td>';
             echo $row->request_id;
             echo '</td><td>';
-            echo $row->text;
+            echo substr($row->text, 0, 10);
             echo '</td><td>';
             echo $row->user_id;
             echo '</td><td>';
@@ -385,7 +385,8 @@
             echo '<td>';
             echo $row->request_id;
             echo '</td><td>';
-            echo $row->text;
+            (strlen($row->text)>10)? substr($row->text, 0, 10).'...':$row->text;
+            
             echo '</td><td>';
             echo $row->user_id;
             echo '</td><td>';
