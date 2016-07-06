@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -9,6 +10,9 @@
     <meta name="author" content="">
 
     <title>QuickCorrections</title>
+
+    <!-- style sheet-->
+    <link rel="stylesheet" href="../css/stylesheet.css">
 
     <!-- Bootstrap Core CSS -->
     <link href="../css/bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -49,9 +53,6 @@
             <!-- /.navbar-header -->
 
             <ul class="nav navbar-top-links navbar-right">
-                <li>
-                    <h6>what is?</h6>
-                </li>
                 <li class="dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#">
                         <i class="fa fa-envelope fa-fw"></i>  <i class="fa fa-caret-down"></i>
@@ -262,13 +263,13 @@
             <!-- /.navbar-top-links -->
 
           
-         <div class="navbar-default sidebar" role="navigation">
-                <div class="sidebar-nav navbar-collapse text-center">
+       <div class="navbar-default sidebar" role="navigation">
+                <div class="sidebar-nav navbar-collapse">
                     <ul class="nav" id="side-menu">
-                        <li>
-                            <div class="input-group">
-                                <div class="circle" style="margin-top: 10px; background-image: url('../img/dfimage.png'); width:150px; height:150px"></div> 
-                                <h3 class="text-center">Unend</h3>
+                        <li class="sidebar-search">
+                            <div class="input-group custom-search-form">
+                                <div class="circle" style="margin-top: 10px; background-image: url('../img/dfimage.png'); width:120px; height:110px"></div> 
+                                <h3 class="text-center">unend</h3>
                             </span>
                             </div>
                             <!-- /input-group -->
@@ -310,43 +311,59 @@
                     
                     </ul>
                 </div>
+                <!-- /.sidebar-collapse -->
             </div>
+            <!-- /.navbar-static-side -->
         </nav>
-    
-    <main id="site-content" role="main">
 
-    <?php if (isset($_SESSION)) : ?>
         <!-- Page Content -->
-       <div id= "page-wrapper"class="container-fluid">
+        <div id= "page-wrapper"class="container-fluid">
                 <div class="row">
                     <div class="col-lg-12">
-                        <h1 class="page-header text-center">English Question</h1>
+                        <h1 class="page-header text-center" style="font-family:avenir">RATE YOUR TUTOR</h1>
                     </div>
+                    <!-- /.col-lg-12 -->
                 </div>
-           
-           <form action="english_question" method="post">
-                <div class= "row"> 
-                    <div class="form-group col-md-8">
-                        <label><h2>Do you have any questions about using English in your daily lives?</h2></label>
-                        <p>We only answer questions about using English in your daily lives. We are not responsible for our responses.</p>
-                        <textarea class="form-control" rows="5" name="words" placeholder="Type your question..." autofocus></textarea>
-                        <h5>1 word = 2.5 point / Limit = 300 words</h5>
-                    </div>
-                </div>
-                <div class"row">
-                    <div class="">
-                    <button href="" class="btn btn-danger">Submit</a>
-                    </div>
 
+                <div class= "row">
+                    
+                <div class="col-lg-6 col-lg-offset-4">
+                   <div class="rate">
+                        <input type="radio" id="star1" name="rate" value="1" /><label for="star1" title="text">1 star</label>
+                        <input type="radio" id="star2" name="rate" value="2" /><label for="star2" title="text">2 stars</label>
+                        <input type="radio" id="star3" name="rate" value="3" /><label for="star3" title="text">3 stars</label>
+                        <input type="radio" id="star4" name="rate" value="4" /><label for="star4" title="text">4 stars</label> 
+                        <input type="radio" id="star5" name="rate" value="5" /><label for="star5" title="text">5 stars</label>
+                       
+                        
+                        
+                    </div>
+                    <button href="" class="btn btn-outline btn-danger btn-lg" style="padding:20px 110px">Next</button>
+                      
                 </div>
-           </form>
-
+                    
+                                
+                    <!-- /.col-lg-4 -->
+                
+                        
+                
+                    
         </div>
 
-    </div>
-   <?php endif; ?>
+               
 
-  
+
+                
+                <!-- /.row -->
+        
+            <!-- /.container-fluid -->
+        
+        <!-- /#page-wrapper -->
+
+    </div>
+    <!-- /#wrapper -->
+
+    <!-- jQuery -->
     <script src="../css/bower_components/jquery/dist/jquery.min.js"></script>
 
     <!-- Bootstrap Core JavaScript -->

@@ -275,6 +275,24 @@
                             <!-- /input-group -->
                         </li>
                         <li>
+                            <a href="#"><i class=""></i> Study<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level collapse in" aria-expanded="true">
+                                <li>
+                                    <a href="">Sentence Correction</a>
+                                </li>
+                                <li>
+                                    <a href="">English Question</a>
+                                </li>
+                                <li>
+                                    <a href="">Pronunciation</a>
+                                </li>
+                                <li>
+                                    <a href="">Proofreading</a>
+                                </li>
+                            </ul>
+                            <!-- /.nav-second-level -->
+                        </li>
+                        <li>
                             <a href="index.html"><i class=""></i> Account</a>
                         </li>
                         <li>
@@ -285,9 +303,7 @@
                         <li>
                             <a href="tables.html"><i class=""></i> Notifications</a>
                         </li>
-                        <li>
-                            <a href="forms.html"><i class=""></i> Buy Point</a>
-                        </li>
+                        
                     
                     </ul>
                 </div>
