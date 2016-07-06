@@ -265,7 +265,7 @@
          <div class="navbar-default sidebar" role="navigation">
                 <div class="sidebar-nav navbar-collapse text-center">
                     <ul class="nav" id="side-menu">
-                        <li>
+                        <li class="sidebar-search">
                             <div class="input-group">
                                 <div class="circle" style="margin-top: 10px; background-image: url('../img/dfimage.png'); width:150px; height:150px"></div> 
                                 <h3 class="text-center">Unend</h3>
