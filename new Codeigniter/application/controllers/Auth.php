@@ -56,6 +56,26 @@ class Auth extends CI_Controller {
           
     }
     
+    public function pronunciation(){
+        if (!$this->ion_auth->logged_in())
+        {
+            redirect('auth/login', 'refresh');
+        }
+        
+        if ($this->input->post('submit'))
+        {
+            
+              
+        }
+        
+        else
+        {
+            $this->load->view('pronunciation/pronunciation');
+        }
+        
+        
+    }
+    
     public function proofread(){
          if (!$this->ion_auth->logged_in())
 		{
@@ -65,7 +85,7 @@ class Auth extends CI_Controller {
         
         if ($this->input->post('submit'))
         {
-             $config['upload_path']   = './uploads/'; 
+         $config['upload_path']   = './uploads/'; 
          $config['allowed_types'] = 'gif|jpg|png|pdf'; 
          $config['max_size']      = 5000; 
          $config['max_width']     = 11024; 

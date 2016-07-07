@@ -265,13 +265,33 @@
          <div class="navbar-default sidebar" role="navigation">
                 <div class="sidebar-nav navbar-collapse text-center">
                     <ul class="nav" id="side-menu">
-                        <li>
+                        <li class="sidebar-search">
                             <div class="input-group">
                                 <div class="circle" style="margin-top: 10px; background-image: url('../img/dfimage.png'); width:150px; height:150px"></div> 
                                 <h3 class="text-center">Unend</h3>
                             </span>
                             </div>
                             <!-- /input-group -->
+                        </li>
+                        <li>
+                            <a href="#"><i class=""></i> Study<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level collapse">
+                                
+                                <li>
+                                    <a href="#">Sentence Correction</a>
+                                </li>
+                                <li>
+                                    <a href="#">English Question</a>
+                                </li>
+                                <li>
+                                    <a href="#">Pronunciation</a>
+                                </li>
+                                <li>
+                                    <a href="#"> Proofreading</a>
+                                </li>
+                               
+                            </ul>
+                            <!-- /.nav-second-level -->
                         </li>
                         <li>
                             <a href=""><i class=""></i> Account</a>

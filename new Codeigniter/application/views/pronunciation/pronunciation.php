@@ -50,9 +50,6 @@
             <!-- /.navbar-header -->
 
             <ul class="nav navbar-top-links navbar-right">
-                <li>
-                    <h6>what is?</h6>
-                </li>
                 <li class="dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#">
                         <i class="fa fa-envelope fa-fw"></i>  <i class="fa fa-caret-down"></i>
@@ -264,11 +261,11 @@
 
           
          <div class="navbar-default sidebar" role="navigation">
-                <div class="sidebar-nav navbar-collapse text-center">
+                <div class="sidebar-nav navbar-collapse">
                     <ul class="nav" id="side-menu">
-                        <li>
-                            <div class="input-group">
-                                <div class="circle" style="margin-top: 10px; background-image: url('../img/dfimage.png'); width:150px; height:150px"></div> 
+                        <li class="sidebar-search">
+                            <div class="input-group custom-search-form">
+                                <div class="circle" style="margin-top: 10px; background-image: url('../img/dfimage.png'); width:120px; height:110px"></div> 
                                 <h3 class="text-center">unend</h3>
                             </span>
                             </div>
@@ -315,99 +312,122 @@
             </div>
             <!-- /.navbar-static-side -->
         </nav>
-
         <!-- Page Content -->
-        <div class="container-fluid" id="page-wrapper">
-            <div class="row" >
-                 <div class="col-lg-12 page-header text-center">
-                    <h1 style="font-family:avenir; font-size:50px">PURCHASE POINT</h1>
-                    <h4>1 cent = 1 point</h4>
-                </div>
-            </div>
-            
-            <div class="row text-center" >
-                <div class="col-lg-10 col-lg-offset-1" >
-                    <div class="col-lg-3">
-                            <div class="panel panel-red">
-                                <div class="panel-heading">
-                                   <h2 style="font-size:50px">$10</h2>
-                                </div>
-                                <div class="panel-body">
-                                    <h3>1000 Points</h3>
-                                </div>
-                              
-                            </div>
+        <?php if (isset($_SESSION)) : ?>
+      <div id= "page-wrapper"class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h1 class="page-header text-center" style="font-family:avenir">PRONUNCIATION</h1>
                     </div>
-                    <div class="col-lg-3">
+                    <!-- /.col-lg-12 -->
+                </div>
+                <div class= "row">
+                    <div class="form-group col-md-8">
+                        <label><h2>New Pronunciation</h2></label>
                        
-                            <div class="panel panel-red">
-                                <div class="panel-heading">
-                                    <h2 style="font-size:50px">$25</h2>
-                                </div>
-                                <div class="panel-body">
-                                    <h3>2500 Points</h3>
-                                </div>
-                                <div class="panel-footer">
-                                   <h4>Bonus: 50 Points</h4>
-                                </div>
-                            </div>
-                        
-                    </div>
-                    <div class="col-lg-3">
-                            <div class="panel panel-red">
-                                <div class="panel-heading">
-                                   <h2 style="font-size:50px">$50</h2>
-                                </div>
-                                <div class="panel-body">
-                                    <h3>5000 points</h3>
-                                </div>
-                                <div class="panel-footer">
-                                    <h4>Bonus: 100 Points</h4>
-                                </div>
-                            </div>                   
-                    </div>
-                    <div class="col-lg-3">
-                        <div class="panel panel-red">
-                            <div class="panel-heading">
-                               <h2 style="font-size:50px">$100</h2> 
-                            </div>
-                            <div class="panel-body">
-                                <h3>10000 points</h3>
-                            </div>
-                            <div class="panel-footer">
-                                <h4>Bonus: 200 points</h4>
-                            </div>
-                        </div>
-                        <!-- /.col-lg-4 -->
                     </div>
                 </div>
-        <!-- /#page-wrapper -->
-            </div>
-            <hr/>
-            <div class="row">
-                <h5>Payment Options</h5>
-                <div class="col-lg-10 col-lg-offset-3" >
+                <div class="row">
+                    <div class="form-group">
+                         <a href="" class=""><img src="../img/voice.png" alt="recorder" ></a>
+                     
+                    </div>
+                </div>
+                <div>
+                <button id="recordButton"type="button" class="btn btn-outline btn-danger btn-lg" onclick="startRecording(this);">Start</button>     
+                <button id="pauseButton"type="button" class="btn btn-outline btn-danger btn-lg" onclick="stopRecording(this);">Pause</button> 
+                    
+                 <h2>Recordings</h2>
+                    <ul id="recordingslist"></ul>
+                    <h2>Log</h2>
+                    <pre id="log"></pre>    
+                </div>
 
-                <button type="button" class="btn btn-outline btn-danger btn-lg" style="padding:20px 80px">Paypal</button> 
-                <button type="button" class="btn btn-outline btn-danger btn-lg" style="padding:20px 80px">Credit Card</button> 
-            </div>
-            </div>
-             
-            <hr/>
-            <div class="row">
-            
-                <div class="col-lg-10 col-lg-offset-3" >
+                <div class="row">
+                    <div class="form-group">
+                                    
+                    <a href="" class="btn btn-danger">Submit</a>
+                    </div>
 
-                <button type="button" class="btn btn-danger btn-lg" style="padding:20px 200px">Purchase</button> 
-               
-            </div>
-            </div>
-            <!-- /.container-fluid -->
-        </div>
-        <!-- /#page-wrapper -->
+                </div></div>
+    
+    <script>
+    
+     function __log(e, data) {
+         log.innerHTML += "\n" + e + " " + (data || '');}
+        
+        var audio_context;
+        var recorder;
 
-    </div>
-    <!-- /#wrapper -->
+        function startUserMedia(stream) {
+            var input = audio_context.createMediaStreamSource(stream);
+            __log('Media stream created.');
+    // Uncomment if you want the audio to feedback directly
+    //input.connect(audio_context.destination);
+    //__log('Input connected to audio context destination.');
+    
+    recorder = new Recorder(input);
+    __log('Recorder initialised.');
+  }
+    
+  function startRecording(button) {
+    recorder && recorder.record();
+    button.disabled = true;
+    button.nextElementSibling.disabled = false;
+    __log('Recording...');
+  }
+    
+  function stopRecording(button) {
+    recorder && recorder.stop();
+    button.disabled = true;
+    button.previousElementSibling.disabled = false;
+    __log('Stopped recording.');
+    
+    // create WAV download link using audio data blob
+    createDownloadLink();
+    
+    recorder.clear();
+  }
+    
+  function createDownloadLink() {
+    recorder && recorder.exportWAV(function(blob)) {
+      var url = URL.createObjectURL(blob);
+      var li = document.createElement('li');
+      var au = document.createElement('audio');
+      var hf = document.createElement('a');
+      
+      au.controls = true;
+      au.src = url;
+      hf.href = url;
+      hf.download = new Date().toISOString() + '.wav';
+      hf.innerHTML = hf.download;
+      li.appendChild(au);
+      li.appendChild(hf);
+      recordingslist.appendChild(li);
+    });
+  }
+    
+  window.onload = function init() {
+    try {
+      // webkit shim
+      window.AudioContext = window.AudioContext || window.webkitAudioContext;
+      navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia;
+      window.URL = window.URL || window.webkitURL;
+      
+      audio_context = new AudioContext;
+      __log('Audio context set up.');
+      __log('navigator.getUserMedia ' + (navigator.getUserMedia ? 'available.' : 'not present!'));
+    } catch (e) {
+      alert('No web audio support in this browser!');
+    }
+    
+    navigator.getUserMedia({audio: true}, startUserMedia, function(e) {
+      __log('No live audio input: ' + e);
+    });
+  };
+   </script>
+
+<?php endif; ?>
 
     <!-- jQuery -->
     <script src="../css/bower_components/jquery/dist/jquery.min.js"></script>
@@ -415,12 +435,15 @@
     <!-- Bootstrap Core JavaScript -->
     <script src="../css/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 
-    <!-- Metis Menu Plugin JavaScript -->
-    <script src="../css/bower_components/metisMenu/dist/metisMenu.min.js"></script>
+<!-- Metis Menu Plugin JavaScript -->
+
+<script src="../css/bower_components/metisMenu/dist/metisMenu.min.js"></script>
+<!--recorder-->
+<script src="../css/dist/js/recorder.js"></script>
+<script src="../css/js/recorder.js"></script>
 
     <!-- Custom Theme JavaScript -->
     <script src="../css/dist/js/sb-admin-2.js"></script>
 
 </body>
 
-</html>
