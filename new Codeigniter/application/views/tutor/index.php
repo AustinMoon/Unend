@@ -1,4 +1,29 @@
 <!DOCTYPE html>
+<?php
+
+function humanTiming ($time)
+{
+
+    $time = time() - $time; // to get the time since that moment
+    $time = ($time<1)? 1 : $time;
+    $tokens = array (
+        31536000 => 'year',
+        2592000 => 'month',
+        604800 => 'week',
+        86400 => 'day',
+        3600 => 'hour',
+        60 => 'minute',
+        1 => 'second'
+    );
+
+    foreach ($tokens as $unit => $text) {
+        if ($time < $unit) continue;
+        $numberOfUnits = floor($time / $unit);
+        return $numberOfUnits.' '.$text.(($numberOfUnits>1)?'s':'');
+    }
+
+}
+?>
 <?php date_default_timezone_set("America/New_York"); ?>
 <html lang="en">
 
@@ -330,9 +355,11 @@
             echo '<td>';
             echo $row->request_id;
             echo '</td><td>';
-            echo substr($row->text, 0, 10);
+            if(strlen($row->text)>10){echo substr($row->text, 0, 10).'...';}
+            else {echo $row->text;}
             echo '</td><td>';
-            echo $row->user_id;
+            $user = $this->ion_auth->user($row->user_id)->row();
+            echo $user->email;
             echo '</td><td>';
             echo '<a href="tutor/assign/'. $row->user_id .'/'. $row->request_id .'"><button class="btn btn-primary" type="button">Assign this request</button></a>';
             echo '</td></tr>';
@@ -369,12 +396,15 @@
             echo '<td>';
             echo $row->request_id;
             echo '</td><td>';
-            (strlen($row->text)>10)? substr($row->text, 0, 10).'...':$row->text;
-            
+            if(strlen($row->text)>10){echo substr($row->text, 0, 10).'...';}
+            else {echo $row->text;}
             echo '</td><td>';
-            echo $row->user_id;
+            $user = $this->ion_auth->user($row->user_id)->row();
+            echo $user->email;
             echo '</td><td>';
-            echo date('m/d/Y',htmlspecialchars($row->assign_date,ENT_QUOTES,'UTF-8'));
+            if ($row->assign_date >0){
+            echo humanTiming($row->assign_date). ' ago';}
+            else { echo '---';}
             echo '</td><td>';
             echo '<a href="tutor/open/'. $row->request_id .'"><button class="btn btn-primary" type="button">open</button></a>';
             echo '</td></tr>';
