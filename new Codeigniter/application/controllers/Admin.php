@@ -33,5 +33,43 @@ class Admin extends CI_Controller {
         
     }
     
+    function send_email($request_id){
+        $this->load->model('tutor_model');
+        
+        $data = $this->tutor_model->get_request_info($request_id)->row();
+        $tutor = $this->ion_auth->user($data->tutor_id)->row();
+        $message='request no ';
+        $message.=$data->request_id;
+            $message.=' is in your account for ';
+        $message.= $this->humanTiming($data->assign_date);
+            $message.=' .Please finish it ASAP';
+        mail($tutor->email, 'My Subject', $message);
+        echo 'Email sent successfully';
+        
+    }
+    
+    function humanTiming ($time)
+{
+    date_default_timezone_set("America/New_York");
+    $time = time() - $time; // to get the time since that moment
+    $time = ($time<1)? 1 : $time;
+    $tokens = array (
+        31536000 => 'year',
+        2592000 => 'month',
+        604800 => 'week',
+        86400 => 'day',
+        3600 => 'hour',
+        60 => 'minute',
+        1 => 'second'
+    );
+
+    foreach ($tokens as $unit => $text) {
+        if ($time < $unit) continue;
+        $numberOfUnits = floor($time / $unit);
+        return $numberOfUnits.' '.$text.(($numberOfUnits>1)?'s':'');
+    }
+
+}
+    
     
 }

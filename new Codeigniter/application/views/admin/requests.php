@@ -3,7 +3,7 @@
 
 function humanTiming ($time)
 {
-
+    date_default_timezone_set("America/New_York");
     $time = time() - $time; // to get the time since that moment
     $time = ($time<1)? 1 : $time;
     $tokens = array (
@@ -23,8 +23,7 @@ function humanTiming ($time)
     }
 
 }
-?>
-<?php date_default_timezone_set("America/New_York"); ?>
+ ?>
 <html lang="en">
 
 <head>
@@ -375,7 +374,7 @@ function humanTiming ($time)
             echo humanTiming($row->assign_date). ' ago';}
             else { echo '---';}
             echo '</td><td>';
-            echo 'dd';
+            echo '<a href="send_email/'.$row->request_id .'"><button type="submit" value="Submit">Submit</button></a>';
             echo '</td></tr>';
        
 }?>
