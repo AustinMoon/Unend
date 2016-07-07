@@ -25,7 +25,9 @@ class User extends CI_Controller {
 	
 	
 	public function index() {
-        echo "Hello";
+        $this->load->view('html/header.html');
+        $this->load->view('html/main.html');
+        $this->load->view('html/footer.html');
 		
 
 		
