@@ -320,17 +320,25 @@
                   <a href="" class=""><img src="../img/voice.png" alt="recorder" ></a>
                      </div>
           </div>
-          
-          <div>  
-              
+          <form action="" method="">
+          <div>              
               <h2>Record your voice</h2>
               <iframe src="https://webaudiodemos.appspot.com/AudioRecorder/index.html"  width="400" height="300"></iframe>
                 </div>
+          </form>
+
+    
           
                 <div class="row">
-                    <div class="form-group">            
+                    <div class="panel panel-red">
+                        <input type = "file" name = "userfile" size = "20" /> 
+                           <input type = "submit" value = "upload" /> 
+                        
+                    </div>
+                    
+                    <div class="form-group">    
+                        
                     <a href="" class="btn btn-danger">Submit</a>
-
                     </div>
                 </div>
     </div>
