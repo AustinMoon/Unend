@@ -21,7 +21,10 @@
 	<script src="http://quickcorrections.com/qc/login3/css/js/main_recorder.js"></script>
 	<script src="http://quickcorrections.com/qc/login3/css/js/recorder.js"></script>
     
+    <iframe src="https://webaudiodemos.appspot.com/AudioRecorder/index.html" width="200" height="200"></iframe>
+
 	<style>
+        
 	html { overflow: hidden; }
 	body { 
 		font: 14pt Arial, sans-serif; 
