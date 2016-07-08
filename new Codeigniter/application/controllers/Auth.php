@@ -150,7 +150,7 @@ class Auth extends CI_Controller {
 			{
 				$this->data['users'][$k]->groups = $this->ion_auth->get_users_groups($user->id)->result();
 			}
-            $this->load->view('html/header.html');
+            $this->load->view('html/header');
 			$this->_render_page('auth/index', $this->data);
 		}
 	}
@@ -643,7 +643,7 @@ class Auth extends CI_Controller {
                 'value' => $this->form_validation->set_value('password_confirm'),
                 'class' => 'form-control',
             );
-            $this->_render_page('html/header.html');
+            $this->_render_page('html/header');
             $this->_render_page('auth/create_user', $this->data);
         }
     }

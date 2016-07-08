@@ -422,7 +422,7 @@ function humanTiming ($time)
             echo humanTiming($row->assign_date). ' ago';}
             else { echo '---';}
             echo '</td><td>';
-            echo '<a href="tutor/open/'. $row->request_id .'"><button class="btn btn-primary" type="button">open</button></a>';
+            echo '<a href="tutor/edit/'. $row->request_id .'"><button class="btn btn-primary" type="button">open</button></a>';
             echo '</td></tr>';
        
 }?>

@@ -54,6 +54,16 @@ class Tutor extends CI_Controller {
         
     }
     
+    function add_revision(){
+        
+        $TR= $_POST['tutor_revision'];
+        $this->db->set('tutor_revision', $TR);
+        $this->db->where('request_id',$_POST['request_id']);
+        $this->db->update('sentence_correct');
+        echo 'true';
+        
+    }
+    
     
     
 }
