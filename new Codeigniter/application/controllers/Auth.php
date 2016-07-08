@@ -61,21 +61,33 @@ class Auth extends CI_Controller {
         {
             redirect('auth/login', 'refresh');
         }
-        
+    
         if ($this->input->post('submit'))
         {
-            
-            
-              
-        }
+         $config['upload_path']   = './uploads/'; 
+         $config['allowed_types'] = 'wav'; 
+         $config['max_size']      = 5000; 
+         $config['max_width']     = 11024; 
+         $config['max_height']    = 1768;  
+         $this->load->library('upload', $config);
+			
+         if (!$this->upload->do_upload()) {
+            $error = array('error' => $this->upload->display_errors()); 
+            $this->load->view('user/upload/upload_form', $error); 
+         }
+			
+         else { 
+            $data = array('upload_data' => $this->upload->data()); 
+            $this->load->view('user/upload/upload_success', $data); 
+         } 
+          } 
         
         else
         {
             $this->load->view('pronunciation/pronunciation');
-        }
-        
-        
+        } 
     }
+        
     
     public function proofread(){
          if (!$this->ion_auth->logged_in())
@@ -87,13 +99,13 @@ class Auth extends CI_Controller {
         if ($this->input->post('submit'))
         {
          $config['upload_path']   = './uploads/'; 
-         $config['allowed_types'] = 'gif|jpg|png|pdf'; 
+         $config['allowed_types'] = '*'; 
          $config['max_size']      = 5000; 
          $config['max_width']     = 11024; 
          $config['max_height']    = 1768;  
          $this->load->library('upload', $config);
 			
-         if ( ! $this->upload->do_upload()) {
+         if (!$this->upload->do_upload()) {
             $error = array('error' => $this->upload->display_errors()); 
             $this->load->view('user/upload/upload_form', $error); 
          }
