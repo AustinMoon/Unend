@@ -326,15 +326,16 @@
                 </div>
                 <div class= "row">
                     <div class="form-group col-md-8">
+                          <form action = "../add_revision" method = "POST">
                         <label><h2>Edit sentence here</h2></label>
-                        <textarea class="form-control" rows="5" placeholder="Type your question..." autofocus></textarea>
+                        <textarea name="tutor_revision" class="form-control" rows="5" autofocus><?= $request->text; ?></textarea>
 
                     </div>
                 </div>
                 <div class"row">
                     <div class="">
-                    <a href="" class="btn btn-danger">Submit</a>
-                    </div>
+                    <button type="submit" class="btn btn-danger">Submit</button>
+                    </div></form>
 
                 </div>
 

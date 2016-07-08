@@ -258,31 +258,11 @@
                     <ul class="nav" id="side-menu">
                         <li class="sidebar-search">
                             <div class="input-group custom-search-form">
-                                <div class="circle" style="margin-top: 10px; background-image: url('../img/dfimage.png'); width:150px; height:150px"></div> 
+                                <div class="circle" style="margin-top: 10px; background-image: url('../img/dfimage.png'); width:120px; height:110px"></div> 
                                 <h3 class="text-center">Unend</h3>
                             </span>
                             </div>
                             <!-- /input-group -->
-                        </li>
-                       <li>
-                            <a href="#"><i class=""></i> Study<span class="fa arrow"></span></a>
-                            <ul class="nav nav-second-level collapse">
-                                
-                                <li>
-                                    <a href="#">Sentence Correction</a>
-                                </li>
-                                <li>
-                                    <a href="#">English Question</a>
-                                </li>
-                                <li>
-                                    <a href="#">Pronunciation</a>
-                                </li>
-                                <li>
-                                    <a href="#"> Proofreading</a>
-                                </li>
-                               
-                            </ul>
-                            <!-- /.nav-second-level -->
                         </li>
                         <li>
                             <a href=""><i class=""></i> Account</a>
@@ -316,7 +296,7 @@
                     <!-- /.col-lg-12 -->
                 </div>
             
-           <?php echo $error;?> 
+           <?php //echo $error;?> 
       <?php echo form_open_multipart('upload/do_upload');?> 
 		
       <form action = "" method = "">

@@ -35,7 +35,6 @@ class Admin extends CI_Controller {
     
     function send_email($request_id){
         $this->load->model('tutor_model');
-        
         $data = $this->tutor_model->get_request_info($request_id)->row();
         $tutor = $this->ion_auth->user($data->tutor_id)->row();
         $message='request no ';

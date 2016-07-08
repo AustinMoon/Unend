@@ -104,7 +104,7 @@
                         <li><a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a>
                         </li>
                         <li class="divider"></li>
-                        <li><a href="<?= base_url('logout') ?>"><i class="fa fa-sign-out fa-fw"></i> Sign Out</a>
+                        <li><a href="<?= base_url('auth/logout') ?>"><i class="fa fa-sign-out fa-fw"></i> Sign Out</a>
                         </li>
                     </ul>
                     <!-- /.dropdown-user -->
@@ -112,8 +112,8 @@
 						<?php else : ?>
 							<li ><a class=""  href="#">Why QuickCorrections</a></li>                  
                         	<li ><a class=""  href="#">Price</a></li>
-                            <li><a href="<?= base_url('register') ?>">Sign Up</a></li>
-							<li><a href="<?= base_url('login') ?>">Sign In</a></li>
+                            <li><a href="<?= base_url('auth/creat_user') ?>">Sign Up</a></li>
+							<li><a href="<?= base_url('auth/login') ?>">Sign In</a></li>
 						<?php endif; ?>
 					</ul>
 				</div><!-- .navbar-collapse -->
