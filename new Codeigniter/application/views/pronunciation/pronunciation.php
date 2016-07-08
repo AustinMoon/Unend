@@ -10,25 +10,10 @@
     <meta name="author" content="">
 
     <title>QuickCorrections</title>
-
-    <!-- Bootstrap Core CSS -->
     <link href="../css/bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- MetisMenu CSS -->
     <link href="../css/bower_components/metisMenu/dist/metisMenu.min.css" rel="stylesheet">
-
-    <!-- Custom CSS -->
     <link href="../css/dist/css/sb-admin-2.css" rel="stylesheet">
-
-    <!-- Custom Fonts -->
     <link href="../css/bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
 
 </head>
 
@@ -312,8 +297,10 @@
             </div>
             <!-- /.navbar-static-side -->
         </nav>
-        <!-- Page Content -->
-        <?php if (isset($_SESSION)) : ?>
+       
+    
+    <!-- Page Content -->
+    <?php if (isset($_SESSION)) : ?>
       <div id= "page-wrapper"class="container-fluid">
                 <div class="row">
                     <div class="col-lg-12">
@@ -323,19 +310,20 @@
                 </div>
                 <div class= "row">
                     <div class="form-group col-md-8">
-                        <label><h2>New Pronunciation</h2></label>
-                       
+                        <label><h2>New Pronunciation</h2></label>    
                     </div>
                 </div>
-                <div class="row">
-                    <div class="form-group">
-                         <a href="" class=""><img src="../img/voice.png" alt="recorder" ></a>
-                     
-                    </div>
-                </div>
-                <div>
-                <button id="recordButton"type="button" class="btn btn-outline btn-danger btn-lg" onclick="startRecording(this);">Start</button>     
-                <button id="pauseButton"type="button" class="btn btn-outline btn-danger btn-lg" onclick="stopRecording(this);">Pause</button> 
+                
+          <div class="row">
+              <div class="form-group">
+                  <a href="" class=""><img src="../img/voice.png" alt="recorder" ></a>
+                     </div>
+          </div>
+          
+          <div>
+            <button id="recordButton" type="button" class="btn btn-outline btn-danger btn-lg" id="recordClick">Start</button>     
+                
+            <button id="pauseButton"type="button" class="btn btn-outline btn-danger btn-lg" id="stopClick">Pause</button> 
                     
                  <h2>Recordings</h2>
                     <ul id="recordingslist"></ul>
@@ -352,32 +340,33 @@
                 </div></div>
     
     <script>
-    
-     function __log(e, data) {
-         log.innerHTML += "\n" + e + " " + (data || '');}
-        
+    function __log(e, data) {
+    log.innerHTML += "\n" + e + " " + (data || '');
+  }
+  
         var audio_context;
+  
         var recorder;
-
+  
         function startUserMedia(stream) {
             var input = audio_context.createMediaStreamSource(stream);
             __log('Media stream created.');
     // Uncomment if you want the audio to feedback directly
     //input.connect(audio_context.destination);
     //__log('Input connected to audio context destination.');
-    
-    recorder = new Recorder(input);
-    __log('Recorder initialised.');
+            recorder = new Recorder(input);
+            __log('Recorder initialised.');
   }
-    
-  function startRecording(button) {
-    recorder && recorder.record();
-    button.disabled = true;
-    button.nextElementSibling.disabled = false;
-    __log('Recording...');
-  }
-    
-  function stopRecording(button) {
+  
+        function startRecording(button) {
+            recorder && recorder.record();
+            button.disabled = true;
+            button.nextElementSibling.disabled = false;
+            __log('Recording...');
+            $("#recordClick").click(stopRecording);
+        }
+  
+        function stopRecording(button) {
     recorder && recorder.stop();
     button.disabled = true;
     button.previousElementSibling.disabled = false;
@@ -385,12 +374,14 @@
     
     // create WAV download link using audio data blob
     createDownloadLink();
+            
     
     recorder.clear();
+    $("#stopClick").click(stopRecording);
   }
-    
-  function createDownloadLink() {
-    recorder && recorder.exportWAV(function(blob)) {
+  
+        function createDownloadLink() {
+    recorder && recorder.exportWAV(function(blob) {
       var url = URL.createObjectURL(blob);
       var li = document.createElement('li');
       var au = document.createElement('audio');
@@ -406,9 +397,10 @@
       recordingslist.appendChild(li);
     });
   }
-    
-  window.onload = function init() {
-    try {
+  
+        window.onload = function init() {
+   
+            try {
       // webkit shim
       window.AudioContext = window.AudioContext || window.webkitAudioContext;
       navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia;
@@ -420,12 +412,21 @@
     } catch (e) {
       alert('No web audio support in this browser!');
     }
+            navigator.getUserMedia_ = (   navigator.getUserMedia
+                           || navigator.webkitGetUserMedia 
+                           || navigator.mozGetUserMedia 
+                           || navigator.msGetUserMedia);
+            
+            if ( !! navigator.getUserMedia_) {
+    navigator.getUserMedia_('video', successCallback, errorCallback);
     
     navigator.getUserMedia({audio: true}, startUserMedia, function(e) {
       __log('No live audio input: ' + e);
     });
   };
-   </script>
+  
+    </script>
+
 
 <?php endif; ?>
 
@@ -434,15 +435,10 @@
 
     <!-- Bootstrap Core JavaScript -->
     <script src="../css/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-
-<!-- Metis Menu Plugin JavaScript -->
-
-<script src="../css/bower_components/metisMenu/dist/metisMenu.min.js"></script>
-<!--recorder-->
-<script src="../css/dist/js/recorder.js"></script>
-<script src="../css/js/recorder.js"></script>
-
-    <!-- Custom Theme JavaScript -->
+    <!-- Metis Menu Plugin JavaScript -->
+    <script src="../css/bower_components/metisMenu/dist/metisMenu.min.js"></script>
+    <!--- Recorder---->
+    <script src="../dist/js/recorder.js"></script>
     <script src="../css/dist/js/sb-admin-2.js"></script>
 
 </body>
