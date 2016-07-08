@@ -25,7 +25,10 @@ class User extends CI_Controller {
 	
 	
 	public function index() {
-        echo "Hello";
+        $this->load->library(array('ion_auth','form_validation'));
+        $this->load->view('html/header');
+        $this->load->view('html/main.html');
+        $this->load->view('html/footer');
 		
 
 		

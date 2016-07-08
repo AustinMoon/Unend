@@ -43,6 +43,17 @@ class Tutor extends CI_Controller {
         
     }
     
+    function edit($request_id){
+        $data = new stdClass();
+        $this->load->model('tutor_model');
+        $data->request = $this->tutor_model->get_request_info($request_id)->row();
+        $this->load->view('html/header');
+        $this->load->view('tutor/tutor_sentence',$data);
+        $this->load->view('html/footer');
+        
+        
+    }
+    
     
     
 }

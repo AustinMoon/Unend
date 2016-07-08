@@ -198,7 +198,7 @@ class Auth extends CI_Controller {
                 'placeholder' => 'Password',
                 'class'=> 'form-control',
 			);
-            $this->load->view('html/header.html');
+            $this->load->view('html/header');
 			$this->_render_page('auth/login', $this->data);
 		}
 	}
