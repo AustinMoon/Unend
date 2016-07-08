@@ -329,6 +329,7 @@
                           <form action = "../add_revision" method = "POST">
                         <label><h2>Edit sentence here</h2></label>
                         <textarea name="tutor_revision" class="form-control" rows="5" autofocus><?= $request->text; ?></textarea>
+                        <input type="hidden" name="request_id" value="<?= $request->request_id; ?>">
 
                     </div>
                 </div>

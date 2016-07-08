@@ -678,10 +678,10 @@ class FineDiff {
 			if ( strcspn($deletion, " \n\r") === 0 ) {
 				$deletion = str_replace(array("\n","\r"), array('\n','\r'), $deletion);
 				}
-			echo '<del>', htmlentities($deletion), '</del>';
+			echo '<span style="background-color: #DB4848">', htmlentities($deletion), '</span>';
 			}
 		else /* if ( $opcode === 'i' ) */ {
- 			echo '<ins>', htmlentities(substr($from, $from_offset, $from_len)), '</ins>';
+ 			echo '<span style="background-color: #95E67E">', htmlentities(substr($from, $from_offset, $from_len)), '</span>';
 			}
 		}
 	}

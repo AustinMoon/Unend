@@ -24,8 +24,7 @@ function index() {
     $from_text=$_POST['student'];
     $to_text=$_POST['tutor'];
     $opcodes = FineDiff::getDiffOpcodes($from_text, $to_text /* default granularity is set to character */);
-    
-   echo FineDiff::renderDiffToHTMLFromOpcodes($from_text, $opcodes);
+    echo FineDiff::renderDiffToHTMLFromOpcodes($from_text, $opcodes);
     
     }
     
