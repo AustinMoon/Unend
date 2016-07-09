@@ -320,12 +320,15 @@
                   <a href="" class=""><img src="../img/voice.png" alt="recorder" ></a>
                      </div>
           </div>
+          
+           <?php //echo $error;?> 
+          
+           <?php echo form_open_multipart('upload/do_upload');?> 
           <form action="" method="">
           <div>              
               <h2>Record your voice</h2>
               <iframe src="https://webaudiodemos.appspot.com/AudioRecorder/index.html"  width="400" height="300"></iframe>
                 </div>
-          </form>
 
     
           
@@ -341,6 +344,8 @@
                     <a href="" class="btn btn-danger">Submit</a>
                     </div>
                 </div>
+                        </form>
+
     </div>
     </body>
 <?php endif; ?>
