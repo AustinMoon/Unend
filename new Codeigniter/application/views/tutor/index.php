@@ -358,6 +358,7 @@ function humanTiming ($time)
         <th>Request ID</th>
         <th>TEXT</th>
         <th>User</th>
+        <th>Request Date</th>
         <th>Select</th>
         
       </tr>
@@ -376,6 +377,8 @@ function humanTiming ($time)
             echo '</td><td>';
             $user = $this->ion_auth->user($row->user_id)->row();
             echo $user->email;
+            echo '</td><td>';
+            echo humanTiming($row->request_date). ' ago';
             echo '</td><td>';
             echo '<a href="tutor/assign/'. $row->user_id .'/'. $row->request_id .'"><button class="btn btn-primary" type="button">Assign this request</button></a>';
             echo '</td></tr>';
