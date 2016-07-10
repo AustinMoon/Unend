@@ -24,7 +24,7 @@ class Tutor_model extends CI_Model {
     public function open_requests(){
         
         $this->db->where('is_assigned', 0);
-        $this->db->order_by('request_date', 'DESC');
+        $this->db->order_by('request_date', 'ASC');
         $query = $this->db->get('sentence_correct');
         return $query;
     }

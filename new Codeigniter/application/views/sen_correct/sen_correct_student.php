@@ -326,9 +326,8 @@
                 <div class= "row">
                     <div class="form-group col-md-8">
                         <label><h2>Check your Sentence!</h2></label>
-                             <textarea class="form-control"  id="textarea" rows="5"placeholder="Type your question..." name="sentence" maxlength="750" autofocus></textarea>
-                        <br/>
-                        <div id="textarea_feedback"></div>
+                             <textarea class="form-control"  id="text" rows="5"placeholder="Type your question..." name="sentence" maxlength="750" autofocus></textarea>
+                        <h6 class="pull-right" id="count_message"></h6>
                         <br/>
                         <h5>1 word = 1.5 point / Limit = 750 characters</h5>
                     </div>
@@ -391,3 +390,14 @@
 </body>
 
 </html>
+<script>
+var text_max = 750;
+$('#count_message').html(text_max + ' remaining');
+
+$('#text').keyup(function() {
+  var text_length = $('#text').val().length;
+  var text_remaining = text_max - text_length;
+  
+  $('#count_message').html(text_remaining + ' remaining');
+});
+</script>
