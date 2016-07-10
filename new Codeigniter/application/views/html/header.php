@@ -12,30 +12,30 @@
 
 	<!-- css -->
     
-	<link href="http://quickcorrection.com/qc/login3/css/bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="http://quickcorrection.com/qc/login3/css/font-awesome.css" rel="stylesheet">
+	<link href="http://quickcorrections.com/qc/css/bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="http://quickcorrections.com/qc/css/font-awesome.css" rel="stylesheet">
 
     <!-- MetisMenu CSS -->
-    <link href="http://quickcorrection.com/qc/login3/css/bower_components/metisMenu/dist/metisMenu.min.css" rel="stylesheet">
+    <link href="http://quickcorrections.com/qc/css/bower_components/metisMenu/dist/metisMenu.min.css" rel="stylesheet">
 
     <!-- Social Buttons CSS -->
-    <link href="http://quickcorrection.com/qc/login3/css/bower_components/bootstrap-social/bootstrap-social.css" rel="stylesheet">
+    <link href="http://quickcorrections.com/qc/css/bower_components/bootstrap-social/bootstrap-social.css" rel="stylesheet">
 
     <!-- Custom CSS -->
-    <link href="http://quickcorrection.com/qc/login3/css/dist/css/sb-admin-2.css" rel="stylesheet">
+    <link href="http://quickcorrections.com/qc/css/dist/css/sb-admin-2.css" rel="stylesheet">
 
     <!-- Custom Fonts -->
-    <link href="http://quickcorrection.com/qc/login3/css/bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <script src="http://quickcorrection.com/qc/login3/css/bower_components/jquery/dist/jquery.min.js"></script>
+    <link href="http://quickcorrections.com/qc/css/bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <script src="http://quickcorrections.com/qc/css/bower_components/jquery/dist/jquery.min.js"></script>
 
     <!-- Bootstrap Core JavaScript -->
-    <script src="http://quickcorrection.com/qc/login3/css/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="http://quickcorrections.com/qc/css/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 
     <!-- Metis Menu Plugin JavaScript -->
-    <script src="http://quickcorrection.com/qc/login3/css/bower_components/metisMenu/dist/metisMenu.min.js"></script>
+    <script src="http://quickcorrections.com/qc/css/bower_components/metisMenu/dist/metisMenu.min.js"></script>
 
     <!-- Custom Theme JavaScript -->
-    <script src="http://quickcorrection.com/qc/login3/css/dist/js/sb-admin-2.js"></script>
+    <script src="http://quickcorrections.com/qc/css/dist/js/sb-admin-2.js"></script>
 
 
 	<!--[if lt IE 9]>
@@ -55,7 +55,7 @@
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>
 					</button>
-                <a class="navbar-brand" href="index.html"><img src="../img/qc_logo.png" style="width:500px;  display:inline; float:left"></a>
+                <a class="navbar-brand" href="index.html"><img src="http://quickcorrections.com/qc/img/qc_logo.png" style="width:500px;  display:inline; float:left"></a>
 				</div>
 				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 					<ul class="nav navbar-nav navbar-right">
@@ -110,8 +110,8 @@
                     <!-- /.dropdown-user -->
                 </li>
 						<?php else : ?>
-							<li ><a class=""  href="#">Why QuickCorrections</a></li>                  
-                        	<li ><a class=""  href="#">Price</a></li>
+							<li ><a class=""  href="user/aboutus">Why QuickCorrections</a></li>                  
+                        	<li ><a class=""  href="user/price">Price</a></li>
                             <li><a href="<?= base_url('auth/creat_user') ?>">Sign Up</a></li>
 							<li><a href="<?= base_url('auth/login') ?>">Sign In</a></li>
 						<?php endif; ?>

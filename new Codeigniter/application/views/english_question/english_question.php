@@ -329,8 +329,10 @@
                     <div class="form-group col-md-8">
                         <label><h2>Do you have any questions about using English in your daily lives?</h2></label>
                         <p>We only answer questions about using English in your daily lives. We are not responsible for our responses.</p>
-                        <textarea class="form-control" rows="5" name="words" placeholder="Type your question..." autofocus></textarea>
-                        <h5>1 word = 2.5 point / Limit = 300 words</h5>
+                        <textarea class="form-control" id="textarea" rows="5" name="words" placeholder="Type your question..." maxlength="750" autofocus></textarea>
+                        <div id="textarea_feedback"></div>
+
+                        <h5>1 word = 2.5 point / Limit = 750 words</h5>
                     </div>
                 </div>
                 <div class"row">
@@ -345,7 +347,19 @@
 
     </div>
    <?php endif; ?>
+    <script>
+    $(document).ready(function() {
+    var text_max = 99;
+    $('#textarea_feedback').html(text_max + '/750');
 
+    $('#textarea').keyup(function() {
+        var text_length = $('#textarea').val().length;
+        var text_remaining = text_max - text_length;
+
+        $('#textarea_feedback').html(text_remaining + ' characters remaining');
+    });
+    });
+    </script>
   
     <script src="../css/bower_components/jquery/dist/jquery.min.js"></script>
 

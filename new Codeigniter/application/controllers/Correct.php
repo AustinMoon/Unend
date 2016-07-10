@@ -22,6 +22,7 @@ class Correct extends CI_Controller {
             //$data->type='sentence';
             $data->user_id= $user->id;
             $data->text=$_POST['sentence'];
+            $data->additional=$_POST['optional'];
             $this->db->insert('sentence_correct', $data);
             $data->user_id =$user->id;
           
