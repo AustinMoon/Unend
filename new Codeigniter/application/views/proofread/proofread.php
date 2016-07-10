@@ -258,7 +258,7 @@
                     <ul class="nav" id="side-menu">
                         <li class="sidebar-search">
                             <div class="input-group custom-search-form">
-                                <div class="circle" style="margin-top: 10px; background-image: url('../img/dfimage.png'); width:120px; height:110px"></div> 
+                                <div class="circle" style="margin-top: 10px; background-image: url('http://quickcorrections.com/qc/img/dfimage.png'); width:120px; height:110px"></div> 
                                 <h3 class="text-center">Unend</h3>
                             </span>
                             </div>

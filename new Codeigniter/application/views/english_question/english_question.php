@@ -267,7 +267,7 @@
                     <ul class="nav" id="side-menu">
                         <li class="sidebar-search">
                             <div class="input-group">
-                                <div class="circle" style="margin-top: 10px; background-image: url('../img/dfimage.png'); width:150px; height:150px"></div> 
+                                <div class="circle" style="margin-top: 10px; background-image: url('http://quickcorrections.com/qc/img/dfimage.png'); width:150px; height:150px"></div> 
                                 <h3 class="text-center">Unend</h3>
                             </span>
                             </div>
