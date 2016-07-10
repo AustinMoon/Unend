@@ -35,6 +35,8 @@
                                 </div>
                                 <!-- Change this to a button or input when using this as a form -->
                                 <button type="submit" class="btn btn-lg btn-success btn-block btn-danger">Login</button>
+                                <p>If you don't have our Account<br/></p>
+                                <a href="create_user" class="btn btn-lg btn-success btn-block btn-danger">Sign up</a>
                             </fieldset>
                         </form>
                     </div>

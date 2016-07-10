@@ -264,9 +264,9 @@
 
           
          <div class="navbar-default sidebar" role="navigation">
-                <div class="sidebar-nav navbar-collapse text-center">
+                <div class="sidebar-nav navbar-collapse">
                     <ul class="nav" id="side-menu">
-                        <li>
+                        <li class="sidebar-search">
                             <div class="input-group">
                                 <div class="circle" style="margin-top: 10px; background-image: url('../img/dfimage.png'); width:150px; height:150px"></div> 
                                 <h3 class="text-center">unend</h3>
@@ -372,10 +372,10 @@
                                <h2 style="font-size:50px">$100</h2> 
                             </div>
                             <div class="panel-body">
-                                <h3>10000 points</h3>
+                                <h3>10000 Points</h3>
                             </div>
                             <div class="panel-footer">
-                                <h4>Bonus: 200 points</h4>
+                                <h4>Bonus: 200 Points</h4>
                             </div>
                         </div>
                         <!-- /.col-lg-4 -->
@@ -384,23 +384,25 @@
         <!-- /#page-wrapper -->
             </div>
             <hr/>
-            <div class="row">
-                <h5>Payment Options</h5>
-                <div class="col-lg-10 col-lg-offset-3" >
-
-                <button type="button" class="btn btn-outline btn-danger btn-lg" style="padding:20px 80px">Paypal</button> 
-                <button type="button" class="btn btn-outline btn-danger btn-lg" style="padding:20px 80px">Credit Card</button> 
-            </div>
-            </div>
-             
-            <hr/>
-            <div class="row">
             
-                <div class="col-lg-10 col-lg-offset-3" >
-
-                <button type="button" class="btn btn-danger btn-lg" style="padding:20px 200px">Purchase</button> 
-               
-            </div>
+            <div class="row">               
+                 <div class="col-lg-offset-4">
+                    <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank" onsubmit="try {return window.confirm(&quot;You are submitting information to an external page.\nAre you sure?&quot;);} catch (e) {return false;}">
+                    <input type="hidden" name="cmd" value="_s-xclick">
+                    <input type="hidden" name="hosted_button_id" value="UVJWMC96A4EZL">
+                    <table>
+                    <tbody><tr><td><input type="hidden" name="on0" value="Points"><h1>SELECT POINTS</h1></td></tr><tr><td><select name="os0">
+                        <option value="1,000 Points">1,000 Points $10.00 USD</option>
+                        <option value="2,500 Points">2,500 Points Bonus+50 $25.00 USD </option>
+                        <option value="5,000 Points">5,000 Points Bonus+100 $50.00 USD</option>
+                        <option value="10,000 Points">10,000 Points Bonus+200 $100.00 USD</option>
+                    </select> </td></tr>
+                    </tbody></table>
+                    <input type="hidden" name="currency_code" value="USD">
+                    <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+                    <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+                    </form>
+                </div>
             </div>
             <!-- /.container-fluid -->
         </div>
