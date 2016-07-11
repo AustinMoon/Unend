@@ -17,12 +17,12 @@
     <div class="form-group">
 					<label for="fname">First Name</label>
 					<?php echo form_input($first_name);?>
-					<p class="help-block">At least 4 characters, letters or numbers only</p>
+					
     </div>
     <div class="form-group">
 					<label for="fname">Last Name</label>
 					<?php echo form_input($last_name);?>
-					<p class="help-block">At least 4 characters, letters or numbers only</p>
+					
     </div>
     
      <?php
@@ -38,27 +38,27 @@
     <div class="form-group">
 					<label for="fname">Company</label>
 					<?php echo form_input($company);?>
-					<p class="help-block">At least 4 characters, letters or numbers only</p>
+					
     </div>
     <div class="form-group">
 					<label for="fname">Email</label>
 					<?php echo form_input($email);?>
-					<p class="help-block">At least 4 characters, letters or numbers only</p>
+					
     </div>
     <div class="form-group">
 					<label for="fname">Phone No.</label>
 					<?php echo form_input($phone);?>
-					<p class="help-block">At least 4 characters, letters or numbers only</p>
+					
     </div>
     <div class="form-group">
 					<label for="fname">Password</label>
 					<?php echo form_input($password);?>
-					<p class="help-block">At least 4 characters, letters or numbers only</p>
+					
     </div>
     <div class="form-group">
-					<label for="fname">Conferm Password</label>
+					<label for="fname">Confirm Password</label>
 					<?php echo form_input($password_confirm);?>
-					<p class="help-block">At least 4 characters, letters or numbers only</p>
+					
     </div>
    
     <div class="form-group">

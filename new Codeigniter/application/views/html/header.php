@@ -55,7 +55,7 @@
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>
 					</button>
-                <a class="navbar-brand" href="index.html"><img src="http://quickcorrections.com/qc/img/qc_logo.png" style="width:500px;  display:inline; float:left"></a>
+                <a class="navbar-brand" href="<?= base_url('user') ?>"><img src="http://quickcorrections.com/qc/img/qc_logo.png" style="width:500px;  display:inline; float:left"></a>
 				</div>
 				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 					<ul class="nav navbar-nav navbar-right">
@@ -110,9 +110,9 @@
                     <!-- /.dropdown-user -->
                 </li>
 						<?php else : ?>
-							<li ><a class=""  href="user/aboutus">Why QuickCorrections</a></li>                  
-                        	<li ><a class=""  href="user/price">Price</a></li>
-                            <li><a href="<?= base_url('auth/creat_user') ?>">Sign Up</a></li>
+							<li ><a class=""  href="http://quickcorrections.com/qc/login3/user/aboutus">Why QuickCorrections</a></li>                  
+                        	<li ><a class=""  href="<?= base_url('user/price') ?>">Price</a></li>
+                            <li><a href="<?= base_url('auth/create_user') ?>">Sign Up</a></li>
 							<li><a href="<?= base_url('auth/login') ?>">Sign In</a></li>
 						<?php endif; ?>
 					</ul>
