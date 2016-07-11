@@ -900,6 +900,7 @@ class Auth extends CI_Controller {
 			
          if (!$this->upload->do_upload()) {
             $error = array('error' => $this->upload->display_errors()); 
+             
             $this->load->view('user/upload/upload_form', $error); 
          }
 			
@@ -911,7 +912,9 @@ class Auth extends CI_Controller {
         
         else
         {
+            $this->load->view('html/header');
             $this->load->view('pronunciation/pronunciation');
+            $this->load->view('html/footer.html');
         } 
     }
         
@@ -945,7 +948,9 @@ class Auth extends CI_Controller {
         
     else
         {
+            $this->load->view('html/header');
             $this->load->view('proofread/proofread');
+            $this->load->view('html/footer.html');
         } 
     }
     
