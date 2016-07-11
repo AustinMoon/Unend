@@ -48,10 +48,7 @@ class User extends CI_Controller {
 	 * @return void
 	 */
 
-    public function payment(){
-        $this->load->view('user/payment/payment_page');
-          
-    }
+   
     public function payment_success(){
         error_reporting(E_ERROR | E_PARSE | E_CORE_ERROR | E_CORE_WARNING | E_COMPILE_ERROR | E_COMPILE_WARNING);
         $data->points=$_POST['points'];
@@ -75,6 +72,29 @@ class User extends CI_Controller {
         $this->load->view('html/header');
         $this->load->view('user/sent_corr',$data);
         $this->load->view('html/footer.html');
+        
+    }
+    
+   // public function payment(){$this->load->view('user/payment/payment_page');}
+    
+    public function payment(){
+         if (!$this->ion_auth->logged_in())
+		{
+			// redirect them to the login page
+			redirect('auth/login', 'refresh');
+		}
+        
+        $this->load->view('html/header');
+        $this->load->view('html/payment.html');
+        $this->load->view('html/footer.html');
+        }
+    public function price(){
+        
+        $this->load->view('html/header');
+        $this->load->view('html/price.html');
+        $this->load->view('html/footer.html');
+        
+        
         
     }
     

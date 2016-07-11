@@ -15,113 +15,6 @@ class Auth extends CI_Controller {
 		$this->lang->load('auth');
 	}
     
-    public function payment(){
-        $this->load->view('user/payment/payment_page');
-          
-    }
-    public function payment_success(){
-        error_reporting(E_ERROR | E_PARSE | E_CORE_ERROR | E_CORE_WARNING | E_COMPILE_ERROR | E_COMPILE_WARNING);
-        $data->points=$_POST['points'];
-        $this->db->insert('users', $data);
-        $this->load->view('user/payment/payment_success', $data); 
-    }
-    
-    
-    public function english_question(){
-        
-        if (!$this->ion_auth->logged_in())
-		{
-			// redirect them to the login page
-			redirect('auth/login', 'refresh');
-		}
-        
-        if (isset($_POST['words']))
-        {
-            $user = $this->ion_auth->user()->row();
-            $data = new stdClass();
-            $data->words=$_POST['words'];
-            $data->user_id =$user->id;
-            $this->db->insert('words', $data);
-          
-            if ($this->db->affected_rows() == 1) {
-              $this->load->view('english_questions/english_success');
-          }
-        }
-        else
-        {
-            $this->load->view('english_question/english_question');
-        }
-        
-        //if($this->ion_auth->tutor()){...}
-          
-    }
-    
-    public function pronunciation(){
-        if (!$this->ion_auth->logged_in())
-        {
-            redirect('auth/login', 'refresh');
-        }
-    
-        if ($this->input->post('submit'))
-        {
-         $config['upload_path']   = './uploads/'; 
-         $config['allowed_types'] = 'wav'; 
-         $config['max_size']      = 5000; 
-         $config['max_width']     = 11024; 
-         $config['max_height']    = 1768;  
-         $this->load->library('upload', $config);
-			
-         if (!$this->upload->do_upload()) {
-            $error = array('error' => $this->upload->display_errors()); 
-            $this->load->view('user/upload/upload_form', $error); 
-         }
-			
-         else { 
-            $data = array('upload_data' => $this->upload->data()); 
-            $this->load->view('user/upload/upload_success', $data); 
-         } 
-          } 
-        
-        else
-        {
-            $this->load->view('pronunciation/pronunciation');
-        } 
-    }
-        
-    
-    public function proofread(){
-         if (!$this->ion_auth->logged_in())
-		{
-			//redirect them to the login page
-			redirect('auth/login', 'refresh');
-		}
-        
-        if ($this->input->post('submit'))
-        {
-         $config['upload_path']   = './uploads/'; 
-         $config['allowed_types'] = '*'; 
-         $config['max_size']      = 5000; 
-         $config['max_width']     = 11024; 
-         $config['max_height']    = 1768;  
-         $this->load->library('upload', $config);
-			
-         if (!$this->upload->do_upload()) {
-            $error = array('error' => $this->upload->display_errors()); 
-            $this->load->view('user/upload/upload_form', $error); 
-         }
-			
-         else { 
-            $data = array('upload_data' => $this->upload->data()); 
-            $this->load->view('user/upload/upload_success', $data); 
-         } 
-          } 
-        
-    else
-        {
-            $this->load->view('proofread/proofread');
-        } 
-    }
-    
     //defualt page
 	// redirect if needed, otherwise display the user list
 	function index()
@@ -137,7 +30,7 @@ class Auth extends CI_Controller {
 		elseif (!$this->ion_auth->is_admin()) // remove this elseif if you want to enable this for non-admins
 		{
 			// redirect them to the home page because they must be an administrator to view this
-			return show_error('You must be an administrator to view this page.');
+			redirect('user', 'refresh');
 		}
 		else
 		{
@@ -944,5 +837,122 @@ class Auth extends CI_Controller {
 
 		if ($returnhtml) return $view_html;//This will return html on 3rd argument being true
 	}
+    
+    public function payment(){
+        $this->load->view('user/payment/payment_page');
+          
+    }
+    public function payment_success(){
+        error_reporting(E_ERROR | E_PARSE | E_CORE_ERROR | E_CORE_WARNING | E_COMPILE_ERROR | E_COMPILE_WARNING);
+        $data->points=$_POST['points'];
+        $this->db->insert('users', $data);
+        $this->load->view('user/payment/payment_success', $data); 
+    }
+    
+    
+    public function english_question(){
+        
+        if (!$this->ion_auth->logged_in())
+		{
+			// redirect them to the login page
+			redirect('auth/login', 'refresh');
+		}
+        
+        if (isset($_POST['words']))
+        {
+            $user = $this->ion_auth->user()->row();
+            $data = new stdClass();
+            $data->words=$_POST['words'];
+            $data->user_id =$user->id;
+            $this->db->insert('words', $data);
+          
+            if ($this->db->affected_rows() == 1) {
+                $this->load->view('html/header');
+                $this->load->view('english_question/english_success');
+                $this->load->view('html/footer.html');
+          }
+        }
+        else
+        {
+            $this->load->view('html/header');
+            $this->load->view('english_question/english_question');
+            $this->load->view('html/footer.html');
+        }
+        
+        //if($this->ion_auth->tutor()){...}
+          
+    }
+    
+    public function pronunciation(){
+        if (!$this->ion_auth->logged_in())
+        {
+            redirect('auth/login', 'refresh');
+        }
+    
+        if ($this->input->post('submit'))
+        {
+         $config['upload_path']   = './uploads/'; 
+         $config['allowed_types'] = 'wav'; 
+         $config['max_size']      = 5000; 
+         $config['max_width']     = 11024; 
+         $config['max_height']    = 1768;  
+         $this->load->library('upload', $config);
+			
+         if (!$this->upload->do_upload()) {
+            $error = array('error' => $this->upload->display_errors()); 
+             
+            $this->load->view('user/upload/upload_form', $error); 
+         }
+			
+         else { 
+            $data = array('upload_data' => $this->upload->data()); 
+            $this->load->view('user/upload/upload_success', $data); 
+         } 
+          } 
+        
+        else
+        {
+            $this->load->view('html/header');
+            $this->load->view('pronunciation/pronunciation');
+            $this->load->view('html/footer.html');
+        } 
+    }
+        
+    
+    public function proofread(){
+         if (!$this->ion_auth->logged_in())
+		{
+			//redirect them to the login page
+			redirect('auth/login', 'refresh');
+		}
+        
+        if ($this->input->post('submit'))
+        {
+         $config['upload_path']   = './uploads/'; 
+         $config['allowed_types'] = '*'; 
+         $config['max_size']      = 5000; 
+         $config['max_width']     = 11024; 
+         $config['max_height']    = 1768;  
+         $this->load->library('upload', $config);
+			
+         if (!$this->upload->do_upload()) {
+            $error = array('error' => $this->upload->display_errors()); 
+            $this->load->view('user/upload/upload_form', $error); 
+         }
+			
+         else { 
+            $data = array('upload_data' => $this->upload->data()); 
+            $this->load->view('user/upload/upload_success', $data); 
+         } 
+          } 
+        
+    else
+        {
+            $this->load->view('html/header');
+            $this->load->view('proofread/proofread');
+            $this->load->view('html/footer.html');
+        } 
+    }
+    
 
 }
