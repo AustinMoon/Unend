@@ -1,40 +1,31 @@
 
 
-          
+      
        <div class="navbar-default sidebar" role="navigation">
                 <div class="sidebar-nav navbar-collapse">
                     <ul class="nav" id="side-menu">
-                        <li class="sidebar-search">
-                            <div class="input-group custom-search-form">
-                                <div class="circle" style="margin-top: 10px; background-image: url('http://quickcorrections.com/qc/img/dfimage.png'); width:150px; height:150px"></div> 
-                                <h3 class="text-center">unend</h3>
-                            </span>
-                            </div>
-                            <!-- /input-group -->
-                        </li>
+                        
                         <li>
                             <a href="#"><i class=""></i> Study<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level collapse">
                                 
                                 <li>
-                                    <a href="#">Sentence Correction</a>
+                                    <a href="<?= base_url('/user/sen_correct_student') ?>">Sentence Correction</a>
                                 </li>
                                 <li>
-                                    <a href="#">English Question</a>
+                                    <a href="<?= base_url('auth/english_question') ?>">English Question</a>
                                 </li>
                                 <li>
-                                    <a href="#">Pronunciation</a>
+                                    <a href="http://quickcorrections.com/qc/login3/auth/pronunciation">Pronunciation</a>
                                 </li>
                                 <li>
-                                    <a href="#"> Proofreading</a>
+                                    <a href="<?= base_url('auth/proofread') ?>"> Proofreading</a>
                                 </li>
                                
                             </ul>
                             <!-- /.nav-second-level -->
                         </li>
-                        <li>
-                            <a href=""><i class=""></i> Account</a>
-                        </li>
+                       
                         <li>
                             <a href=""><i class=""></i> Setting</a>
                             
@@ -44,7 +35,7 @@
                             <a href=""><i class=""></i> Notifications</a>
                         </li>
                         <li>
-                            <a href=""><i class=""></i> Buy Point</a>
+                            <a href="http://quickcorrections.com/qc/login3/user/payment"><i class=""></i> Buy Point</a>
                         </li>
                     
                     </ul>
@@ -105,13 +96,11 @@
     <!-- /#wrapper -->
 <script>
     $(document).ready(function() {
-    var text_max = 99;
+    var text_max = 750;
     $('#textarea_feedback').html(text_max + '/750');
-
     $('#textarea').keyup(function() {
         var text_length = $('#textarea').val().length;
         var text_remaining = text_max - text_length;
-
         $('#textarea_feedback').html(text_remaining + ' characters remaining');
     });
 });
@@ -134,7 +123,6 @@
 <script>
 var text_max = 750;
 $('#count_message').html(text_max + ' remaining');
-
 $('#text').keyup(function() {
   var text_length = $('#text').val().length;
   var text_remaining = text_max - text_length;
