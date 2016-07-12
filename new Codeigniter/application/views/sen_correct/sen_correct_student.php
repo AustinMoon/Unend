@@ -10,16 +10,16 @@
                             <ul class="nav nav-second-level collapse">
                                 
                                 <li>
-                                    <a href="#">Sentence Correction</a>
+                                    <a href="<?= base_url('/user/sen_correct_student') ?>">Sentence Correction</a>
                                 </li>
                                 <li>
-                                    <a href="#">English Question</a>
+                                    <a href="<?= base_url('auth/english_question') ?>">English Question</a>
                                 </li>
                                 <li>
-                                    <a href="#">Pronunciation</a>
+                                    <a href="http://quickcorrections.com/qc/login3/auth/pronunciation">Pronunciation</a>
                                 </li>
                                 <li>
-                                    <a href="#"> Proofreading</a>
+                                    <a href="<?= base_url('auth/proofread') ?>"> Proofreading</a>
                                 </li>
                                
                             </ul>
