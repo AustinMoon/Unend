@@ -5,10 +5,12 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Quick Correction</title>
+	<link rel="shortcut icon" type="image/x-icon" href="http://quickcorrections.com/qc/img/logo.png"/>
+	<title> Quick Corrections</title>
 	<meta name="description" content="">
 	<meta name="keywords" content="">
 	<meta name="author" content="">
+	
 
 	<!-- css -->
     
@@ -55,19 +57,25 @@
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>
 					</button>
-                <a class="navbar-brand" href="<?= base_url('user') ?>"><img src="http://quickcorrections.com/qc/img/qc_logo.png" style="width:800px;   display:inline"></a>
+                <a class="navbar-brand" href="<?= base_url('user') ?>"><img src="http://quickcorrections.com/qc/img/qc_logo.png" style="width:900px;   display:inline"></a>
 				</div>
 				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-					<ul class="nav navbar-nav navbar-right">
+					<ul class="nav navbar-nav navbar-right" style="padding-right:30px" >
 						<?php if ($this->ion_auth->logged_in()) : ?>
-						<li ><a class=""  href="http://quickcorrections.com/qc/login3/user/aboutus">About us</a></li>                  
-                        <li><a href="<?= base_url('auth/logout') ?>"><i class="fa fa-sign-out fa-fw"></i> Sign Out</a>
-                        </li>
+						
+						<li ><a class=""  href="http://quickcorrections.com/qc/login3/user/aboutus">Why QuickCorrections</a></li>
+                        <li><a href="http://quickcorrections.com/qc/login3/user/payment">Point</a></li>
+                        <li><a href="<?= base_url('auth/logout') ?>"> Sign Out</a>
+                      
+                        
                   
 						<?php else : ?>
-							<li ><a class=""  href="http://quickcorrections.com/qc/login3/user/aboutus">About us</a></li>                  
+						
+
+							<li ><a class=""  href="http://quickcorrections.com/qc/login3/user/aboutus">Why QuickCorrections</a></li>                  
                             <li><a href="<?= base_url('auth/create_user') ?>">Sign Up</a></li>
 							<li><a href="<?= base_url('auth/login') ?>">Sign In</a></li>
+						
 						<?php endif; ?>
 					</ul>
 				</div><!-- .navbar-collapse -->

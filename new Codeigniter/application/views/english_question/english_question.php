@@ -25,9 +25,7 @@
                             </ul>
                             <!-- /.nav-second-level -->
                         </li>
-                        <li>
-                            <a href=""><i class=""></i> Account</a>
-                        </li>
+                       
                         <li>
                             <a href=""><i class=""></i> Setting</a>
                             
@@ -37,7 +35,7 @@
                             <a href=""><i class=""></i> Notifications</a>
                         </li>
                         <li>
-                            <a href=""><i class=""></i> Buy Point</a>
+                            <a href="http://quickcorrections.com/qc/login3/user/payment"></i> Buy Point</a>
                         </li>
                     
                     </ul>
