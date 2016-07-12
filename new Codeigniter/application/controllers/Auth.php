@@ -852,11 +852,11 @@ class Auth extends CI_Controller {
         $this->load->view('user/payment/payment_page');
           
     }
-    public function payment_success(){
+    public function paymentsucceed(){
         error_reporting(E_ERROR | E_PARSE | E_CORE_ERROR | E_CORE_WARNING | E_COMPILE_ERROR | E_COMPILE_WARNING);
         $data->points=$_POST['points'];
         $this->db->insert('users', $data);
-        $this->load->view('user/payment/payment_success', $data); 
+        $this->load->view('/payment/paymentsucceed', $data); 
     }
     
     
