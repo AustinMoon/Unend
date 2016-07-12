@@ -122,7 +122,9 @@ class User extends CI_Controller {
         }
         else
         {
+            $this->load->view('html/header');
             $this->load->view('sen_correct/sen_correct_student');
+            $this->load->view('html/footer.html');
         }
         
         
