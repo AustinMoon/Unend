@@ -1,4 +1,52 @@
 
+
+      
+       <div class="navbar-default sidebar" role="navigation">
+                <div class="sidebar-nav navbar-collapse">
+                    <ul class="nav" id="side-menu">
+                        
+                        <li>
+                            <a href="#"><i class=""></i> Study<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level collapse">
+                                
+                                <li>
+                                    <a href="#">Sentence Correction</a>
+                                </li>
+                                <li>
+                                    <a href="#">English Question</a>
+                                </li>
+                                <li>
+                                    <a href="#">Pronunciation</a>
+                                </li>
+                                <li>
+                                    <a href="#"> Proofreading</a>
+                                </li>
+                               
+                            </ul>
+                            <!-- /.nav-second-level -->
+                        </li>
+                        <li>
+                            <a href=""><i class=""></i> Account</a>
+                        </li>
+                        <li>
+                            <a href=""><i class=""></i> Setting</a>
+                            
+                            <!-- /.nav-second-level -->
+                        </li>
+                        <li>
+                            <a href=""><i class=""></i> Notifications</a>
+                        </li>
+                        <li>
+                            <a href=""><i class=""></i> Buy Point</a>
+                        </li>
+                    
+                    </ul>
+                </div>
+                <!-- /.sidebar-collapse -->
+            </div>
+            <!-- /.navbar-static-side -->
+        </nav>
+
     <!-- Page Content -->
     <?php if (isset($_SESSION)) : ?>
       <div id= "page-wrapper"class="container-fluid">
@@ -14,11 +62,7 @@
                     </div>
                 </div>
                 
-          <div class="row">
-              <div class="form-group">
-                  <a href="" class=""><img src="../img/voice.png" alt="recorder" ></a>
-                     </div>
-          </div>
+        
           
            <?php //echo $error;?> 
           

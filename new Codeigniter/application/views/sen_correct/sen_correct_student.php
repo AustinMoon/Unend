@@ -4,14 +4,7 @@
        <div class="navbar-default sidebar" role="navigation">
                 <div class="sidebar-nav navbar-collapse">
                     <ul class="nav" id="side-menu">
-                        <li class="sidebar-search">
-                            <div class="input-group custom-search-form">
-                                <div class="circle" style="margin-top: 10px; background-image: url('http://quickcorrections.com/qc/img/dfimage.png'); width:150px; height:150px"></div> 
-                                <h3 class="text-center">unend</h3>
-                            </span>
-                            </div>
-                            <!-- /input-group -->
-                        </li>
+                        
                         <li>
                             <a href="#"><i class=""></i> Study<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level collapse">
@@ -105,7 +98,7 @@
     <!-- /#wrapper -->
 <script>
     $(document).ready(function() {
-    var text_max = 99;
+    var text_max = 750;
     $('#textarea_feedback').html(text_max + '/750');
     $('#textarea').keyup(function() {
         var text_length = $('#textarea').val().length;
