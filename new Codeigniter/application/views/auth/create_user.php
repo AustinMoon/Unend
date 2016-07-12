@@ -37,22 +37,24 @@
           echo '<p class="help-block">At least 4 characters, letters or numbers only</p></div>';
       }
       ?>
-    
+    <!--
     <div class="form-group">
 					<label for="fname">Company</label>
 					<?php echo form_input($company);?>
 					
-    </div>
+    </div> -->
     <div class="form-group">
 					<label for="fname">Email (User Name)</label>
 					<?php echo form_input($email);?>
 					
     </div>
+    <!--
     <div class="form-group">
 					<label for="fname">Phone No.</label>
 					<?php echo form_input($phone);?>
 					
-    </div>
+					
+    </div>-->
     <div class="form-group">
 					<label for="fname">Password</label>
 					<?php echo form_input($password);?>

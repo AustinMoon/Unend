@@ -6,20 +6,20 @@
                     <ul class="nav" id="side-menu">
                         
                         <li>
-                            <a href="#"><i class=""></i> Study<span class="fa arrow"></span></a>
+                            <a href="#"><i class=""></i> <b>Our Services</b><span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level collapse">
                                 
                                 <li>
-                                    <a href="<?= base_url('/user/sen_correct_student') ?>">Sentence Correction</a>
+                                    <a href="<?= base_url('/user/sen_correct_student') ?>"><b>Sentence Correction</b></a>
                                 </li>
                                 <li>
-                                    <a href="<?= base_url('auth/english_question') ?>">English Question</a>
+                                    <a href="<?= base_url('auth/english_question') ?>"><b>English Question</b></a>
                                 </li>
                                 <li>
-                                    <a href="http://quickcorrections.com/qc/login3/auth/pronunciation">Pronunciation</a>
+                                    <a href="http://quickcorrections.com/qc/login3/auth/pronunciation"><b>Pronunciation</b></a>
                                 </li>
                                 <li>
-                                    <a href="<?= base_url('auth/proofread') ?>"> Proofreading</a>
+                                    <a href="<?= base_url('auth/proofread') ?>"> <b>Proofreading</b></a>
                                 </li>
                                
                             </ul>
@@ -27,15 +27,15 @@
                         </li>
                        
                         <li>
-                            <a href=""><i class=""></i> Setting</a>
+                            <a href="http://quickcorrections.com/qc/login3/user/setting"><i class=""></i> <b>Setting</b></a>
                             
                             <!-- /.nav-second-level -->
                         </li>
                         <li>
-                            <a href=""><i class=""></i> Notifications</a>
+                            <a href=""><i class=""></i> <b>Notifications</b></a>
                         </li>
                         <li>
-                            <a href="http://quickcorrections.com/qc/login3/user/payment"></i> Buy Point</a>
+                            <a href="http://quickcorrections.com/qc/login3/user/payment"><i class=""></i><b> Buy Point</b></a>
                         </li>
                     
                     </ul>

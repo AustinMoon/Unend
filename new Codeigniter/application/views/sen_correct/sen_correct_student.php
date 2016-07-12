@@ -6,20 +6,20 @@
                     <ul class="nav" id="side-menu">
                         
                         <li>
-                            <a href="#"><i class=""></i> Study<span class="fa arrow"></span></a>
+                            <a href="#"><i class=""></i> <b>Our Services</b><span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level collapse">
                                 
                                 <li>
-                                    <a href="<?= base_url('/user/sen_correct_student') ?>">Sentence Correction</a>
+                                    <a href="<?= base_url('/user/sen_correct_student') ?>"><b>Sentence Correction</b></a>
                                 </li>
                                 <li>
-                                    <a href="<?= base_url('auth/english_question') ?>">English Question</a>
+                                    <a href="<?= base_url('auth/english_question') ?>"><b>English Question</b></a>
                                 </li>
                                 <li>
-                                    <a href="http://quickcorrections.com/qc/login3/auth/pronunciation">Pronunciation</a>
+                                    <a href="http://quickcorrections.com/qc/login3/auth/pronunciation"><b>Pronunciation</b></a>
                                 </li>
                                 <li>
-                                    <a href="<?= base_url('auth/proofread') ?>"> Proofreading</a>
+                                    <a href="<?= base_url('auth/proofread') ?>"> <b>Proofreading</b></a>
                                 </li>
                                
                             </ul>
@@ -27,15 +27,15 @@
                         </li>
                        
                         <li>
-                            <a href=""><i class=""></i> Setting</a>
+                            <a href="http://quickcorrections.com/qc/login3/user/setting"><i class=""></i> <b>Setting</b></a>
                             
                             <!-- /.nav-second-level -->
                         </li>
                         <li>
-                            <a href=""><i class=""></i> Notifications</a>
+                            <a href=""><i class=""></i> <b>Notifications</b></a>
                         </li>
                         <li>
-                            <a href="http://quickcorrections.com/qc/login3/user/payment"><i class=""></i> Buy Point</a>
+                            <a href="http://quickcorrections.com/qc/login3/user/payment"><i class=""></i><b> Buy Point</b></a>
                         </li>
                     
                     </ul>
@@ -56,27 +56,45 @@
             
             <form action="sen_correct_student" method="post">
                 <div class= "row">
-                    <div class="form-group col-md-8">
+                    <div class="form-group col-sm-12">
+                    <div class="col-sm-8" style="position:relative">
                         <label><h2>Check your Sentence!</h2></label>
-                             <textarea class="form-control"  id="text" rows="5"placeholder="Type your question..." name="sentence" maxlength="750" autofocus></textarea>
-                        <h6 class="pull-right" id="count_message"></h6>
-                        <br/>
-                        <h5>1 word = 1.5 point / Limit = 750 characters</h5>
-                    </div>
-                </div>
-
-                <div class"row">
-                    <div class="form-group col-md-8">
+                        <textarea class="form-control"  id="text" rows="5"placeholder="Type Sentence here..." name="sentence" maxlength="750" autofocus></textarea>
+                        
+                        
+                        <h5 style="display:inline">1 word = 1.5 point / Limit = 750 characters</h5>
+                         <h5 class="pull-right" id="count_message"></h5>
+                    
+                
+                        <hr/>
+                                 
                         <h4>What do you need? Please let us know (Optional)</h4>
-                        <textarea class="form-control"  id="textarea" rows="2"placeholder="Type Sentence here..." name="optional" maxlength="750" ></textarea>
-                        <div id="textarea_feedback"></div>
-                        <br/>
-                        <h5> 1 word = free / Limit = 750 characters</h5>
+                       <!-- <div id="textarea_feedback"></div>-->
+                        <textarea class="form-control"  id="text_feedback" rows="2"placeholder="Type Sentence here..." name="optional" maxlength="750" ></textarea>
+                     
+                        <h5 style="display:inline"> 1 word = free / Limit = 750 characters</h5>
+                         <h5 class="pull-right" id="textarea_feedback"></h5>
+
+                        
+                    </div>
+                    <div class="col-sm-4 ">
+                        <div class="panel panel-danger">
+                        <div class="panel-heading">
+                            <h4><b><i>How to use</i></b></h4>
+                        </div>
+                        <div class="panel-body">
+                            <h5>Type Your English Sentence into TextBox.
+                            For more, just add point credits to your account.</h5>
+                        </div>
+                        
+                            </div>
+                    </div>
+
                     </div>
                 </div>
 
                 <div class"row">
-                    <div class="form-group col-md-8"> 
+                    <div class="form-group col-sm-8"> 
                         <button href="" class="btn btn-danger">Submit</button>
                     </div>
 
@@ -101,7 +119,7 @@
     $('#textarea').keyup(function() {
         var text_length = $('#textarea').val().length;
         var text_remaining = text_max - text_length;
-        $('#textarea_feedback').html(text_remaining + ' characters remaining');
+        $('#textarea_feedback').html(text_remaining + ' /750');
     });
 });
 </script>
@@ -122,11 +140,20 @@
 </html>
 <script>
 var text_max = 750;
-$('#count_message').html(text_max + ' remaining');
+$('#count_message').html(text_max + ' /750');
 $('#text').keyup(function() {
   var text_length = $('#text').val().length;
   var text_remaining = text_max - text_length;
   
-  $('#count_message').html(text_remaining + ' remaining');
+  $('#count_message').html(text_remaining + ' /750');
 });
+</script>
+<script>
+var text_max = 750;
+$('#textarea_feedback').html(text_max + '/750');
+    $('#text_feedback').keyup(function() {
+        var text_length = $('#text_feedback').val().length;
+        var text_remaining = text_max - text_length;
+        $('#textarea_feedback').html(text_remaining + ' /750');
+    });
 </script>

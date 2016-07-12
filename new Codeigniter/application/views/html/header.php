@@ -48,7 +48,7 @@
 <body>
 
 	<header id="site-header" >
-		<nav class="navbar navbar-default navbar-static-top" role="navigation">
+		<nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
 			<div class="container-fluid">
 				<div class="navbar-header">
 					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
@@ -57,14 +57,15 @@
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>
 					</button>
-                <a class="navbar-brand" href="<?= base_url('user') ?>"><img src="http://quickcorrections.com/qc/img/qc_logo.png" style="width:900px;   display:inline"></a>
+
+                	<a href="<?= base_url('user') ?>" class="navbar-brand" ><img src="http://quickcorrections.com/qc/img/qc_logo.png" style="width:100%; display:inline"></a>
 				</div>
 				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 					<ul class="nav navbar-nav navbar-right" style="padding-right:30px" >
 						<?php if ($this->ion_auth->logged_in()) : ?>
 						
-						<li ><a class=""  href="http://quickcorrections.com/qc/login3/user/aboutus">Why QuickCorrections</a></li>
-                        <li><a href="http://quickcorrections.com/qc/login3/user/payment">Point</a></li>
+						<li ><a  href="http://quickcorrections.com/qc/login3/user/aboutus"><b>Why QuickCorrections</b></a></li>
+                        <li><a href="http://quickcorrections.com/qc/login3/user/payment">Buy Point</a></li>
                         <li><a href="<?= base_url('auth/logout') ?>"> Sign Out</a>
                       
                         
@@ -72,7 +73,8 @@
 						<?php else : ?>
 						
 
-							<li ><a class=""  href="http://quickcorrections.com/qc/login3/user/aboutus">Why QuickCorrections</a></li>                  
+							<li ><a class=""  href="http://quickcorrections.com/qc/login3/user/aboutus"><b>Why QuickCorrections</b></a></li>
+							<li><a href="http://quickcorrections.com/qc/login3/user/price">Price</a></li>               
                             <li><a href="<?= base_url('auth/create_user') ?>">Sign Up</a></li>
 							<li><a href="<?= base_url('auth/login') ?>">Sign In</a></li>
 						

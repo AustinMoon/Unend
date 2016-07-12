@@ -97,6 +97,35 @@ class User extends CI_Controller {
         
         
     }
+    public function setting(){
+        $this->load->view('html/header');
+        $this->load->view('html/setting.html');
+        $this->load->view('html/footer.html');
+
+    }
+    public function privacy(){
+
+        $this->load->view('html/header');
+        $this->load->view('html/privacy.html');
+        $this->load->view('html/footer.html');
+
+    }
+     public function terms(){
+        
+        $this->load->view('html/header');
+        $this->load->view('html/terms.html');
+        $this->load->view('html/footer.html');
+
+    }
+    public function jobposting(){
+        
+        $this->load->view('html/header');
+        $this->load->view('html/jobposting.html');
+        $this->load->view('html/footer.html');
+        
+        
+        
+    }
     
     public function sen_correct_student(){
         if (!$this->ion_auth->logged_in())

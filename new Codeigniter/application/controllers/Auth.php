@@ -54,6 +54,7 @@ class Auth extends CI_Controller {
         if ($this->ion_auth->logged_in())
 		{
 			// redirect them to the admin page
+			
 			redirect('auth/', 'refresh');
           
 		}
@@ -67,19 +68,25 @@ class Auth extends CI_Controller {
 		{
 			// check to see if the user is logging in
 			// check for "remember me"
+
 			$remember = (bool) $this->input->post('remember');
+
 
 			if ($this->ion_auth->login($this->input->post('identity'), $this->input->post('password'), $remember))
 			{
 				//if the login is successful
 				//redirect them back to the home page
+				
 				$this->session->set_flashdata('message', $this->ion_auth->messages());
+
 				redirect('/auth', 'refresh');
+
 			}
 			else
 			{
 				// if the login was un-successful
 				// redirect them back to the login page
+
 				$this->session->set_flashdata('message', $this->ion_auth->errors());
 				redirect('auth/login', 'refresh'); // use redirects instead of loading views for compatibility with MY_Controller libraries
 			}
@@ -105,6 +112,7 @@ class Auth extends CI_Controller {
 			);
             $this->load->view('html/header');
 			$this->_render_page('auth/login', $this->data);
+			$this->load->view('html/footer.html');
 		}
 	}
 
@@ -430,6 +438,7 @@ class Auth extends CI_Controller {
 
         if ($this->ion_auth->logged_in())
         {
+        	
             redirect('auth', 'refresh');
         }
 
@@ -538,6 +547,7 @@ class Auth extends CI_Controller {
             );
             $this->_render_page('html/header');
             $this->_render_page('auth/create_user', $this->data);
+            $this->_render_page('html/footer.html');
         }
     }
 
@@ -952,6 +962,12 @@ class Auth extends CI_Controller {
             $this->load->view('proofread/proofread');
             $this->load->view('html/footer.html');
         } 
+    }
+    public function jobposting()
+    {
+    	$this->load->view('html/header');
+        $this->load->view('html/jobposting.html');
+        $this->load->view('html/footer.html');
     }
     
 

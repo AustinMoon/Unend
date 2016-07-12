@@ -40,7 +40,10 @@ body {
 }
 
 .navbar-top-links li a {
-    padding: 15px;
+    padding-left: 15px;
+    padding-right:15px;
+    padding-top: 5px ;
+    padding-bottom: 5px;
     min-height: 50px;
 }
 
@@ -132,7 +135,7 @@ body {
         z-index: 1;
         position: absolute;
         width: 250px;
-        margin-top: 51px;
+        margin-top: 30px;
     }
 
     .navbar-top-links .dropdown-messages,
