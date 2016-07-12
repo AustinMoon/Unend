@@ -1,6 +1,6 @@
 
 
-          
+      
        <div class="navbar-default sidebar" role="navigation">
                 <div class="sidebar-nav navbar-collapse">
                     <ul class="nav" id="side-menu">
@@ -107,11 +107,9 @@
     $(document).ready(function() {
     var text_max = 99;
     $('#textarea_feedback').html(text_max + '/750');
-
     $('#textarea').keyup(function() {
         var text_length = $('#textarea').val().length;
         var text_remaining = text_max - text_length;
-
         $('#textarea_feedback').html(text_remaining + ' characters remaining');
     });
 });
@@ -134,7 +132,6 @@
 <script>
 var text_max = 750;
 $('#count_message').html(text_max + ' remaining');
-
 $('#text').keyup(function() {
   var text_length = $('#text').val().length;
   var text_remaining = text_max - text_length;

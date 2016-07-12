@@ -45,7 +45,7 @@
 </head>
 <body>
 
-	<header id="site-header">
+	<header id="site-header" >
 		<nav class="navbar navbar-default navbar-static-top" role="navigation">
 			<div class="container-fluid">
 				<div class="navbar-header">
@@ -55,63 +55,17 @@
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>
 					</button>
-                <a class="navbar-brand" href="<?= base_url('user') ?>"><img src="http://quickcorrections.com/qc/img/qc_logo.png" style="width:500px;  display:inline; float:left"></a>
+                <a class="navbar-brand" href="<?= base_url('user') ?>"><img src="http://quickcorrections.com/qc/img/qc_logo.png" style="width:800px;   display:inline"></a>
 				</div>
 				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 					<ul class="nav navbar-nav navbar-right">
 						<?php if ($this->ion_auth->logged_in()) : ?>
-						<li class="dropdown">
-	                   	 <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-	                        <i class="fa fa-bell fa-fw"></i>  <i class="fa fa-caret-down"></i>
-	                    </a>
-	                    <ul class="dropdown-menu dropdown-alerts">
-	                        <li>
-	                            <a href="#">
-	                                <div>
-	                                    <i class="fa fa-comment fa-fw"></i> New Update
-	                                    <span class="pull-right text-muted small">4 minutes ago</span>
-	                                </div>
-	                            </a>
-	                        </li>
-	                        <li class="divider"></li>
-	                        <li>
-	                            <a href="#">
-	                                <div>
-	                                    <i class="fa fa-envelope fa-fw"></i> Text submitted
-	                                    <span class="pull-right text-muted small">4 minutes ago</span>
-	                                </div>
-	                            </a>
-	                        </li>
-	                       	                        
-	                        <li class="divider"></li>
-	                        <li>
-	                            <a class="text-center" href="#">
-	                                <strong>See All Alerts</strong>
-	                                <i class="fa fa-angle-right"></i>
-	                            </a>
-	                        </li>
-	                    </ul>
-                    <!-- /.dropdown-alerts -->
-                </li>
-                <!-- /.dropdown -->
-                <li class="dropdown">
-                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                        <i class="fa fa-user fa-fw"></i>  <i class="fa fa-caret-down"></i>
-                    </a>
-                    <ul class="dropdown-menu dropdown-user">
-                        <li><a href="#"><i class="fa fa-user fa-fw"></i> User Profile</a>
-                        </li>
-                        <li><a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a>
-                        </li>
-                        <li class="divider"></li>
+						<li ><a class=""  href="http://quickcorrections.com/qc/login3/user/aboutus">About us</a></li>                  
                         <li><a href="<?= base_url('auth/logout') ?>"><i class="fa fa-sign-out fa-fw"></i> Sign Out</a>
                         </li>
-                    </ul>
-                    <!-- /.dropdown-user -->
-                </li>
+                  
 						<?php else : ?>
-							<li ><a class=""  href="http://quickcorrections.com/qc/login3/user/aboutus">Why QuickCorrections</a></li>                  
-                        	<li ><a class=""  href="<?= base_url('user/price') ?>">Price</a></li>
+							<li ><a class=""  href="http://quickcorrections.com/qc/login3/user/aboutus">About us</a></li>                  
                             <li><a href="<?= base_url('auth/create_user') ?>">Sign Up</a></li>
 							<li><a href="<?= base_url('auth/login') ?>">Sign In</a></li>
 						<?php endif; ?>

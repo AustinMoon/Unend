@@ -1,7 +1,9 @@
 <div class="container">
 <div class="row">
 <div class="col-md-12">
-			<div class="page-header">
+
+
+			<div class="page-header  text-center">
 				<h1><?php echo lang('create_user_heading');?></h1>
                 <p><?php echo lang('create_user_subheading');?></p>
 			</div>
@@ -12,9 +14,10 @@
 				</div>
 			</div>
 		<?php } ?>
-    
     <?php echo form_open("auth/create_user");?>
-    <div class="form-group">
+
+    <div class="col-md-4 col-lg-offset-4">
+    <div class="form-group" >
 					<label for="fname">First Name</label>
 					<?php echo form_input($first_name);?>
 					
@@ -41,7 +44,7 @@
 					
     </div>
     <div class="form-group">
-					<label for="fname">Email</label>
+					<label for="fname">Email (User Name)</label>
 					<?php echo form_input($email);?>
 					
     </div>
@@ -64,7 +67,9 @@
     <div class="form-group">
 					<input type="submit" class="btn btn-default" value="Create a User">
 				</div>
+				</div>
 			</form>
+			
 		</div>
 	</div><!-- .row -->
 </div><!-- .container -->
