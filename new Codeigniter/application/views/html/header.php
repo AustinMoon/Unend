@@ -64,11 +64,19 @@
 					<ul class="nav navbar-nav navbar-right" style="padding-right:35px" >
 						<?php if ($this->ion_auth->logged_in()) : ?>
 						<?php if ($this->ion_auth->in_group(4)) {
+<<<<<<< HEAD
            				 echo'<li ><a  href="http://quickcorrections.com/qc/login3/tutor/"><b >Go to Tutor Page</b></a></li>';} ?>
                         <?php if ($this->ion_auth->is_admin()) {
            				 echo'<li ><a  href="http://quickcorrections.com/qc/login3/admin/requests"><b >See All Requests</b></a></li>
            					 <li ><a  href="http://quickcorrections.com/qc/login3/auth/"><b >Go To Admin Page</b></a></li>
             				';} ?>
+=======
+            echo'<li ><a  href="http://quickcorrections.com/qc/login3/tutor/"><b >Go to Tutor Page</b></a></li>';} ?>
+                        <?php if ($this->ion_auth->is_admin()) {
+            echo'<li ><a  href="http://quickcorrections.com/qc/login3/admin/requests"><b >See All Requests</b></a></li>
+            <li ><a  href="http://quickcorrections.com/qc/login3/auth/"><b >Go To Admin Page</b></a></li>
+            ';} ?>
+>>>>>>> fb3419e7264742f4a577cca5feafb4363e2c3c56
 						<li ><a  href="http://quickcorrections.com/qc/login3/user/aboutus"><b >Why QuickCorrections</b></a></li>
                         <li><a href="http://quickcorrections.com/qc/login3/user/payment">Buy Point</a></li>
                         <li><a href="<?= base_url('auth/logout') ?>"> Sign Out</a>
