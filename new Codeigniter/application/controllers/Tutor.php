@@ -17,19 +17,13 @@ class Tutor extends CI_Controller {
 	}
     
     function index(){
-        if (!$this->ion_auth->logged_in() )
+        if (!$this->ion_auth->logged_in() || !$this->ion_auth->in_group(4))
 		{
 			// redirect them to the login page
 			redirect('auth/login', 'refresh');
 		}
-        elseif (!$this->ion_auth->in_group(4)) {
-            redirect('auth/login', 'refresh');
-           
-        }
-
-        else
-        {
-        
+      
+               
         $this->load->model('tutor_model');
         $data = new stdClass();
         $user = $this->ion_auth->user()->row();
@@ -39,7 +33,7 @@ class Tutor extends CI_Controller {
         $this->load->view('html/header',$data);
         $this->load->view('tutor/index',$data);
         $this->load->view('html/footer.html',$data);
-        }
+        
     }
     
     function assign($tutor_id, $request_id){

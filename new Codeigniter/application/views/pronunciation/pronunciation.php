@@ -52,11 +52,11 @@
                     <div class="col-lg-12">
                         <h1 class="page-header text-center" style="font-family:avenir">PRONUNCIATION</h1>
                     </div>
-                    <!-- /.col-lg-12 -->
                 </div>
-                <div class= "row">
-                    <div class="form-group col-md-8">
-                        <label><h2>New Pronunciation</h2></label>    
+                <div class= "row text-center">
+                    <!--<div class="form-group col-md-8 ">-->
+                        <img src="http://quickcorrections.com/qc/img/tempo.jpg">
+                        <h1><b>Sorry about the inconvenience!</b></h1>  
                     </div>
                 </div>
                 
@@ -65,7 +65,7 @@
            <?php //echo $error;?> 
           
            <?php echo form_open_multipart('upload/do_upload');?> 
-          <form action="" method="">
+         <!-- <form action="" method="">
           <div>              
               <h2>Record your voice</h2>
               <iframe src="https://webaudiodemos.appspot.com/AudioRecorder/index.html"  width="400" height="300"></iframe>
@@ -85,7 +85,7 @@
                     <a href="" class="btn btn-danger">Submit</a>
                     </div>
                 </div>
-                        </form>
+            </form>-->
 
     </div>
     </body>

@@ -12,9 +12,7 @@
                                 <li>
                                     <a href="<?= base_url('/user/sen_correct_student') ?>"><b>Sentence Correction</b></a>
                                 </li>
-                                <li>
-                                    <a href="<?= base_url('auth/english_question') ?>"><b>Question about English</b></a>
-                                </li>
+                                
                                 <li>
                                     <a href="http://quickcorrections.com/qc/login3/auth/pronunciation"><b>Pronunciation</b></a>
                                 </li>
@@ -52,15 +50,18 @@
        <div id= "page-wrapper"class="container-fluid">
                 <div class="row">
                     <div class="col-lg-12">
-                        <h1 class="page-header text-center">ENGLISH QUESTION</h1>
+                        <h1 class="page-header text-center">QUESTION ABOUT ENGLISH</h1>
                     </div>
                 </div>
            
            <form action="english_question" method="post">
                 <div class= "row"> 
                     <div class="form-group col-md-8">
-                        <h4 ><i>Step 1. Do you have any questions about using English in your daily lives? If so, type yourquestion below.<br/></h4>
-                        <br/><h5>(Please don&#39;t forget! We only answer questions about using English in your daily lives. Additionally, we are not responsible for our responses. This is only for your reference.)</i></h5>
+
+                        
+                        <h4 ><i>Step 1. Do you have any questions about using English in your daily lives? If so, type yourquestion below.<hr/></h4>
+                        <h5>(Please don&#39;t forget! We only answer questions about using English in your daily lives. Additionally, we are not responsible for our responses. This is only for your reference.)<br/></i></h5>
+                        
                         <textarea class="form-control"  id="text" rows="5"placeholder="Type Your Question..." name="sentence" maxlength="750" autofocus></textarea>
 
                         <h5 style="display:inline; color:#918C8C">1 word = 2.5 point / Limit = 750 words</h5>
@@ -70,7 +71,7 @@
                 </div>
                 <div class"row">
                     <div class="">
-                    <h4 ><i>Step 2. Are you done? Put the submit button below. Thank you!</i></h4>
+                    <h4 ><i>Step 2. Are you done? Put the submit button below. Thank you!<hr/></i></h4>
 
                     <button href="" class="btn btn-danger">Submit</a>
                     </div>
