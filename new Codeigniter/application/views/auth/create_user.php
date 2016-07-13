@@ -5,7 +5,7 @@
 
 			<div class="page-header  text-center">
 				<h1><?php echo lang('create_user_heading');?></h1>
-                <p><?php echo lang('create_user_subheading');?></p>
+                <h4><?php echo lang('create_user_subheading');?></h4>
 			</div>
     <?php if (isset($message)){ ?>
 			<div class="col-md-12">

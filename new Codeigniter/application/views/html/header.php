@@ -64,7 +64,7 @@
 					<ul class="nav navbar-nav navbar-right" style="padding-right:30px" >
 						<?php if ($this->ion_auth->logged_in()) : ?>
 						
-						<li ><a  href="http://quickcorrections.com/qc/login3/user/aboutus"><b>Why QuickCorrections</b></a></li>
+						<li ><a  href="http://quickcorrections.com/qc/login3/user/aboutus"><b >Why QuickCorrections</b></a></li>
                         <li><a href="http://quickcorrections.com/qc/login3/user/payment">Buy Point</a></li>
                         <li><a href="<?= base_url('auth/logout') ?>"> Sign Out</a>
                       

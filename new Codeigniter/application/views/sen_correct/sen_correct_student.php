@@ -58,26 +58,27 @@
                 <div class= "row">
                     <div class="form-group col-sm-12">
                     <div class="col-sm-8" style="position:relative">
-                        <label><h2>Check your Sentence!</h2></label>
+                        <h4 ><i>Step 1. Type your sentence(s) below (limit = 750)</i></h4>
                         <textarea class="form-control"  id="text" rows="5"placeholder="Type Sentence here..." name="sentence" maxlength="750" autofocus></textarea>
                         
+
                         
-                        <h5 style="display:inline">1 word = 1.5 point / Limit = 750 characters</h5>
+                        <h5 style="display:inline; color:#918C8C" >1 word = 1.5 point / Limit = 750 characters</h5>
                          <h5 class="pull-right" id="count_message"></h5>
                     
                 
                         <hr/>
-                                 
-                        <h4>What do you need? Please let us know (Optional)</h4>
-                       <!-- <div id="textarea_feedback"></div>-->
+                        <h4 ><i>Step 2. Let us know if you need anything! (optional)</i></h4>
+
+<!-- <div id="textarea_feedback"></div>-->
                         <textarea class="form-control"  id="text_feedback" rows="2"placeholder="Type Sentence here..." name="optional" maxlength="750" ></textarea>
-                     
-                        <h5 style="display:inline"> 1 word = free / Limit = 750 characters</h5>
-                         <h5 class="pull-right" id="textarea_feedback"></h5>
+                        
+                        <h5 style="display:inline;color:#918C8C"> 1 word = 1 point / Limit = 750 characters</h5>
+                        <h5 class="pull-right" id="textarea_feedback"></h5>
 
                         
                     </div>
-                    <div class="col-sm-4 ">
+                    <!--<div class="col-sm-4 ">
                         <div class="panel panel-danger">
                         <div class="panel-heading">
                             <h4><b><i>How to use</i></b></h4>
@@ -88,13 +89,15 @@
                         </div>
                         
                             </div>
-                    </div>
+                    </div>-->
 
                     </div>
                 </div>
 
                 <div class"row">
                     <div class="form-group col-sm-8"> 
+                    <h4 ><i>Step 3. Are you done? Put the submit button below. Thank you!</i></h4>
+
                         <button href="" class="btn btn-danger">Submit</button>
                     </div>
 

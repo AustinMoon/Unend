@@ -99,7 +99,7 @@ body {
 }
 
 .sidebar ul li a.active {
-    background-color: #ffffff;
+    background-color: #F7C3CA;
 }
 
 .sidebar .arrow {
@@ -133,6 +133,7 @@ body {
         position: absolute;
         width: 250px;
         margin-top: 51px;
+        background-color: #F7C3CA;
     }
 
     .navbar-top-links .dropdown-messages,

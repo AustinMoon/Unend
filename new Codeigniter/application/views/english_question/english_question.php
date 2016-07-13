@@ -52,23 +52,26 @@
        <div id= "page-wrapper"class="container-fluid">
                 <div class="row">
                     <div class="col-lg-12">
-                        <h1 class="page-header text-center">English Question</h1>
+                        <h1 class="page-header text-center">ENGLISH QUESTION</h1>
                     </div>
                 </div>
            
            <form action="english_question" method="post">
                 <div class= "row"> 
                     <div class="form-group col-md-8">
-                        <label><h2>Do you have any questions about using English in your daily lives?</h2></label>
-                        <p>We only answer questions about using English in your daily lives. We are not responsible for our responses.</p>
-                        <textarea class="form-control" id="textarea" rows="5" name="words" placeholder="Type your question..." maxlength="750" autofocus></textarea>
-                        <div id="textarea_feedback"></div>
+                        <h4 ><i>Step 1. Do you have any questions about using English in your daily lives? If so, type yourquestion below.<br/></h4>
+                        <br/><h5>(Please don&#39;t forget! We only answer questions about using English in your daily lives. Additionally, we are not responsible for our responses. This is only for your reference.)</i></h5>
+                        <textarea class="form-control"  id="text" rows="5"placeholder="Type Your Question..." name="sentence" maxlength="750" autofocus></textarea>
 
-                        <h5>1 word = 2.5 point / Limit = 750 words</h5>
+                        <h5 style="display:inline; color:#918C8C">1 word = 2.5 point / Limit = 750 words</h5>
+                        <h5 class="pull-right" id="count_message"></h5>
+
                     </div>
                 </div>
                 <div class"row">
                     <div class="">
+                    <h4 ><i>Step 2. Are you done? Put the submit button below. Thank you!</i></h4>
+
                     <button href="" class="btn btn-danger">Submit</a>
                     </div>
 
@@ -107,3 +110,13 @@
 </body>
 
 </html>
+<script>
+var text_max = 750;
+$('#count_message').html(text_max + ' /750');
+$('#text').keyup(function() {
+  var text_length = $('#text').val().length;
+  var text_remaining = text_max - text_length;
+  
+  $('#count_message').html(text_remaining + ' /750');
+});
+</script>
