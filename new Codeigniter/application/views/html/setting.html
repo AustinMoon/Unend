@@ -13,7 +13,7 @@
                                     <a href="<?= base_url('/user/sen_correct_student') ?>"><b>Sentence Correction</b></a>
                                 </li>
                                 <li>
-                                    <a href="<?= base_url('auth/english_question') ?>"><b>English Question</b></a>
+                                    <a href="<?= base_url('auth/english_question') ?>"><b>Question about English</b></a>
                                 </li>
                                 <li>
                                     <a href="http://quickcorrections.com/qc/login3/auth/pronunciation"><b>Pronunciation</b></a>
