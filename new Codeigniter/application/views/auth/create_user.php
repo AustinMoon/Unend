@@ -57,7 +57,9 @@
     </div>-->
     <div class="form-group">
 					<label for="fname">Password</label>
+					
 					<?php echo form_input($password);?>
+
 					
     </div>
     <div class="form-group">
@@ -67,7 +69,7 @@
     </div>
    
     <div class="form-group">
-					<input type="submit" class="btn btn-default" value="Create a User">
+					<input type="submit" class="btn btn-danger" value="Create a User">
 				</div>
 				</div>
 			</form>
@@ -75,6 +77,8 @@
 		</div>
 	</div><!-- .row -->
 </div><!-- .container -->
+
+
     
     
   

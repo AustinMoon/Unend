@@ -32,6 +32,8 @@ class Auth extends CI_Controller {
 			// redirect them to the home page because they must be an administrator to view this
 			redirect('user', 'refresh');
 		}
+		
+
 		else
 		{
 			// set the flash data error message if there is one
@@ -45,6 +47,7 @@ class Auth extends CI_Controller {
 			}
             $this->load->view('html/header');
 			$this->_render_page('auth/index', $this->data);
+			$this->load->view('html/footer.html');
 		}
 	}
 
@@ -878,8 +881,8 @@ class Auth extends CI_Controller {
           
             if ($this->db->affected_rows() == 1) {
                 $this->load->view('html/header');
-                $this->load->view('english_question/english_success');
-                $this->load->view('html/footer.html');
+              	$this->load->view('sen_correct/sen_correct_success',$data);
+	            $this->load->view('html/footer.html');
           }
         }
         else
@@ -916,8 +919,9 @@ class Auth extends CI_Controller {
 			
          else { 
             $data = array('upload_data' => $this->upload->data()); 
+ 			$this->load->view('html/header');
             $this->load->view('user/upload/upload_success', $data); 
-         } 
+            $this->load->view('html/footer.html');         } 
           } 
         
         else
@@ -952,7 +956,9 @@ class Auth extends CI_Controller {
 			
          else { 
             $data = array('upload_data' => $this->upload->data()); 
+            $this->load->view('html/header');
             $this->load->view('user/upload/upload_success', $data); 
+            $this->load->view('html/footer.html');
          } 
           } 
         

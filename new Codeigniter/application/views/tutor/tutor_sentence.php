@@ -22,7 +22,8 @@
                     </div></form>
 
                 </div>
-           <div class= "row">
+                <!--
+                <div class= "row">
                     <div class="form-group col-md-8">
                           <form action = "../add_revision" method = "POST">
                         <label><h2>Student Comments</h2></label>
@@ -31,6 +32,7 @@
 
                     </div>
                 </div>
+                -->
 
 
 

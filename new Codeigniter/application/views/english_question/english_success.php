@@ -68,9 +68,7 @@
                       
                     </div>
                     <!-- /.col-lg-4 -->
-                    <div class="form-group col-md-8 col-lg-offset-10"> 
-                        <button href="" class="btn btn-outline btn-danger">Next</button>
-                    </div>
+                    
                 </div>
                     
               </div>

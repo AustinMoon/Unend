@@ -6,7 +6,7 @@
                     <ul class="nav" id="side-menu">
                         
                         <li>
-                            <a href="#"><i class=""></i> <b>Our Services</b><span class="fa arrow"></span></a>
+                            <a href="#"><i class=""></i> <b>Services</b><span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level collapse">
                                 
                                 <li>
@@ -68,9 +68,7 @@
                       
                     </div>
                     <!-- /.col-lg-4 -->
-                    <div class="form-group col-md-8 col-lg-offset-10"> 
-                        <button href="" class="btn btn-outline btn-danger">Next</button>
-                    </div>
+                    
                 </div>
                     
               </div>

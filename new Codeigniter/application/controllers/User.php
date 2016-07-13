@@ -146,7 +146,9 @@ class User extends CI_Controller {
             $data->user_id =$user->id;
           
             if ($this->db->affected_rows() == 1) {
-              $this->load->view('sen_correct/sen_correct_success');
+              $this->load->view('html/header');
+              $this->load->view('sen_correct/sen_correct_success',$data);
+              $this->load->view('html/footer.html');
           }
         }
         else
