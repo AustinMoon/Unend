@@ -63,7 +63,12 @@
 				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 					<ul class="nav navbar-nav navbar-right" style="padding-right:30px" >
 						<?php if ($this->ion_auth->logged_in()) : ?>
-						
+						<?php if ($this->ion_auth->in_group(4)) {
+            echo'<li ><a  href="http://quickcorrections.com/qc/login3/tutor/"><b >Go to Tutor Page</b></a></li>';} ?>
+                        <?php if ($this->ion_auth->is_admin()) {
+            echo'<li ><a  href="http://quickcorrections.com/qc/login3/admin/requests"><b >See All Requests</b></a></li>
+            <li ><a  href="http://quickcorrections.com/qc/login3/auth/"><b >Go To Admin Page</b></a></li>
+            ';} ?>
 						<li ><a  href="http://quickcorrections.com/qc/login3/user/aboutus"><b >Why QuickCorrections</b></a></li>
                         <li><a href="http://quickcorrections.com/qc/login3/user/payment">Buy Point</a></li>
                         <li><a href="<?= base_url('auth/logout') ?>"> Sign Out</a>

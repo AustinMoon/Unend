@@ -29,7 +29,9 @@ class Admin extends CI_Controller {
         $data = new stdClass();
         $user = $this->ion_auth->user()->row();
         $data->all_requests= $this->tutor_model->all_requests();
+        $this->load->view('html/header');
         $this->load->view('admin/requests',$data);
+        $this->load->view('html/footer.html');
         
     }
     
