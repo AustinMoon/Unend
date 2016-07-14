@@ -6,13 +6,15 @@
                     <ul class="nav" id="side-menu">
                         
                         <li>
-                            <a href="#"><i class=""></i> <b>Our Services</b><span class="fa arrow"></span></a>
+                            <a href="#"><i class=""></i> <b>Services</b><span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level collapse">
                                 
                                 <li>
                                     <a href="<?= base_url('/user/sen_correct_student') ?>"><b>Sentence Correction</b></a>
                                 </li>
-                                
+                                <li>
+                                    <a href="<?= base_url('auth/english_question') ?>"><b>Question about English</b></a>
+                                </li>
                                 <li>
                                     <a href="http://quickcorrections.com/qc/login3/auth/pronunciation"><b>Pronunciation</b></a>
                                 </li>
@@ -25,12 +27,12 @@
                         </li>
                        
                         <li>
-                            <a href="http://quickcorrections.com/qc/login3/user/setting"><i class=""></i> <b>Setting</b></a>
+                            <a href="http://quickcorrections.com/qc/login3/user/setting"><i class=""></i> <b>Password</b></a>
                             
                             <!-- /.nav-second-level -->
                         </li>
                         <li>
-                            <a href=""><i class=""></i> <b>Notifications</b></a>
+                            <a href="http://quickcorrections.com/qc/login3/user/userpage"><i class=""></i> <b>Notifications</b></a>
                         </li>
                         <li>
                             <a href="http://quickcorrections.com/qc/login3/user/payment"><i class=""></i><b> Buy Point</b></a>

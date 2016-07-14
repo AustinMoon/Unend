@@ -3,7 +3,7 @@
         <div id="page-wrapper">
             <div class="row">
                 <div class="col-lg-12">
-                    <h1 class="page-header text-center" style="font-family:avenir">USER PAGE</h1>
+                    <h1 class="page-header text-center" style="font-family:avenir">ANSWER</h1>
                 </div>
                 <!-- /.col-lg-12 -->
             </div>
@@ -12,14 +12,16 @@
                
                 <!-- /.col-lg-6 -->
                <div class="panel panel-default">
-                     <div class="panel-heading"> Request #</div>
+                     <div class="panel-heading"> Request # </div>
     <div class="panel-body">
         <div class="row">
             <div class="col-md-3">
                 Student 
             </div>
-                <div class="col-md-9">
+            <div class="col-md-9">
                     <?= $request->text; ?>
+                    <br/>
+                    <img src="http://quickcorrections.com/qc/img/arrow.png">
             </div>
             
         </div>
@@ -30,6 +32,9 @@
             </div>
                 <div class="col-md-9">
                     <?= $outpot; ?>
+                    <br/>
+                    <img src="http://quickcorrections.com/qc/img/arrow.png">
+
             </div>
             
         </div>

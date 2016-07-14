@@ -50,11 +50,44 @@ class User extends CI_Controller {
 
    
     public function payment_success(){
-        error_reporting(E_ERROR | E_PARSE | E_CORE_ERROR | E_CORE_WARNING | E_COMPILE_ERROR | E_COMPILE_WARNING);
-        $data->points=$_POST['points'];
-        $this->db->insert('users', $data);
+        //error_reporting(E_ERROR | E_PARSE | E_CORE_ERROR | E_CORE_WARNING | E_COMPILE_ERROR | E_COMPILE_WARNING);
+        
+		$data['id'] = $_SESSION['user_id'];
+		if($_GET['st'] == 'Completed'){
+			 $this->db->where(array('id' => $_SESSION['user_id']));
+			 $query = $this->db->get('users');
+			 $user = $query->result_array();
+			 $points = $user[0]['points'] + $_GET['item_number']; 
+			 $data['points'] = $points;
+		}
+		$data['txn_id'] = $_GET['tx'];
+		$data['payment_status'] = $_GET['st'];
+
+		$this->db->where('id', $_SESSION['user_id']);
+		$this->db->update('users', $data);
         $this->load->view('user/payment/payment_success', $data); 
     }
+	
+	public function payment_ipn(){
+        //error_reporting(E_ERROR | E_PARSE | E_CORE_ERROR | E_CORE_WARNING | E_COMPILE_ERROR | E_COMPILE_WARNING);
+        
+		if($_GET){
+			$this->db->where(array('txn_id' => $_GET['tx']));
+			$query = $this->db->get('users');
+			$user = $query->result_array();
+			if(!empty($user)){
+				$data['payment_status'] = $_GET['st'];
+				if($_GET['st'] == 'Completed'){
+					$points = $user[0]['points'] + $_GET['item_number']; 
+					$data['points'] = $points;
+				}
+				$this->db->where('id', $user[0]['id']);
+				$this->db->update('users', $data);
+			}
+		}
+    }
+	
+	
     public function aboutus(){
         $this->load->library(array('ion_auth','form_validation'));
         $this->load->view('html/header');
@@ -159,6 +192,17 @@ class User extends CI_Controller {
         }
         
         
+    }
+      public function contactus(){
+        $this->load->view('html/header');
+        $this->load->view('html/contactus');
+        $this->load->view('html/footer.html');
+
+    }
+    public function userpage(){
+        $this->load->view('html/header');
+        $this->load->view('user/userpage');
+        $this->load->view('html/footer.html');
     }
 	
 }
