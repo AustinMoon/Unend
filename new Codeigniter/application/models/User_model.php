@@ -146,5 +146,18 @@ class User_model extends CI_Model {
     return false; 
 }
     }
+    
+    public function english_q_requests($user_id){
+        $this->db->where('user_id',$user_id);
+        $this->db->where('type','English Question');
+        $query = $this->db->get('sentence_correct');
+        return $query;
+    }
+    public function s_correct_requests($user_id){
+        $this->db->where('user_id',$user_id);
+        $this->db->where('type','Sentence Correction');
+        $query = $this->db->get('sentence_correct');
+        return $query;
+    }
 	
 }
