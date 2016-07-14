@@ -70,7 +70,7 @@ function humanTiming ($time)
             echo humanTiming($row->request_date). ' ago';
             echo '</td><td>';
             $tutor = $this->ion_auth->user()->row();
-            echo '<a href="tutor/assign/'. $tutor->id .'/'. $row->request_id .'"><button class="btn btn-primary" type="button">Assign this request</button></a>';
+            echo '<a href="http://quickcorrections.com/qc/login3/tutor/assign/'. $tutor->id .'/'. $row->request_id .'"><button class="btn btn-primary" type="button">Assign this request</button></a>';
             echo '</td></tr>';
        
 }?>
@@ -115,7 +115,7 @@ function humanTiming ($time)
             echo humanTiming($row->assign_date). ' ago';}
             else { echo '---';}
             echo '</td><td>';
-            echo '<a href="tutor/edit/'. $row->request_id .'"><button class="btn btn-primary" type="button">open</button></a>';
+            echo '<a href="http://quickcorrections.com/qc/login3/tutor/edit/'. $row->request_id .'"><button class="btn btn-primary" type="button">open</button></a>';
             echo '</td></tr>';
        
 }?>

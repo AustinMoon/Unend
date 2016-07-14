@@ -33,6 +33,7 @@ class Tutor extends CI_Controller {
         $this->load->view('html/header',$data);
         $this->load->view('tutor/index',$data);
         $this->load->view('html/footer.html',$data);
+        $this->tutor_model->send_email_to_tutors();
         
     }
     
