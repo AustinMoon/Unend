@@ -33,7 +33,7 @@ class Tutor extends CI_Controller {
         $this->load->view('html/header',$data);
         $this->load->view('tutor/index',$data);
         $this->load->view('html/footer.html',$data);
-        $this->tutor_model->send_email_to_tutors();
+        
         
     }
     
@@ -75,6 +75,22 @@ class Tutor extends CI_Controller {
         echo 'true';
         
     }
+    function tutor_english_question($request_id){
+        if (!$this->ion_auth->logged_in() || !$this->ion_auth->in_group(4))
+		{
+			// redirect them to the login page
+			redirect('auth/login', 'refresh');
+		}
+        if($this->tutor_model->role_exists($request_id)){
+        
+        $data = new stdClass();
+        $this->load->model('tutor_model');
+        $data->request = $this->tutor_model->get_request_info($request_id)->row();
+        $this->load->view('html/header');
+        $this->load->view('tutor/tutor_english_q',$data);
+        $this->load->view('html/footer');  
+    }}
+    
     
     
     
