@@ -80,12 +80,11 @@
                         
                     </div>
                     
-                    <div class="form-group">    
-                        
+                    <div class="form-group">        
                     <a href="" class="btn btn-danger">Submit</a>
                     </div>
                 </div>
-                        </form>
+          </form>
 
     </div>
     </body>
