@@ -107,6 +107,15 @@ class User extends CI_Controller {
         $this->load->view('html/footer.html');
         
     }
+    public function edited_eq($request_id){
+        $this->load->model('tutor_model');
+        $data = new stdClass();
+        $data->request = $this->tutor_model->get_request_info($request_id)->row();
+        $this->load->view('html/header');
+        $this->load->view('user/edited_eq',$data);
+        $this->load->view('html/footer.html');
+        
+    }
     
     
    // public function payment(){$this->load->view('user/payment/payment_page');}
@@ -203,8 +212,13 @@ class User extends CI_Controller {
 
     }
     public function userpage(){
+        $this->load->model('user_model');
+        $data = new stdClass();
+        $user = $this->ion_auth->user()->row();
+        $data->sc=$this->user_model->s_correct_requests($user->id);
+        $data->eq=$this->user_model->english_q_requests($user->id);
         $this->load->view('html/header');
-        $this->load->view('user/userpage');
+        $this->load->view('user/userpage',$data);
         $this->load->view('html/footer.html');
     }
 	

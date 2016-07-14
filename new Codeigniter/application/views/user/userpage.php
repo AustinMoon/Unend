@@ -75,7 +75,28 @@
     </thead>
     <tbody>
 
-             </tbody></table>
+        <?php 
+        
+        foreach ($sc->result() as $row)
+{
+            echo '<tr>';
+            echo '<td>';
+            echo $row->request_id;
+            echo '</td><td>';
+            echo $row->text;
+            echo '</td><td>';
+            $user = $this->ion_auth->user($row->user_id)->row();
+            echo $user->email;
+            echo '</td><td>';
+            echo $row->request_date;
+            echo '</td><td>';
+            if(!empty($row->tutor_revision)){
+            echo '<a href="http://quickcorrections.com/qc/login3/user/edited_request/'. $row->request_id .'"><button class="btn btn-primary" type="button">open</button></a>';}
+            else{ echo 'in progress..';}
+            echo '</td><td>';
+        }
+            ?>
+    </tbody></table>
                     </div>
                     </div>
             </div>
@@ -98,7 +119,27 @@
                       </tr>
                     </thead>
                 <tbody>
-       
+       <?php 
+        
+        foreach ($eq->result() as $row)
+{
+            echo '<tr>';
+            echo '<td>';
+            echo $row->request_id;
+            echo '</td><td>';
+            echo $row->text;
+            echo '</td><td>';
+            $user = $this->ion_auth->user($row->user_id)->row();
+            echo $user->email;
+            echo '</td><td>';
+            echo $row->request_date;
+            echo '</td><td>';
+            if(!empty($row->tutor_revision)){
+            echo '<a href="http://quickcorrections.com/qc/login3/user/edited_eq/'. $row->request_id .'"><button class="btn btn-primary" type="button">open</button></a>';}
+            else{ echo 'in progress..';}
+            echo '</td><td>';
+        }
+            ?>
             </tbody></table>
                     </div>
                     </div>
