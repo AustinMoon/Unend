@@ -32,7 +32,7 @@
                             <!-- /.nav-second-level -->
                         </li>
                         <li>
-                            <a href="http://quickcorrections.com/qc/login3/user/userpage"><i class=""></i> <b>Notifications</b></a>
+                            <a href=""><i class=""></i> <b>Notifications</b></a>
                         </li>
                         <li>
                             <a href="http://quickcorrections.com/qc/login3/user/payment"><i class=""></i><b> Buy Point</b></a>
@@ -44,58 +44,49 @@
             </div>
             <!-- /.navbar-static-side -->
         </nav>
-
-	<main id="site-content" role="main">
-        <?php if (isset($_SESSION)) : ?>
-
+        <!-- Page Content -->
         <div id= "page-wrapper"class="container-fluid">
                 <div class="row">
                     <div class="col-lg-12">
-                        <h1 class="page-header text-center" style="font-family:avenir">PROOFREADING</h1>
+                        <h1 class="page-header text-center" style="font-family:avenir">THANK YOU!</h1>
                     </div>
                     <!-- /.col-lg-12 -->
                 </div>
-            
-           <?php //echo $error;?> 
-      <?php echo form_open_multipart('upload/do_upload');?> 
-		
-      <form action = "" method = "">
+
                 <div class= "row">
-                   
-                    <div class="form-group col-md-8">
-                        
-                        
-                        <h4 ><i>Step 1. Prepare your paper with MS Word format.<hr/></i></h4>
-                        <h4 ><i>Step 2. Select your file and upload on our system.<hr/></i></h4>
-
-                        <div class="panel panel-red">
-
-                        <input style="display:inline" type = "file" name = "userfile" size = "20" /> 
-                        
+                    
+                <div class="col-lg-6 col-lg-offset-3">
+                    <div class="panel panel-red">
+                        <div class="panel-heading text-center">
+                            <h2>
+                                We will try our best to improve your work space
+                          
+                       </br>
+                        <i>- Thank you for business -</i>
+                    </h2>
                         </div>
-                        <input class="btn btn-danger " type = "submit" value = "Upload"  /> 
-
-
-                    <h5 style="color:#918C8C"> 1 word = 1.5 or more points</h5>
-                        <hr/>
-                         <h4><i>Step 3. Let us know if you need anything! (e.g. due date etc.)<hr/></i></h4>
-                        <textarea class="form-control"  id="text" rows="5"placeholder="Type Sentence here..." name="sentence" maxlength="750" autofocus></textarea>
-                        <h5 style="display:inline; color:#918C8C"> 1 word = free / Limit = 750 words</h5>
-                        <h5 class="pull-right" id="count_message"></h5>
-
-
-                    </br>
-                        <h4 ><i>Step 4. Great! You done! Please put the submit button!<hr/></i></h4>
-
-                         <button href="" class="btn btn-danger">Submit</button>
+                      
                     </div>
-            </form>
+                    <!-- /.col-lg-4 -->
+                    
+                </div>
+                    
+              </div>
+
+               
+
+
+                
+                <!-- /.row -->
         </div>
-        </div>
+            <!-- /.container-fluid -->
+        
+        <!-- /#page-wrapper -->
+
     </div>
-		<?php endif; ?>
+    <!-- /#wrapper -->
 
-
+    <!-- jQuery -->
     <script src="../css/bower_components/jquery/dist/jquery.min.js"></script>
 
     <!-- Bootstrap Core JavaScript -->
@@ -110,13 +101,3 @@
 </body>
 
 </html>
-<script>
-var text_max = 750;
-$('#count_message').html(text_max + ' /750');
-$('#text').keyup(function() {
-  var text_length = $('#text').val().length;
-  var text_remaining = text_max - text_length;
-  
-  $('#count_message').html(text_remaining + ' /750');
-});
-</script>
