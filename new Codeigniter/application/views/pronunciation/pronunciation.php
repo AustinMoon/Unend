@@ -80,12 +80,15 @@
                         
                     </div>
                     
-                    <div class="form-group">    
-                        
+                    <div class="form-group">        
                     <a href="" class="btn btn-danger">Submit</a>
                     </div>
                 </div>
+<<<<<<< HEAD
+          </form>
+=======
             </form>-->
+>>>>>>> b8c0840896891d75f3b274e80fb579620dd799e3
 
     </div>
     </body>

@@ -172,6 +172,7 @@ class User extends CI_Controller {
             $data = new stdClass();
             //$data->type='sentence';
             $data->user_id= $user->id;
+            $data->type='Sentence Correction';
             $data->request_date= time();
             $data->text=$_POST['sentence'];
             $data->additional=$_POST['optional'];
@@ -182,6 +183,7 @@ class User extends CI_Controller {
               $this->load->view('html/header');
               $this->load->view('sen_correct/sen_correct_success',$data);
               $this->load->view('html/footer.html');
+                $this->tutor_model->send_email_to_tutors();
           }
         }
         else

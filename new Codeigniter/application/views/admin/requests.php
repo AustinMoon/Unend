@@ -79,7 +79,7 @@ function humanTiming ($time)
             echo humanTiming($row->assign_date). ' ago';}
             else { echo '---';}
             echo '</td><td>';
-            echo '<a href="send_email/'.$row->request_id .'"><button type="submit" value="Submit">Submit</button></a>';
+            echo '<a href="send_email/'.$row->request_id .'"><button type="submit" value="Send Email">Send Email</button></a>';
             echo '</td></tr>';
        
 }?>

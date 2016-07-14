@@ -92,6 +92,7 @@ class Tutor extends CI_Controller {
         $data->request = $this->tutor_model->get_request_info($request_id)->row();
         $this->load->view('html/header');
         $this->load->view('tutor/tutor_english_q',$data);
+<<<<<<< HEAD
         $this->load->view('html/footer'); 
 
     }}
@@ -99,6 +100,10 @@ class Tutor extends CI_Controller {
         
 
     }
+=======
+        $this->load->view('html/footer');  
+    }}
+>>>>>>> 6a08328a3b1e86d0f4078dff278027f543a73f4e
     
     
     

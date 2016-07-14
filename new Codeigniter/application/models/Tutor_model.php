@@ -61,6 +61,22 @@ class Tutor_model extends CI_Model {
         return false;
     }
 }
+    public function send_email_to_tutors(){
+        $email='';
+        $this->db->where('group_id', '4');
+        $query = $this->db->get('users_groups');
+        foreach ($query->result() as $row){
+            $tutor  = $this->ion_auth->user($row->user_id)->row();
+            $email  .=$tutor->email;
+            $email  .=',';
+             
+            
+        }
+       substr($email, 0, -1);
+        $subject='new request offered';
+        $message='hello tutor. There is new request in the website. please click on this link to see it: http://quickcorrections.com/qc/login3/tutor/';
+        mail($email, $subject, $message);
+    }
     
 }
 	
