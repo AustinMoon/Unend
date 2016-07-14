@@ -57,7 +57,7 @@
                
                 <!-- /.col-lg-6 -->
                <div class="panel panel-default">
-                     <div class="panel-heading"> Request # </div>
+                     <div class="panel-heading"> Request # <?= $request->request_id; ?></div>
     <div class="panel-body">
         <div class="row">
             <div class="col-md-3">

@@ -171,14 +171,19 @@ class User extends CI_Controller {
     }
     
     public function sen_correct_student(){
+        
         if (!$this->ion_auth->logged_in())
 		{
 			// redirect them to the login page
 			redirect('auth/login', 'refresh');
 		}
+        $user = $this->ion_auth->user()->row();
+        if ($user->points <=20){
+            redirect('user/pay', 'refresh');
+        }
         
         if(isset($_POST['sentence'])){
-            $user = $this->ion_auth->user()->row();
+            
             $data = new stdClass();
             //$data->type='sentence';
             $data->user_id= $user->id;
@@ -220,6 +225,9 @@ class User extends CI_Controller {
         $this->load->view('html/header');
         $this->load->view('user/userpage',$data);
         $this->load->view('html/footer.html');
+    }
+    public function pay(){
+        $this->load->view('user/pay');
     }
 	
 }

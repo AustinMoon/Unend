@@ -159,5 +159,10 @@ class User_model extends CI_Model {
         $query = $this->db->get('sentence_correct');
         return $query;
     }
+    
+    public function points(){
+        
+        
+    }
 	
 }
