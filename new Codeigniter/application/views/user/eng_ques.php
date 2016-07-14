@@ -61,7 +61,7 @@
     <div class="panel-body">
         <div class="row">
             <div class="col-md-3">
-                Student 
+                Student Question
             </div>
             <div class="col-md-9">
                     <?= $request->text; ?>
@@ -71,18 +71,7 @@
             
         </div>
         
-        <div class="row">
-            <div class="col-md-3">
-                Fixed
-            </div>
-                <div class="col-md-9">
-                    <?= $outpot; ?>
-                    <br/>
-                    <img src="http://quickcorrections.com/qc/img/arrow.png">
-
-            </div>
-            
-        </div>
+        
         <div class="row">
             <div class="col-md-3">
                 Tutor
