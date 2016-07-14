@@ -126,9 +126,11 @@ class User extends CI_Controller {
 			// redirect them to the login page
 			redirect('auth/login', 'refresh');
 		}
-        
+        $data = new stdClass();
+        $user = $this->ion_auth->user()->row();
         $this->load->view('html/header');
-        $this->load->view('html/payment.html');
+        $data->points= $user->points;
+        $this->load->view('html/payment',$data);
         $this->load->view('html/footer.html');
         }
     public function price(){

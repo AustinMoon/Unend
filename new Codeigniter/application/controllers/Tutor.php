@@ -66,13 +66,18 @@ class Tutor extends CI_Controller {
     }}
     
     function add_revision(){
-        
+        $this->load->model('tutor_model');
         $TR= $_POST['tutor_revision'];
         $this->db->set('tutor_revision', $TR);
         $this->db->set('revision_finish_date', time());
         $this->db->where('request_id',$_POST['request_id']);
         $this->db->update('sentence_correct');
-        
+        $words=$this->tutor_model->get_request_info($_POST['request_id'])->row();
+        $user = $this->ion_auth->user()->row();
+        $new_points= $user->points - str_word_count($words->text);
+        $this->db->where('id',$user->id);
+        $this->db->set('points', $new_points);
+        $this->db->update('users');
 
         $this->load->view('html/header');
         $this->load->view('tutor/tutor_success');
@@ -92,7 +97,7 @@ class Tutor extends CI_Controller {
         $data->request = $this->tutor_model->get_request_info($request_id)->row();
         $this->load->view('html/header');
         $this->load->view('tutor/tutor_english_q',$data);
-<<<<<<< HEAD
+
         $this->load->view('html/footer'); 
 
     }}
@@ -100,10 +105,9 @@ class Tutor extends CI_Controller {
         
 
     }
-=======
-        $this->load->view('html/footer');  
-    }}
->>>>>>> 6a08328a3b1e86d0f4078dff278027f543a73f4e
+
+       
+
     
     
     

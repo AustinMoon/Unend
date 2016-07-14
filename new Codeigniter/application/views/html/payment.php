@@ -51,6 +51,7 @@
                  <div class="col-lg-12 page-header text-center">
                     <h1>PURCHASE POINT</h1>
                     <h4> 1 U.S. Cent = 1 Point</h4>
+                     <h4>You Have <?=$points ?> points</h4>
                 </div>
             </div>
             
