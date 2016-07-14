@@ -5,7 +5,7 @@
         $message = $_POST['message'];
         $human = intval($_POST['human']);
         $from = 'Demo Contact Form'; 
-        $to = 'quickcorrections@gmail.com'; 
+        $to = 'example@domain.com'; 
         $subject = 'Message from Contact Demo ';
         
         $body ="From: $name\n E-Mail: $email\n Message:\n $message";
@@ -24,9 +24,7 @@
             $errMessage = 'Please enter your message';
         }
         //Check if simple anti-bot test is correct
-        if ($human !== 5) {
-            $errHuman = 'Your anti-spam is incorrect';
-        }
+        
 // If there are no errors, send the email
 if (!$errName && !$errEmail && !$errMessage && !$errHuman) {
     if (mail ($to, $subject, $body, $from)) {
@@ -69,12 +67,7 @@ if (!$errName && !$errEmail && !$errMessage && !$errHuman) {
                             <textarea class="form-control" rows="4" name="message"></textarea>
                         </div>
                     </div>
-                    <div class="form-group">
-                        <label for="human" class="col-sm-4 control-label">2 + 3 = ?</label>
-                        <div class="col-sm-4">
-                            <input type="text" class="form-control" id="human" name="human" placeholder="Your Answer">
-                        </div>
-                    </div>
+                    
                     <div class="form-group">
                         <div class="col-sm-9">
                             <input id="submit" name="submit" type="submit" value="Send" class="btn btn-danger">

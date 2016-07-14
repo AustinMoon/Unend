@@ -1,0 +1,199 @@
+
+
+      
+       <div class="navbar-default sidebar" role="navigation">
+                <div class="sidebar-nav navbar-collapse">
+                    <ul class="nav" id="side-menu">
+                        
+                        <li>
+                            <a href="#"><i class=""></i> <b>Services</b><span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level collapse">
+                                
+                                <li>
+                                    <a href="<?= base_url('/user/sen_correct_student') ?>"><b>Sentence Correction</b></a>
+                                </li>
+                                <li>
+                                    <a href="<?= base_url('auth/english_question') ?>"><b>Question about English</b></a>
+                                </li>
+                                <li>
+                                    <a href="http://quickcorrections.com/qc/login3/auth/pronunciation"><b>Pronunciation</b></a>
+                                </li>
+                                <li>
+                                    <a href="<?= base_url('auth/proofread') ?>"> <b>Proofreading</b></a>
+                                </li>
+                               
+                            </ul>
+                            <!-- /.nav-second-level -->
+                        </li>
+                       
+                        <li>
+                            <a href="http://quickcorrections.com/qc/login3/user/setting"><i class=""></i> <b>Password</b></a>
+                            
+                            <!-- /.nav-second-level -->
+                        </li>
+                        <li>
+                            <a href="http://quickcorrections.com/qc/login3/user/userpage"><i class=""></i> <b>Your Answer</b></a>
+                        </li>
+                        <li>
+                            <a href="http://quickcorrections.com/qc/login3/user/payment"><i class=""></i><b> Buy Point</b></a>
+                        </li>
+                    
+                    </ul>
+                </div>
+                <!-- /.sidebar-collapse -->
+            </div>
+            <!-- /.navbar-static-side -->
+        </nav>
+
+        <!-- Page Content -->
+        <div class="container-fluid" id="page-wrapper">
+            <div class="row" >
+                 <div class="col-lg-12 page-header text-center">
+                    <h1>PURCHASE POINT</h1>
+                    <h4> 1 U.S. Cent = 1 Point</h4>
+                     <h4>You Have <?=$points ?> points</h4>
+                </div>
+            </div>
+            
+            <div class="row text-center" >
+                <div class="col-lg-10 col-lg-offset-1" >
+                    <div class="col-lg-3">
+                            <div class="panel panel-red">
+                                <div class="panel-heading">
+                                   <h2 style="font-size:50px">$10</h2>
+                                </div>
+                                <div class="panel-body">
+                                    <h3>1,000 points</h3>
+                                </div>
+								<div class="panel-footer">
+                                   <h4>&nbsp;</h4>
+								   <br>
+								   <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+<input type="hidden" name="cmd" value="_s-xclick">
+<input type="hidden" name="hosted_button_id" value="HCS7PJ35FX2F2">
+<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_buynow_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+<img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+</form>
+
+
+
+
+
+
+                                </div>
+                              
+                            </div>
+                    </div>
+                    <div class="col-lg-3">
+                       
+                            <div class="panel panel-red">
+                                <div class="panel-heading">
+                                    <h2 style="font-size:50px">$25</h2>
+                                </div>
+                                <div class="panel-body">
+                                    <h3>2,500 points</h3>
+                                </div>
+                                <div class="panel-footer">
+                                   <h4>Bonus: 50 Points</h4>
+								   <br>
+								   
+									<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+<input type="hidden" name="cmd" value="_s-xclick">
+<input type="hidden" name="hosted_button_id" value="NAA54T4RS8WD8">
+<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_buynow_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+<img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+</form>
+
+                                </div>
+                            </div>
+                        
+                    </div>
+                    <div class="col-lg-3">
+                            <div class="panel panel-red">
+                                <div class="panel-heading">
+                                   <h2 style="font-size:50px">$50</h2>
+                                </div>
+                                <div class="panel-body">
+                                    <h3>5,000 points</h3>
+                                </div>
+                                <div class="panel-footer">
+                                    <h4>Bonus: 100 Points</h4>
+									<br>
+									<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+<input type="hidden" name="cmd" value="_s-xclick">
+<input type="hidden" name="hosted_button_id" value="USQWTMC3J2QXW">
+<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_buynow_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+<img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+</form>
+
+                                </div>
+                            </div>                   
+                    </div>
+                    <div class="col-lg-3">
+                        <div class="panel panel-red">
+                            <div class="panel-heading">
+                               <h2 style="font-size:50px">$100</h2> 
+                            </div>
+                            <div class="panel-body">
+                                <h3>10,000 points</h3>
+                            </div>
+                            <div class="panel-footer">
+                                <h4>Bonus: 200 Points</h4>
+								<br>
+								<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+<input type="hidden" name="cmd" value="_s-xclick">
+<input type="hidden" name="hosted_button_id" value="YDZL9785CQBEQ">
+<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_buynow_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+<img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+</form>
+
+                            </div>
+                        </div>
+                        <!-- /.col-lg-4 -->
+                    </div>
+                </div>
+        <!-- /#page-wrapper -->
+            </div>
+            <hr/>
+            
+            <div class="row">               
+                 <div class="col-lg-offset-4">
+                    <form style='display:none;' action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+                        <input type="hidden" name="cmd" value="_s-xclick">
+                        <input type="hidden" name="hosted_button_id" value="XLWRC3PSK98XA">
+                        <table>
+                        <tr><td><input type="hidden" name="on0" value="Points">Points</td></tr><tr><td><select name="os0">
+                         <option value="1,000 Points">1,000 Points $10.00 USD</option>
+                         <option value="2,500 Points (+50 Bonus)">2,500 Points (+50 Bonus) $20.00 USD</option>
+                         <option value="5,000 Points (+100 Bonus)">5,000 Points (+100 Bonus) $50.00 USD</option>
+                         <option value="10,000 Points (+200 Bonus)">10,000 Points (+200 Bonus) $100.00 USD</option>
+                        </select> </td></tr>
+                        </table>
+                        <input type="hidden" name="currency_code" value="USD">
+                        <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+                        <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+                    </form>
+                </div>
+            </div>
+            <!-- /.container-fluid -->
+        </div>
+        <!-- /#page-wrapper -->
+
+    </div>
+    <!-- /#wrapper -->
+
+    <!-- jQuery -->
+    <script src="../css/bower_components/jquery/dist/jquery.min.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="../css/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+
+    <!-- Metis Menu Plugin JavaScript -->
+    <script src="../css/bower_components/metisMenu/dist/metisMenu.min.js"></script>
+
+    <!-- Custom Theme JavaScript -->
+    <script src="../css/dist/js/sb-admin-2.js"></script>
+
+</body>
+
+</html>

@@ -1,6 +1,9 @@
 
 
       
+   
+
+      
        <div class="navbar-default sidebar" role="navigation">
                 <div class="sidebar-nav navbar-collapse">
                     <ul class="nav" id="side-menu">
@@ -32,7 +35,7 @@
                             <!-- /.nav-second-level -->
                         </li>
                         <li>
-                            <a href="http://quickcorrections.com/qc/login3/user/userpage"><i class=""></i> <b>Notifications</b></a>
+                            <a href="http://quickcorrections.com/qc/login3/user/userpage"><i class=""></i> <b>Your Answer</b></a>
                         </li>
                         <li>
                             <a href="http://quickcorrections.com/qc/login3/user/payment"><i class=""></i><b> Buy Point</b></a>
@@ -44,7 +47,6 @@
             </div>
             <!-- /.navbar-static-side -->
         </nav>
-
 
 
         <!-- Page Content -->

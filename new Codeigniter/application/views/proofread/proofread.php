@@ -18,9 +18,7 @@
                                 <li>
                                     <a href="http://quickcorrections.com/qc/login3/auth/pronunciation"><b>Pronunciation</b></a>
                                 </li>
-                                <li>
-                                    <a href="<?= base_url('auth/proofread') ?>"> <b>Proofreading</b></a>
-                                </li>
+                               
                                
                             </ul>
                             <!-- /.nav-second-level -->
@@ -32,7 +30,7 @@
                             <!-- /.nav-second-level -->
                         </li>
                         <li>
-                            <a href="http://quickcorrections.com/qc/login3/user/userpage"><i class=""></i> <b>Notifications</b></a>
+                            <a href="http://quickcorrections.com/qc/login3/user/userpage"><i class=""></i> <b>Your Answer</b></a>
                         </li>
                         <li>
                             <a href="http://quickcorrections.com/qc/login3/user/payment"><i class=""></i><b> Buy Point</b></a>
@@ -44,7 +42,6 @@
             </div>
             <!-- /.navbar-static-side -->
         </nav>
-
 	<main id="site-content" role="main">
         <?php if (isset($_SESSION)) : ?>
 

@@ -32,7 +32,7 @@
                             <!-- /.nav-second-level -->
                         </li>
                         <li>
-                            <a href="http://quickcorrections.com/qc/login3/user/userpage"><i class=""></i> <b>Notifications</b></a>
+                            <a href="http://quickcorrections.com/qc/login3/user/userpage"><i class=""></i> <b>Your Answer</b></a>
                         </li>
                         <li>
                             <a href="http://quickcorrections.com/qc/login3/user/payment"><i class=""></i><b> Buy Point</b></a>
@@ -62,7 +62,6 @@
                            We've received your inquiry. Once we are done, we will let you know. 
                            Please check your email as well.
                        </br>
-                        <i>- Thank you for your business -</i>
                     </h2>
                         </div>
                       
