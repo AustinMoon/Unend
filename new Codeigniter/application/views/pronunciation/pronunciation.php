@@ -62,7 +62,7 @@
                 
         
           
-           <?php //echo $error;?> 
+          <!-- <?php //echo $error;?> 
           
            <?php echo form_open_multipart('upload/do_upload');?> 
          <form action="" method="">
@@ -72,7 +72,7 @@
               <iframe src="http://vocaroo.com/?minimal" width="525" height="450" frameborder="0"></iframe><br>Powered by <a href="http://vocaroo.com" title="Voice Recorder">Vocaroo Voice Recorder</a>
               
               <!--<iframe src="https://webaudiodemos.appspot.com/AudioRecorder/index.html"  width="400" height="300"></iframe>-->
-                </div>
+               <!-- </div>
 
     
           
@@ -86,12 +86,10 @@
                     <div class="form-group">        
                     <a href="" class="btn btn-danger">Submit</a>
                     </div>
-                </div>
-<<<<<<< HEAD
+                </div>-->
+
           </form>
-=======
             </form>
->>>>>>> b8c0840896891d75f3b274e80fb579620dd799e3
 
     </div>
     </body>
