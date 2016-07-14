@@ -127,6 +127,10 @@ class User extends CI_Controller {
 			redirect('auth/login', 'refresh');
 		}
         $data = new stdClass();
+<<<<<<< HEAD
+=======
+        $user = $this->ion_auth->user()->row();
+>>>>>>> 8acc103f8803865c2a126b1c1b0135338fe5270a
         $this->load->view('html/header');
         $data->points= $user->points;
         $this->load->view('html/payment',$data);

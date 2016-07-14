@@ -681,7 +681,7 @@ class FineDiff {
 			echo '<del>', htmlentities($deletion), '</del>';
 			}
 		else /* if ( $opcode === 'i' ) */ {
- 			echo '<ins>', htmlentities(substr($from, $from_offset, $from_len)), '</ins>';
+ 			echo '<span style="background-color:green;">', htmlentities(substr($from, $from_offset, $from_len)), '</span>';
 			}
 		}
 	}
