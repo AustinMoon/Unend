@@ -871,18 +871,23 @@ class Auth extends CI_Controller {
 			redirect('auth/login', 'refresh');
 		}
         
-        if (isset($_POST['words']))
+        if (isset($_POST['sentence']))
         {
             $user = $this->ion_auth->user()->row();
             $data = new stdClass();
-            $data->words=$_POST['words'];
+            $data->text=$_POST['sentence'];
+            $data->request_date= time();
+            $data->type='English Question';
             $data->user_id =$user->id;
-            $this->db->insert('words', $data);
+            
+            $this->db->insert('sentence_correct', $data);
           
             if ($this->db->affected_rows() == 1) {
                 $this->load->view('html/header');
               	$this->load->view('sen_correct/sen_correct_success',$data);
 	            $this->load->view('html/footer.html');
+                $this->load->model('tutor_model');
+                $this->tutor_model->send_email_to_tutors();
           }
         }
         else
