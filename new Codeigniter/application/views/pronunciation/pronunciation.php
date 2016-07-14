@@ -65,10 +65,13 @@
            <?php //echo $error;?> 
           
            <?php echo form_open_multipart('upload/do_upload');?> 
-         <!-- <form action="" method="">
+         <form action="" method="">
           <div>              
               <h2>Record your voice</h2>
-              <iframe src="https://webaudiodemos.appspot.com/AudioRecorder/index.html"  width="400" height="300"></iframe>
+              
+              <iframe src="http://vocaroo.com/?minimal" width="525" height="450" frameborder="0"></iframe><br>Powered by <a href="http://vocaroo.com" title="Voice Recorder">Vocaroo Voice Recorder</a>
+              
+              <!--<iframe src="https://webaudiodemos.appspot.com/AudioRecorder/index.html"  width="400" height="300"></iframe>-->
                 </div>
 
     
@@ -87,7 +90,7 @@
 <<<<<<< HEAD
           </form>
 =======
-            </form>-->
+            </form>
 >>>>>>> b8c0840896891d75f3b274e80fb579620dd799e3
 
     </div>
