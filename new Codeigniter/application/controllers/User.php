@@ -129,10 +129,14 @@ class User extends CI_Controller {
         $data = new stdClass();
 
         $user = $this->ion_auth->user()->row();
-        $this->load->view('html/header');
+        $this->load->view('html/header',$data);
         $data->points= $user->points;
+
+
         $this->load->view('html/payment',$data);
         $this->load->view('html/footer.html');
+
+
         }
     public function price(){
         
@@ -145,14 +149,17 @@ class User extends CI_Controller {
     }
     public function setting(){
         $this->load->view('html/header');
-        $this->load->view('html/setting.html');
+        $this->load->view('html/setting');
         $this->load->view('html/footer.html');
 
     }
     public function privacy(){
+        $data = new stdClass();
+        $user = $this->ion_auth->user()->row();
+        $data->points= $user->points;
 
-        $this->load->view('html/header');
-        $this->load->view('html/privacy.html');
+        $this->load->view('html/header',$data);
+        $this->load->view('html/privacy');
         $this->load->view('html/footer.html');
 
     }

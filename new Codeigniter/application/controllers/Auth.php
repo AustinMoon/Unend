@@ -914,7 +914,7 @@ class Auth extends CI_Controller {
         if ($this->input->post('submit'))
         {
          $config['upload_path']   = './uploads/'; 
-         $config['allowed_types'] = 'wav'; 
+         $config['allowed_types'] = 'wav|mp3|flac|ogg'; 
          $config['max_size']      = 5000; 
          $config['max_width']     = 11024; 
          $config['max_height']    = 1768;  
@@ -922,7 +922,6 @@ class Auth extends CI_Controller {
 			
          if (!$this->upload->do_upload()) {
             $error = array('error' => $this->upload->display_errors()); 
-             
             $this->load->view('user/upload/upload_form', $error); 
          }
 			
@@ -930,8 +929,9 @@ class Auth extends CI_Controller {
             $data = array('upload_data' => $this->upload->data()); 
  			$this->load->view('html/header');
             $this->load->view('user/upload/upload_success', $data); 
-            $this->load->view('html/footer.html');         } 
-          } 
+            $this->load->view('html/footer.html');         
+         } 
+        } 
         
         else
         {
@@ -962,7 +962,7 @@ class Auth extends CI_Controller {
          $config['max_height']    = 1768;  
          $this->load->library('upload', $config);
 			
-         if (!$this->do_upload()) {
+         if (!$this->upload->do_upload()) {
             $error = array('error' => $this->upload->display_errors()); 
             $this->load->view('user/upload/upload_form', $error); 
          }
@@ -977,11 +977,15 @@ class Auth extends CI_Controller {
         
     else
         {
-            $this->load->view('html/header');
+        	 $data = new stdClass();
+	        $user = $this->ion_auth->user()->row();
+	        $data->points= $user->points;
+            $this->load->view('html/header', $data);
             $this->load->view('proofread/proofread');
             $this->load->view('html/footer.html');
         } 
     }
+
     public function do_upload() { 
          $config['upload_path']   = './uploads/'; 
          $config['allowed_types'] = 'gif|jpg|png|pdf|wav|docx|doc'; 
@@ -998,7 +1002,8 @@ class Auth extends CI_Controller {
          else { 
             $data = array('upload_data' => $this->upload->data()); 
             //$this->load->view('user/upload/upload_success', $data); 
-             echo $this->upload->data('file_name');  ;
+             echo 'ee';
+             $this->user_model->upload_file($user->id,$this->upload->data('file_name'));
          } 
       } 
     

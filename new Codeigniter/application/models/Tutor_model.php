@@ -73,8 +73,8 @@ class Tutor_model extends CI_Model {
             
         }
        substr($email, 0, -1);
-        $subject='new request offered';
-        $message='hello tutor. There is new request in the website. please click on this link to see it: http://quickcorrections.com/qc/login3/tutor/';
+        $subject='QuickCorrections: Test email';
+        $message='This is test email, sorry.';
         mail($email, $subject, $message);
     }
     

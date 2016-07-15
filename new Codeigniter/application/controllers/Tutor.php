@@ -78,8 +78,9 @@ class Tutor extends CI_Controller {
         $this->db->where('id',$user->id);
         $this->db->set('points', $new_points);
         $this->db->update('users');
-        $message='Hello, tutor responded to your request #'.$_POST['request_id'].'. with the following: '.$TR;
-        mail($user->email, 'Your Request # '.$_POST['request_id'].' is Finished', $message);
+        $message='Hello, tutor responded to your request #'.$_POST['request_id'].'.
+        Answer: '.$TR;
+        mail($user->email, 'QuickCorrections: Your Request # '.$_POST['request_id'].' is Finished', $message);
 
         $this->load->view('html/header');
         $this->load->view('tutor/tutor_success');
@@ -105,6 +106,12 @@ class Tutor extends CI_Controller {
     }}
     function tutor_submit(){
         
+
+    }
+    function setting(){
+        $this->load->view('html/header');
+        $this->load->view('tutor/setting.html');
+        $this->load->view('html/footer'); 
 
     }
 

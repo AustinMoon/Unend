@@ -75,6 +75,8 @@
                         <li><a href="http://quickcorrections.com/qc/login3/user/payment">Buy Point</a></li>
                         <li><a href="<?= base_url('auth/logout') ?>"> Sign Out</a>
                         </li>
+
+                        <h4>point: <?=$points ?></h4>
                       
                       
                         
@@ -83,7 +85,7 @@
 						
 
 							<li ><a class=""  href="http://quickcorrections.com/qc/login3/user/aboutus"><b>Why QuickCorrections</b></a></li>
-							<li><a href="http://quickcorrections.com/qc/login3/user/price">Price</a></li>               
+							<li><a href="http://quickcorrections.com/qc/login3/user/price">Pricing</a></li>               
                             <li><a href="<?= base_url('auth/create_user') ?>">Sign Up</a></li>
 							<li><a href="<?= base_url('auth/login') ?>">Sign In</a></li>
 						

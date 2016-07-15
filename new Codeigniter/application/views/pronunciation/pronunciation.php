@@ -52,15 +52,15 @@
                     </div>
                 </div>
                 <div class= "row text-center">
-                    <!--<div class="form-group col-md-8 ">-->
+                   <!-- <!--<div class="form-group col-md-8 ">
                         <img src="http://quickcorrections.com/qc/img/tempo.jpg">
                         <h1><b>Sorry about the inconvenience!</b></h1>  
-                    </div>
+                    </div>-->
                 </div>
                 
         
           
-          <!-- <?php //echo $error;?> 
+        <?php //echo $error;?> 
           
            <?php echo form_open_multipart('upload/do_upload');?> 
          <form action="" method="">
@@ -69,22 +69,22 @@
               
               <iframe src="http://vocaroo.com/?minimal" width="525" height="450" frameborder="0"></iframe><br>Powered by <a href="http://vocaroo.com" title="Voice Recorder">Vocaroo Voice Recorder</a>
               
-              <!--<iframe src="https://webaudiodemos.appspot.com/AudioRecorder/index.html"  width="400" height="300"></iframe>-->
-               <!-- </div>
+            
+         </div>
 
     
           
                 <div class="row">
                     <div class="panel panel-red">
                         <input type = "file" name = "userfile" size = "20" /> 
-                           <input type = "submit" value = "upload" /> 
+                            
                         
                     </div>
                     
                     <div class="form-group">        
-                    <a href="" class="btn btn-danger">Submit</a>
+                    <input type ="submit" value="Upload" href="" class="btn btn-danger" />
                     </div>
-                </div>-->
+                </div>
 
           </form>
             </form>

@@ -59,7 +59,7 @@
                     <div class="form-group col-md-8">
 
                         
-                        <h4 ><i>Step 1. Do you have any questions about using English in your daily lives? If so, type yourquestion below.<hr/></h4>
+                        <h4 ><i>Step 1. Do you have any questions about using English in your daily lives? If so, type yourquestion below.</h4>
                         <h5>(Please don&#39;t forget! We only answer questions about using English in your daily lives. Additionally, we are not responsible for our responses. This is only for your reference.)<br/></i></h5>
                         
                         <textarea class="form-control"  id="text" rows="5"placeholder="Type Your Question..." name="sentence" maxlength="750" autofocus></textarea>
@@ -71,7 +71,7 @@
                 </div>
                 <div class"row">
                     <div class="">
-                    <h4 ><i>Step 2. Are you done? Put the submit button below. Thank you!<hr/></i></h4>
+                    <h4 ><i><hr/>Step 2. Are you done? Put the submit button below. Thank you!</i></h4>
 
                     <button href="" class="btn btn-danger">Submit</a>
                     </div>
