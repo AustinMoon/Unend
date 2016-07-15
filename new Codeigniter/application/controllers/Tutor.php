@@ -116,6 +116,10 @@ class Tutor extends CI_Controller {
         if($this->tutor_model->role_exists($request_id)){
             $data = new stdClass();
             $this->load->model('tutor_model');
+            
+            
+            $this->load->library('upload');
+
         
         
         
