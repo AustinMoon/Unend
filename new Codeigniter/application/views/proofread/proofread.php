@@ -54,14 +54,14 @@
                 </div>
             
            <?php //echo $error;?> 
-      <?php echo form_open_multipart('upload/do_upload');?> 
+      <?php echo form_open_multipart('auth/proofread');?> 
 		
       <form action = "" method = "">
                 <div class= "row">
                    
                     <div class="form-group col-md-8">
                         
-                        
+                        <h4 ><i> <?php echo $error;?> </i></h4>
                         <h4 ><i>Step 1. Prepare your paper with MS Word format.<hr/></i></h4>
                         <h4 ><i>Step 2. Select your file and upload on our system.<hr/></i></h4>
 
