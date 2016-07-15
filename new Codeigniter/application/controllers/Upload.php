@@ -30,6 +30,10 @@
              $this->load->model('user_model');
              $user = $this->ion_auth->user()->row();
              $this->user_model->upload_file($user->id,$this->upload->data('file_name'));
+             $this->load->view('html/header');
+              	$this->load->view('sen_correct/sen_correct_success',$data);
+	            $this->load->view('html/footer.html');
+                
          } 
       } 
    } 

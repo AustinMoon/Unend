@@ -71,6 +71,9 @@ class Admin extends CI_Controller {
     }
 
 }
+    function froofreading_orders(){
+        
+    }
     
     
 }
