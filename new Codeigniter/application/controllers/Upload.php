@@ -21,7 +21,7 @@
 			
          if ( ! $this->upload->do_upload('userfile')) {
             $error = array('error' => $this->upload->display_errors()); 
-            $this->load->view('user/upload/upload_form', $error); 
+            $this->load->view('proofread/proofread', $error); 
          }
 			
          else { 
