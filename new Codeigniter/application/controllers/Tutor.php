@@ -65,6 +65,15 @@ class Tutor extends CI_Controller {
         $this->load->view('html/footer');  
     }}
     
+    function uploaded($request_id){
+        $request=get_request_info($request_id)->row();
+        if (!$this->ion_auth->logged_in() || !$this->ion_auth->in_group(4) || $request->type != 'Uploded File' )
+		{
+			// redirect them to the login page
+			redirect('auth/login', 'refresh');
+		}
+    }
+    
     function add_revision(){
         $this->load->model('tutor_model');
         $TR= $_POST['tutor_revision'];
@@ -100,7 +109,6 @@ class Tutor extends CI_Controller {
         $data->request = $this->tutor_model->get_request_info($request_id)->row();
         $this->load->view('html/header');
         $this->load->view('tutor/tutor_english_q',$data);
-
         $this->load->view('html/footer'); 
 
     }}
@@ -108,11 +116,32 @@ class Tutor extends CI_Controller {
         
 
     }
+<<<<<<< HEAD
     function setting(){
         $this->load->view('html/header');
         $this->load->view('tutor/setting.html');
         $this->load->view('html/footer'); 
 
+=======
+        
+    }
+    
+    function uploaded($request_id){
+         if (!$this->ion_auth->logged_in() || !$this->ion_auth->in_group(4))
+		{
+			// redirect them to the login page
+			redirect('auth/login', 'refresh');
+		}
+        if($this->tutor_model->role_exists($request_id)){
+        
+        $data = new stdClass();
+        $this->load->model('tutor_model');
+        $data->request = $this->tutor_model->get_request_info($request_id)->row();
+        $this->load->view('html/header');
+        $this->load->view('tutor/tutor_pronunciation',$data);
+        $this->load->view('html/footer'); 
+        
+>>>>>>> 50835a23647ca9d33ca3431f823c46fa948261f3
     }
 
        

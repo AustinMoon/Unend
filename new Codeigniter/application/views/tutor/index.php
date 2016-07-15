@@ -144,10 +144,13 @@ function humanTiming ($time)
             echo humanTiming($row->assign_date). ' ago';}
             else { echo '---';}
             echo '</td><td>';
+            $a='';
             if($row->type=='English Question')
             {$a='tutor_english_question';}
-            else
+            else if ($row->type=='Sentence Correction' || $row->type==NULL)
             {$a='edit';}
+            else if ($row->type=='Uploded File')
+             {$a='uploaded';}
             echo '<a href="http://quickcorrections.com/qc/login3/tutor/'. $a .'/'. $row->request_id .'"><button class="btn btn-primary" type="button">open</button></a>';
             echo '</td></tr>';
        

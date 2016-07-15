@@ -56,7 +56,11 @@ function humanTiming ($time)
         <div id="page-wrapper">
             <div class="row">
                 <div class="col-lg-12">
+<<<<<<< HEAD
                     <h1 class="page-header text-center" style="font-family:avenir">ADMIN PAGE</h1>
+=======
+                    <h1 class="page-header text-center" style="font-family:avenir">Proofread Assigning Page</h1>
+>>>>>>> 50835a23647ca9d33ca3431f823c46fa948261f3
                 </div>
                 
                 <!-- /.col-lg-12 -->
@@ -111,6 +115,7 @@ function humanTiming ($time)
              <!-- /.row -->
             <div class="row">
                
+<<<<<<< HEAD
                 <div class="panel panel-default">
                      <div class="panel-heading">Assigned requests to you</div>
     <div class="panel-body">
@@ -155,6 +160,9 @@ function humanTiming ($time)
              </tbody></table>
                     </div>
                     </div>
+=======
+               
+>>>>>>> 50835a23647ca9d33ca3431f823c46fa948261f3
             </div>
             <!-- /.row -->
         </div>
