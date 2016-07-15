@@ -5,6 +5,7 @@
       public function __construct() { 
          parent::__construct(); 
          $this->load->helper(array('form', 'url')); 
+          $this->load->library(array('ion_auth','form_validation'));
       }
 		
       public function index() { 
@@ -26,8 +27,9 @@
 			
          else { 
             $data = array('upload_data' => $this->upload->data()); 
-            //$this->load->view('user/upload/upload_success', $data); 
-             echo $this->upload->data('file_name');  ;
+             $this->load->model('user_model');
+             $user = $this->ion_auth->user()->row();
+             $this->user_model->upload_file($user->id,$this->upload->data('file_name'));
          } 
       } 
    } 
