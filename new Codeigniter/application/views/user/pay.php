@@ -277,7 +277,4 @@
 
 </html>
 
-=======
-You do not have enough points. Please buy more points to use the services.
-<meta http-equiv="refresh" content="5; url=http://quickcorrections.com/qc/login3/user/payment" />
->>>>>>> 8acc103f8803865c2a126b1c1b0135338fe5270a
+
