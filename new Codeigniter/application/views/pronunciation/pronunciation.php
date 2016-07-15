@@ -63,7 +63,7 @@
           
         <?php //echo $error;?> 
           
-           <?php echo form_open_multipart('upload/do_upload');?> 
+           <?php echo form_open_multipart('upload/do_pronunciation');?> 
          <form action="" method="">
           <div>              
               <h2>Record your voice</h2>
