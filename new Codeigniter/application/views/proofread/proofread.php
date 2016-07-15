@@ -54,9 +54,9 @@
                 </div>
             
            <?php //echo $error;?> 
-      <?php echo form_open_multipart('auth/proofread');?> 
+      <?php echo form_open_multipart('upload/do_upload');?> 
 		
-      <form action = "" method = "">
+      
                 <div class= "row">
                    
                     <div class="form-group col-md-8">
