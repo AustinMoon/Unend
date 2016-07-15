@@ -57,7 +57,7 @@
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>
 					</button>
-
+						
                 	<a href="<?= base_url('user') ?>" class="navbar-brand" ><img src="http://quickcorrections.com/qc/img/qc_logo.png" style="width:100%; display:inline"></a>
 
 
@@ -70,10 +70,12 @@
            				 echo'<li ><a  href="http://quickcorrections.com/qc/login3/admin/requests"><b >See All Requests</b></a></li>
            					 <li ><a  href="http://quickcorrections.com/qc/login3/auth/"><b >Go To Admin Page</b></a></li>
             				';} ?>
+
 						<li ><a  href="http://quickcorrections.com/qc/login3/user/aboutus"><b >Why QuickCorrections</b></a></li>
                         <li><a href="http://quickcorrections.com/qc/login3/user/payment">Buy Point</a></li>
                         <li><a href="<?= base_url('auth/logout') ?>"> Sign Out</a>
-                       	<h4 style="float:right; display:inline">Welcome</h4>
+                        </li>
+                      
                       
                         
                   

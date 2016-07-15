@@ -116,6 +116,23 @@ class Tutor extends CI_Controller {
         
 
     }
+    
+    function tutor_download(){
+        if (!$this->ion_auth->logged_in() || !$this->ion_auth->in_group(4)){
+			redirect('auth/login', 'refresh');
+		}
+        
+        if($this->tutor_model->role_exists($request_id)){
+            $data = new stdClass();
+            $this->load->model('tutor_model');
+        
+        
+        
+        
+    }
+        
+        
+    }
 
        
 
