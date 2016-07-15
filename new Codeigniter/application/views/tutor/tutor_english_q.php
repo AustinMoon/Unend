@@ -1,4 +1,29 @@
-
+ <div class="navbar-default sidebar" role="navigation">
+                <div class="sidebar-nav navbar-collapse">
+                    <ul class="nav" id="side-menu">
+                        <li>
+                            <a href="#"><i class=""></i> <b>Tutor Page</b></a>
+                        </li>
+                        
+                        <li>
+                            <a href="#"><i class=""></i> <b>Tutor History</b></a>
+                            
+                            <!-- /.nav-second-level -->
+                        </li>
+                        <li>
+                            <a href="http://quickcorrections.com/qc/login3/tutor/setting"><i class=""></i> <b>Password</b></a>
+                            
+                            <!-- /.nav-second-level -->
+                        </li>
+                        
+                        
+                    
+                    </ul>
+                </div>
+                <!-- /.sidebar-collapse -->
+            </div>
+            <!-- /.navbar-static-side -->
+        </nav>
         <!-- Page Content -->
        <div id= "page-wrapper"class="container-fluid">
                 <div class="row">
