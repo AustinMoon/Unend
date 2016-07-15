@@ -1,7 +1,4 @@
-
-
-      
-       <div class="navbar-default sidebar" role="navigation">
+ <div class="navbar-default sidebar" role="navigation">
                 <div class="sidebar-nav navbar-collapse">
                     <ul class="nav" id="side-menu">
                         <li>
@@ -14,12 +11,13 @@
                             <!-- /.nav-second-level -->
                         </li>
                         <li>
-                            <a href="http://quickcorrections.com/qc/login3/user/setting"><i class=""></i> <b>Password</b></a>
+                            <a href="http://quickcorrections.com/qc/login3/tutor/setting"><i class=""></i> <b>Password</b></a>
                             
                             <!-- /.nav-second-level -->
                         </li>
                         
-
+                        
+                    
                     </ul>
                 </div>
                 <!-- /.sidebar-collapse -->
@@ -27,38 +25,44 @@
             <!-- /.navbar-static-side -->
         </nav>
         <!-- Page Content -->
-        <div id= "page-wrapper"class="container-fluid">
+       <div id= "page-wrapper"class="container-fluid">
                 <div class="row">
                     <div class="col-lg-12">
-                        <h1 class="page-header text-center" style="font-family:avenir">THANK YOU!</h1>
+                        <h1 class="page-header text-center">Pronunciation</h1>
                     </div>
                     <!-- /.col-lg-12 -->
                 </div>
-
                 <div class= "row">
-                    
-                <div class="col-lg-6 col-lg-offset-3">
-                    <div class="panel panel-red">
-                        <div class="panel-heading text-center">
-                            <h2>
-                                We will try our best to improve your work space
-                          
-                       </br>
-                        <i>- Thank you for business -</i>
-                    </h2>
-                        </div>
-                      
+                    <div class="form-group col-md-8">
+                          <form action = "../add_revision" method = "POST">
+                        <label><p><h2>Student's file &nbsp; <button>download</button></h2></p></label>
+                        <label><p><h2>Tutor Answer:</h2></p></label>
+                        <textarea name="tutor_revision" class="form-control" rows="5" autofocus></textarea>
+                        <input type="hidden" name="request_id" value="<?= $request->request_id; ?>">
+
                     </div>
-                    <!-- /.col-lg-4 -->
-                    
                 </div>
-                    
-              </div>
+                <div class"row">
+                    <div class="">
+                    <button type="submit" class="btn btn-danger">Submit</button>
+                    </div></form>
 
-               
+                </div>
+                <!--
+                <div class= "row">
+                    <div class="form-group col-md-8">
+                          <form action = "../add_revision" method = "POST">
+                        <label><h2>Student Comments</h2></label>
+                        <textarea name="tutor_revision" class="form-control" rows="5" autofocus disabled><?= $request->additional; ?></textarea>
+                        <input type="hidden" name="request_id" value="<?= $request->request_id; ?>">
+
+                    </div>
+                </div>
+                -->
 
 
-                
+
+              
                 <!-- /.row -->
         </div>
             <!-- /.container-fluid -->

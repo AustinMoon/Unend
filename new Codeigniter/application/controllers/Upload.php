@@ -14,7 +14,7 @@
 		
       public function do_upload() { 
          $config['upload_path']   = './uploads/'; 
-         $config['allowed_types'] = 'gif|jpg|png|pdf|wav|docx|doc'; 
+         $config['allowed_types'] = 'gif|jpg|png|pdf|wav|docx|doc|mp3|ogg|flac'; 
          $config['max_size']      = 5000; 
          $config['max_width']     = 11024; 
          $config['max_height']    = 1768;  
