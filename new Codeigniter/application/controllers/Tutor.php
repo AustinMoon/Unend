@@ -137,6 +137,10 @@ class Tutor extends CI_Controller {
         
         
     }
+    
+    function uploaded($request_id){
+        
+    }
 
        
 
