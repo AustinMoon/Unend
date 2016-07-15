@@ -72,12 +72,14 @@ class Tutor extends CI_Controller {
         $this->db->set('revision_finish_date', time());
         $this->db->where('request_id',$_POST['request_id']);
         $this->db->update('sentence_correct');
-        $words=$this->tutor_model->get_request_info($_POST['request_id'])->row();
-        $user = $this->ion_auth->user()->row();
-        $new_points= $user->points - str_word_count($words->text);
+        $req=$this->tutor_model->get_request_info($_POST['request_id'])->row();
+        $user = $this->ion_auth->user($req->user_id)->row();
+        $new_points= $user->points - str_word_count($req->text);
         $this->db->where('id',$user->id);
         $this->db->set('points', $new_points);
         $this->db->update('users');
+        $message='Hello, tutor responded to your request #'.$_POST['request_id'].'. with the following: '.$TR;
+        mail($user->email, 'Your Request # '.$_POST['request_id'].' is Finished', $message);
 
         $this->load->view('html/header');
         $this->load->view('tutor/tutor_success');
