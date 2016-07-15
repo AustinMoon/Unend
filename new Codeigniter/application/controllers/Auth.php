@@ -920,7 +920,7 @@ class Auth extends CI_Controller {
          $config['max_height']    = 1768;  
          $this->load->library('upload', $config);
 			
-         if (!$this->upload->do_upload()) {
+         if (!$this->upload->do_pronunciation()) {
             $error = array('error' => $this->upload->display_errors()); 
             $this->load->view('user/upload/upload_form', $error); 
          }

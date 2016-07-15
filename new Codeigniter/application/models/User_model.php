@@ -173,5 +173,18 @@ class User_model extends CI_Model {
         
     }
     
+     public function upload_pronunciation($user_id,$link){
+        date_default_timezone_set("America/New_York");
+        $data = array(
+			'user_id'   => $user_id,
+            'text'      => $link,
+            'request_date'  => time(),
+            'type'      => 'Pronunciation',
+		);
+		
+		return $this->db->insert('sentence_correct', $data);
+        
+    }
+    
 	
 }
