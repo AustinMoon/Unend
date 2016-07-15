@@ -56,11 +56,9 @@ function humanTiming ($time)
         <div id="page-wrapper">
             <div class="row">
                 <div class="col-lg-12">
-<<<<<<< HEAD
                     <h1 class="page-header text-center" style="font-family:avenir">ADMIN PAGE</h1>
-=======
+
                     <h1 class="page-header text-center" style="font-family:avenir">Proofread Assigning Page</h1>
->>>>>>> 50835a23647ca9d33ca3431f823c46fa948261f3
                 </div>
                 
                 <!-- /.col-lg-12 -->
@@ -75,7 +73,7 @@ function humanTiming ($time)
     <thead>
       <tr>
         <th>Request ID</th>
-        <th>TEXT</th>
+        <th>FILE</th>
         <th>User</th>
         <th>Request Date</th>
         <th>Request Type</th>
@@ -92,8 +90,7 @@ function humanTiming ($time)
             echo '<td>';
             echo $row->request_id;
             echo '</td><td>';
-            if(strlen($row->text)>10){echo substr($row->text, 0, 10).'...';}
-            else {echo $row->text;}
+            echo'<a href="http://quickcorrections.com/qc/login3/uploads/'.$row->text.'" download>click here to download</a>';
             echo '</td><td>';
             $user = $this->ion_auth->user($row->user_id)->row();
             echo $user->email;
@@ -113,57 +110,7 @@ function humanTiming ($time)
             </div>
             <!-- /.row -->
              <!-- /.row -->
-            <div class="row">
-               
-<<<<<<< HEAD
-                <div class="panel panel-default">
-                     <div class="panel-heading">Assigned requests to you</div>
-    <div class="panel-body">
-        <table class="table table-hover">
-    <thead>
-      <tr>
-        <th>Request ID</th>
-        <th>TEXT</th>
-        <th>User</th>
-        <th>Assign time</th>
-        <th>Select</th>
         
-      </tr>
-    </thead>
-    <tbody>
-        <?php 
-        
-        foreach ($assigned_reuests->result() as $row)
-{
-            echo '<tr>';
-            echo '<td>';
-            echo $row->request_id;
-            echo '</td><td>';
-            if(strlen($row->text)>10){echo substr($row->text, 0, 10).'...';}
-            else {echo $row->text;}
-            echo '</td><td>';
-            $user = $this->ion_auth->user($row->user_id)->row();
-            echo $user->email;
-            echo '</td><td>';
-            if ($row->assign_date >0){
-            echo humanTiming($row->assign_date). ' ago';}
-            else { echo '---';}
-            echo '</td><td>';
-            if($row->type=='English Question')
-            {$a='tutor_english_question';}
-            else
-            {$a='edit';}
-            echo '<a href="http://quickcorrections.com/qc/login3/tutor/'. $a .'/'. $row->request_id .'"><button class="btn btn-primary" type="button">open</button></a>';
-            echo '</td></tr>';
-       
-}?>
-             </tbody></table>
-                    </div>
-                    </div>
-=======
-               
->>>>>>> 50835a23647ca9d33ca3431f823c46fa948261f3
-            </div>
             <!-- /.row -->
         </div>
         <!-- /#page-wrapper -->

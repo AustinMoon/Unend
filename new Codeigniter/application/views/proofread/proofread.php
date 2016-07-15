@@ -61,11 +61,10 @@
                    
                     <div class="form-group col-md-8">
                         
-<<<<<<< HEAD
+
                        <!-- <h4 ><i> <?php echo $error;?> </i></h4>-->
-=======
+
                       
->>>>>>> 50835a23647ca9d33ca3431f823c46fa948261f3
                         <h4 ><i>Step 1. Prepare your paper with MS Word format.</i></h4>
                         <h4 ><i><hr/>Step 2. Select your file and upload on our system.</i></h4>
 
