@@ -160,20 +160,20 @@ class User_model extends CI_Model {
         return $query;
     }
     
-    public function upload_file($user_id,$link){
+    public function upload_file($user_id, $link){
         date_default_timezone_set("America/New_York");
         $data = array(
 			'user_id'   => $user_id,
             'text'      => $link,
             'request_date'  => time(),
-            'type'      => 'Uploded File',
+            'type'      => 'Proofread',
 		);
 		
 		return $this->db->insert('sentence_correct', $data);
         
     }
     
-     public function upload_pronunciation($user_id,$link){
+     public function upload_pronunciation($user_id, $link){
         date_default_timezone_set("America/New_York");
         $data = array(
 			'user_id'   => $user_id,
