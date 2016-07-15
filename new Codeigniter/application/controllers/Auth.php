@@ -962,7 +962,7 @@ class Auth extends CI_Controller {
          $config['max_height']    = 1768;  
          $this->load->library('upload', $config);
 			
-         if (!$this->do_upload()) {
+         if (!$this->upload->do_upload()) {
             $error = array('error' => $this->upload->display_errors()); 
             $this->load->view('user/upload/upload_form', $error); 
          }
@@ -1000,7 +1000,8 @@ class Auth extends CI_Controller {
          else { 
             $data = array('upload_data' => $this->upload->data()); 
             //$this->load->view('user/upload/upload_success', $data); 
-             echo $this->upload->data('file_name');  ;
+             echo 'ee';
+             $this->user_model->upload_file($user->id,$this->upload->data('file_name'));
          } 
       } 
 >>>>>>> 513aa2fb092aa06e747b501c010226076b707112

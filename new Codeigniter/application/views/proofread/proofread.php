@@ -54,16 +54,16 @@
                 </div>
             
            <?php //echo $error;?> 
-      <?php echo form_open_multipart('auth/proofread');?> 
+      <?php echo form_open_multipart('upload/do_upload');?> 
 		
-      <form action = "" method = "">
+      
                 <div class= "row">
                    
                     <div class="form-group col-md-8">
                         
-                        <h4 ><i> <?php echo $error;?> </i></h4>
-                        <h4 ><i>Step 1. Prepare your paper with MS Word format.<hr/></i></h4>
-                        <h4 ><i>Step 2. Select your file and upload on our system.<hr/></i></h4>
+                      
+                        <h4 ><i>Step 1. Prepare your paper with MS Word format.</i></h4>
+                        <h4 ><i><hr/>Step 2. Select your file and upload on our system.</i></h4>
 
                         <div class="panel panel-red">
 
@@ -74,15 +74,15 @@
 
 
                     <h5 style="color:#918C8C"> 1 word = 1.5 or more points</h5>
-                        <hr/>
-                         <h4><i>Step 3. Let us know if you need anything! (e.g. due date etc.)<hr/></i></h4>
+                        
+                         <h4><i><hr/>Step 3. Let us know if you need anything! (e.g. due date etc.)</i></h4>
                         <textarea class="form-control"  id="text" rows="5"placeholder="Type Sentence here..." name="sentence" maxlength="750" autofocus></textarea>
                         <h5 style="display:inline; color:#918C8C"> 1 word = free / Limit = 750 words</h5>
                         <h5 class="pull-right" id="count_message"></h5>
 
 
                     </br>
-                        <h4 ><i>Step 4. Great! You done! Please put the submit button!<hr/></i></h4>
+                        <h4 ><i><hr/>Step 4. Great! You done! Please put the submit button!</i></h4>
 
                          <button href="" class="btn btn-danger">Submit</button>
                     </div>

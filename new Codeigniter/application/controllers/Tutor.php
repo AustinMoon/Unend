@@ -65,6 +65,15 @@ class Tutor extends CI_Controller {
         $this->load->view('html/footer');  
     }}
     
+    function uploaded($request_id){
+        $request=get_request_info($request_id)->row();
+        if (!$this->ion_auth->logged_in() || !$this->ion_auth->in_group(4) || $request->type != 'Uploded File' )
+		{
+			// redirect them to the login page
+			redirect('auth/login', 'refresh');
+		}
+    }
+    
     function add_revision(){
         $this->load->model('tutor_model');
         $TR= $_POST['tutor_revision'];
