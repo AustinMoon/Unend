@@ -982,29 +982,9 @@ class Auth extends CI_Controller {
             $this->load->view('html/footer.html');
         } 
     }
-<<<<<<< HEAD
-=======
-    public function do_upload() { 
-         $config['upload_path']   = './uploads/'; 
-         $config['allowed_types'] = 'gif|jpg|png|pdf|wav|docx|doc'; 
-         $config['max_size']      = 5000; 
-         $config['max_width']     = 11024; 
-         $config['max_height']    = 1768;  
-         $this->load->library('upload', $config);
-			
-         if ( ! $this->do_upload('userfile')) {
-            $error = array('error' => $this->upload->display_errors()); 
-            $this->load->view('proofread/proofread', $error); 
-         }
-			
-         else { 
-            $data = array('upload_data' => $this->upload->data()); 
-            //$this->load->view('user/upload/upload_success', $data); 
-             echo 'ee';
-             $this->user_model->upload_file($user->id,$this->upload->data('file_name'));
-         } 
-      } 
->>>>>>> 513aa2fb092aa06e747b501c010226076b707112
+
+ 
+
     
     public function jobposting()
     {

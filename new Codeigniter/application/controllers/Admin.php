@@ -71,8 +71,13 @@ class Admin extends CI_Controller {
     }
 
 }
-    function froofreading_orders(){
-        
+    function proofreading_orders(){
+        $this->load->model('tutor_model');
+        $data = new stdClass();
+        $data->content= $this->tutor_model->open_proofread();
+        $this->load->view('html/header');
+        $this->load->view('admin/admin_page',$data);
+        $this->load->view('html/footer.html');
     }
     
     
