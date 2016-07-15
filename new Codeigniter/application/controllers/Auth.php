@@ -983,10 +983,7 @@ class Auth extends CI_Controller {
         } 
     }
 
-<<<<<<< HEAD
  
-
-=======
     public function do_upload() { 
          $config['upload_path']   = './uploads/'; 
          $config['allowed_types'] = 'gif|jpg|png|pdf|wav|docx|doc|mp3|flac|ogg'; 
@@ -995,7 +992,7 @@ class Auth extends CI_Controller {
          $config['max_height']    = 1768;  
          $this->load->library('upload', $config);
 			
-         if ( ! $this->do_upload('userfile')) {
+         if (!$this->do_upload('userfile')) {
             $error = array('error' => $this->upload->display_errors()); 
             $this->load->view('proofread/proofread', $error); 
          }
@@ -1007,7 +1004,28 @@ class Auth extends CI_Controller {
              $this->user_model->upload_file($user->id,$this->upload->data('file_name'));
          } 
       } 
->>>>>>> 2d7f244d7b992f893e759cf7aa152d98ed2bc824
+    
+    
+    public function do_pronunciation() { 
+         $config['upload_path']   = './uploads/'; 
+         $config['allowed_types'] = 'wav|mp3|flac|ogg'; 
+         $config['max_size']      = 5000; 
+         $config['max_width']     = 11024; 
+         $config['max_height']    = 1768;  
+         $this->load->library('upload', $config);
+			
+         if (!$this->do_pronunciation('userfile')) {
+            $error = array('error' => $this->upload->display_errors()); 
+            $this->load->view('pronunciation/pronunciation', $error); 
+         }
+			
+         else { 
+            $data = array('upload_data' => $this->upload->data()); 
+            //$this->load->view('user/upload/upload_success', $data); 
+             echo 'ee';
+             $this->user_model->upload_pronunciation($user->id,$this->upload->data('file_name'));
+         } 
+      } 
     
     public function jobposting()
     {

@@ -45,7 +45,7 @@
          $config['max_height']    = 1768;  
          $this->load->library('upload', $config);
 			
-         if (!$this->upload->do_pronunciation('userfile')) {
+         if (!$this->upload->upload_pronunciation('userfile')) {
             $error = array('error' => $this->upload->display_errors()); 
             $this->load->view('user/upload/upload_form', $error); 
          }
