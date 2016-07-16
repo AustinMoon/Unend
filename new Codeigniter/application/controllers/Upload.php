@@ -31,8 +31,8 @@
              $user = $this->ion_auth->user()->row();
              $this->user_model->upload_file($user->id,$this->upload->data('file_name'));
              $this->load->view('html/header');
-              	$this->load->view('sen_correct/sen_correct_success',$data);
-	            $this->load->view('html/footer.html');
+             $this->load->view('sen_correct/sen_correct_success',$data);
+             $this->load->view('html/footer.html');
                 
          } 
       } 
@@ -45,7 +45,7 @@
          $config['max_height']    = 1768;  
          $this->load->library('upload', $config);
 			
-         if (!$this->upload->upload_pronunciation('userfile')) {
+         if (!$this->do_pronunciation('userfile')) {
             $error = array('error' => $this->upload->display_errors()); 
             $this->load->view('user/upload/upload_form', $error); 
          }
@@ -60,7 +60,6 @@
              $this->load->view('html/footer.html');
          } 
        } 
-   
    } 
 
 ?>
