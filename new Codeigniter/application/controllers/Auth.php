@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <?php defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Auth extends CI_Controller {
@@ -1017,8 +1016,7 @@ class Auth extends CI_Controller {
     
 
 }
-=======
-<?php defined('BASEPATH') OR exit('No direct script access allowed');
+ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Auth extends CI_Controller {
     
@@ -2056,4 +2054,3 @@ class Auth extends CI_Controller {
     
 
 }
->>>>>>> 50835a23647ca9d33ca3431f823c46fa948261f3
