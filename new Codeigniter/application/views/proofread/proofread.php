@@ -66,14 +66,14 @@
 
                       
                         <h4 ><i>Step 1. Prepare your paper with MS Word format.</i></h4>
-                        <h4 ><i><hr/>Step 2. Select your file and upload on our system.</i></h4>
+                        <h4 ><i><hr/>Step 2. Select your file on our system.</i></h4>
 
                         <div class="panel panel-red">
 
                         <input style="display:inline" type = "file" name = "userfile" size = "20" /> 
                         
                         </div>
-                        <input class="btn btn-danger " type = "submit" value = "Upload"  /> 
+                        
 
 
                     <h5 style="color:#918C8C"> 1 word = 1.5 or more points</h5>
@@ -85,9 +85,9 @@
 
 
                     </br>
-                        <h4 ><i><hr/>Step 4. Great! You done! Please put the submit button!</i></h4>
+                        <h4 ><i><hr/>Step 4. Great! You done! Please put the upload button!</i></h4>
 
-                         <button href="" class="btn btn-danger">Submit</button>
+                         <input class="btn btn-danger " type = "submit" value = "Upload"  /> 
                     </div>
             </form>
         </div>
