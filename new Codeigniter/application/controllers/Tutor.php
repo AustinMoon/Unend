@@ -22,7 +22,10 @@ class Tutor extends CI_Controller {
 			// redirect them to the login page
 			redirect('auth/login', 'refresh');
 		}
-      
+        {$data = new stdClass();
+            $user = $this->ion_auth->user()->row();
+            $data->points= $user->points;
+            $this->load->view('html/header',$data);}
                
         $this->load->model('tutor_model');
         $data = new stdClass();
@@ -30,7 +33,6 @@ class Tutor extends CI_Controller {
         $data->content= $this->tutor_model->open_requests();
         $data->assigned_reuests= $this->tutor_model->assigned_requests($user->id);
         $data->group = $this->ion_auth->get_users_groups(5)->result(); 
-        $this->load->view('html/header',$data);
         $this->load->view('tutor/index',$data);
         $this->load->view('html/footer.html',$data);
         
@@ -91,7 +93,10 @@ class Tutor extends CI_Controller {
         Answer: '.$TR;
         mail($user->email, 'QuickCorrections: Your Request # '.$_POST['request_id'].' is Finished', $message);
 
-        $this->load->view('html/header');
+       {$data = new stdClass();
+            $user = $this->ion_auth->user()->row();
+            $data->points= $user->points;
+            $this->load->view('html/header',$data);}
         $this->load->view('tutor/tutor_success');
         $this->load->view('html/footer.html');
         
@@ -103,11 +108,14 @@ class Tutor extends CI_Controller {
 			redirect('auth/login', 'refresh');
 		}
         if($this->tutor_model->role_exists($request_id)){
-        
+        {$data = new stdClass();
+            $user = $this->ion_auth->user()->row();
+            $data->points= $user->points;
+            $this->load->view('html/header',$data);}
         $data = new stdClass();
         $this->load->model('tutor_model');
         $data->request = $this->tutor_model->get_request_info($request_id)->row();
-        $this->load->view('html/header');
+        
         $this->load->view('tutor/tutor_english_q',$data);
         $this->load->view('html/footer'); 
 
@@ -117,7 +125,10 @@ class Tutor extends CI_Controller {
 
     }
     function setting(){
-        $this->load->view('html/header');
+        $data = new stdClass();
+            $user = $this->ion_auth->user()->row();
+            $data->points= $user->points;
+            $this->load->view('html/header',$data);
         $this->load->view('tutor/setting.html');
         $this->load->view('html/footer'); 
 
@@ -131,11 +142,14 @@ class Tutor extends CI_Controller {
 			redirect('auth/login', 'refresh');
 		}
         if($this->tutor_model->role_exists($request_id)){
-        
+        {$data = new stdClass();
+            $user = $this->ion_auth->user()->row();
+            $data->points= $user->points;
+            $this->load->view('html/header',$data);}
         $data = new stdClass();
         $this->load->model('tutor_model');
         $data->request = $this->tutor_model->get_request_info($request_id)->row();
-        $this->load->view('html/header');
+        
         $this->load->view('tutor/tutor_pronunciation',$data);
         $this->load->view('html/footer'); 
         

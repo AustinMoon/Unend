@@ -24,12 +24,15 @@ class Admin extends CI_Controller {
 			// redirect them to the login page
 			redirect('auth/login', 'refresh');
 		}
+        {$data = new stdClass();
+            $user = $this->ion_auth->user()->row();
+            $data->points= $user->points;
+            $this->load->view('html/header',$data);}
         
         $this->load->model('tutor_model');
         $data = new stdClass();
         $user = $this->ion_auth->user()->row();
         $data->all_requests= $this->tutor_model->all_requests();
-        $this->load->view('html/header');
         $this->load->view('admin/requests',$data);
         $this->load->view('html/footer.html');
         
@@ -72,10 +75,14 @@ class Admin extends CI_Controller {
 
 }
     function proofreading_orders(){
+        {$data = new stdClass();
+            $user = $this->ion_auth->user()->row();
+            $data->points= $user->points;
+            $this->load->view('html/header',$data);}
         $this->load->model('tutor_model');
         $data = new stdClass();
         $data->content= $this->tutor_model->open_proofread();
-        $this->load->view('html/header');
+       
         $this->load->view('admin/admin_page',$data);
         $this->load->view('html/footer.html');
     }
@@ -99,8 +106,12 @@ class Admin extends CI_Controller {
          }
 			
          else { 
+            {$data = new stdClass();
+            $user = $this->ion_auth->user()->row();
+            $data->points= $user->points;
+            $this->load->view('html/header',$data);}
             $data = array('upload_data' => $this->upload->data()); 
-            $this->load->view('html/header');
+    
             $this->load->view('user/upload/upload_success', $data); 
             $this->load->view('html/footer.html');
          } 

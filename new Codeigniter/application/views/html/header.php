@@ -74,10 +74,11 @@
 
 						<li ><a  href="http://quickcorrections.com/qc/login3/user/aboutus"><b >Why QuickCorrections</b></a></li>
                         <li><a href="http://quickcorrections.com/qc/login3/user/payment">Buy Point</a></li>
-                        <li><a href="<?= base_url('auth/logout') ?>"> Sign Out</a>
+                        <li><a href="<?= base_url('auth/logout') ?>"> Sign Out<br/></a>
                         </li>
-                      
-                      	                      
+                        <div clas="row">
+                      	<h5 style="float:right; padding-right:30px; color:#E6858F">Welcome! Your Point : <?=$points ?></h5>
+                      	</div>
                         
                   
 						<?php else : ?>

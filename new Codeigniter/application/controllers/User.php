@@ -33,7 +33,13 @@ class User extends CI_Controller {
 	
 	public function index() {
         $this->load->library(array('ion_auth','form_validation'));
-        $this->load->view('html/header');
+        
+        $data = new stdClass();
+         if ($this->ion_auth->logged_in()){
+        $user = $this->ion_auth->user()->row();
+        $data->points= $user->points;
+         }
+        $this->load->view('html/header',$data);
         $this->load->view('html/main.html');
         $this->load->view('html/footer.html');
 		
@@ -90,28 +96,40 @@ class User extends CI_Controller {
 	
     public function aboutus(){
         $this->load->library(array('ion_auth','form_validation'));
-        $this->load->view('html/header');
+         $data = new stdClass();
+         if ($this->ion_auth->logged_in()){
+        $user = $this->ion_auth->user()->row();
+        $data->points= $user->points;
+         }
+        $this->load->view('html/header',$data);
         $this->load->view('html/aboutus.html');
         $this->load->view('html/footer.html');
     }
     
     public function edited_request($request_id){
+        {$data = new stdClass();
+            $user = $this->ion_auth->user()->row();
+            $data->points= $user->points;
+            $this->load->view('html/header',$data);}
         $this->load->model('tutor_model');
         $data = new stdClass();
         $data->request = $this->tutor_model->get_request_info($request_id)->row();
         $opcodes = FineDiff::getDiffOpcodes($data->request->text, $data->request->tutor_revision /* default granularity is set to character */);
         $data->outpot =FineDiff::renderDiffToHTMLFromOpcodes($data->request->text, $opcodes);
         $this->load->library(array('ion_auth','form_validation'));
-        $this->load->view('html/header');
+        
         $this->load->view('user/sent_corr',$data);
         $this->load->view('html/footer.html');
         
     }
     public function edited_eq($request_id){
+        {$data = new stdClass();
+            $user = $this->ion_auth->user()->row();
+            $data->points= $user->points;
+            $this->load->view('html/header',$data);}
         $this->load->model('tutor_model');
         $data = new stdClass();
         $data->request = $this->tutor_model->get_request_info($request_id)->row();
-        $this->load->view('html/header');
         $this->load->view('user/edited_eq',$data);
         $this->load->view('html/footer.html');
         
@@ -129,8 +147,9 @@ class User extends CI_Controller {
         $data = new stdClass();
 
         $user = $this->ion_auth->user()->row();
-        $this->load->view('html/header',$data);
-        $data->points= $user->points;
+ 
+            $data->points= $user->points;
+            $this->load->view('html/header',$data);
 
 
         $this->load->view('html/payment',$data);
@@ -140,7 +159,12 @@ class User extends CI_Controller {
         }
     public function price(){
         
-        $this->load->view('html/header');
+         $data = new stdClass();
+         if ($this->ion_auth->logged_in()){
+        $user = $this->ion_auth->user()->row();
+        $data->points= $user->points;
+         }
+        $this->load->view('html/header',$data);
         $this->load->view('html/price.html');
         $this->load->view('html/footer.html');
         
@@ -148,7 +172,10 @@ class User extends CI_Controller {
         
     }
     public function setting(){
-        $this->load->view('html/header');
+        $data = new stdClass();
+        $user = $this->ion_auth->user()->row();
+        $data->points= $user->points;
+        $this->load->view('html/header',$data);
         $this->load->view('html/setting');
         $this->load->view('html/footer.html');
 
@@ -165,14 +192,24 @@ class User extends CI_Controller {
     }
      public function terms(){
         
-        $this->load->view('html/header');
+         $data = new stdClass();
+         if ($this->ion_auth->logged_in()){
+        $user = $this->ion_auth->user()->row();
+        $data->points= $user->points;
+         }
+        $this->load->view('html/header',$data);
         $this->load->view('html/terms.html');
         $this->load->view('html/footer.html');
 
     }
     public function jobposting(){
         
-        $this->load->view('html/header');
+         $data = new stdClass();
+         if ($this->ion_auth->logged_in()){
+        $user = $this->ion_auth->user()->row();
+        $data->points= $user->points;
+         }
+        $this->load->view('html/header',$data);
         $this->load->view('html/jobposting.html');
         $this->load->view('html/footer.html');
         
@@ -205,7 +242,11 @@ class User extends CI_Controller {
             $data->user_id =$user->id;
           
             if ($this->db->affected_rows() == 1) {
-              $this->load->view('html/header');
+            {$data = new stdClass();
+            $user = $this->ion_auth->user()->row();
+            $data->points= $user->points;
+            $this->load->view('html/header',$data);}
+              
               $this->load->view('sen_correct/sen_correct_success',$data);
               $this->load->view('html/footer.html');
                 $this->tutor_model->send_email_to_tutors();
@@ -213,7 +254,10 @@ class User extends CI_Controller {
         }
         else
         {
-            $this->load->view('html/header');
+             $data = new stdClass();
+            $user = $this->ion_auth->user()->row();
+            $data->points= $user->points;
+            $this->load->view('html/header',$data);
             $this->load->view('sen_correct/sen_correct_student');
             $this->load->view('html/footer.html');
         }
@@ -221,18 +265,29 @@ class User extends CI_Controller {
         
     }
       public function contactus(){
-        $this->load->view('html/header');
+         $data = new stdClass();
+         if ($this->ion_auth->logged_in()){
+        $user = $this->ion_auth->user()->row();
+        $data->points= $user->points;
+         }
+        $this->load->view('html/header',$data);
         $this->load->view('html/contactus');
         $this->load->view('html/footer.html');
 
     }
     public function userpage(){
+        {
+        $data = new stdClass();
+        $user = $this->ion_auth->user()->row();
+        $data->points= $user->points;
+        $this->load->view('html/header',$data);
+        }
         $this->load->model('user_model');
         $data = new stdClass();
         $user = $this->ion_auth->user()->row();
         $data->sc=$this->user_model->s_correct_requests($user->id);
         $data->eq=$this->user_model->english_q_requests($user->id);
-        $this->load->view('html/header');
+        
         $this->load->view('user/userpage',$data);
         $this->load->view('html/footer.html');
     }

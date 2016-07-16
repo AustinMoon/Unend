@@ -1,45 +1,48 @@
+<?php
 
+function humanTiming ($time)
+{
 
-      
-   
+    $time = time() - $time; // to get the time since that moment
+    $time = ($time<1)? 1 : $time;
+    $tokens = array (
+        31536000 => 'year',
+        2592000 => 'month',
+        604800 => 'week',
+        86400 => 'day',
+        3600 => 'hour',
+        60 => 'minute',
+        1 => 'second'
+    );
 
-      
-       <div class="navbar-default sidebar" role="navigation">
+    foreach ($tokens as $unit => $text) {
+        if ($time < $unit) continue;
+        $numberOfUnits = floor($time / $unit);
+        return $numberOfUnits.' '.$text.(($numberOfUnits>1)?'s':'');
+    }
+
+}
+?>
+<?php date_default_timezone_set("America/New_York"); ?>
+ <div class="navbar-default sidebar" role="navigation">
                 <div class="sidebar-nav navbar-collapse">
                     <ul class="nav" id="side-menu">
+                        <li>
+                            <a href="#"><i class=""></i> <b>Tutor Page</b></a>
+                        </li>
                         
                         <li>
-                            <a href="#"><i class=""></i> <b>Services</b><span class="fa arrow"></span></a>
-                            <ul class="nav nav-second-level collapse">
-                                
-                                <li>
-                                    <a href="<?= base_url('/user/sen_correct_student') ?>"><b>Sentence Correction</b></a>
-                                </li>
-                                <li>
-                                    <a href="<?= base_url('auth/english_question') ?>"><b>Question about English</b></a>
-                                </li>
-                                <li>
-                                    <a href="http://quickcorrections.com/qc/login3/auth/pronunciation"><b>Pronunciation</b></a>
-                                </li>
-                                <li>
-                                    <a href="<?= base_url('auth/proofread') ?>"> <b>Proofreading</b></a>
-                                </li>
-                               
-                            </ul>
-                            <!-- /.nav-second-level -->
-                        </li>
-                       
-                        <li>
-                            <a href="http://quickcorrections.com/qc/login3/user/setting"><i class=""></i> <b>Password</b></a>
+                            <a href="#"><i class=""></i> <b>Tutor History</b></a>
                             
                             <!-- /.nav-second-level -->
                         </li>
                         <li>
-                            <a href="http://quickcorrections.com/qc/login3/user/userpage"><i class=""></i> <b>Your Answer</b></a>
+                            <a href="http://quickcorrections.com/qc/login3/tutor/setting"><i class=""></i> <b>Password</b></a>
+                            
+                            <!-- /.nav-second-level -->
                         </li>
-                        <li>
-                            <a href="http://quickcorrections.com/qc/login3/user/payment"><i class=""></i><b> Buy Point</b></a>
-                        </li>
+                        
+                        
                     
                     </ul>
                 </div>
@@ -53,7 +56,7 @@
         <div id="page-wrapper">
             <div class="row">
                 <div class="col-lg-12">
-                    <h1 class="page-header text-center" style="font-family:avenir">TUTOR HISTORY</h1>
+                    <h1 class="page-header text-center" style="font-family:avenir">TUTOR PAGE</h1>
                 </div>
                 
                 <!-- /.col-lg-12 -->
@@ -62,7 +65,7 @@
             <div class="row">
                
                 <div class="panel panel-default">
-                     <div class="panel-heading">Sentence Correction</div>
+                     <div class="panel-heading">Previous Requests</div>
     <div class="panel-body">
         <table class="table table-hover">
     <thead>
@@ -71,130 +74,43 @@
         <th>TEXT</th>
         <th>User</th>
         <th>Request Date</th>
-        <th>Select</th>
+        <th>Request Type</th>
+        <th>Points Earned</th>
         
       </tr>
     </thead>
     <tbody>
-
         <?php 
         
-        foreach ($sc->result() as $row)
+        foreach ($content->result() as $row)
 {
             echo '<tr>';
             echo '<td>';
             echo $row->request_id;
             echo '</td><td>';
-            echo $row->text;
+            if($row->type=='Pronunciation'){echo'<a href="http://quickcorrections.com/qc/login3/uploads/'.$row->text.'" download>click here to download</a>';}
+            else{
+            if(strlen($row->text)>10){echo substr($row->text, 0, 10).'...';}
+            else {echo $row->text;}}
             echo '</td><td>';
             $user = $this->ion_auth->user($row->user_id)->row();
             echo $user->email;
             echo '</td><td>';
-            echo $row->request_date;
+            echo humanTiming($row->request_date). ' ago';
             echo '</td><td>';
-            if(!empty($row->tutor_revision)){
-            echo '<a href="http://quickcorrections.com/qc/login3/user/edited_request/'. $row->request_id .'"><button class="btn btn-primary" type="button">open</button></a>';}
-            else{ echo 'in progress..';}
+            echo $row->type;
             echo '</td><td>';
-        }
-            ?>
-    </tbody></table>
-                    </div>
-                    </div>
-            </div>
-            <!-- /.row -->
-             <!-- /.row -->
-            <div class="row">
-               
-                <div class="panel panel-default">
-                     <div class="panel-heading">Question about English</div>
-                    <div class="panel-body">
-                        <table class="table table-hover">
-                    <thead>
-                      <tr>
-                        <th>Request ID</th>
-                        <th>TEXT</th>
-                        <th>User</th>
-                        <th>Assign time</th>
-                        <th>Select</th>
-                        
-                      </tr>
-                    </thead>
-                <tbody>
-       <?php 
-        
-        foreach ($eq->result() as $row)
-{
-            echo '<tr>';
-            echo '<td>';
-            echo $row->request_id;
-            echo '</td><td>';
-            echo $row->text;
-            echo '</td><td>';
-            $user = $this->ion_auth->user($row->user_id)->row();
-            echo $user->email;
-            echo '</td><td>';
-            echo $row->request_date;
-            echo '</td><td>';
-            if(!empty($row->tutor_revision)){
-            echo '<a href="http://quickcorrections.com/qc/login3/user/edited_eq/'. $row->request_id .'"><button class="btn btn-primary" type="button">open</button></a>';}
-            else{ echo 'in progress..';}
-            echo '</td><td>';
-        }
-            ?>
-            </tbody></table>
-                    </div>
-                    </div>
-            </div>
-            <!-- /.row -->
-             <!-- /.row -->
-            <div class="row">
-               
-                <div class="panel panel-default">
-                     <div class="panel-heading">Pronunciation</div>
-                    <div class="panel-body">
-                        <table class="table table-hover">
-                    <thead>
-                      <tr>
-                        <th>Request ID</th>
-                        <th>TEXT</th>
-                        <th>User</th>
-                        <th>Assign time</th>
-                        <th>Select</th>
-                        
-                      </tr>
-                    </thead>
-                <tbody>
-      
-            </tbody></table>
-                    </div>
-                    </div>
-            </div>
-            <!-- /.row -->
-             <!-- /.row -->
-            <div class="row">
-               
-                <div class="panel panel-default">
-                     <div class="panel-heading">Proofreading</div>
-                    <div class="panel-body">
-                        <table class="table table-hover">
-                    <thead>
-                      <tr>
-                        <th>Request ID</th>
-                        <th>TEXT</th>
-                        <th>User</th>
-                        <th>Assign time</th>
-                        <th>Select</th>
-                        
-                      </tr>
-                    </thead>
-                <tbody>
-     
+            $tutor = $this->ion_auth->user()->row();
+            echo str_word_count($row->text);
+            echo '</td></tr>';
+       
+}?>
              </tbody></table>
                     </div>
                     </div>
             </div>
             <!-- /.row -->
+           
         </div>
         <!-- /#page-wrapper -->
 
