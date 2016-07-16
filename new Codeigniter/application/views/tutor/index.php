@@ -88,8 +88,10 @@ function humanTiming ($time)
             echo '<td>';
             echo $row->request_id;
             echo '</td><td>';
+            if($row->type=='Pronunciation'){echo'<a href="http://quickcorrections.com/qc/login3/uploads/'.$row->text.'" download>click here to download</a>';}
+            else{
             if(strlen($row->text)>10){echo substr($row->text, 0, 10).'...';}
-            else {echo $row->text;}
+            else {echo $row->text;}}
             echo '</td><td>';
             $user = $this->ion_auth->user($row->user_id)->row();
             echo $user->email;
@@ -121,6 +123,7 @@ function humanTiming ($time)
         <th>TEXT</th>
         <th>User</th>
         <th>Assign time</th>
+        <th>Request Type</th>
         <th>Select</th>
         
       </tr>
@@ -134,8 +137,10 @@ function humanTiming ($time)
             echo '<td>';
             echo $row->request_id;
             echo '</td><td>';
+            if($row->type=='Pronunciation'){echo'<a href="http://quickcorrections.com/qc/login3/uploads/'.$row->text.'" download>click here to download</a>';}
+            else{
             if(strlen($row->text)>10){echo substr($row->text, 0, 10).'...';}
-            else {echo $row->text;}
+            else {echo $row->text;}}
             echo '</td><td>';
             $user = $this->ion_auth->user($row->user_id)->row();
             echo $user->email;
@@ -143,6 +148,8 @@ function humanTiming ($time)
             if ($row->assign_date >0){
             echo humanTiming($row->assign_date). ' ago';}
             else { echo '---';}
+            echo '</td><td>';
+            echo $row->type;
             echo '</td><td>';
             $a='';
             if($row->type=='English Question')

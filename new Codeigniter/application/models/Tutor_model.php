@@ -30,7 +30,7 @@ class Tutor_model extends CI_Model {
     }
     public function open_proofread(){
         $this->db->where('is_assigned', 0);
-        $this->db->order_by('request_date', 'ASC');
+        $this->db->order_by('request_date', 'DESC');
         $query = $this->db->get('sentence_correct');
         return $query;
     }
@@ -38,6 +38,7 @@ class Tutor_model extends CI_Model {
     public function assigned_requests ($id){
         
         $this->db->where('is_assigned', 1);
+        $this->db->order_by('request_date', 'DESC');
         $this->db->where('tutor_id',$id);
         $this->db->where('tutor_revision',NULL);
         $query = $this->db->get('sentence_correct');

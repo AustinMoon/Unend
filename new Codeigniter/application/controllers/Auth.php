@@ -920,7 +920,7 @@ class Auth extends CI_Controller {
          $config['max_height']    = 1768;  
          $this->load->library('upload', $config);
 			
-         if (!$this->upload->do_upload()) {
+         if (!$this->upload->do_pronunciation()) {
             $error = array('error' => $this->upload->display_errors()); 
             $this->load->view('user/upload/upload_form', $error); 
          }
@@ -986,26 +986,6 @@ class Auth extends CI_Controller {
         } 
     }
 
-    public function do_upload() { 
-         $config['upload_path']   = './uploads/'; 
-         $config['allowed_types'] = 'gif|jpg|png|pdf|wav|docx|doc'; 
-         $config['max_size']      = 5000; 
-         $config['max_width']     = 11024; 
-         $config['max_height']    = 1768;  
-         $this->load->library('upload', $config);
-			
-         if ( ! $this->do_upload('userfile')) {
-            $error = array('error' => $this->upload->display_errors()); 
-            $this->load->view('proofread/proofread', $error); 
-         }
-			
-         else { 
-            $data = array('upload_data' => $this->upload->data()); 
-            //$this->load->view('user/upload/upload_success', $data); 
-             echo 'ee';
-             $this->user_model->upload_file($user->id,$this->upload->data('file_name'));
-         } 
-      } 
     
     public function jobposting()
     {
@@ -1016,6 +996,7 @@ class Auth extends CI_Controller {
     
 
 }
+<<<<<<< HEAD
  defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Auth extends CI_Controller {
@@ -2054,3 +2035,5 @@ class Auth extends CI_Controller {
     
 
 }
+=======
+>>>>>>> 67042dfb60022605a649dafb2ed13026564bdb96
