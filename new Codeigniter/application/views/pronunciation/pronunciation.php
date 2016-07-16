@@ -1,10 +1,7 @@
 
-<<<<<<< HEAD
 
 
       
-=======
->>>>>>> dc8b9799eac652bad4ce05373f3b7bfc173ebc40
        <div class="navbar-default sidebar" role="navigation">
                 <div class="sidebar-nav navbar-collapse">
                     <ul class="nav" id="side-menu">
@@ -46,8 +43,6 @@
             </div>
             <!-- /.navbar-static-side -->
         </nav>
-<<<<<<< HEAD
-=======
 
     <!-- Page Content -->
     <?php if (isset($_SESSION)) : ?>
@@ -80,27 +75,10 @@
                     <h4 ><i><hr/>Step 2. Download file as mp3</i></h4>
 
 
->>>>>>> dc8b9799eac652bad4ce05373f3b7bfc173ebc40
 
              
         
-<<<<<<< HEAD
-          
-        <?php //echo $error;?> 
-          
-           <?php echo form_open_multipart('upload/do_pronunciation');?> 
-         <form action="" method="">
-          <div>              
-              <h2>Record your voice</h2>
-              
-              <iframe src="http://vocaroo.com/?minimal" width="525" height="450" frameborder="0"></iframe><br>Powered by <a href="http://vocaroo.com" title="Voice Recorder">Vocaroo Voice Recorder</a>
-              
-            
-         </div>
-
-=======
                 <h4 ><i><hr/> Step 3. Select your recorded file, and upload it on our system.</i></h4>
->>>>>>> dc8b9799eac652bad4ce05373f3b7bfc173ebc40
     
             <div class="panel panel-red">
                 <input type = "file" name = "userfile" size = "20" /> 
