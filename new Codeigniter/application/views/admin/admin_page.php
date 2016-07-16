@@ -100,7 +100,7 @@ function humanTiming ($time)
             echo $row->type;
             echo '</td><td>';
             $tutor = $this->ion_auth->user()->row();
-            echo '<a href="http://quickcorrections.com/qc/login3/tutor/assign/'. $tutor->id .'/'. $row->request_id .'"><button class="btn btn-primary" type="button">Assign this request</button></a>';
+            echo '<a href="http://quickcorrections.com/qc/login3/admin/proofread_answer/'. $row->request_id .'"><button class="btn btn-primary" type="button">Assign this request</button></a>';
             echo '</td></tr>';
        
 }?>

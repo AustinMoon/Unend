@@ -79,6 +79,44 @@ class Admin extends CI_Controller {
         $this->load->view('admin/admin_page',$data);
         $this->load->view('html/footer.html');
     }
+    function proofread_answer($request_id){
+        if (!$this->ion_auth->logged_in())
+		{
+			//redirect them to the login page
+			redirect('auth/login', 'refresh');
+		}
+        $user = $this->ion_auth->user()->row();
+        if ($user->points <=20){
+            redirect('user/pay', 'refresh');
+        }
+        
+        if ($this->input->post('submit'))
+        {
+			
+         if (!$this->upload->do_proofread_answer($request_id)) {
+            $error = array('error' => $this->upload->display_errors()); 
+            $this->load->view('user/upload/upload_form', $error); 
+         }
+			
+         else { 
+            $data = array('upload_data' => $this->upload->data()); 
+            $this->load->view('html/header');
+            $this->load->view('user/upload/upload_success', $data); 
+            $this->load->view('html/footer.html');
+         } 
+          } 
+        
+    else
+        {
+        	 $data = new stdClass();
+	        $user = $this->ion_auth->user()->row();
+	        $data->points= $user->points;
+            $this->load->view('html/header', $data);
+            $this->load->view('proofread/proofread');
+            $this->load->view('html/footer.html');
+        } 
+        
+    }
     
     
 }

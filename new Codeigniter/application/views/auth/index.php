@@ -44,7 +44,7 @@
                    </tbody></table>
                
             </div>
-            <?php echo anchor('auth/create_user', lang('index_create_user_link'))?> | <?php echo anchor('auth/create_group', lang('index_create_group_link'))?>
+            
             <hr/>
            <br/>
             

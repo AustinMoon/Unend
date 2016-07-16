@@ -186,6 +186,11 @@ class User_model extends CI_Model {
 		
 		return $this->db->insert('sentence_correct', $data);
     }
+    public function upload_proofread_answer($request_id,$uploaded_file){
+        $this->db->set('tutor_revision', $uploaded_file);
+        $this->db->where('request_id',$request_id);
+        $this->db->update('sentence_correct');
+    }
     
 	
 }
