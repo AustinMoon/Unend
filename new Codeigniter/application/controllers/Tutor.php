@@ -116,13 +116,19 @@ class Tutor extends CI_Controller {
         
 
     }
+<<<<<<< HEAD
 
+=======
+>>>>>>> dc8b9799eac652bad4ce05373f3b7bfc173ebc40
     function setting(){
         $this->load->view('html/header');
         $this->load->view('tutor/setting.html');
         $this->load->view('html/footer'); 
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> dc8b9799eac652bad4ce05373f3b7bfc173ebc40
         
     }
     
@@ -141,7 +147,10 @@ class Tutor extends CI_Controller {
         $this->load->view('tutor/tutor_pronunciation',$data);
         $this->load->view('html/footer'); 
         
+<<<<<<< HEAD
  
+=======
+>>>>>>> dc8b9799eac652bad4ce05373f3b7bfc173ebc40
     }
 
        
