@@ -67,18 +67,18 @@
 						<?php if ($this->ion_auth->in_group(4)) {
            				 echo'<li ><a  href="http://quickcorrections.com/qc/login3/tutor/"><b >Go to Tutor Page</b></a></li>';} ?>
                         <?php if ($this->ion_auth->is_admin()) {
-           				 echo'<li ><a  href="http://quickcorrections.com/qc/login3/admin/requests"><b >See All Requests</b></a></li>
+           				 echo'<li ><a  href="http://quickcorrections.com/qc/login3/admin/proofreading_orders"><b >Proofreading</b></a></li>
+           				 	<li ><a  href="http://quickcorrections.com/qc/login3/admin/requests"><b >See All Requests</b></a></li>
            					 <li ><a  href="http://quickcorrections.com/qc/login3/auth/"><b >Go To Admin Page</b></a></li>
             				';} ?>
 
 						<li ><a  href="http://quickcorrections.com/qc/login3/user/aboutus"><b >Why QuickCorrections</b></a></li>
                         <li><a href="http://quickcorrections.com/qc/login3/user/payment">Buy Point</a></li>
-                        <li><a href="<?= base_url('auth/logout') ?>"> Sign Out</a>
+                        <li><a href="<?= base_url('auth/logout') ?>"> Sign Out<br/></a>
                         </li>
-
-                        <h4>point: <?=$points ?></h4>
-                      
-                      
+                        <div clas="row">
+                      	<h5 style="float:right; padding-right:40px">Welcome! Your Point : <?=$points; ?></h5>
+                      	</div>
                         
                   
 						<?php else : ?>
