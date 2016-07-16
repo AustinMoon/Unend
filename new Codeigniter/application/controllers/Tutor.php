@@ -161,4 +161,21 @@ class Tutor extends CI_Controller {
     
     
     
-}}
+}
+    function tutor_history(){
+    if (!$this->ion_auth->logged_in() || !$this->ion_auth->in_group(4))
+		{
+			// redirect them to the login page
+			redirect('auth/login', 'refresh');
+		}
+        $data = new stdClass();
+         $user = $this->ion_auth->user()->row();
+        $this->load->model('tutor_model');
+        $data->content = $this->tutor_model->get_tutor_history($user->id);
+        $this->load->view('html/header');
+        $this->load->view('tutor/tutor_history',$data);
+        $this->load->view('html/footer'); 
+    
+}
+
+}

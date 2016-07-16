@@ -84,6 +84,13 @@ class Tutor_model extends CI_Model {
         $message='This is test email, sorry.';
         mail($email, $subject, $message);
     }
+    function get_tutor_history($tutor_id){
+        $this->db->where('tutor_id', $tutor_id);
+        $this->db->where('tutor_revision IS NOT', NULL);
+        //$this->db->where('tutor_id', $tutor_id);
+        $query = $this->db->get('sentence_correct');
+        return $query;
+    }
     
 }
 	
