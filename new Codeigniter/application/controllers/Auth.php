@@ -36,6 +36,11 @@ class Auth extends CI_Controller {
 
 		else
 		{
+			{$data = new stdClass();
+            $user = $this->ion_auth->user()->row();
+            $data->points= $user->points;
+            $this->load->view('html/header',$data);}
+
 			// set the flash data error message if there is one
 			$this->data['message'] = (validation_errors()) ? validation_errors() : $this->session->flashdata('message');
 
@@ -45,7 +50,7 @@ class Auth extends CI_Controller {
 			{
 				$this->data['users'][$k]->groups = $this->ion_auth->get_users_groups($user->id)->result();
 			}
-            $this->load->view('html/header');
+            
 			$this->_render_page('auth/index', $this->data);
 			$this->load->view('html/footer.html');
 		}
@@ -887,7 +892,10 @@ class Auth extends CI_Controller {
             $this->db->insert('sentence_correct', $data);
           
             if ($this->db->affected_rows() == 1) {
-                $this->load->view('html/header');
+                {$data = new stdClass();
+            $user = $this->ion_auth->user()->row();
+            $data->points= $user->points;
+            $this->load->view('html/header',$data);}
               	$this->load->view('sen_correct/sen_correct_success',$data);
 	            $this->load->view('html/footer.html');
                 $this->load->model('tutor_model');
@@ -896,7 +904,10 @@ class Auth extends CI_Controller {
         }
         else
         {
-            $this->load->view('html/header');
+            $data = new stdClass();
+            $user = $this->ion_auth->user()->row();
+            $data->points= $user->points;
+            $this->load->view('html/header',$data);
             $this->load->view('english_question/english_question');
             $this->load->view('html/footer.html');
         }
@@ -926,8 +937,12 @@ class Auth extends CI_Controller {
          }
 			
          else { 
+         	{$data = new stdClass();
+            $user = $this->ion_auth->user()->row();
+            $data->points= $user->points;
+            $this->load->view('html/header',$data);}
             $data = array('upload_data' => $this->upload->data()); 
- 			$this->load->view('html/header');
+ 			
             $this->load->view('user/upload/upload_success', $data); 
             $this->load->view('html/footer.html');         
          } 
@@ -935,7 +950,10 @@ class Auth extends CI_Controller {
         
         else
         {
-            $this->load->view('html/header');
+            $data = new stdClass();
+            $user = $this->ion_auth->user()->row();
+            $data->points= $user->points;
+            $this->load->view('html/header',$data);
             $this->load->view('pronunciation/pronunciation');
             $this->load->view('html/footer.html');
         } 
@@ -968,8 +986,12 @@ class Auth extends CI_Controller {
          }
 			
          else { 
+         	{$data = new stdClass();
+            $user = $this->ion_auth->user()->row();
+            $data->points= $user->points;
+            $this->load->view('html/header',$data);}
             $data = array('upload_data' => $this->upload->data()); 
-            $this->load->view('html/header');
+            
             $this->load->view('user/upload/upload_success', $data); 
             $this->load->view('html/footer.html');
          } 
@@ -996,5 +1018,8 @@ class Auth extends CI_Controller {
     
 
 }
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> 528aaf24bfd623fa47b3bd1ff3a74ac51b2642fe
