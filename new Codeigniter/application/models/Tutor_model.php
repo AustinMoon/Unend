@@ -24,12 +24,14 @@ class Tutor_model extends CI_Model {
     public function open_requests(){
         
         $this->db->where('is_assigned', 0);
+        $this->db->where('type !=', 'Proofread');
         $this->db->order_by('request_date', 'DESC');
         $query = $this->db->get('sentence_correct');
         return $query;
     }
     public function open_proofread(){
         $this->db->where('is_assigned', 0);
+        $this->db->where('type', 'Proofread');
         $this->db->order_by('request_date', 'DESC');
         $query = $this->db->get('sentence_correct');
         return $query;
@@ -38,6 +40,7 @@ class Tutor_model extends CI_Model {
     public function assigned_requests ($id){
         
         $this->db->where('is_assigned', 1);
+        $this->db->where('type !=', 'Proofread');
         $this->db->order_by('request_date', 'DESC');
         $this->db->where('tutor_id',$id);
         $this->db->where('tutor_revision',NULL);
@@ -82,7 +85,7 @@ class Tutor_model extends CI_Model {
        substr($email, 0, -1);
         $subject='QuickCorrections: Test email';
         $message='This is test email, sorry.';
-        mail($email, $subject, $message);
+        //mail($email, $subject, $message);
     }
     function get_tutor_history($tutor_id){
         $this->db->where('tutor_id', $tutor_id);

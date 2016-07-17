@@ -4,35 +4,33 @@
        <div class="navbar-default sidebar" role="navigation">
                 <div class="sidebar-nav navbar-collapse">
                     <ul class="nav" id="side-menu">
-<<<<<<< HEAD
+
                         <li>
                             <a href="#"><i class=""></i> <b>Tutor Page</b></a>
                         </li>
                         
-=======
+
                         <li>
                             <a href="#"><i class=""></i> <b>Tutor Page</b></a>
                         </li>
                         
                         <li>
-                            <a href="#"><i class=""></i> <b>Tutor History</b></a>
+                            <a href="http://quickcorrections.com/qc/login3/tutor/tutor_history"><i class=""></i> <b>Tutor History</b></a>
                             
                             <!-- /.nav-second-level -->
                         </li>
->>>>>>> 50835a23647ca9d33ca3431f823c46fa948261f3
+
                         <li>
-                            <a href="#"><i class=""></i> <b>Tutor History</b></a>
+                            <a href="http://quickcorrections.com/qc/login3/tutor/tutor_history"><i class=""></i> <b>Tutor History</b></a>
                             
                             <!-- /.nav-second-level -->
                         </li>
-<<<<<<< HEAD
+
                         <li>
                             <a href="http://quickcorrections.com/qc/login3/tutor/setting"><i class=""></i> <b>Password</b></a>
                             
                             <!-- /.nav-second-level -->
                         </li>
-=======
->>>>>>> 50835a23647ca9d33ca3431f823c46fa948261f3
                         
 
                     </ul>

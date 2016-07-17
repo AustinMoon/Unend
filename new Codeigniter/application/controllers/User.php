@@ -96,7 +96,12 @@ class User extends CI_Controller {
 	
     public function aboutus(){
         $this->load->library(array('ion_auth','form_validation'));
-        $this->load->view('html/header');
+         $data = new stdClass();
+         if ($this->ion_auth->logged_in()){
+        $user = $this->ion_auth->user()->row();
+        $data->points= $user->points;
+         }
+        $this->load->view('html/header',$data);
         $this->load->view('html/aboutus.html');
         $this->load->view('html/footer.html');
     }
@@ -154,7 +159,12 @@ class User extends CI_Controller {
         }
     public function price(){
         
-        $this->load->view('html/header');
+         $data = new stdClass();
+         if ($this->ion_auth->logged_in()){
+        $user = $this->ion_auth->user()->row();
+        $data->points= $user->points;
+         }
+        $this->load->view('html/header',$data);
         $this->load->view('html/price.html');
         $this->load->view('html/footer.html');
         
@@ -182,14 +192,24 @@ class User extends CI_Controller {
     }
      public function terms(){
         
-        $this->load->view('html/header');
+         $data = new stdClass();
+         if ($this->ion_auth->logged_in()){
+        $user = $this->ion_auth->user()->row();
+        $data->points= $user->points;
+         }
+        $this->load->view('html/header',$data);
         $this->load->view('html/terms.html');
         $this->load->view('html/footer.html');
 
     }
     public function jobposting(){
         
-        $this->load->view('html/header');
+         $data = new stdClass();
+         if ($this->ion_auth->logged_in()){
+        $user = $this->ion_auth->user()->row();
+        $data->points= $user->points;
+         }
+        $this->load->view('html/header',$data);
         $this->load->view('html/jobposting.html');
         $this->load->view('html/footer.html');
         
@@ -245,7 +265,12 @@ class User extends CI_Controller {
         
     }
       public function contactus(){
-        $this->load->view('html/header');
+         $data = new stdClass();
+         if ($this->ion_auth->logged_in()){
+        $user = $this->ion_auth->user()->row();
+        $data->points= $user->points;
+         }
+        $this->load->view('html/header',$data);
         $this->load->view('html/contactus');
         $this->load->view('html/footer.html');
 
