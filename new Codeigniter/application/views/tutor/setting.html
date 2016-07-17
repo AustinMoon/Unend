@@ -6,7 +6,7 @@
                         </li>
                         
                         <li>
-                            <a href="#"><i class=""></i> <b>Tutor History</b></a>
+                            <a href="http://quickcorrections.com/qc/login3/tutor/tutor_history"><i class=""></i> <b>Tutor History</b></a>
                             
                             <!-- /.nav-second-level -->
                         </li>

@@ -62,7 +62,9 @@ class Tutor extends CI_Controller {
         $data = new stdClass();
         $this->load->model('tutor_model');
         $data->request = $this->tutor_model->get_request_info($request_id)->row();
-        $this->load->view('html/header');
+        $user = $this->ion_auth->user()->row();
+        $data->points= $user->points;
+        $this->load->view('html/header',$data);
         $this->load->view('tutor/tutor_sentence',$data);
         $this->load->view('html/footer');  
     }}
@@ -85,7 +87,9 @@ class Tutor extends CI_Controller {
         $this->db->update('sentence_correct');
         $req=$this->tutor_model->get_request_info($_POST['request_id'])->row();
         $user = $this->ion_auth->user($req->user_id)->row();
-        $new_points= $user->points - str_word_count($req->text);
+        $words=str_word_count($req->text);
+        $words =$words* 1.5;
+        $new_points= $user->points -$words ;
         $this->db->where('id',$user->id);
         $this->db->set('points', $new_points);
         $this->db->update('users');
@@ -142,24 +146,16 @@ class Tutor extends CI_Controller {
 			redirect('auth/login', 'refresh');
 		}
         if($this->tutor_model->role_exists($request_id)){
-        {$data = new stdClass();
-            $user = $this->ion_auth->user()->row();
-            $data->points= $user->points;
-            $this->load->view('html/header',$data);}
         $data = new stdClass();
+        $user = $this->ion_auth->user()->row();
+        $data->points= $user->points;
+        $this->load->view('html/header',$data);
         $this->load->model('tutor_model');
         $data->request = $this->tutor_model->get_request_info($request_id)->row();
-        
         $this->load->view('tutor/tutor_pronunciation',$data);
         $this->load->view('html/footer'); 
         
-    }
-
-       
-
-    
-    
-    
+    }   
     
 }
     function tutor_history(){
@@ -169,10 +165,11 @@ class Tutor extends CI_Controller {
 			redirect('auth/login', 'refresh');
 		}
         $data = new stdClass();
-         $user = $this->ion_auth->user()->row();
+        $user = $this->ion_auth->user()->row();
+        $data->points= $user->points;
         $this->load->model('tutor_model');
         $data->content = $this->tutor_model->get_tutor_history($user->id);
-        $this->load->view('html/header');
+        $this->load->view('html/header',$data);
         $this->load->view('tutor/tutor_history',$data);
         $this->load->view('html/footer'); 
     

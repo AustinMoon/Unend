@@ -1018,3 +1018,8 @@ class Auth extends CI_Controller {
     
 
 }
+<<<<<<< HEAD
+
+
+=======
+>>>>>>> 528aaf24bfd623fa47b3bd1ff3a74ac51b2642fe
