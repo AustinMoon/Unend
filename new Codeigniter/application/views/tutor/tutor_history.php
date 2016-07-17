@@ -28,11 +28,11 @@ function humanTiming ($time)
                 <div class="sidebar-nav navbar-collapse">
                     <ul class="nav" id="side-menu">
                         <li>
-                            <a href="#"><i class=""></i> <b>Tutor Page</b></a>
+                            <a href="http://quickcorrections.com/qc/login3/tutor/"><i class=""></i> <b>Tutor Page</b></a>
                         </li>
                         
                         <li>
-                            <a href="#"><i class=""></i> <b>Tutor History</b></a>
+                            <a href="http://quickcorrections.com/qc/login3/tutor/tutor_history"><i class=""></i> <b>Tutor History</b></a>
                             
                             <!-- /.nav-second-level -->
                         </li>
@@ -56,7 +56,7 @@ function humanTiming ($time)
         <div id="page-wrapper">
             <div class="row">
                 <div class="col-lg-12">
-                    <h1 class="page-header text-center" style="font-family:avenir">TUTOR PAGE</h1>
+                    <h1 class="page-header text-center" style="font-family:avenir">TUTOR HISTORY</h1>
                 </div>
                 
                 <!-- /.col-lg-12 -->
@@ -81,7 +81,7 @@ function humanTiming ($time)
     </thead>
     <tbody>
         <?php 
-        
+        $total_points=0;
         foreach ($content->result() as $row)
 {
             echo '<tr>';
@@ -103,11 +103,13 @@ function humanTiming ($time)
             $tutor = $this->ion_auth->user()->row();
             echo str_word_count($row->text);
             echo '</td></tr>';
+            $total_points += str_word_count($row->text);
        
 }?>
              </tbody></table>
                     </div>
                     </div>
+                Total Points Earned: <?= $total_points ?>
             </div>
             <!-- /.row -->
            
