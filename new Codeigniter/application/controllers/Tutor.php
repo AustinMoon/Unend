@@ -105,6 +105,7 @@ class Tutor extends CI_Controller {
         $this->load->view('html/footer.html');
         
     }
+    
     function tutor_english_question($request_id){
         if (!$this->ion_auth->logged_in() || !$this->ion_auth->in_group(4))
 		{
@@ -122,12 +123,34 @@ class Tutor extends CI_Controller {
         
         $this->load->view('tutor/tutor_english_q',$data);
         $this->load->view('html/footer'); 
-
-    }}
+        }
+    }
+    
+    function tutor_pronunciation($request_id){
+        
+        if (!$this->ion_auth->logged_in() || !$this->ion_auth->in_group(4))
+        {
+			// redirect them to the login page
+			redirect('auth/login', 'refresh');
+		}
+        if($this->tutor_model->role_exists($request_id)){
+        $data = new stdClass();
+        $user = $this->ion_auth->user()->row();
+        $data->points= $user->points;
+        $this->load->view('html/header',$data);
+        $this->load->model('tutor_model');
+        $data->request = $this->tutor_model->get_request_info($request_id)->row();
+        $this->load->view('tutor/tutor_pronunciation', $data);
+        $this->load->view('html/footer'); 
+        }
+    }
+    
+    
     function tutor_submit(){
         
 
     }
+    
     function setting(){
         $data = new stdClass();
             $user = $this->ion_auth->user()->row();
@@ -154,10 +177,9 @@ class Tutor extends CI_Controller {
         $data->request = $this->tutor_model->get_request_info($request_id)->row();
         $this->load->view('tutor/tutor_pronunciation',$data);
         $this->load->view('html/footer'); 
-        
-    }   
+        }   
+    }
     
-}
     function tutor_history(){
     if (!$this->ion_auth->logged_in() || !$this->ion_auth->in_group(4))
 		{
@@ -172,7 +194,6 @@ class Tutor extends CI_Controller {
         $this->load->view('html/header',$data);
         $this->load->view('tutor/tutor_history',$data);
         $this->load->view('html/footer'); 
-    
-}
 
+    }
 }
