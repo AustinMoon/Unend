@@ -28,7 +28,7 @@ function humanTiming ($time)
                 <div class="sidebar-nav navbar-collapse">
                     <ul class="nav" id="side-menu">
                         <li>
-                            <a href="#"><i class=""></i> <b>Tutor Page</b></a>
+                            <a href="http://quickcorrections.com/qc/login3/tutor/"><i class=""></i> <b>Tutor Page</b></a>
                         </li>
                         
                         <li>
@@ -56,7 +56,7 @@ function humanTiming ($time)
         <div id="page-wrapper">
             <div class="row">
                 <div class="col-lg-12">
-                    <h1 class="page-header text-center" style="font-family:avenir">TUTOR PAGE</h1>
+                    <h1 class="page-header text-center" style="font-family:avenir">TUTOR HISTORY</h1>
                 </div>
                 
                 <!-- /.col-lg-12 -->
