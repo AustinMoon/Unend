@@ -76,7 +76,7 @@
                         
 
 
-                    <h5 style="color:#918C8C"> 1 word = 1.5 or more points</h5>
+                    <h5 style="color:#918C8C"> </h5>
                         
                          <h4><i><hr/>Step 3. Let us know if you need anything! (e.g. due date etc.)</i></h4>
                         <textarea class="form-control"  id="text" rows="5"placeholder="Type Sentence here..." name="sentence" maxlength="750" autofocus></textarea>
