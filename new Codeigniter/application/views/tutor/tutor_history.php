@@ -100,8 +100,7 @@ function humanTiming ($time)
             echo '</td><td>';
             echo $row->type;
             echo '</td><td>';
-            $tutor = $this->ion_auth->user()->row();
-            echo str_word_count($row->text);
+            echo str_word_count($row->text)/2;
             echo '</td></tr>';
             $total_points += str_word_count($row->text);
        
@@ -109,7 +108,7 @@ function humanTiming ($time)
              </tbody></table>
                     </div>
                     </div>
-                Total Points Earned: <?= $total_points ?>
+                Total Points Earned: <?= $total_points/2 ?>
             </div>
             <!-- /.row -->
            

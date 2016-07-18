@@ -288,6 +288,8 @@ class User extends CI_Controller {
         $user = $this->ion_auth->user()->row();
         $data->sc=$this->user_model->s_correct_requests($user->id);
         $data->eq=$this->user_model->english_q_requests($user->id);
+        $data->proof=$this->user_model->proof_requests($user->id);
+        $data->pronoun=$this->user_model->pronoun_requests($user->id);
         
         $this->load->view('user/userpage',$data);
         $this->load->view('html/footer.html');
