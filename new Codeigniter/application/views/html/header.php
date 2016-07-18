@@ -73,27 +73,16 @@
             				';} ?>
 
 						<li ><a  href="http://quickcorrections.com/qc/login3/user/aboutus"><b >Why QuickCorrections</b></a></li>
-                        <li><a href="http://quickcorrections.com/qc/login3/user/payment">Buy Point</a></li>
+                        <li><a href="http://quickcorrections.com/qc/login3/user/payment">Buy Points</a></li>
                         <li><a href="<?= base_url('auth/logout') ?>"> Sign Out<br/></a>
                         </li>
 
                         <div clas="row">
                       	<h5 style="float:right; padding-right:30px; color:#E6858F">Welcome! Your Point : <?=$points ?></h5>
                       	</div>
-=======
-<<<<<<< HEAD
-                        <div clas="row">
-                      	<h5 style="float:right; padding-right:40px">Welcome! Your Point : <?=$points; ?></h5>
-                      	</div>
-<<<<<<< HEAD
-             	                     
-=======
-=======
-                      
-                      	                      
->>>>>>> fbc6d311e034c565e4fadeeaff395dd9dcf904fd
->>>>>>> e801d123891265fb51d893fc6c9952acf60b0d10
->>>>>>> 528aaf24bfd623fa47b3bd1ff3a74ac51b2642fe
+
+                       
+
                         
                   
 						<?php else : ?>
