@@ -64,7 +64,7 @@
                         
                         <textarea class="form-control"  id="text" rows="5"placeholder="Type Your Question..." name="sentence" maxlength="750" autofocus></textarea>
 
-                        <h5 style="display:inline; color:#918C8C">1 word = 2.5 point / Limit = 750 words</h5>
+                        <h5 style="display:inline; color:#918C8C">80 point + 1 word = 2 point / Limit = 750 words</h5>
                         <h5 class="pull-right" id="count_message"></h5>
 
                     </div>

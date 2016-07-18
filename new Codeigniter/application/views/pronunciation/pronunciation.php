@@ -69,7 +69,7 @@
                     <div class="form-group col-sm-12">
                     <div class="col-sm-8" style="position:relative">
                     <h4 ><i>Step 1. Please record your speaking with your laptop or desktop.<br/>
-                    * You can record up to 45 seconds, and we will charge you 90 points.</i></h4>
+                    * You can record up to 45 seconds, and we will charge you 120 points.</i></h4>
               
               <iframe src="http://vocaroo.com/?minimal" width="525" height="450" frameborder="0"></iframe><br>Powered by <a href="http://vocaroo.com" title="Voice Recorder">Vocaroo Voice Recorder</a>
                     <h4 ><i><hr/>Step 2. Download file as mp3</i></h4>
