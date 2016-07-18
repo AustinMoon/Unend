@@ -1,6 +1,4 @@
-
-
-      
+   
        <div class="navbar-default sidebar" role="navigation">
                 <div class="sidebar-nav navbar-collapse">
                     <ul class="nav" id="side-menu">
@@ -9,16 +7,16 @@
                             <a href="#"><i class=""></i> <b>Services</b><span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level collapse">
                                 
-                                <li>
-                                    <a href="<?= base_url('/user/sen_correct_student') ?>"><b>Sentence Correction</b></a>
-                                </li>
+                               
                                 <li>
                                     <a href="<?= base_url('auth/english_question') ?>"><b>Question about English</b></a>
                                 </li>
                                 <li>
                                     <a href="http://quickcorrections.com/qc/login3/auth/pronunciation"><b>Pronunciation</b></a>
                                 </li>
-                               
+                                <li>
+                                    <a href="<?= base_url('auth/proofread') ?>"> <b>Proofreading</b></a>
+                                </li>
                                
                             </ul>
                             <!-- /.nav-second-level -->
@@ -42,43 +40,63 @@
             </div>
             <!-- /.navbar-static-side -->
         </nav>
-	<main id="site-content" role="main">
-        <?php if (isset($_SESSION)) : ?>
-
+        <!-- Page Content -->
         <div id= "page-wrapper"class="container-fluid">
                 <div class="row">
                     <div class="col-lg-12">
-                       <h1 class="page-header text-center" style="font-family:avenir">Pronunciation Answer</h1>
+                        <h1 class="page-header text-center" style="font-family:avenir">TUTOR PROFILE</h1>
                     </div>
+                    <!-- /.col-lg-12 -->
                 </div>
             
-            <?php //echo $error;?> 
-            <?php echo form_open_multipart('upload/do_pronunciation_answer/'.$req_id);?> 
-            
-            <div class= "row"> 
-                <div class="form-group col-md-8">
-                        <!-- <h4 ><i> <?php echo $error;?> </i></h4>-->
+            <form action="sen_correct_student" method="post">
+                <div class= "row">
+                    <div class="form-group col-sm-12">
+                    <div class="col-sm-8" style="position:relative">
+                        <h3 ><i>Tutor email : </i></h3>
+                        <h4 ><i><hr/>Tutor rate :</i></h4>
+                        <h4 ><i><hr/>Tutor feedback :</i></h4>
 
-                     <iframe src="http://vocaroo.com/?minimal" width="525" height="450" frameborder="0"></iframe><br>Powered by <a href="http://vocaroo.com" title="Voice Recorder">Vocaroo Voice Recorder</a>
-                    
-                        <h4 ><i>Upload the revision</i></h4>
-                       
 
-                        <div class="panel panel-red">
-
-                        <input style="display:inline" type = "file" name = "userfile" size = "20" /> 
                         
-                        </div> 
+                    </div>
+                    <!--<div class="col-sm-4 ">
+                        <div class="panel panel-danger">
+                        <div class="panel-heading">
+                            <h4><b><i>How to use</i></b></h4>
+                        </div>
+                        <div class="panel-body">
+                            <h5>Type Your English Sentence into TextBox.
+                            For more, just add point credits to your account.</h5>
+                        </div>
+                        
+                            </div>
+                    </div>-->
+
                     </div>
                 </div>
-            <textarea class="form-control"  id="text" rows="5"placeholder="Type Sentence here..." name="sentence" maxlength="750" autofocus></textarea>
-            
-            <button href="" class="btn btn-danger">Submit</button>
+
+                <div class"row">
+                    <div class="form-group col-sm-8"> 
+                    <h4 ><i><hr/>Step 3. Are you done? Put the submit button below. Thank you!</i></h4>
+
+                        <button href="" class="btn btn-danger">Submit</button>
+                    </div>
+
+                </div>
+                
+                </form>
+
+
+              
+                <!-- /.row -->
         </div>
+            <!-- /.container-fluid -->
+        
+        <!-- /#page-wrapper -->
 
-		<?php endif; ?>
-
-
+    </div>
+      <!-- jQuery -->
     <script src="../css/bower_components/jquery/dist/jquery.min.js"></script>
 
     <!-- Bootstrap Core JavaScript -->
@@ -93,13 +111,3 @@
 </body>
 
 </html>
-<script>
-var text_max = 750;
-$('#count_message').html(text_max + ' /750');
-$('#text').keyup(function() {
-  var text_length = $('#text').val().length;
-  var text_remaining = text_max - text_length;
-  
-  $('#count_message').html(text_remaining + ' /750');
-});
-</script>

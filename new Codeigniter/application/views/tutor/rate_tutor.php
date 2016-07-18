@@ -9,16 +9,16 @@
                             <a href="#"><i class=""></i> <b>Services</b><span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level collapse">
                                 
-                                <li>
-                                    <a href="<?= base_url('/user/sen_correct_student') ?>"><b>Sentence Correction</b></a>
-                                </li>
+                               
                                 <li>
                                     <a href="<?= base_url('auth/english_question') ?>"><b>Question about English</b></a>
                                 </li>
                                 <li>
                                     <a href="http://quickcorrections.com/qc/login3/auth/pronunciation"><b>Pronunciation</b></a>
                                 </li>
-                               
+                                <li>
+                                    <a href="<?= base_url('auth/proofread') ?>"> <b>Proofreading</b></a>
+                                </li>
                                
                             </ul>
                             <!-- /.nav-second-level -->
@@ -42,43 +42,60 @@
             </div>
             <!-- /.navbar-static-side -->
         </nav>
-	<main id="site-content" role="main">
-        <?php if (isset($_SESSION)) : ?>
 
+        <!-- Page Content -->
         <div id= "page-wrapper"class="container-fluid">
                 <div class="row">
                     <div class="col-lg-12">
-                       <h1 class="page-header text-center" style="font-family:avenir">Pronunciation Answer</h1>
+                        <h1 class="page-header text-center" style="font-family:avenir">RATE YOUR TUTOR</h1>
                     </div>
+                    <!-- /.col-lg-12 -->
                 </div>
-            
-            <?php //echo $error;?> 
-            <?php echo form_open_multipart('upload/do_pronunciation_answer/'.$req_id);?> 
-            
-            <div class= "row"> 
-                <div class="form-group col-md-8">
-                        <!-- <h4 ><i> <?php echo $error;?> </i></h4>-->
 
-                     <iframe src="http://vocaroo.com/?minimal" width="525" height="450" frameborder="0"></iframe><br>Powered by <a href="http://vocaroo.com" title="Voice Recorder">Vocaroo Voice Recorder</a>
+                <div class= "row">
                     
-                        <h4 ><i>Upload the revision</i></h4>
-                       
-
-                        <div class="panel panel-red">
-
-                        <input style="display:inline" type = "file" name = "userfile" size = "20" /> 
+                <div class="col-lg-6 col-lg-offset-4">
+                   <div class="rate">
+                        <input type="radio" id="star1" name="rate" value="1" /><label for="star1" title="text">1 star</label>
+                        <input type="radio" id="star2" name="rate" value="2" /><label for="star2" title="text">2 stars</label>
+                        <input type="radio" id="star3" name="rate" value="3" /><label for="star3" title="text">3 stars</label>
+                        <input type="radio" id="star4" name="rate" value="4" /><label for="star4" title="text">4 stars</label> 
+                        <input type="radio" id="star5" name="rate" value="5" /><label for="star5" title="text">5 stars</label>
+                    
                         
-                        </div> 
+                        
                     </div>
                 </div>
-            <textarea class="form-control"  id="text" rows="5"placeholder="Type Sentence here..." name="sentence" maxlength="750" autofocus></textarea>
-            
-            <button href="" class="btn btn-danger">Submit</button>
+                <div  class="col-lg-8 col-lg-offset-2">
+                       <h4><br/>Feedback</h4>
+                         <textarea class="form-control"  id="text_feedback" rows="2"placeholder="Type feedback..." name="optional" maxlength="750" ></textarea>
+                    <hr/>
+                    <button href="" class="btn btn-danger btn-lg" >Submit</button>
+                </div>
+               
+                    
+                                
+                    <!-- /.col-lg-4 -->
+                
+                        
+                
+                    
         </div>
 
-		<?php endif; ?>
+               
 
 
+                
+                <!-- /.row -->
+        
+            <!-- /.container-fluid -->
+        
+        <!-- /#page-wrapper -->
+
+    </div>
+    <!-- /#wrapper -->
+
+    <!-- jQuery -->
     <script src="../css/bower_components/jquery/dist/jquery.min.js"></script>
 
     <!-- Bootstrap Core JavaScript -->
@@ -93,13 +110,3 @@
 </body>
 
 </html>
-<script>
-var text_max = 750;
-$('#count_message').html(text_max + ' /750');
-$('#text').keyup(function() {
-  var text_length = $('#text').val().length;
-  var text_remaining = text_max - text_length;
-  
-  $('#count_message').html(text_remaining + ' /750');
-});
-</script>
