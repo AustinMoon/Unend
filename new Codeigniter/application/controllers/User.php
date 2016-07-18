@@ -176,6 +176,7 @@ class User extends CI_Controller {
         $user = $this->ion_auth->user()->row();
         $data->points= $user->points;
         $this->load->view('html/header',$data);
+        
         $this->load->view('html/setting');
         $this->load->view('html/footer.html');
 
