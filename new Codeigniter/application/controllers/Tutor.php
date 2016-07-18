@@ -91,11 +91,12 @@ class Tutor extends CI_Controller {
         $words=0;
         if($req->type=='English Question'){$words=str_word_count($req->text)*2 +80;}
         else if ($req->type=='Sentence Correction'){$words=str_word_count($req->text)*1.5;}
-        $new_points= $user->points - $words;
+        $new_points= $user->points - $words ;
         $this->db->where('id',$user->id);
         $this->db->set('points', $new_points);
         $this->db->update('users');
-        $message='Hello, tutor responded to your request #'.$_POST['request_id'].'.Answer: '.$TR;
+        $message='Hello, tutor responded to your request #'.$_POST['request_id'].'.
+        Answer: '.$TR;
         mail($user->email, 'QuickCorrections: Your Request # '.$_POST['request_id'].' is Finished', $message);
 
        {
@@ -126,9 +127,10 @@ class Tutor extends CI_Controller {
         $this->db->set('points', $new_points);
         $this->db->update('users');
         
-        $message='Hello, tutor responded to your request #'.$_POST['request_id'].'.Answer: '.$TR;
+        $message='Hello, tutor responded to your request #'.$_POST['request_id'].'.
+        Answer: '.$TR;
         mail($user->email, 'QuickCorrections: Your Request # '.$_POST['request_id'].' is Finished', $message);
-        mail($user->email, 'New pronunciation', 'http://quickcorrections.com/qc/login3/tutor/'. $TR .'/'. $row->request_id);
+        mail($user->email, 'New pronunciation', 'http://quickcorrections.com/qc/login3/tutor/'. $a .'/'. $row->request_id);
 
         {
             $data = new stdClass();
@@ -141,19 +143,12 @@ class Tutor extends CI_Controller {
         $this->load->view('html/footer.html');
         
     }
-<<<<<<< HEAD
 
         
  
    
 
     function tutor_english_question($request_id){
-=======
-    
-    
-   
-function tutor_english_question($request_id){
->>>>>>> 2700029a93ea3dcab967fb819f7189443493b503
         if (!$this->ion_auth->logged_in() || !$this->ion_auth->in_group(4))
 		{
 			// redirect them to the login page
@@ -193,12 +188,8 @@ function tutor_english_question($request_id){
         $this->load->view('html/footer'); 
         }
     }
-<<<<<<< HEAD
     
 
-=======
-      
->>>>>>> 2700029a93ea3dcab967fb819f7189443493b503
     function tutor_submit(){
         
 
@@ -249,9 +240,6 @@ function tutor_english_question($request_id){
         $this->load->view('html/header',$data);
         $this->load->view('tutor/tutor_history',$data);
         $this->load->view('html/footer'); 
-<<<<<<< HEAD
 
-=======
->>>>>>> 2700029a93ea3dcab967fb819f7189443493b503
     }
 }
