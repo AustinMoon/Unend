@@ -1,41 +1,28 @@
-
-
-      
-       <div class="navbar-default sidebar" role="navigation">
+ <div class="navbar-default sidebar" role="navigation">
                 <div class="sidebar-nav navbar-collapse">
                     <ul class="nav" id="side-menu">
+                        <li>
+                            <a href="#"><i class=""></i> <b>Tutor Page</b></a>
+                        </li>
                         
                         <li>
-                            <a href="#"><i class=""></i> <b>Services</b><span class="fa arrow"></span></a>
-                            <ul class="nav nav-second-level collapse">
-                                
-                                <li>
-                                    <a href="<?= base_url('/user/sen_correct_student') ?>"><b>Sentence Correction</b></a>
-                                </li>
-                                <li>
-                                    <a href="<?= base_url('auth/english_question') ?>"><b>Question about English</b></a>
-                                </li>
-                                <li>
-                                    <a href="http://quickcorrections.com/qc/login3/auth/pronunciation"><b>Pronunciation</b></a>
-                                </li>
-                               
-                               
-                            </ul>
-                            <!-- /.nav-second-level -->
-                        </li>
-                       
-                        <li>
-                            <a href="http://quickcorrections.com/qc/login3/user/setting"><i class=""></i> <b>Password</b></a>
+                            <a href="http://quickcorrections.com/qc/login3/tutor/tutor_history"><i class=""></i> <b>Tutor History</b></a>
                             
                             <!-- /.nav-second-level -->
                         </li>
                         <li>
-                            <a href="http://quickcorrections.com/qc/login3/user/userpage"><i class=""></i> <b>Your Answer</b></a>
+                            <a href="http://quickcorrections.com/qc/login3/tutor/setting"><i class=""></i> <b>Password</b></a>
+                            
+                            <!-- /.nav-second-level -->
                         </li>
+                        
                         <li>
-                            <a href="http://quickcorrections.com/qc/login3/user/payment"><i class=""></i><b> Buy Point</b></a>
+                            <a href="http://quickcorrections.com/qc/login3/admin/proofreading_orders"><i class=""></i> <b>Proofreading</b></a>
+                            
+                            <!-- /.nav-second-level -->
                         </li>
-                    
+                        
+                      
                     </ul>
                 </div>
                 <!-- /.sidebar-collapse -->
@@ -65,29 +52,21 @@
                        <!-- <h4 ><i> <?php echo $error;?> </i></h4>-->
 
                       
-                        <h4 ><i>Step 1. Prepare your paper with MS Word format.</i></h4>
-                       
+                       <h4> Upload fixed file </h4>
 
                         <div class="panel panel-red">
 
                         <input style="display:inline" type = "file" name = "userfile" size = "20" /> 
                         
                         </div>
-                        <input class="btn btn-danger " type = "submit" value = "Upload"  /> 
 
 
-                    <h5 style="color:#918C8C"> 1 word = 1.5 or more points</h5>
-                        
-                         <h4><i><hr/>Step 3. Let us know if you need anything! (e.g. due date etc.)</i></h4>
-                        <textarea class="form-control"  id="text" rows="5"placeholder="Type Sentence here..." name="sentence" maxlength="750" autofocus></textarea>
-                        <h5 style="display:inline; color:#918C8C"> 1 word = free / Limit = 750 words</h5>
-                        <h5 class="pull-right" id="count_message"></h5>
+                
 
 
                     </br>
-                        <h4 ><i><hr/>Step 4. Great! You done! Please put the submit button!</i></h4>
-
-                         <button href="" class="btn btn-danger">Submit</button>
+                        <h4><hr/>Click Upload button</h4>
+                        <input class="btn btn-danger " type = "submit" value = "Upload"  /> 
                     </div>
             </form>
         </div>
