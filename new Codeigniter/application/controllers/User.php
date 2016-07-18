@@ -123,14 +123,31 @@ class User extends CI_Controller {
         
     }
     public function edited_eq($request_id){
-        {$data = new stdClass();
+        {
+            $data = new stdClass();
             $user = $this->ion_auth->user()->row();
             $data->points= $user->points;
-            $this->load->view('html/header',$data);}
+            $this->load->view('html/header',$data);
+        }
         $this->load->model('tutor_model');
         $data = new stdClass();
         $data->request = $this->tutor_model->get_request_info($request_id)->row();
         $this->load->view('user/edited_eq',$data);
+        $this->load->view('html/footer.html');
+        
+    }
+    
+    public function edited_pro($request_id){
+        {
+            $data = new stdClass();
+            $user = $this->ion_auth->user()->row();
+            $data->points= $user->points;
+            $this->load->view('html/header',$data);
+        }
+        $this->load->model('tutor_model');
+        $data = new stdClass();
+        $data->request = $this->tutor_model->get_request_info($request_id)->row();
+        $this->load->view('user/edited_pro',$data);
         $this->load->view('html/footer.html');
         
     }
