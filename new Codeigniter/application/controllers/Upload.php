@@ -69,20 +69,21 @@
          } 
        } 
        
-              public function do_proofread_answer($request_id){
+       public function do_proofread_answer($request_id){
            $config['upload_path']   = './uploads/'; 
-         $config['allowed_types'] = 'wav|mp3|ogg|flac'; 
-         $config['max_size']      = 5000; 
-         $config['max_width']     = 11024; 
-         $config['max_height']    = 1768;  
-         $this->load->library('upload', $config);
+           $config['allowed_types'] = 'doc|docx|pdf|txt'; 
+           $config['max_size']      = 5000; 
+           $config['max_width']     = 11024; 
+           $config['max_height']    = 1768;  
+           $this->load->library('upload', $config);
 			
-         if (!$this->upload->do_upload('userfile')) {
+           if (!$this->upload->do_upload('userfile')) {
             $error = array('error' => $this->upload->display_errors()); 
             $this->load->view('user/upload/upload_form', $error); 
-         }
+           }
 			
-         else { 
+         else 
+         {
              $data = array('upload_data' => $this->upload->data()); 
              $this->load->model('user_model');
              $user = $this->ion_auth->user()->row();
