@@ -272,6 +272,8 @@ class User extends CI_Controller {
             $data->type='Sentence Correction';
             $data->request_date= time();
             $data->text=$_POST['sentence'];
+            $points=str_word_count($_POST['sentence']);
+            $data->req_points=$points *1.5;
             $data->additional=$_POST['optional'];
             $this->db->insert('sentence_correct', $data);
             $data->user_id =$user->id;
