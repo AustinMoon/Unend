@@ -152,6 +152,23 @@ class User extends CI_Controller {
         
     }
     
+     public function edited_proof($request_id){
+        {
+            $data = new stdClass();
+            $user = $this->ion_auth->user()->row();
+            $data->points= $user->points;
+            $this->load->view('html/header',$data);
+        }
+        $this->load->model('tutor_model');
+        $data = new stdClass();
+        $data->request = $this->tutor_model->get_request_info($request_id)->row();
+        $this->load->view('user/edited_proof',$data);
+        $this->load->view('html/footer.html');
+        
+    }
+    
+    
+    
     
    // public function payment(){$this->load->view('user/payment/payment_page');}
     
