@@ -154,7 +154,6 @@ class Tutor extends CI_Controller {
 			// redirect them to the login page
 			redirect('auth/login', 'refresh');
 		}
-<<<<<<< HEAD
         if($this->tutor_model->role_exists($request_id))
         {
             {
@@ -167,17 +166,6 @@ class Tutor extends CI_Controller {
             $data->request = $this->tutor_model->get_request_info($request_id)->row();
             $this->load->view('tutor/tutor_english_q',$data);
             $this->load->view('html/footer'); 
-=======
-        if($this->tutor_model->role_exists($request_id)){
-        $data = new stdClass();
-            $user = $this->ion_auth->user()->row();
-            $data->points= $user->points;
-            $this->load->view('html/header',$data);
-        $this->load->model('tutor_model');
-        $data->request = $this->tutor_model->get_request_info($request_id)->row();
-        $this->load->view('tutor/tutor_english_q',$data);
-        $this->load->view('html/footer'); 
->>>>>>> 78beb89ac73b8d6388e386743c66e825c2b42b96
         }
     }
     
