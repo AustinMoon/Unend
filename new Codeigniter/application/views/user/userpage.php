@@ -175,8 +175,11 @@
             echo '</td><td>';
             echo $row->request_date;
             echo '</td><td>';
-            if(!empty($row->tutor_revision)){
-            echo '<a href="http://quickcorrections.com/qc/login3/user/edited_eq/'. $row->request_id .'"><button class="btn btn-primary" type="button">open</button></a>';}
+            if(!empty($row->tutor_revision))
+            {
+            echo '<a href="http://quickcorrections.com/qc/login3/user/edited_pro/'. $row->request_id .'">
+            <button class="btn btn-primary" type="button">open</button></a>';
+            }
             else{ echo 'in progress..';}
             echo '</td><td>';
         } ?>

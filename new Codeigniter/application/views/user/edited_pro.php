@@ -9,7 +9,9 @@
                             <a href="#"><i class=""></i> <b>Services</b><span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level collapse">
                                 
-                               
+                                <li>
+                                    <a href="<?= base_url('/user/sen_correct_student') ?>"><b>Sentence Correction</b></a>
+                                </li>
                                 <li>
                                     <a href="<?= base_url('auth/english_question') ?>"><b>Question about English</b></a>
                                 </li>
@@ -42,54 +44,51 @@
             </div>
             <!-- /.navbar-static-side -->
         </nav>
-
         <!-- Page Content -->
-        <div id= "page-wrapper"class="container-fluid">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <h1 class="page-header text-center" style="font-family:avenir">RATE YOUR TUTOR</h1>
-                    </div>
-                    <!-- /.col-lg-12 -->
+        <div id="page-wrapper">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1 class="page-header text-center" style="font-family:avenir">PRONUNCIATION</h1>
                 </div>
-
-                <div class= "row">
-                    
-                <div class="col-lg-6 col-lg-offset-4">
-                   <div class="rate">
-                        <input type="radio" id="star1" name="rate" value="1" /><label for="star1" title="text">1 star</label>
-                        <input type="radio" id="star2" name="rate" value="2" /><label for="star2" title="text">2 stars</label>
-                        <input type="radio" id="star3" name="rate" value="3" /><label for="star3" title="text">3 stars</label>
-                        <input type="radio" id="star4" name="rate" value="4" /><label for="star4" title="text">4 stars</label> 
-                        <input type="radio" id="star5" name="rate" value="5" /><label for="star5" title="text">5 stars</label>
-                    
-                        
-                        
-                    </div>
-                </div>
-                <div  class="col-lg-8 col-lg-offset-2">
-                       <h4><br/>Feedback</h4>
-                         <textarea class="form-control"  id="text_feedback" rows="2"placeholder="Type feedback..." name="optional" maxlength="750" ></textarea>
-                    <hr/>
-                    <button href="" class="btn btn-danger btn-lg" >Submit</button>
-                </div>
+                <!-- /.col-lg-12 -->
+            </div>
+            <!-- /.row -->
+            <div class="row">
                
-                    
-                                
-                    <!-- /.col-lg-4 -->
-                
-                        
-                
-                    
+                <!-- /.col-lg-6 -->
+               <div class="panel panel-default">
+                     <div class="panel-heading"> Request # <?= $request->request_id; ?></div>
+    <div class="panel-body">
+        <div class="row">
+            <div class="col-md-3">
+                Question 
+            </div>
+            <div class="col-md-9">
+                    <?= $request->text; ?>
+                    <br/>
+                    <img src="http://quickcorrections.com/qc/img/arrow.png">
+            </div>
+            
         </div>
-
-               
-
-
-                
-                <!-- /.row -->
         
-            <!-- /.container-fluid -->
+       
+        <div class="row">
+            <div class="col-md-3">
+                Answer
+            </div>
+                <div class="col-md-9">
+                    <?= $request->tutor_revision; ?>
+                    
+            </div>
+            
+        </div>
         
+        
+                   </div></div>
+                <!-- /.col-lg-6 -->
+            </div>
+            <!-- /.row -->
+        </div>
         <!-- /#page-wrapper -->
 
     </div>
