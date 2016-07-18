@@ -48,60 +48,34 @@
         <div id= "page-wrapper"class="container-fluid">
                 <div class="row">
                     <div class="col-lg-12">
-                        <h1 class="page-header text-center" style="font-family:avenir">PROOFREADING ANSWER</h1>
+                       <h1 class="page-header text-center" style="font-family:avenir">Pronunciation Answer</h1>
                     </div>
-                    <!-- /.col-lg-12 -->
                 </div>
             
-           <?php //echo $error;?> 
-      <?php echo form_open_multipart('upload/do_proofread_answer/'.$req_id);?> 
-		
-      
-                <div class= "row">
-                   
-                    <div class="form-group col-md-8">
-                        
+            <?php //echo $error;?> 
+            <?php echo form_open_multipart('upload/do_pronunciation_answer/'.$req_id);?> 
+            
+            <div class= "row"> 
+                <div class="form-group col-md-8">
+                        <!-- <h4 ><i> <?php echo $error;?> </i></h4>-->
 
-                       <!-- <h4 ><i> <?php echo $error;?> </i></h4>-->
-
-                      
-                        <h4 ><i>Step 1. Prepare your paper with MS Word format.</i></h4>
+                     <iframe src="http://vocaroo.com/?minimal" width="525" height="450" frameborder="0"></iframe><br>Powered by <a href="http://vocaroo.com" title="Voice Recorder">Vocaroo Voice Recorder</a>
+                    
+                        <h4 ><i>Upload the revision</i></h4>
                        
 
                         <div class="panel panel-red">
 
                         <input style="display:inline" type = "file" name = "userfile" size = "20" /> 
                         
-                        </div>
-                        <input class="btn btn-danger " type = "submit" value = "Upload"  /> 
-
-<<<<<<< HEAD
+                        </div> 
                     </div>
                 </div>
-                
-                    <div class="">
-                    <button type="submit" class="btn btn-danger">Submit</button>
-                    </div>
-=======
->>>>>>> c7e9cda19fa2e132a4dccd3f1558413e1da4aa2d
-
-                    <h5 style="color:#918C8C"> 1 word = 1.5 or more points</h5>
-                        
-                         <h4><i><hr/>Step 3. Let us know if you need anything! (e.g. due date etc.)</i></h4>
-                        <textarea class="form-control"  id="text" rows="5"placeholder="Type Sentence here..." name="sentence" maxlength="750" autofocus></textarea>
-                        <h5 style="display:inline; color:#918C8C"> 1 word = free / Limit = 750 words</h5>
-                        <h5 class="pull-right" id="count_message"></h5>
-
-
-                    </br>
-                        <h4 ><i><hr/>Step 4. Great! You done! Please put the submit button!</i></h4>
-
-                         <button href="" class="btn btn-danger">Submit</button>
-                    </div>
-            </form>
+            <textarea class="form-control"  id="text" rows="5"placeholder="Type Sentence here..." name="sentence" maxlength="750" autofocus></textarea>
+            
+            <button href="" class="btn btn-danger">Submit</button>
         </div>
-        </div>
-    </div>
+
 		<?php endif; ?>
 
 
