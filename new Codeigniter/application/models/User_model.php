@@ -182,6 +182,7 @@ class User_model extends CI_Model {
             'text'      => $link,
             'request_date'  => time(),
             'type'      => 'Pronunciation',
+            'req_points'      => 120,
 		);
 		
 		return $this->db->insert('sentence_correct', $data);

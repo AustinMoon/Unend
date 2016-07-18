@@ -888,6 +888,8 @@ class Auth extends CI_Controller {
             $data->request_date= time();
             $data->type='English Question';
             $data->user_id =$user->id;
+            $points=str_word_count($_POST['sentence']);$points *=2;$points+=80;
+            $data->req_points=$points;
             
             $this->db->insert('sentence_correct', $data);
           
