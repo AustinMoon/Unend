@@ -91,12 +91,11 @@ class Tutor extends CI_Controller {
         $words=0;
         if($req->type=='English Question'){$words=str_word_count($req->text)*2.5;}
         else if ($req->type=='Sentence Correction'){$words=str_word_count($req->text)*1.5;}
-        $new_points= $user->points - $words ;
+        $new_points= $user->points - $words;
         $this->db->where('id',$user->id);
         $this->db->set('points', $new_points);
         $this->db->update('users');
-        $message='Hello, tutor responded to your request #'.$_POST['request_id'].'.
-        Answer: '.$TR;
+        $message='Hello, tutor responded to your request #'.$_POST['request_id'].'.Answer: '.$TR;
         mail($user->email, 'QuickCorrections: Your Request # '.$_POST['request_id'].' is Finished', $message);
 
        {
@@ -127,10 +126,9 @@ class Tutor extends CI_Controller {
         $this->db->set('points', $new_points);
         $this->db->update('users');
         
-        $message='Hello, tutor responded to your request #'.$_POST['request_id'].'.
-        Answer: '.$TR;
+        $message='Hello, tutor responded to your request #'.$_POST['request_id'].'.Answer: '.$TR;
         mail($user->email, 'QuickCorrections: Your Request # '.$_POST['request_id'].' is Finished', $message);
-        mail($user->email, 'New pronunciation', 'http://quickcorrections.com/qc/login3/tutor/'. $a .'/'. $row->request_id);
+        mail($user->email, 'New pronunciation', 'http://quickcorrections.com/qc/login3/tutor/'. $TR .'/'. $row->request_id);
 
         {
             $data = new stdClass();
@@ -144,14 +142,9 @@ class Tutor extends CI_Controller {
         
     }
     
-<<<<<<< HEAD
-=======
-        
-    }
-   
     
->>>>>>> 241066e9d374d9d7776ec404b40c8cc65efa6fea
-    function tutor_english_question($request_id){
+   
+function tutor_english_question($request_id){
         if (!$this->ion_auth->logged_in() || !$this->ion_auth->in_group(4))
 		{
 			// redirect them to the login page
@@ -191,30 +184,7 @@ class Tutor extends CI_Controller {
         $this->load->view('html/footer'); 
         }
     }
-    
-<<<<<<< HEAD
-    function tutor_pronunciation($request_id){
-        
-        if (!$this->ion_auth->logged_in() || !$this->ion_auth->in_group(4))
-        {
-			// redirect them to the login page
-			redirect('auth/login', 'refresh');
-		}
-        if($this->tutor_model->role_exists($request_id)){
-        $data = new stdClass();
-        $user = $this->ion_auth->user()->row();
-        $data->points= $user->points;
-        $this->load->view('html/header',$data);
-        $this->load->model('tutor_model');
-        $data->request = $this->tutor_model->get_request_info($request_id)->row();
-        $this->load->view('tutor/tutor_pronunciation', $data);
-        $this->load->view('html/footer'); 
-        }
-    }
-    
-=======
->>>>>>> 241066e9d374d9d7776ec404b40c8cc65efa6fea
-    
+      
     function tutor_submit(){
         
 
@@ -265,9 +235,5 @@ class Tutor extends CI_Controller {
         $this->load->view('html/header',$data);
         $this->load->view('tutor/tutor_history',$data);
         $this->load->view('html/footer'); 
-<<<<<<< HEAD
-
-=======
->>>>>>> 241066e9d374d9d7776ec404b40c8cc65efa6fea
     }
 }
