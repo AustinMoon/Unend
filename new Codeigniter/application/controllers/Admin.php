@@ -86,12 +86,14 @@ class Admin extends CI_Controller {
         $this->load->view('admin/admin_page',$data);
         $this->load->view('html/footer.html');
     }
+    
     function proofread_answer($request_id){
         if (!$this->ion_auth->logged_in())
 		{
 			//redirect them to the login page
 			redirect('auth/login', 'refresh');
 		}
+        
         $user = $this->ion_auth->user()->row();
         if ($user->points <=20){
             redirect('user/pay', 'refresh');
@@ -119,13 +121,13 @@ class Admin extends CI_Controller {
         
     else
         {
-        	 $data = new stdClass();
-	        $user = $this->ion_auth->user()->row();
-	        $data->points= $user->points;
-            $data->req_id=$request_id;
-            $this->load->view('html/header', $data);
-            $this->load->view('admin/proofread_answer', $data);
-            $this->load->view('html/footer.html');
+        $data = new stdClass();
+        $user = $this->ion_auth->user()->row();
+        $data->points= $user->points;
+        $data->req_id=$request_id;
+        $this->load->view('html/header', $data);
+        $this->load->view('admin/proofread_answer', $data);
+        $this->load->view('html/footer.html');
         } 
         
     }

@@ -25,11 +25,10 @@
                     <div class="col-lg-12">
                         <h1 class="page-header text-center">Pronunciation</h1>
                     </div>
-                    <!-- /.col-lg-12 -->
                 </div>
                 <div class= "row">
                     <div class="form-group col-md-8">
-                        <form action = "../add_revision" method = "POST">
+      <?php echo form_open_multipart('upload/do_pronunciation_answer/'.$req_id);?> 
                             
                             <label><p><h2>Student's pronunciation &nbsp; <button>download</button></h2></p></label>
                         <label><p><h2>Tutor's Answer:</h2></p></label>
