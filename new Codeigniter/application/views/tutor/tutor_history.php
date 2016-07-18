@@ -100,9 +100,9 @@ function humanTiming ($time)
             echo '</td><td>';
             echo $row->type;
             echo '</td><td>';
-            echo str_word_count($row->text)/2;
+            echo $row->req_points/2;
             echo '</td></tr>';
-            $total_points += str_word_count($row->text);
+            $total_points += $row->req_points;
        
 }?>
              </tbody></table>
