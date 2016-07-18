@@ -123,7 +123,7 @@ class Admin extends CI_Controller {
 	        $user = $this->ion_auth->user()->row();
 	        $data->points= $user->points;
             $this->load->view('html/header', $data);
-            $this->load->view('proofread/proofread');
+            $this->load->view('admin/proofread_answer');
             $this->load->view('html/footer.html');
         } 
         
