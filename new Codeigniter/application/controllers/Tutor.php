@@ -88,9 +88,10 @@ class Tutor extends CI_Controller {
         
         $req=$this->tutor_model->get_request_info($_POST['request_id'])->row();
         $user = $this->ion_auth->user($req->user_id)->row();
-        $words=str_word_count($req->text);
-        $words =$words* 1.5;
-        $new_points= $user->points -$words ;
+        $words=0;
+        if($req->type=='English Question'){$words=str_word_count($req->text)*2.5;}
+        else if ($req->type=='Sentence Correction'){$words=str_word_count($req->text)*1.5;}
+        $new_points= $user->points - $words ;
         $this->db->where('id',$user->id);
         $this->db->set('points', $new_points);
         $this->db->update('users');
@@ -153,6 +154,7 @@ class Tutor extends CI_Controller {
 			// redirect them to the login page
 			redirect('auth/login', 'refresh');
 		}
+<<<<<<< HEAD
         if($this->tutor_model->role_exists($request_id))
         {
             {
@@ -165,6 +167,17 @@ class Tutor extends CI_Controller {
             $data->request = $this->tutor_model->get_request_info($request_id)->row();
             $this->load->view('tutor/tutor_english_q',$data);
             $this->load->view('html/footer'); 
+=======
+        if($this->tutor_model->role_exists($request_id)){
+        $data = new stdClass();
+            $user = $this->ion_auth->user()->row();
+            $data->points= $user->points;
+            $this->load->view('html/header',$data);
+        $this->load->model('tutor_model');
+        $data->request = $this->tutor_model->get_request_info($request_id)->row();
+        $this->load->view('tutor/tutor_english_q',$data);
+        $this->load->view('html/footer'); 
+>>>>>>> 78beb89ac73b8d6388e386743c66e825c2b42b96
         }
     }
     
