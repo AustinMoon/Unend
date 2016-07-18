@@ -56,22 +56,22 @@
                     <div class="form-group col-sm-12">
                     <div class="col-sm-8" style="position:relative">
                         <h4 ><i>Step 1. Type your sentence(s) below (limit = 750)</i></h4>
-                        <textarea class="form-control"  id="text" rows="5"placeholder="Type Sentence here..." name="sentence" maxlength="750" autofocus></textarea>
+                        <textarea class="form-control"  id="word_count" rows="5"placeholder="Type Sentence here..." name="sentence" maxlength="750" autofocus></textarea>
                         
 
                         
                         <h5 style="display:inline; color:#918C8C" >1 word = 1.5 point / Limit = 750 characters</h5>
-                         <h5 class="pull-right" id="count_message"></h5>
+                         <h5 class="pull-right" >Total word count: <span id="display_count">0</span></h5>
+
                     
                 
                         
                         <h4 ><i><hr/>Step 2. Let us know if you need anything! (optional)</i></h4>
 
 <!-- <div id="textarea_feedback"></div>-->
-                        <textarea class="form-control"  id="text_feedback" rows="2"placeholder="Type Sentence here..." name="optional" maxlength="750" ></textarea>
+                        <textarea class="form-control"  id="c" rows="2"placeholder="Type Sentence here..." name="optional" maxlength="750" ></textarea>
                         
-                        <h5 style="display:inline;color:#918C8C"> 1 word = 1 point / Limit = 750 characters</h5>
-                        <h5 class="pull-right" id="textarea_feedback"></h5>
+                      
 
                         
                     </div>
@@ -139,21 +139,38 @@
 
 </html>
 <script>
-var text_max = 750;
-$('#count_message').html(text_max + ' /750');
-$('#text').keyup(function() {
-  var text_length = $('#text').val().length;
-  var text_remaining = text_max - text_length;
-  
-  $('#count_message').html(text_remaining + ' /750');
+$(document).ready(function() {
+  $("#word_count").on('keyup', function() {
+    var text = this.value;
+    var regex = [/DAV/g, /MAC/g];
+
+    function countWords() {
+      var count = [];
+      regex.forEach(function(reg) {
+        var m = text.match(reg);
+
+        if (m) {
+          count = count.concat(m);
+        }
+      });
+      var acronyms = count.length;
+      var wordsFromAcronyms = count.join().replace(/,/g,'').length;
+      var rawWords = text.match(/\S+/g).length;
+      
+      return rawWords - acronyms + wordsFromAcronyms;
+    }
+
+
+    var words = countWords();
+    if (words > 200) {
+      // Split the string on first 200 words and rejoin on spaces
+      var trimmed = $(this).val().split(/\s+/, 200).join(" ");
+      // Add a space at the end to keep new typing making new words
+      $(this).val(trimmed + " ");
+    } else {
+      $('#display_count').text(words);
+      $('#word_left').text(200 - words);
+    }
+  });
 });
-</script>
-<script>
-var text_max = 750;
-$('#textarea_feedback').html(text_max + '/750');
-    $('#text_feedback').keyup(function() {
-        var text_length = $('#text_feedback').val().length;
-        var text_remaining = text_max - text_length;
-        $('#textarea_feedback').html(text_remaining + ' /750');
-    });
 </script>

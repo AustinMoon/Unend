@@ -73,7 +73,7 @@ function humanTiming ($time)
         <th>Request ID</th>
         <th>TEXT</th>
         <th>User</th>
-        <th>Request Date</th>
+        <th>Answer Date</th>
         <th>Request Type</th>
         <th>Points Earned</th>
         
@@ -96,7 +96,7 @@ function humanTiming ($time)
             $user = $this->ion_auth->user($row->user_id)->row();
             echo $user->email;
             echo '</td><td>';
-            echo humanTiming($row->request_date). ' ago';
+            echo date('m/d/Y', $row->revision_finish_date);
             echo '</td><td>';
             echo $row->type;
             echo '</td><td>';

@@ -90,7 +90,7 @@
             $user = $this->ion_auth->user($row->user_id)->row();
             echo $user->email;
             echo '</td><td>';
-            echo $row->request_date;
+            echo date('m/d/Y', $row->request_date);
             echo '</td><td>';
             if(!empty($row->tutor_revision)){
             echo '<a href="http://quickcorrections.com/qc/login3/user/edited_request/'. $row->request_id .'"><button class="btn btn-primary" type="button">open</button></a>';}
@@ -134,7 +134,7 @@
             $user = $this->ion_auth->user($row->user_id)->row();
             echo $user->email;
             echo '</td><td>';
-            echo $row->request_date;
+            echo date('m/d/Y', $row->request_date);
             echo '</td><td>';
             if(!empty($row->tutor_revision)){
             echo '<a href="http://quickcorrections.com/qc/login3/user/edited_eq/'. $row->request_id .'"><button class="btn btn-primary" type="button">open</button></a>';}
@@ -173,7 +173,7 @@
             $user = $this->ion_auth->user($row->user_id)->row();
             echo $user->email;
             echo '</td><td>';
-            echo $row->request_date;
+            echo date('m/d/Y', $row->request_date);
             echo '</td><td>';
             if(!empty($row->tutor_revision))
             {
@@ -217,7 +217,7 @@
             $user = $this->ion_auth->user($row->user_id)->row();
             echo $user->email;
             echo '</td><td>';
-            echo $row->request_date;
+            echo date('m/d/Y', $row->request_date);
             echo '</td><td>';
             if(!empty($row->tutor_revision)){
             echo '<a href="http://quickcorrections.com/qc/login3/user/edited_proof/'. $row->request_id .'"><button class="btn btn-primary" type="button">open</button></a>';}
