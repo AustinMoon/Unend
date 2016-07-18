@@ -123,10 +123,12 @@ class User extends CI_Controller {
         
     }
     public function edited_eq($request_id){
-        {$data = new stdClass();
+        {
+            $data = new stdClass();
             $user = $this->ion_auth->user()->row();
             $data->points= $user->points;
-            $this->load->view('html/header',$data);}
+            $this->load->view('html/header',$data);
+        }
         $this->load->model('tutor_model');
         $data = new stdClass();
         $data->request = $this->tutor_model->get_request_info($request_id)->row();
@@ -134,6 +136,38 @@ class User extends CI_Controller {
         $this->load->view('html/footer.html');
         
     }
+    
+    public function edited_pro($request_id){
+        {
+            $data = new stdClass();
+            $user = $this->ion_auth->user()->row();
+            $data->points= $user->points;
+            $this->load->view('html/header',$data);
+        }
+        $this->load->model('tutor_model');
+        $data = new stdClass();
+        $data->request = $this->tutor_model->get_request_info($request_id)->row();
+        $this->load->view('user/edited_pro',$data);
+        $this->load->view('html/footer.html');
+        
+    }
+    
+     public function edited_proof($request_id){
+        {
+            $data = new stdClass();
+            $user = $this->ion_auth->user()->row();
+            $data->points= $user->points;
+            $this->load->view('html/header',$data);
+        }
+        $this->load->model('tutor_model');
+        $data = new stdClass();
+        $data->request = $this->tutor_model->get_request_info($request_id)->row();
+        $this->load->view('user/edited_proof',$data);
+        $this->load->view('html/footer.html');
+        
+    }
+    
+    
     
     
    // public function payment(){$this->load->view('user/payment/payment_page');}
@@ -238,6 +272,8 @@ class User extends CI_Controller {
             $data->type='Sentence Correction';
             $data->request_date= time();
             $data->text=$_POST['sentence'];
+            $points=str_word_count($_POST['sentence']);
+            $data->req_points=$points *1.5;
             $data->additional=$_POST['optional'];
             $this->db->insert('sentence_correct', $data);
             $data->user_id =$user->id;
