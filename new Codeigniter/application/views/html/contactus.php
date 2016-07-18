@@ -1,40 +1,23 @@
-<?php
-    if (isset($_POST["submit"])) {
-        $name = $_POST['name'];
-        $email = $_POST['email'];
-        $message = $_POST['message'];
-        $human = intval($_POST['human']);
-        $from = 'Demo Contact Form'; 
-        $to = 'example@domain.com'; 
-        $subject = 'Message from Contact Demo ';
-        
-        $body ="From: $name\n E-Mail: $email\n Message:\n $message";
-        // Check if name has been entered
-        if (!$_POST['name']) {
-            $errName = 'Please enter your name';
-        }
-        
-        // Check if email has been entered and is valid
-        if (!$_POST['email'] || !filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
-            $errEmail = 'Please enter a valid email address';
-        }
-        
-        //Check if message has been entered
-        if (!$_POST['message']) {
-            $errMessage = 'Please enter your message';
-        }
-        //Check if simple anti-bot test is correct
-        
-// If there are no errors, send the email
-if (!$errName && !$errEmail && !$errMessage && !$errHuman) {
-    if (mail ($to, $subject, $body, $from)) {
-        $result='<div class="alert alert-success">Thank You! I will be in touch</div>';
-    } else {
-        $result='<div class="alert alert-danger">Sorry there was an error sending your message. Please try again later.</div>';
-    }
-}
+<?php 
+if(isset($_POST['submit'])){
+    $to = "byungilmoon90@gmail.com"; // this is your Email address
+    $from = $_POST['email']; // this is the sender's Email address
+    $first_name = $_POST['first_name'];
+    $last_name = $_POST['last_name'];
+    $subject = "Form submission";
+    $subject2 = "Copy of your form submission";
+    $message = $first_name . " " . $last_name . " wrote the following:" . "\n\n" . $_POST['message'];
+    $message2 = "Here is a copy of your message " . $first_name . "\n\n" . $_POST['message'];
+
+    $headers = "From:" . $from;
+    $headers2 = "From:" . $to;
+    mail($to,$subject,$message,$headers);
+    mail($from,$subject2,$message2,$headers2); // sends a copy of the message to the sender
+    echo "Mail Sent. Thank you " . $first_name . ", we will contact you shortly.";
+    // You can also use header('Location: thank_you.php'); to redirect to another page.
     }
 ?>
+
         <!-- Page Content -->
 
  <div class="container-fluid">
@@ -45,42 +28,22 @@ if (!$errName && !$errEmail && !$errMessage && !$errHuman) {
         </div>
     </div>
     <div class="row" >
-        <form class="form-horizontal" role="form" method="post" action="contactus.php">
-            <div class="col-sm-12 text-center">   
-                    <div class="form-group">
-                      <label for="name" class="col-sm-4 control-label">Name</label>
-                        <div class="col-sm-4">
-                            <input type="text" class="form-control" id="name" name="name" placeholder="First & Last Name" value="">
-                        </div>
-                    </div>
-                    <div class="form-group">
+        
 
-                        <label for="email" class="col-sm-4 control-label">Email</label>
-                        <div class="col-sm-4">
-                            
-                            <input type="email" class="form-control" id="email" name="email" placeholder="example@domain.com" value="">
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label for="message" class="col-sm-4 control-label">Message</label>
-                        <div class="col-sm-4">
-                            <textarea class="form-control" rows="4" name="message"></textarea>
-                        </div>
-                    </div>
-                    
-                    <div class="form-group">
-                        <div class="col-sm-9">
-                            <input id="submit" name="submit" type="submit" value="Send" class="btn btn-danger">
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <div class="col-sm-10 col-sm-offset-2">
-                            <! Will be used to display an alert to the user>
-                        </div>  
-                    </div>
-                
+        <form action="" method="post" class="form-horizontal">
+            <div class="col-sm-12">   
+            <div class="col-sm-6 col-sm-offset-3">
+
+                First Name: <input class="form-control" type="text" name="first_name"><br>
+                Last Name: <input class="form-control" type="text" name="last_name"><br>
+                Email: <input class="form-control" type="text" name="email"><br>
+                Message:<br><textarea class="form-control" rows="5" name="message" cols="30"></textarea><br>
+            <input class="btn btn-danger" type="submit" name="submit" value="Submit">
+            </div>
             </div>
         </form>
+
+    </div>
 
     </div>
 </div>
