@@ -1,71 +1,101 @@
-<nav>
-<div class="navbar-default sidebar" role="navigation">
+
+
+      
+       <div class="navbar-default sidebar" role="navigation">
                 <div class="sidebar-nav navbar-collapse">
                     <ul class="nav" id="side-menu">
+                        
                         <li>
-                            <a href="#"><i class=""></i> <b>Tutor Page</b></a>
+                            <a href="#"><i class=""></i> <b>Services</b><span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level collapse">
+                                
+                                <li>
+                                    <a href="<?= base_url('/user/sen_correct_student') ?>"><b>Sentence Correction</b></a>
+                                </li>
+                                <li>
+                                    <a href="<?= base_url('auth/english_question') ?>"><b>Question about English</b></a>
+                                </li>
+                                <li>
+                                    <a href="http://quickcorrections.com/qc/login3/auth/pronunciation"><b>Pronunciation</b></a>
+                                </li>
+                               
+                               
+                            </ul>
+                            <!-- /.nav-second-level -->
                         </li>
+                       
                         <li>
-                            <a href="http://quickcorrections.com/qc/login3/tutor/tutor_history"><i class=""></i> <b>Tutor History</b></a>
+                            <a href="http://quickcorrections.com/qc/login3/user/setting"><i class=""></i> <b>Password</b></a>
+                            
                             <!-- /.nav-second-level -->
                         </li>
                         <li>
-                            <a href="http://quickcorrections.com/qc/login3/tutor/setting"><i class=""></i> <b>Password</b></a>
-                            <!-- /.nav-second-level -->
-                        </li>                    
+                            <a href="http://quickcorrections.com/qc/login3/user/userpage"><i class=""></i> <b>Your Answer</b></a>
+                        </li>
+                        <li>
+                            <a href="http://quickcorrections.com/qc/login3/user/payment"><i class=""></i><b> Buy Point</b></a>
+                        </li>
+                    
                     </ul>
                 </div>
                 <!-- /.sidebar-collapse -->
             </div>
             <!-- /.navbar-static-side -->
         </nav>
-        <!-- Page Content -->
-       <div id= "page-wrapper"class="container-fluid">
+	<main id="site-content" role="main">
+        <?php if (isset($_SESSION)) : ?>
+
+        <div id= "page-wrapper"class="container-fluid">
                 <div class="row">
                     <div class="col-lg-12">
-                        <h1 class="page-header text-center">Pronunciation</h1>
+                        <h1 class="page-header text-center" style="font-family:avenir">PROOFREADING ANSWER</h1>
                     </div>
+                    <!-- /.col-lg-12 -->
                 </div>
+            
+           <?php //echo $error;?> 
+      <?php echo form_open_multipart('upload/do_proofread_answer/'.$req_id);?> 
+		
+      
                 <div class= "row">
+                   
                     <div class="form-group col-md-8">
-      <?php echo form_open_multipart('upload/do_pronunciation_answer/'.$req_id);?> 
-                            
-                            <label><p><h2>Student's pronunciation &nbsp; <button>download</button></h2></p></label>
-                        <label><p><h2>Tutor's Answer:</h2></p></label>
                         
-                    <iframe src="http://vocaroo.com/?minimal" width="525" height="450" frameborder="0"></iframe><br>Powered by <a href="http://vocaroo.com" title="Voice Recorder">Vocaroo Voice Recorder</a>
-                    
-                    <div class="panel panel-red">
-                           <input name="tutor_revision" type = "file" name = "userfile" size = "20" />
+
+                       <!-- <h4 ><i> <?php echo $error;?> </i></h4>-->
+
+                      
+                        <h4 ><i>Step 1. Prepare your paper with MS Word format.</i></h4>
+                       
+
+                        <div class="panel panel-red">
+
+                        <input style="display:inline" type = "file" name = "userfile" size = "20" /> 
                         
-                    </div>     
-                        <textarea name="tutor_revision" class="form-control" rows="5" autofocus></textarea>
-                    <input type="hidden" name="request_id" value="<?= $request->request_id; ?>"/>
+                        </div>
+                        <input class="btn btn-danger " type = "submit" value = "Upload"  /> 
 
+
+                    <h5 style="color:#918C8C"> 1 word = 1.5 or more points</h5>
+                        
+                         <h4><i><hr/>Step 3. Let us know if you need anything! (e.g. due date etc.)</i></h4>
+                        <textarea class="form-control"  id="text" rows="5"placeholder="Type Sentence here..." name="sentence" maxlength="750" autofocus></textarea>
+                        <h5 style="display:inline; color:#918C8C"> 1 word = free / Limit = 750 words</h5>
+                        <h5 class="pull-right" id="count_message"></h5>
+
+
+                    </br>
+                        <h4 ><i><hr/>Step 4. Great! You done! Please put the submit button!</i></h4>
+
+                         <button href="" class="btn btn-danger">Submit</button>
                     </div>
-                </div>
-                
-                    <div class="">
-                    <button type="submit" class="btn btn-danger">Submit</button>
-                    </div></form>
-
-                </div>
-                <!--
-                <div class= "row">
-                    <div class="form-group col-md-8">
-                          <form action = "../add_revision" method = "POST">
-                        <label><h2>Student Comments</h2></label>
-                        <textarea name="tutor_revision" class="form-control" rows="5" autofocus disabled><?= $request->additional; ?></textarea>
-                        <input type="hidden" name="request_id" value="<?= $request->request_id; ?>">
-
-                    </div>
-                </div>
-                -->
-        </div>        
-
+            </form>
+        </div>
+        </div>
     </div>
+		<?php endif; ?>
 
-    <!-- jQuery -->
+
     <script src="../css/bower_components/jquery/dist/jquery.min.js"></script>
 
     <!-- Bootstrap Core JavaScript -->
@@ -80,3 +110,13 @@
 </body>
 
 </html>
+<script>
+var text_max = 750;
+$('#count_message').html(text_max + ' /750');
+$('#text').keyup(function() {
+  var text_length = $('#text').val().length;
+  var text_remaining = text_max - text_length;
+  
+  $('#count_message').html(text_remaining + ' /750');
+});
+</script>
