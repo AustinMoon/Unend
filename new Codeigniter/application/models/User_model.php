@@ -199,5 +199,19 @@ class User_model extends CI_Model {
         $this->db->update('sentence_correct');
     }
     
+    function proof_requests($user_id){
+        $this->db->where('user_id',$user_id);
+        $this->db->where('type','Proofread');
+        $query = $this->db->get('sentence_correct');
+        return $query;
+    }
+    
+    function pronoun_requests($user_id){
+        $this->db->where('user_id',$user_id);
+        $this->db->where('type','Pronunciation');
+        $query = $this->db->get('sentence_correct');
+        return $query;
+    }
+    
 	
 }
