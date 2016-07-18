@@ -41,7 +41,7 @@
                 </div>
             
            <?php //echo $error;?> 
-      <?php echo form_open_multipart('upload/do_proofread_answer');?> 
+      <?php echo form_open_multipart('upload/do_proofread_answer/'.$req_id);?> 
 		
       
                 <div class= "row">
