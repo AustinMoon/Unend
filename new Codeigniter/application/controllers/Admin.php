@@ -122,8 +122,9 @@ class Admin extends CI_Controller {
         	 $data = new stdClass();
 	        $user = $this->ion_auth->user()->row();
 	        $data->points= $user->points;
+            $data->req_id=$request_id;
             $this->load->view('html/header', $data);
-            $this->load->view('admin/proofread_answer');
+            $this->load->view('admin/proofread_answer', $data);
             $this->load->view('html/footer.html');
         } 
         
