@@ -184,6 +184,7 @@ class Tutor extends CI_Controller {
         $this->load->view('html/header',$data);
         $this->load->model('tutor_model');
         $data->request = $this->tutor_model->get_request_info($request_id)->row();
+        $data->req_id = $request_id;
         $this->load->view('tutor/tutor_pronunciation', $data);
         $this->load->view('html/footer'); 
         }
