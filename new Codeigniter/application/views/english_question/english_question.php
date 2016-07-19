@@ -59,13 +59,13 @@
                     <div class="form-group col-md-8">
 
                         
-                        <h4 ><i>Step 1. Do you have any questions about using English in your daily lives? If so, type yourquestion below.</h4>
+                        <h4 ><i>Step 1. Do you have any questions about using English in your daily lives? If so, type your question below.</h4>
                         <h5>(Please don&#39;t forget! We only answer questions about using English in your daily lives. Additionally, we are not responsible for our responses. This is only for your reference.)<br/></i></h5>
                         
-                        <textarea class="form-control"  id="text" rows="5"placeholder="Type Your Question..." name="sentence" maxlength="750" autofocus></textarea>
+                        <textarea class="form-control"  id="word_count" rows="5"placeholder="Type Your Question..." name="sentence" maxlength="750" autofocus></textarea>
 
-                        <h5 style="display:inline; color:#918C8C">80 point + 1 word = 2 point / Limit = 750 words</h5>
-                        <h5 class="pull-right" id="count_message"></h5>
+                        <h5 style="display:inline; color:#918C8C">Basic Service Charge 80 points + 1 word with 2 point</h5>
+                        <h5 class="pull-right" >Total word count: <span id="display_count">0</span></h5>
 
                     </div>
                 </div>
@@ -112,12 +112,38 @@
 
 </html>
 <script>
-var text_max = 750;
-$('#count_message').html(text_max + ' /750');
-$('#text').keyup(function() {
-  var text_length = $('#text').val().length;
-  var text_remaining = text_max - text_length;
-  
-  $('#count_message').html(text_remaining + ' /750');
+$(document).ready(function() {
+  $("#word_count").on('keyup', function() {
+    var text = this.value;
+    var regex = [/DAV/g, /MAC/g];
+
+    function countWords() {
+      var count = [];
+      regex.forEach(function(reg) {
+        var m = text.match(reg);
+
+        if (m) {
+          count = count.concat(m);
+        }
+      });
+      var acronyms = count.length;
+      var wordsFromAcronyms = count.join().replace(/,/g,'').length;
+      var rawWords = text.match(/\S+/g).length;
+      
+      return rawWords - acronyms + wordsFromAcronyms;
+    }
+
+
+    var words = countWords();
+    if (words > 200) {
+      // Split the string on first 200 words and rejoin on spaces
+      var trimmed = $(this).val().split(/\s+/, 200).join(" ");
+      // Add a space at the end to keep new typing making new words
+      $(this).val(trimmed + " ");
+    } else {
+      $('#display_count').text(words);
+      $('#word_left').text(200 - words);
+    }
+  });
 });
 </script>

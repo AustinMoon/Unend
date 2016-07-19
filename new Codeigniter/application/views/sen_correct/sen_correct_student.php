@@ -55,12 +55,12 @@
                 <div class= "row">
                     <div class="form-group col-sm-12">
                     <div class="col-sm-8" style="position:relative">
-                        <h4 ><i>Step 1. Type your sentence(s) below (limit = 750)</i></h4>
+                        <h4 ><i>Step 1. Type your sentence(s) below </i></h4>
                         <textarea class="form-control"  id="word_count" rows="5"placeholder="Type Sentence here..." name="sentence" maxlength="750" autofocus></textarea>
                         
 
                         
-                        <h5 style="display:inline; color:#918C8C" >1 word = 1.5 point / Limit = 750 characters</h5>
+                        <h5 style="display:inline; color:#918C8C" >1 word = 1.5 point</h5>
                          <h5 class="pull-right" >Total word count: <span id="display_count">0</span></h5>
 
                     

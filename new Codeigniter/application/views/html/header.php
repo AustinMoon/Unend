@@ -78,7 +78,7 @@
                         </li>
 
                         <div clas="row">
-                      	<h5 style="float:right; padding-right:30px; color:#E6858F">Welcome! Your Point : <?=$points ?></h5>
+                      	<h5 style="float:right; padding-right:30px; color:#E6858F">Welcome! Your Points : <?=$points ?></h5>
                       	</div>
 
                        
