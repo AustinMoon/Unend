@@ -578,6 +578,7 @@ class Auth extends CI_Controller {
 		$this->form_validation->set_rules('last_name', $this->lang->line('edit_user_validation_lname_label'), 'required');
 		$this->form_validation->set_rules('phone', $this->lang->line('edit_user_validation_phone_label'));
 		$this->form_validation->set_rules('company', $this->lang->line('edit_user_validation_company_label'));
+        $this->form_validation->set_rules('points','Points can not be less than 0','is_natural');
 
 		if (isset($_POST) && !empty($_POST))
 		{
@@ -601,6 +602,7 @@ class Auth extends CI_Controller {
 					'last_name'  => $this->input->post('last_name'),
 					'company'    => $this->input->post('company'),
 					'phone'      => $this->input->post('phone'),
+                    'points'      => $this->input->post('points'),
 				);
 
 				// update the password if it was posted
@@ -695,6 +697,12 @@ class Auth extends CI_Controller {
 			'id'    => 'phone',
 			'type'  => 'text',
 			'value' => $this->form_validation->set_value('phone', $user->phone),
+		);
+        $this->data['points'] = array(
+			'name'  => 'points',
+			'id'    => 'points',
+			'type'  => 'text',
+			'value' => $this->form_validation->set_value('points', $user->points),
 		);
 		$this->data['password'] = array(
 			'name' => 'password',

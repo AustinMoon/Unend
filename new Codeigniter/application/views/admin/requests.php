@@ -84,6 +84,7 @@ function humanTiming ($time)
        
 }?>
              </tbody></table>
+       <?=  $this->pagination->create_links(); ?>
                     </div>
                     </div>
             </div>
