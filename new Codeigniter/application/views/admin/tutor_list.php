@@ -1,9 +1,8 @@
-<!DOCTYPE html>
 <?php
 
 function humanTiming ($time)
 {
-    date_default_timezone_set("America/New_York");
+
     $time = time() - $time; // to get the time since that moment
     $time = ($time<1)? 1 : $time;
     $tokens = array (
@@ -23,13 +22,41 @@ function humanTiming ($time)
     }
 
 }
- ?>
+?>
+<?php date_default_timezone_set("America/New_York"); ?>
+ <div class="navbar-default sidebar" role="navigation">
+                <div class="sidebar-nav navbar-collapse">
+                    <ul class="nav" id="side-menu">
+                        <li>
+                            <a href="http://quickcorrections.com/qc/login3/tutor/"><i class=""></i> <b>Tutor Page</b></a>
+                        </li>
+                        
+                        <li>
+                            <a href="http://quickcorrections.com/qc/login3/tutor/tutor_history"><i class=""></i> <b>Tutor History</b></a>
+                            
+                            <!-- /.nav-second-level -->
+                        </li>
+                        <li>
+                            <a href="http://quickcorrections.com/qc/login3/tutor/setting"><i class=""></i> <b>Password</b></a>
+                            
+                            <!-- /.nav-second-level -->
+                        </li>
+                        
+                        
+                    
+                    </ul>
+                </div>
+                <!-- /.sidebar-collapse -->
+            </div>
+            <!-- /.navbar-static-side -->
+        </nav>
+
 
         <!-- Page Content -->
         <div id="page-wrapper">
             <div class="row">
                 <div class="col-lg-12">
-                    <h1 class="page-header text-center" style="font-family:avenir">Requests List</h1>
+                    <h1 class="page-header text-center" style="font-family:avenir">TUTOR HISTORY</h1>
                 </div>
                 
                 <!-- /.col-lg-12 -->
@@ -38,7 +65,7 @@ function humanTiming ($time)
             <div class="row">
                
                 <div class="panel panel-default">
-                     <div class="panel-heading">List of Requests</div>
+                     <div class="panel-heading">Previous Requests</div>
     <div class="panel-body">
         <table class="table table-hover">
     <thead>
@@ -46,50 +73,45 @@ function humanTiming ($time)
         <th>Request ID</th>
         <th>TEXT</th>
         <th>User</th>
-        <th>Is Assigned To Tutor?</th>
-        <th>Assigned Tutor</th>
-        <th> Time Since Assigned</th>
-        <th>Action</th>
+        <th>Answer Date</th>
+        <th>Request Type</th>
+        <th>Points Earned</th>
         
       </tr>
     </thead>
     <tbody>
         <?php 
-        
-        foreach ($all_requests->result() as $row)
+        $total_points=0;
+        foreach ($content->result() as $row)
 {
             echo '<tr>';
             echo '<td>';
             echo $row->request_id;
             echo '</td><td>';
+            if($row->type=='Pronunciation'){echo'<a href="http://quickcorrections.com/qc/login3/uploads/'.$row->text.'" download>click here to download</a>';}
+            else{
             if(strlen($row->text)>10){echo substr($row->text, 0, 10).'...';}
-            else {echo $row->text;}
+            else {echo $row->text;}}
             echo '</td><td>';
             $user = $this->ion_auth->user($row->user_id)->row();
             echo $user->email;
             echo '</td><td>';
-            echo ($row->is_assigned==1)?'Yes':'No';
+            echo date('m/d/Y', $row->revision_finish_date);
             echo '</td><td>';
-            if(!empty($row->tutor_id))
-            {$user = $this->ion_auth->user($row->tutor_id)->row();
-            echo $user->email;}
-            else{
-            echo 'Not Assigned Yet';}
+            echo $row->type;
             echo '</td><td>';
-            if ($row->assign_date >0){
-            echo humanTiming($row->assign_date). ' ago';}
-            else { echo '---';}
-            echo '</td><td>';
-            echo '<a href="send_email/'.$row->request_id .'"><button type="submit" class="btn btn-danger" value="Send Email">Send Email</button></a>';
+            echo $row->req_points/2;
             echo '</td></tr>';
+            $total_points += $row->req_points;
        
 }?>
              </tbody></table>
-       <?=  $this->pagination->create_links(); ?>
                     </div>
                     </div>
+                Total Points Earned: <?= $total_points/2 ?>
             </div>
             <!-- /.row -->
+           
         </div>
         <!-- /#page-wrapper -->
 

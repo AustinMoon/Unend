@@ -94,6 +94,12 @@ class Tutor_model extends CI_Model {
         $query = $this->db->get('sentence_correct');
         return $query;
     }
+    function tutor_list(){
+        $this->db->where('users_groups.group_id', '4');
+        $this->db->where('users_groups.user_id','users.id');
+        $query=$this->db->get(array('users_groups','users'));
+        return $query;
+    }
     
 }
 	
