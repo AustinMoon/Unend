@@ -95,7 +95,8 @@ class Tutor extends CI_Controller {
         $this->db->where('id',$user->id);
         $this->db->set('points', $new_points);
         $this->db->update('users');
-        $message='Hello, tutor responded to your request #'.$_POST['request_id'].'.
+        $message='
+        Hello, tutor responded to your request #'.$_POST['request_id'].'.
         Answer: '.$TR;
         mail($user->email, 'QuickCorrections: Your Request # '.$_POST['request_id'].' is Finished', $message);
 
