@@ -83,9 +83,13 @@ class Tutor_model extends CI_Model {
             
         }
        substr($email, 0, -1);
-        $subject='QuickCorrections: Test email';
-        $message='This is test email, sorry.';
-        //mail($email, $subject, $message);
+        $subject='QuickCorrections: You got new request';
+        $message='
+        You have received a new request! 
+        Please Click http://quickcorrections.com/qc/login3/tutor/
+
+        Thank you so much!';
+        mail($email, $subject, $message);
     }
     function get_tutor_history($tutor_id){
         $this->db->where('tutor_id', $tutor_id);

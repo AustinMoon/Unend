@@ -72,7 +72,11 @@
            					 <li ><a  href="http://quickcorrections.com/qc/login3/auth/"><b >Go To Admin Page</b></a></li>
             				';} ?>
 
+
 						<li ><a  href="http://quickcorrections.com/qc/login3/user/aboutus"><b >Why QuickCorrections</b></a></li>
+						<li>
+                            <a href="http://quickcorrections.com/qc/login3/user/userpage"> <b>Your Answer</b></a>
+                        </li>
                         <li><a href="http://quickcorrections.com/qc/login3/user/payment">Buy Points</a></li>
                         <li><a href="<?= base_url('auth/logout') ?>"> Sign Out<br/></a>
                         </li>
