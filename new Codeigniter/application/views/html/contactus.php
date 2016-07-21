@@ -39,6 +39,7 @@ if(isset($_POST['submit'])){
                 Email: <input class="form-control" type="text" name="email"><br>
                 Message:<br><textarea class="form-control" rows="5" name="message" cols="30"></textarea><br>
             <input class="btn btn-danger" type="submit" name="submit" value="Submit">
+            <h1></h1>
             </div>
             </div>
         </form>
