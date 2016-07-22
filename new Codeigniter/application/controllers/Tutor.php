@@ -235,7 +235,8 @@ class Tutor extends CI_Controller {
 			redirect('auth/login', 'refresh');
 		}
         $data = new stdClass();
-        $user = $this->ion_auth->user()->row();
+        if(isset($_POST['user_id'])){ $user = $this->ion_auth->user($_POST['user_id'])->row();}
+        else {$user = $this->ion_auth->user()->row();}
         $data->points= $user->points;
         $this->load->model('tutor_model');
         $data->content = $this->tutor_model->get_tutor_history($user->id);

@@ -139,11 +139,13 @@ class Admin extends CI_Controller {
     }
     
     function tutor_list(){
+        $this->load->library('ion_auth');
         $data = new stdClass();
         $this->load->model('tutor_model');
         $data->content=$this->tutor_model->tutor_list();
         $user = $this->ion_auth->user()->row();
         $data->points= $user->points;
+        $data->earned_points=$this->tutor_model->tutor_points(1)->result();
         $this->load->view('html/header',$data);
         $this->load->view('admin/tutor_list',$data);
         $this->load->view('html/footer.html');

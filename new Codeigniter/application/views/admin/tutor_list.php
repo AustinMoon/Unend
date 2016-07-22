@@ -70,10 +70,10 @@ function humanTiming ($time)
         <table class="table table-hover">
     <thead>
       <tr>
-        <th>Request ID</th>
-        <th>TEXT</th>
-        <th>User</th>
-        <th>Answer Date</th>
+        <th>Tutor_id</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Name</th>
         <th>Request Type</th>
         <th>Points Earned</th>
         
@@ -84,9 +84,12 @@ function humanTiming ($time)
         $total_points=0;
         foreach ($content->result() as $row)
 {
-            echo '<tr><td>';
+            $user = $this->ion_auth->user($row->user_id)->row();
             
-            echo $row->id;
+            echo '<form action="http://quickcorrections.com/qc/login3/tutor/tutor_history" method="post">';
+            echo '<input type="hidden" name ="user_id" value= "'. $row->user_id .'">';
+            echo '<tr><td>';
+            echo $row->user_id;
             echo '</td><td>';
             $q= $this->tutor_model->tutor_points($row->id);
             foreach ($q->result() as $row1){
@@ -94,14 +97,15 @@ function humanTiming ($time)
             
             }
             echo '</td><td>';
-            echo $row->id;
+            echo $user->email;
             echo '</td><td>';
-            echo $row->id;
+            echo $user->first_name .' '. $user->last_name;
             echo '</td><td>';
-            echo $row->id;
+            //echo $row->id;
+            echo $earned_points[0]->req_points;
             echo '</td><td>';
-            echo $row->id;
-            echo '</td></tr>';
+            echo '<input type="submit" class="btn btn-danger" value="See Tutor Histury">';
+            echo '</td></tr></form>';
             
        
 }?>
