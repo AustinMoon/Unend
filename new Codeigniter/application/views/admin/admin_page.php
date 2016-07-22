@@ -76,7 +76,8 @@ function humanTiming ($time)
         <th>FILE</th>
         <th>User</th>
         <th>Request Date</th>
-        <th>Request Type</th>
+        <th>points Count</th>
+        <th>Select Tutor</th>
         <th>Select</th>
         
       </tr>
@@ -86,9 +87,11 @@ function humanTiming ($time)
         
         foreach ($content->result() as $row)
 {
+            echo '<form action="assign_proofread" method="post">';
             echo '<tr>';
             echo '<td>';
             echo $row->request_id;
+            echo '<input type="hidden" name ="req_id" value= "'. $row->request_id .'">';
             echo '</td><td>';
             echo'<a href="http://quickcorrections.com/qc/login3/uploads/'.$row->text.'" download>click here to download</a>';
             echo '</td><td>';
@@ -97,11 +100,20 @@ function humanTiming ($time)
             echo '</td><td>';
             echo humanTiming($row->request_date). ' ago';
             echo '</td><td>';
-            echo $row->type;
+            
+            echo'<input type="number" class="form-control" name="points">';
             echo '</td><td>';
-            $tutor = $this->ion_auth->user()->row();
-            echo '<a href="http://quickcorrections.com/qc/login3/admin/proofread_answer/'. $row->request_id .'"><button class="btn btn-primary" type="button">Assign this request</button></a>';
-            echo '</td></tr>';
+             echo '<select class="form-control" name="tutor_id">';
+            foreach($tutors->result() as $row)
+            { 
+                $tutor = $this->ion_auth->user($row->user_id)->row();
+              echo '<option value="'.$row->user_id.'">'.$tutor->email.'</option>';
+            }
+            
+            echo '</select>';
+            echo '</td><td>';
+            echo '<input type="submit" value="Submit">';
+            echo '</td></tr></form>';
        
 }?>
              </tbody></table>

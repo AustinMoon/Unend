@@ -87,6 +87,7 @@ class Admin extends CI_Controller {
         $this->load->model('tutor_model');
         $data = new stdClass();
         $data->content= $this->tutor_model->open_proofread();
+        $data->tutors= $this->tutor_model->list_of_tutors();
        
         $this->load->view('admin/admin_page',$data);
         $this->load->view('html/footer.html');
@@ -146,6 +147,13 @@ class Admin extends CI_Controller {
         $this->load->view('html/header',$data);
         $this->load->view('admin/tutor_list',$data);
         $this->load->view('html/footer.html');
+    }
+    function assign_proofread(){
+        $this->load->model('tutor_model');
+        $req_id= $_POST['req_id'];
+        $tutor_id= $_POST['tutor_id'];
+        $points= $_POST['points'];
+        $this->tutor_model->assign_to_tutor($req_id,$tutor_id,$points);
     }
     
     
