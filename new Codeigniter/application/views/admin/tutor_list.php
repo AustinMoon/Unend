@@ -102,7 +102,8 @@ function humanTiming ($time)
             echo $user->first_name .' '. $user->last_name;
             echo '</td><td>';
             //echo $row->id;
-            echo $earned_points[0]->req_points;
+            $earned_points=$this->tutor_model->tutor_points($row->user_id)->result();
+            echo $earned_points[0]->req_points/2;
             echo '</td><td>';
             echo '<input type="submit" class="btn btn-danger" value="See Tutor Histury">';
             echo '</td></tr></form>';
