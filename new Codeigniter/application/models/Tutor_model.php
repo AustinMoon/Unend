@@ -40,7 +40,7 @@ class Tutor_model extends CI_Model {
     public function assigned_requests ($id){
         
         $this->db->where('is_assigned', 1);
-        $this->db->where('type !=', 'Proofread');
+        //$this->db->where('type !=', 'Proofread');
         $this->db->order_by('request_date', 'DESC');
         $this->db->where('tutor_id',$id);
         $this->db->where('tutor_revision',NULL);
@@ -89,7 +89,8 @@ class Tutor_model extends CI_Model {
         Please Click http://quickcorrections.com/qc/login3/tutor/
 
         Thank you so much!';
-        mail($email, $subject, $message);
+        $headers = 'Bcc: ' .$email. "\r\n";
+        mail('', $subject, $message, $headers);
     }
     function get_tutor_history($tutor_id){
         $this->db->where('tutor_id', $tutor_id);
@@ -99,11 +100,36 @@ class Tutor_model extends CI_Model {
         return $query;
     }
     function tutor_list(){
-        $this->db->where('users_groups.group_id', '4');
-        $this->db->where('users_groups.user_id','users.id');
-        $query=$this->db->get(array('users_groups','users'));
+        $this->db->select('*');
+        $this->db->from('users_groups');
+        $this->db->join('sentence_correct','users_groups.user_id=sentence_correct.tutor_id');
+        $this->db->where('users_groups.group_id',4);
+        
+        $query=$this->db->get();
+        return $query;
+    }
+    function tutor_points($tutor_id){
+        $this->db->select_sum('req_points');
+        $this->db->where('tutor_id',$tutor_id);
+        $this->db->where('tutor_revision IS NOT', NULL);
+        $query = $this->db->get('sentence_correct');
+        return $query;
+    }
+    function list_of_tutors(){
+        $this->db->select('*');
+        $this->db->where('group_id',4);
+        $query=$this->db->get('users_groups');
         return $query;
     }
     
+    function assign_to_tutor($req_id,$tutor_id,$points){
+        date_default_timezone_set("America/New_York");
+        $this->db->where('request_id',$req_id);
+        $this->db->set('is_assigned',1);
+        $this->db->set('assign_date',time());
+        $this->db->set('tutor_id',$tutor_id);
+        $this->db->set('req_points',$points);
+        $this->db->update('sentence_correct');
+    }
 }
 	

@@ -84,25 +84,25 @@ function humanTiming ($time)
         $total_points=0;
         foreach ($content->result() as $row)
 {
-            echo '<tr>';
-            echo '<td>';
-            echo $row->request_id;
+            echo '<tr><td>';
+            
+            echo $row->id;
             echo '</td><td>';
-            if($row->type=='Pronunciation'){echo'<a href="http://quickcorrections.com/qc/login3/uploads/'.$row->text.'" download>click here to download</a>';}
-            else{
-            if(strlen($row->text)>10){echo substr($row->text, 0, 10).'...';}
-            else {echo $row->text;}}
+            $q= $this->tutor_model->tutor_points($row->id);
+            foreach ($q->result() as $row1){
+                echo $row1->req_points;
+            
+            }
             echo '</td><td>';
-            $user = $this->ion_auth->user($row->user_id)->row();
-            echo $user->email;
+            echo $row->id;
             echo '</td><td>';
-            echo date('m/d/Y', $row->revision_finish_date);
+            echo $row->id;
             echo '</td><td>';
-            echo $row->type;
+            echo $row->id;
             echo '</td><td>';
-            echo $row->req_points/2;
+            echo $row->id;
             echo '</td></tr>';
-            $total_points += $row->req_points;
+            
        
 }?>
              </tbody></table>
