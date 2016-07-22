@@ -1,30 +1,24 @@
- <div class="navbar-default sidebar" role="navigation">
-                <div class="sidebar-nav navbar-collapse">
-                    <ul class="nav" id="side-menu">
-                        <li>
-                            <a href="#"><i class=""></i> <b>Tutor Page</b></a>
-                        </li>
+<nav>
+    <div class="navbar-default sidebar" role="navigation">
+        <div class="sidebar-nav navbar-collapse">
+            <ul class="nav" id="side-menu">
+                <li> <a href="#"><i class=""></i> <b>Tutor Page</b></a> </li>
                         
-                        <li>
-                            <a href="http://quickcorrections.com/qc/login3/tutor/tutor_history"><i class=""></i> <b>Tutor History</b></a>
-                            
-                            <!-- /.nav-second-level -->
-                        </li>
-                        <li>
-                            <a href="http://quickcorrections.com/qc/login3/tutor/setting"><i class=""></i> <b>Password</b></a>
-                            
-                            <!-- /.nav-second-level -->
-                        </li>
-                        
-                      
-                    </ul>
-                </div>
+                <li> <a href="http://quickcorrections.com/qc/login3/tutor/tutor_history"><i class=""></i> <b>Tutor History</b></a>
+                </li>
+                
+                <li> <a href="http://quickcorrections.com/qc/login3/tutor/setting"><i class=""></i> <b>Password</b></a>
+                <!-- /.nav-second-level -->
+                </li>
+            </ul>
+        </div>
                 <!-- /.sidebar-collapse -->
-            </div>
+    </div>
             <!-- /.navbar-static-side -->
-        </nav>
-        <!-- Page Content -->
-       <div id= "page-wrapper"class="container-fluid">
+</nav>
+<!-- Page Content -->
+
+<div id= "page-wrapper"class="container-fluid">
                 <div class="row">
                     <div class="col-lg-12">
                         <h1 class="page-header text-center">SENTENCE CORRECTION</h1>
@@ -34,10 +28,18 @@
                 <div class= "row">
                     <div class="form-group col-md-8">
                           <form action = "../add_revision" method = "POST">
-                        <label><h2>Edit sentence here</h2></label>
-                        <textarea name="tutor_revision" class="form-control" rows="5" autofocus><?= $request->text; ?></textarea>
-                        <input type="hidden" name="request_id" value="<?= $request->request_id; ?>">
+                              
+                              <label><h2>Edit student's sentence</h2></label>                              
+                              
+                              <textarea name="tutor_revision" class="form-control" rows="5" autofocus><?= $request->text; ?></textarea>
+                              
+                              <input type="hidden" name="request_id" value="<?= $request->request_id; ?>">
+                              
+                              <label><h2>Student comments:</h2></label>
+                              <textarea name="tutor_comment" class="form-control" rows="5" autofocus><?= $request->additional; ?></textarea>
 
+                        
+                    
                     </div>
                 </div>
                 <div class"row">

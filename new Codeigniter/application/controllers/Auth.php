@@ -893,6 +893,7 @@ class Auth extends CI_Controller {
             $user = $this->ion_auth->user()->row();
             $data = new stdClass();
             $data->text=$_POST['sentence'];
+            $data->text=$_POST['comment'];
             $data->request_date= time();
             $data->type='English Question';
             $data->user_id =$user->id;
@@ -902,10 +903,12 @@ class Auth extends CI_Controller {
             $this->db->insert('sentence_correct', $data);
           
             if ($this->db->affected_rows() == 1) {
-                {$data = new stdClass();
-            $user = $this->ion_auth->user()->row();
-            $data->points= $user->points;
-            $this->load->view('html/header',$data);}
+                {
+                    $data = new stdClass();
+                    $user = $this->ion_auth->user()->row();
+                    $data->points= $user->points;
+                    $this->load->view('html/header',$data);
+                }
               	$this->load->view('sen_correct/sen_correct_success',$data);
 	            $this->load->view('html/footer.html');
                 $this->load->model('tutor_model');
@@ -947,14 +950,15 @@ class Auth extends CI_Controller {
          }
 			
          else { 
-         	{$data = new stdClass();
-            $user = $this->ion_auth->user()->row();
-            $data->points= $user->points;
-            $this->load->view('html/header',$data);}
-            $data = array('upload_data' => $this->upload->data()); 
- 			
-            $this->load->view('user/upload/upload_success', $data); 
-            $this->load->view('html/footer.html');         
+         	{
+                $data = new stdClass();
+                $user = $this->ion_auth->user()->row();
+                $data->points= $user->points;
+                $this->load->view('html/header',$data);
+            }
+             $data = array('upload_data' => $this->upload->data()); 
+             $this->load->view('user/upload/upload_success', $data); 
+             $this->load->view('html/footer.html');         
          } 
         } 
         
