@@ -57,7 +57,7 @@
                     <div class="form-group col-sm-12">
                     <div class="col-sm-8" style="position:relative">
                         <h4 ><i>Step 1. Type your sentence(s) below </i></h4>
-                        <textarea class="form-control"  id="word_count" rows="5"placeholder="Type Sentence here..." name="sentence" maxlength="750" autofocus></textarea>
+                        <textarea class="form-control"  id="word_count" rows="5" placeholder="Type Sentence here..." name="sentence" maxlength="750" autofocus></textarea>
                         
 
                         
@@ -65,12 +65,10 @@
                          <h5 class="pull-right" >Total word count: <span id="display_count">0</span></h5>
 
                     
-                
-                        
                         <h4 ><i><hr/>Step 2. Let us know if you need anything! (optional)</i></h4>
-
-<!-- <div id="textarea_feedback"></div>-->
-                        <textarea class="form-control"  id="c" rows="2"placeholder="Type Sentence here..." name="optional" maxlength="750" ></textarea>
+                        
+                        <!-- <div id="textarea_feedback"></div>-->
+                        <textarea class="form-control"  id="c" rows="2"placeholder="Leave comment here... here..." name="optional" maxlength="750" name="comment"></textarea>
                         
                       
 

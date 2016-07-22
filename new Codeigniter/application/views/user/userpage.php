@@ -96,7 +96,7 @@
             echo '</td><td>';
             if(!empty($row->tutor_revision)){
             echo '<a href="http://quickcorrections.com/qc/login3/user/edited_request/'. $row->request_id .'"><button class="btn btn-primary" type="button">open</button></a>';}
-            else{ echo 'in progress..';}
+            else{ echo 'In progress..';}
             echo '</td><td>';
         }
             ?>
