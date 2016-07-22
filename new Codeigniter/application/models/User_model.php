@@ -169,6 +169,7 @@ class User_model extends CI_Model {
             'text'      => $link,
             'request_date'  => time(),
             'type'      => 'Proofread',
+            'additional'=> $_POST['comment'],
 		);
 		
 		return $this->db->insert('sentence_correct', $data);
