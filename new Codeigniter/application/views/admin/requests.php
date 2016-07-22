@@ -62,7 +62,8 @@ function humanTiming ($time)
             echo '<td>';
             echo $row->request_id;
             echo '</td><td>';
-            echo $row->text;
+            if(strlen($row->text)>10){echo substr($row->text, 0, 10).'...';}
+            else {echo $row->text;}
             echo '</td><td>';
             $user = $this->ion_auth->user($row->user_id)->row();
             echo $user->email;
@@ -79,7 +80,7 @@ function humanTiming ($time)
             echo humanTiming($row->assign_date). ' ago';}
             else { echo '---';}
             echo '</td><td>';
-            echo '<a href="send_email/'.$row->request_id .'"><button type="submit" value="Send Email">Send Email</button></a>';
+            echo '<a href="send_email/'.$row->request_id .'"><button type="submit" class="btn btn-danger" value="Send Email">Send Email</button></a>';
             echo '</td></tr>';
        
 }?>

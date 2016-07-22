@@ -28,7 +28,7 @@ function humanTiming ($time)
                 <div class="sidebar-nav navbar-collapse">
                     <ul class="nav" id="side-menu">
                         <li>
-                            <a href="#"><i class=""></i> <b>Tutor Page</b></a>
+                            <a href="http://quickcorrections.com/qc/login3/tutor/"><i class=""></i> <b>Tutor Page</b></a>
                         </li>
                         
                         <li>
@@ -56,9 +56,7 @@ function humanTiming ($time)
         <div id="page-wrapper">
             <div class="row">
                 <div class="col-lg-12">
-                    <h1 class="page-header text-center" style="font-family:avenir">ADMIN PAGE</h1>
-
-                    <h1 class="page-header text-center" style="font-family:avenir">Proofread Assigning Page</h1>
+                    <h1 class="page-header text-center" style="font-family:avenir">TUTOR HISTORY</h1>
                 </div>
                 
                 <!-- /.col-lg-12 -->
@@ -67,63 +65,53 @@ function humanTiming ($time)
             <div class="row">
                
                 <div class="panel panel-default">
-                     <div class="panel-heading">Open requests</div>
+                     <div class="panel-heading">Previous Requests</div>
     <div class="panel-body">
         <table class="table table-hover">
     <thead>
       <tr>
         <th>Request ID</th>
-        <th>FILE</th>
+        <th>TEXT</th>
         <th>User</th>
-        <th>Request Date</th>
-        <th>points Count</th>
-        <th>Select Tutor</th>
-        <th>Select</th>
+        <th>Answer Date</th>
+        <th>Request Type</th>
+        <th>Points Earned</th>
         
       </tr>
     </thead>
     <tbody>
         <?php 
-        
+        $total_points=0;
         foreach ($content->result() as $row)
 {
-            echo '<form action="assign_proofread" method="post">';
-            echo '<tr>';
-            echo '<td>';
-            echo $row->request_id;
-            echo '<input type="hidden" name ="req_id" value= "'. $row->request_id .'">';
-            echo '</td><td>';
-            echo'<a href="http://quickcorrections.com/qc/login3/uploads/'.$row->text.'" download>click here to download</a>';
-            echo '</td><td>';
-            $user = $this->ion_auth->user($row->user_id)->row();
-            echo $user->email;
-            echo '</td><td>';
-            echo humanTiming($row->request_date). ' ago';
-            echo '</td><td>';
+            echo '<tr><td>';
             
-            echo'<input type="number" class="form-control" name="points">';
+            echo $row->id;
             echo '</td><td>';
-             echo '<select class="form-control" name="tutor_id">';
-            foreach($tutors->result() as $row)
-            { 
-                $tutor = $this->ion_auth->user($row->user_id)->row();
-              echo '<option value="'.$row->user_id.'">'.$tutor->email.'</option>';
+            $q= $this->tutor_model->tutor_points($row->id);
+            foreach ($q->result() as $row1){
+                echo $row1->req_points;
+            
             }
-            
-            echo '</select>';
             echo '</td><td>';
-            echo '<input type="submit" value="Submit">';
-            echo '</td></tr></form>';
+            echo $row->id;
+            echo '</td><td>';
+            echo $row->id;
+            echo '</td><td>';
+            echo $row->id;
+            echo '</td><td>';
+            echo $row->id;
+            echo '</td></tr>';
+            
        
 }?>
              </tbody></table>
                     </div>
                     </div>
+                Total Points Earned: <?= $total_points/2 ?>
             </div>
             <!-- /.row -->
-             <!-- /.row -->
-        
-            <!-- /.row -->
+           
         </div>
         <!-- /#page-wrapper -->
 

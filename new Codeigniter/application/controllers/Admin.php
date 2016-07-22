@@ -26,32 +26,11 @@ class Admin extends CI_Controller {
 		}
         $data = new stdClass();
         $this->load->library('pagination');
-        $config['base_url'] = 'http://quickcorrections.com/qc/login3/admin/requests/';
+        $this->db->limit(5, $this->uri->segment(3));
+        $this->load->model('user_model');
+        $config=$this->user_model->paging();
+        $data->all_requests=$this->db->get('sentence_correct',$config['per_page']);
         $config['total_rows'] = $this->db->get('sentence_correct')->num_rows();
-        $config['per_page'] = 10;
-        $config['num_links'] = 3;
-        $config['full_tag_open'] = '<ul class="pagination">';
-        $config['full_tag_close'] = '</ul><!--pagination-->';
-        $config['first_link'] = '&laquo; First';
-        $config['first_tag_open'] = '<li class="prev page">';
-        $config['first_tag_close'] = '</li>';
-        $config['last_link'] = 'Last &raquo;';
-        $config['last_tag_open'] = '<li class="next page">';
-        $config['last_tag_close'] = '</li>';
-        $config['next_link'] = 'Next &rarr;';
-        $config['next_tag_open'] = '<li class="next page">';
-        $config['next_tag_close'] = '</li>';
-        $config['prev_link'] = '&larr; Previous';
-        $config['prev_tag_open'] = '<li class="prev page">';
-        $config['prev_tag_close'] = '</li>';
-        $config['cur_tag_open'] = '<li class="active"><a href="">';
-        $config['cur_tag_close'] = '</a></li>';
-        $config['num_tag_open'] = '<li class="page">';
-        $config['num_tag_close'] = '</li>';
-// $config['display_pages'] = FALSE;
-// 
-$config['anchor_class'] = 'follow_link';
-        $data->all_requests=$this->db->get('sentence_correct',$config['per_page'],$this->uri->segment(5));
         $this->pagination->initialize($config);
         $user = $this->ion_auth->user()->row();
         $data->points= $user->points;
@@ -108,6 +87,7 @@ $config['anchor_class'] = 'follow_link';
         $this->load->model('tutor_model');
         $data = new stdClass();
         $data->content= $this->tutor_model->open_proofread();
+        $data->tutors= $this->tutor_model->list_of_tutors();
        
         $this->load->view('admin/admin_page',$data);
         $this->load->view('html/footer.html');
@@ -156,6 +136,24 @@ $config['anchor_class'] = 'follow_link';
         $this->load->view('html/footer.html');
         } 
         
+    }
+    
+    function tutor_list(){
+        $data = new stdClass();
+        $this->load->model('tutor_model');
+        $data->content=$this->tutor_model->tutor_list();
+        $user = $this->ion_auth->user()->row();
+        $data->points= $user->points;
+        $this->load->view('html/header',$data);
+        $this->load->view('admin/tutor_list',$data);
+        $this->load->view('html/footer.html');
+    }
+    function assign_proofread(){
+        $this->load->model('tutor_model');
+        $req_id= $_POST['req_id'];
+        $tutor_id= $_POST['tutor_id'];
+        $points= $_POST['points'];
+        $this->tutor_model->assign_to_tutor($req_id,$tutor_id,$points);
     }
     
     
