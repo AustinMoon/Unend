@@ -217,8 +217,10 @@ class User extends CI_Controller {
     }
     public function privacy(){
         $data = new stdClass();
+        if ($this->ion_auth->logged_in()){
         $user = $this->ion_auth->user()->row();
         $data->points= $user->points;
+         }
 
         $this->load->view('html/header',$data);
         $this->load->view('html/privacy');
@@ -234,6 +236,18 @@ class User extends CI_Controller {
          }
         $this->load->view('html/header',$data);
         $this->load->view('html/terms.html');
+        $this->load->view('html/footer.html');
+
+    }
+     public function faqs(){
+        
+         $data = new stdClass();
+         if ($this->ion_auth->logged_in()){
+        $user = $this->ion_auth->user()->row();
+        $data->points= $user->points;
+         }
+        $this->load->view('html/header',$data);
+        $this->load->view('html/faqs.html');
         $this->load->view('html/footer.html');
 
     }
