@@ -902,7 +902,6 @@ class Auth extends CI_Controller {
             
             $this->db->insert('sentence_correct', $data);
           
-<<<<<<< HEAD
             if ($this->db->affected_rows() == 1) {
                 {
                     $data = new stdClass();
@@ -910,20 +909,13 @@ class Auth extends CI_Controller {
                     $data->points= $user->points;
                     $this->load->view('html/header',$data);
                 }
-=======
-            if ($this->db->affected_rows() == 1) 
-            {
-                {$data = new stdClass();
-	            $user = $this->ion_auth->user()->row();
-	            $data->points= $user->points;
-	            $this->load->view('html/header',$data);}
->>>>>>> 5a792496b8660accc4892ad60ea3b44d23b2b8c0
               	$this->load->view('sen_correct/sen_correct_success',$data);
 	            $this->load->view('html/footer.html');
                 $this->load->model('tutor_model');
                 $this->tutor_model->send_email_to_tutors();
           }
         }
+        
         else
         {
             $data = new stdClass();
