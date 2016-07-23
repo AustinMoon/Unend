@@ -118,6 +118,7 @@ class Auth extends CI_Controller {
                 'placeholder' => 'Password',
                 'class'=> 'form-control',
 			);
+            
             $this->load->view('html/header');
 			$this->_render_page('auth/login', $this->data);
 			$this->load->view('html/footer.html');
@@ -239,10 +240,15 @@ class Auth extends CI_Controller {
 			{
 				$this->data['identity_label'] = $this->lang->line('forgot_password_email_identity_label');
 			}
+			{$data = new stdClass();
+            $user = $this->ion_auth->user()->row();
+            $data->points= $user->points;
+            $this->load->view('html/header',$data);}
 
 			// set any errors and display the form
 			$this->data['message'] = (validation_errors()) ? validation_errors() : $this->session->flashdata('message');
 			$this->_render_page('auth/forgot_password', $this->data);
+			$this->load->view('html/footer.html');
 		}
 		else
 		{
@@ -275,6 +281,7 @@ class Auth extends CI_Controller {
 			}
 			else
 			{
+				
 				$this->session->set_flashdata('message', $this->ion_auth->errors());
 				redirect("auth/forgot_password", 'refresh');
 			}
