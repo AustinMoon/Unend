@@ -7,7 +7,7 @@
                 <li> <a href="http://quickcorrections.com/qc/login3/tutor/tutor_history"><i class=""></i> <b>Tutor History</b></a>
                 </li>
                 
-                <li> <a href="http://quickcorrections.com/qc/login3/tutor/setting"><i class=""></i> <b>Password</b></a>
+                <li> <a href="http://quickcorrections.com/qc/login3/auth/change_password"><i class=""></i> <b>Password</b></a>
                 <!-- /.nav-second-level -->
                 </li>
             </ul>

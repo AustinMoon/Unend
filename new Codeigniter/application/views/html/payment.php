@@ -26,7 +26,7 @@
                         
                        
                         <li>
-                            <a href="http://quickcorrections.com/qc/login3/user/setting"><i class=""></i> <h4>Information</h4></a>
+                            <a href="http://quickcorrections.com/qc/login3/auth/change_password"><i class=""></i> <h4>Information</h4></a>
                             
                             <!-- /.nav-second-level -->
                         </li>

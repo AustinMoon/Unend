@@ -6,36 +6,35 @@
                     <ul class="nav" id="side-menu">
                         
                         <li>
-                            <a href="#"><i class=""></i> <b>Services</b><span class="fa arrow"></span></a>
-                            <ul class="nav nav-second-level collapse">
+                            <a ><i class=""></i> <h4>Services</h4></a>
+                        </li>
                                 
                                 <li>
-                                    <a href="<?= base_url('/user/sen_correct_student') ?>"><b>Sentence Correction</b></a>
+                                    <a href="<?= base_url('/user/sen_correct_student') ?>"><h5>&nbsp;>&nbsp;&nbsp;&nbsp;Sentence Correction</h5></a>
                                 </li>
                                 <li>
-                                    <a href="<?= base_url('auth/english_question') ?>"><b>Question about English</b></a>
+                                    <a href="<?= base_url('auth/english_question') ?>"><h5>&nbsp;>&nbsp;&nbsp;&nbsp;Question about English</h5></a>
                                 </li>
                                 <li>
-                                    <a href="http://quickcorrections.com/qc/login3/auth/pronunciation"><b>Pronunciation</b></a>
+                                    <a href="http://quickcorrections.com/qc/login3/auth/pronunciation"><h5 >&nbsp;>&nbsp;&nbsp;&nbsp;Pronunciation</h5></a>
                                 </li>
                                 <li>
-                                    <a href="<?= base_url('auth/proofread') ?>"> <b>Proofreading</b></a>
+                                    <a href="<?= base_url('auth/proofread') ?>"> <h5>&nbsp;>&nbsp;&nbsp;&nbsp;Proofreading</h5></a>
                                 </li>
                                
-                            </ul>
                             <!-- /.nav-second-level -->
-                        </li>
+                        
                        
                         <li>
-                            <a href="http://quickcorrections.com/qc/login3/user/setting"><i class=""></i> <b>Password</b></a>
+                            <a href="http://quickcorrections.com/qc/login3/auth/change_password"><i class=""></i> <h4>Information</h4></a>
                             
                             <!-- /.nav-second-level -->
                         </li>
                         <li>
-                            <a href="http://quickcorrections.com/qc/login3/user/userpage"><i class=""></i> <b>Notifications</b></a>
+                            <a href="http://quickcorrections.com/qc/login3/user/userpage"><i class=""></i> <h4>Your Answer</h4></a>
                         </li>
                         <li>
-                            <a href="http://quickcorrections.com/qc/login3/user/payment"><i class=""></i><b> Buy Point</b></a>
+                            <a href="http://quickcorrections.com/qc/login3/user/payment"><i class=""></i><h4> Buy Point</h4></a>
                         </li>
                     
                     </ul>

@@ -11,7 +11,7 @@
                             <!-- /.nav-second-level -->
                         </li>
                         <li>
-                            <a href="http://quickcorrections.com/qc/login3/tutor/setting"><i class=""></i> <b>Password</b></a>
+                            <a href="http://quickcorrections.com/qc/login3/tutor/change_password"><i class=""></i> <b>Information</b></a>
                             
                             <!-- /.nav-second-level -->
                         </li>

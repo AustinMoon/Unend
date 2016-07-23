@@ -19,14 +19,14 @@
                                     <a href="http://quickcorrections.com/qc/login3/auth/pronunciation"><h5 >&nbsp;>&nbsp;&nbsp;&nbsp;Pronunciation</h5></a>
                                 </li>
                                 <li>
-                                    <a href="#"> <h5>&nbsp;>&nbsp;&nbsp;&nbsp;Proofreading</h5></a>
+                                    <a href=""> <h5>&nbsp;>&nbsp;&nbsp;&nbsp;Proofreading</h5></a>
                                 </li>
                                
                             <!-- /.nav-second-level -->
                         
                        
                         <li>
-                            <a href="http://quickcorrections.com/qc/login3/user/setting"><i class=""></i> <h4>Information</h4></a>
+                            <a href="http://quickcorrections.com/qc/login3/auth/change_password"><i class=""></i> <h4>Information</h4></a>
                             
                             <!-- /.nav-second-level -->
                         </li>
