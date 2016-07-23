@@ -50,9 +50,9 @@
                         
 
                        <!-- <h4 ><i> <?php echo $error;?> </i></h4>-->
-
                       
                        <h4> Upload fixed file </h4>
+                        <h4>Student comments: <i><?= $add->additional; ?></i></h4>
 
                         <div class="panel panel-red">
 

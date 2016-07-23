@@ -955,17 +955,19 @@ class Auth extends CI_Controller {
             $this->load->view('user/upload/upload_form', $error); 
          }
 			
-         else { 
-         	{
+         else
+         { 
+             {
                 $data = new stdClass();
                 $user = $this->ion_auth->user()->row();
                 $data->points= $user->points;
                 $this->load->view('html/header',$data);
-            }
+             }
+             
              $data = array('upload_data' => $this->upload->data()); 
              $this->load->view('user/upload/upload_success', $data); 
-             $this->load->view('html/footer.html');         
-         } 
+             $this->load->view('html/footer.html');
+         }
         } 
         
         else
@@ -1004,27 +1006,32 @@ class Auth extends CI_Controller {
             $error = array('error' => $this->upload->display_errors()); 
             $this->load->view('user/upload/upload_form', $error); 
          }
-			
-         else { 
-         	{$data = new stdClass();
-            $user = $this->ion_auth->user()->row();
-            $data->points= $user->points;
-            $this->load->view('html/header',$data);}
-            $data = array('upload_data' => $this->upload->data()); 
+		
+         else 
+         { 
+             { 
+                 $data = new stdClass();
+                 $user = $this->ion_auth->user()->row();
+                 $data->points= $user->points;
+                 $this->load->view('html/header',$data);
+            }
+             
             
-            $this->load->view('user/upload/upload_success', $data); 
-            $this->load->view('html/footer.html');
+             
+             $data = array('upload_data' => $this->upload->data()); 
+             $this->load->view('user/upload/upload_success', $data); 
+             $this->load->view('html/footer.html');
          } 
-          } 
+        } 
         
     else
         {
-        	 $data = new stdClass();
-	        $user = $this->ion_auth->user()->row();
-	        $data->points= $user->points;
-            $this->load->view('html/header', $data);
-            $this->load->view('proofread/proofread');
-            $this->load->view('html/footer.html');
+        $data = new stdClass();
+        $user = $this->ion_auth->user()->row();
+        $data->points= $user->points;
+        $this->load->view('html/header', $data);
+        $this->load->view('proofread/proofread');
+        $this->load->view('html/footer.html');
         } 
     }
 

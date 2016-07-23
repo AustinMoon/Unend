@@ -35,8 +35,8 @@
                               
                               <input type="hidden" name="request_id" value="<?= $request->request_id; ?>">
                               
-                              <label><h2>Student comments:</h2></label>
-                              <textarea name="tutor_comment" class="form-control" rows="5" autofocus><?= $request->additional; ?></textarea>
+                              <label><h2>Student's comment: <?= $request->additional; ?></h2></label>
+                              <textarea name="tutor_comment" class="form-control" rows="5" autofocus></textarea>
 
                         
                     

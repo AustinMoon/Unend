@@ -64,7 +64,7 @@
       <tr>
         <th>Request ID</th>
         <th>TEXT</th>
-        <th>User</th>
+        <th>Tutor</th>
         <th>Request Date</th>
         <th>Select</th>
         
@@ -82,8 +82,10 @@
             echo '</td><td>';
             echo $row->text;
             echo '</td><td>';
-            $user = $this->ion_auth->user($row->user_id)->row();
-            echo $user->email;
+            if(!empty($row->tutor_id)){
+            $user = $this->ion_auth->user($row->tutor_id)->row();
+            echo $user->email;}
+            else {echo 'not assigned yet';}
             echo '</td><td>';
             echo date('m/d/Y', $row->request_date);
             echo '</td><td>';
@@ -109,7 +111,7 @@
                       <tr>
                         <th>Request ID</th>
                         <th>TEXT</th>
-                        <th>User</th>
+                        <th>Tutor</th>
                         <th>Assign time</th>
                         <th>Select</th>
                         
@@ -126,8 +128,10 @@
             echo '</td><td>';
             echo $row->text;
             echo '</td><td>';
-            $user = $this->ion_auth->user($row->user_id)->row();
-            echo $user->email;
+            if(!empty($row->tutor_id)){
+            $user = $this->ion_auth->user($row->tutor_id)->row();
+            echo $user->email;}
+            else {echo 'not assigned yet';}
             echo '</td><td>';
             echo date('m/d/Y', $row->request_date);
             echo '</td><td>';
@@ -153,7 +157,7 @@
                       <tr>
                         <th>Request ID</th>
                         <th>TEXT</th>
-                        <th>User</th>
+                        <th>Tutor</th>
                         <th>Assign time</th>
                         <th>Select</th>
                       </tr>
@@ -165,8 +169,10 @@
             echo '</td><td>';
             echo $row->text;
             echo '</td><td>';
-            $user = $this->ion_auth->user($row->user_id)->row();
-            echo $user->email;
+            if(!empty($row->tutor_id)){
+            $user = $this->ion_auth->user($row->tutor_id)->row();
+            echo $user->email;}
+            else {echo 'not assigned yet';}
             echo '</td><td>';
             echo date('m/d/Y', $row->request_date);
             echo '</td><td>';
@@ -197,7 +203,7 @@
                       <tr>
                         <th>Request ID</th>
                         <th>TEXT</th>
-                        <th>User</th>
+                        <th>Tutor</th>
                         <th>Assign time</th>
                         <th>Select</th>
                       </tr>
@@ -209,8 +215,10 @@
             echo '</td><td>';
             echo $row->text;
             echo '</td><td>';
-            $user = $this->ion_auth->user($row->user_id)->row();
-            echo $user->email;
+            if(!empty($row->tutor_id)){
+            $user = $this->ion_auth->user($row->tutor_id)->row();
+            echo $user->email;}
+            else {echo 'not assigned yet';}
             echo '</td><td>';
             echo date('m/d/Y', $row->request_date);
             echo '</td><td>';

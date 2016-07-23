@@ -80,17 +80,15 @@
                     <h5 style="color:#918C8C"> </h5>
                         
                          <h4><i><hr/>Step 3. Let us know if you need anything! (e.g. due date etc.)</i></h4>
-                        <textarea class="form-control"  id="text" rows="5"placeholder="Type Sentence here..." name="sentence" maxlength="750" autofocus></textarea>
+                        <form action="do_upload" method="post">
+                        <textarea class="form-control"  id="text" rows="5" placeholder="Type Sentence here..." name="comment" maxlength="750" autofocus></textarea>
                         <h5 style="display:inline; color:#918C8C"> 1 word = free / Limit = 750 words</h5>
-                        <h5 class="pull-right" id="count_message"></h5>
+                        <h5 class="pull-right" id="count_message"></h5></form>
 
-
-                    </br>
                         <h4 ><i><hr/>Step 4. Great! You done! Please put the upload button!</i></h4>
 
                          <input class="btn btn-danger " type = "submit" value = "Upload"  /> 
                     </div>
-            </form>
         </div>
         </div>
     </div>

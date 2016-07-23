@@ -102,16 +102,14 @@ class Tutor_model extends CI_Model {
     function tutor_list(){
         $this->db->select('*');
         $this->db->from('users_groups');
-        $this->db->join('sentence_correct','users_groups.user_id=sentence_correct.tutor_id');
-        $this->db->where('users_groups.group_id',4);
-        
+        $this->db->where('group_id',4); 
         $query=$this->db->get();
         return $query;
     }
     function tutor_points($tutor_id){
         $this->db->select_sum('req_points');
         $this->db->where('tutor_id',$tutor_id);
-        $this->db->where('tutor_revision IS NOT', NULL);
+        //$this->db->where('tutor_revision IS NOT', NULL);
         $query = $this->db->get('sentence_correct');
         return $query;
     }

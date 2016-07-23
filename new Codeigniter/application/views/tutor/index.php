@@ -160,6 +160,8 @@ function humanTiming ($time)
              {$a='uploaded';}
             else if($row->type=='Pronunciation')
             {$a='tutor_pronunciation';}
+            else if($row->type=='Proofread')
+            {$a='proofread_answer';}
             echo '<a href="http://quickcorrections.com/qc/login3/tutor/'. $a .'/'. $row->request_id .'"><button class="btn btn-primary" type="button">open</button></a>';
             echo '</td></tr>';
        

@@ -169,6 +169,7 @@ class User_model extends CI_Model {
             'text'      => $link,
             'request_date'  => time(),
             'type'      => 'Proofread',
+            'additional'=> $_POST['comment'],
 		);
 		
 		return $this->db->insert('sentence_correct', $data);
@@ -214,8 +215,6 @@ class User_model extends CI_Model {
         return $query;
     }
     function paging(){
-        $config['base_url'] = 'http://quickcorrections.com/qc/login3/admin/requests/';
-        $config['per_page'] = 10;
         $config['num_links'] = 3;
         $config['full_tag_open'] = '<ul class="pagination">';
         $config['full_tag_close'] = '</ul><!--pagination-->';

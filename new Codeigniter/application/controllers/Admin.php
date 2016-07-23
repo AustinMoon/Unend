@@ -29,6 +29,8 @@ class Admin extends CI_Controller {
         $this->db->limit(5, $this->uri->segment(3));
         $this->load->model('user_model');
         $config=$this->user_model->paging();
+        $config['base_url'] = 'http://quickcorrections.com/qc/login3/admin/requests/';
+        $config['per_page'] = 10;
         $data->all_requests=$this->db->get('sentence_correct',$config['per_page']);
         $config['total_rows'] = $this->db->get('sentence_correct')->num_rows();
         $this->pagination->initialize($config);
@@ -93,52 +95,9 @@ class Admin extends CI_Controller {
         $this->load->view('html/footer.html');
     }
     
-    function proofread_answer($request_id){
-        if (!$this->ion_auth->logged_in())
-		{
-			//redirect them to the login page
-			redirect('auth/login', 'refresh');
-		}
-        
-        $user = $this->ion_auth->user()->row();
-        if ($user->points <=20){
-            redirect('user/pay', 'refresh');
-        }
-        
-        if ($this->input->post('submit'))
-        {
-			
-         if (!$this->upload->do_proofread_answer($request_id)) {
-            $error = array('error' => $this->upload->display_errors()); 
-            $this->load->view('user/upload/upload_form', $error); 
-         }
-			
-         else { 
-            {$data = new stdClass();
-            $user = $this->ion_auth->user()->row();
-            $data->points= $user->points;
-            $this->load->view('html/header',$data);}
-            $data = array('upload_data' => $this->upload->data()); 
-    
-            $this->load->view('user/upload/upload_success', $data); 
-            $this->load->view('html/footer.html');
-         } 
-          } 
-        
-    else
-        {
-        $data = new stdClass();
-        $user = $this->ion_auth->user()->row();
-        $data->points= $user->points;
-        $data->req_id=$request_id;
-        $this->load->view('html/header', $data);
-        $this->load->view('admin/proofread_answer', $data);
-        $this->load->view('html/footer.html');
-        } 
-        
-    }
-    
+   
     function tutor_list(){
+        $this->load->library('ion_auth');
         $data = new stdClass();
         $this->load->model('tutor_model');
         $data->content=$this->tutor_model->tutor_list();
