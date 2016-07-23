@@ -234,13 +234,20 @@ class Tutor extends CI_Controller {
 			// redirect them to the login page
 			redirect('auth/login', 'refresh');
 		}
-        
+        $this->load->model('tutor_model');
         $data = new stdClass();
+        $data->content = $this->tutor_model->get_tutor_history($user->id);
+        $this->load->library('pagination');
+        $config['base_url']='http://quickcorrections.com/qc/login3/tutor/tutor_history';
+        $config['per_page']=3
+        $config['num_links']=3
+        $config['total_rows']=$data->content->num_rows();
+        $this->pagination->initialize($config);
+        
         if(isset($_POST['user_id'])){ $user = $this->ion_auth->user($_POST['user_id'])->row();}
         else {$user = $this->ion_auth->user()->row();}
         $data->points= $user->points;
-        $this->load->model('tutor_model');
-        $data->content = $this->tutor_model->get_tutor_history($user->id);
+        
         $this->load->view('html/header',$data);
         $this->load->view('tutor/tutor_history',$data);
         $this->load->view('html/footer'); 

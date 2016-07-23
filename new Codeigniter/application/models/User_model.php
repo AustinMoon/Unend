@@ -164,12 +164,13 @@ class User_model extends CI_Model {
     
     public function upload_file($user_id, $link){
         date_default_timezone_set("America/New_York");
+        if (!empty($_POST['comment'])){$a=$_POST['comment'];}else{$a='';}
         $data = array(
 			'user_id'   => $user_id,
             'text'      => $link,
             'request_date'  => time(),
             'type'      => 'Proofread',
-            'additional'=> $_POST['comment'],
+            'additional'=> $a ,
 		);
 		
 		return $this->db->insert('sentence_correct', $data);
