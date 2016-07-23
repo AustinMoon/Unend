@@ -1,12 +1,7 @@
-<<<<<<< HEAD
+
 <nav>
-    <div class="navbar-default sidebar" role="navigation">
-=======
-
-
       
        <div class="navbar-default sidebar" role="navigation">
->>>>>>> 5a792496b8660accc4892ad60ea3b44d23b2b8c0
                 <div class="sidebar-nav navbar-collapse">
                     <ul class="nav" id="side-menu">
                         
@@ -21,7 +16,7 @@
                                     <a href="<?= base_url('auth/english_question') ?>"><h5>&nbsp;>&nbsp;&nbsp;&nbsp;Question about English</h5></a>
                                 </li>
                                 <li>
-                                    <a href="#"><h5 >&nbsp;>&nbsp;&nbsp;&nbsp;Pronunciation</h5></a>
+                                    <a href="http://quickcorrections.com/qc/login3/auth/pronunciation"><h5 >&nbsp;>&nbsp;&nbsp;&nbsp;Pronunciation</h5></a>
                                 </li>
                                 <li>
                                     <a href="<?= base_url('auth/proofread') ?>"> <h5>&nbsp;>&nbsp;&nbsp;&nbsp;Proofreading</h5></a>
@@ -31,7 +26,7 @@
                         
                        
                         <li>
-                            <a href="http://quickcorrections.com/qc/login3/user/setting"><i class=""></i> <h4>Information</h4></a>
+                            <a href="http://quickcorrections.com/qc/login3/auth/change_password"><i class=""></i> <h4>Information</h4></a>
                             
                             <!-- /.nav-second-level -->
                         </li>
@@ -46,27 +41,10 @@
                 </div>
                 <!-- /.sidebar-collapse -->
             </div>
-<<<<<<< HEAD
-</nav>
-
-<!-- Page Content -->
-<body>
-      <?php if (isset($_SESSION)) : ?>
-    <div id= "page-wrapper"class="container-fluid">
-        <div class="row">
-        <div class="col-lg-12">
-            <h1 class="page-header text-center" style="font-family:avenir">PRONUNCIATION</h1>
-        </div>
-    </div>
-
-    <?php echo form_open_multipart('upload/do_pronunciation');?> 
-    <form action="pronunciation" method="post">
-        <div class= "row">
-            <div class="form-group col-sm-12">
-                <div class="col-sm-8" style="position:relative">
-=======
             <!-- /.navbar-static-side -->
         </nav>
+<body>
+     
     <!-- Page Content -->
     <?php if (isset($_SESSION)) : ?>
       <div id= "page-wrapper"class="container-fluid">
@@ -81,17 +59,12 @@
                         <h1><b>Sorry about the inconvenience!</b></h1>  
                     </div>-->
                
-                
-        
-          
-      
           
            <?php echo form_open_multipart('upload/do_pronunciation');?> 
             <form action="pronunciation" method="post">
               <div class= "row">
                     <div class="form-group col-sm-12">
                     <div class="col-sm-8" style="position:relative">
->>>>>>> 5a792496b8660accc4892ad60ea3b44d23b2b8c0
                     <h4 ><i>Step 1. Please record your speaking with your laptop or desktop.<br/>
                     * You can record up to 45 seconds, and we will charge you 120 points.</i></h4>
               

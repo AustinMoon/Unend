@@ -183,7 +183,12 @@ class Auth extends CI_Controller {
 			);
 
 			// render
+			 {$data = new stdClass();
+            $user = $this->ion_auth->user()->row();
+            $data->points= $user->points;
+            $this->load->view('html/header',$data);}
 			$this->_render_page('auth/change_password', $this->data);
+			$this->load->view('html/footer.html');
 		}
 		else
 		{

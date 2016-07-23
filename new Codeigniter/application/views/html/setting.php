@@ -85,12 +85,13 @@
                 </br>-->
                
                
-                
+                <?php echo form_open("auth/change_password");?>
                 
                 <div class="form-group">
                         <label for="name" class="col-sm-2 control-label">Old Passwords</label>
                         <div class="col-sm-6">
-                            <input type="text" class="form-control" id="name" name="name" placeholder="********" value=""></div>
+                            <?php echo lang('change_password_old_password_label', 'old_password');?> <br />
+                             <?php echo form_input($old_password);?></div>
                     </div>
 
                   <div class="form-group">
@@ -115,6 +116,8 @@
                     <div class="col-lg-10 col-sm-offset-1" >
 
                     <button type="button" class="btn btn-danger">SAVE</button> 
+                    </div>
+                    <?php echo form_close();?>
                 </form> 
                 </div>
             <hr/>
@@ -124,7 +127,7 @@
         </div>
         <!-- /#page-wrapper -->
 
-    </div>
+   
     <!-- /#wrapper -->
 
     <!-- jQuery -->

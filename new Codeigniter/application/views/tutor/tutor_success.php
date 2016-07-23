@@ -10,9 +10,7 @@
                         </li>
                         
 
-                        <li>
-                            <a href="#"><i class=""></i> <b>Tutor Page</b></a>
-                        </li>
+                      
                         
                         <li>
                             <a href="http://quickcorrections.com/qc/login3/tutor/tutor_history"><i class=""></i> <b>Tutor History</b></a>
@@ -20,14 +18,10 @@
                             <!-- /.nav-second-level -->
                         </li>
 
-                        <li>
-                            <a href="http://quickcorrections.com/qc/login3/tutor/tutor_history"><i class=""></i> <b>Tutor History</b></a>
-                            
-                            <!-- /.nav-second-level -->
-                        </li>
+                       
 
                         <li>
-                            <a href="http://quickcorrections.com/qc/login3/tutor/setting"><i class=""></i> <b>Password</b></a>
+                            <a href="http://quickcorrections.com/qc/login3/auth/change_password"><i class=""></i> <b>Information</b></a>
                             
                             <!-- /.nav-second-level -->
                         </li>

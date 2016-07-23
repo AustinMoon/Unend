@@ -88,11 +88,14 @@
 			
          else 
          {
+          {$data = new stdClass();
+            $user = $this->ion_auth->user()->row();
+            $data->points= $user->points;
+            $this->load->view('html/header',$data);}
              $data = array('upload_data' => $this->upload->data()); 
              $this->load->model('user_model');
              $user = $this->ion_auth->user()->row();
              $this->user_model->upload_proofread_answer($request_id,$this->upload->data('file_name'));
-             $this->load->view('html/header');
              $this->load->view('sen_correct/sen_correct_success',$data);
              $this->load->view('html/footer.html');
          } 
@@ -114,6 +117,10 @@
 			
          else 
          {
+          {$data = new stdClass();
+            $user = $this->ion_auth->user()->row();
+            $data->points= $user->points;
+            $this->load->view('html/header',$data);}
              $data = array('upload_data' => $this->upload->data()); 
              $this->load->model('user_model');
              $this->load->model('tutor_model');
@@ -124,7 +131,6 @@
              $this->db->where('id',$req->user_id);
              $this->db->set('points', $new_points);
              $this->db->update('users');
-             $this->load->view('html/header');
              $this->load->view('sen_correct/sen_correct_success',$data);
              $this->load->view('html/footer.html');
          } 

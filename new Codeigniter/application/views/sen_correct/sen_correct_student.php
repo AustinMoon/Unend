@@ -26,7 +26,7 @@
                         
                        
                         <li>
-                            <a href="http://quickcorrections.com/qc/login3/user/setting"><i class=""></i> <h4>Information</h4></a>
+                            <a href="http://quickcorrections.com/qc/login3/auth/change_password"><i class=""></i> <h4>Information</h4></a>
                             
                             <!-- /.nav-second-level -->
                         </li>
@@ -47,7 +47,7 @@
         <div id= "page-wrapper"class="container-fluid">
                 <div class="row">
                     <div class="col-lg-12">
-                        <h1 class="page-header text-center" style="font-family:avenir">SENTENCE CORRECTION</h1>
+                        <h1 class="page-header text-center" >SENTENCE CORRECTION</h1>
                     </div>
                     <!-- /.col-lg-12 -->
                 </div>

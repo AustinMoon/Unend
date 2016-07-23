@@ -130,7 +130,7 @@
                         </li>
                        
                         <li>
-                            <a href="http://quickcorrections.com/qc/login3/user/setting"><i class=""></i> <b>Password</b></a>
+                            <a href="http://quickcorrections.com/qc/login3/auth/change_password"><i class=""></i> <b>Information</b></a>
                             
                             <!-- /.nav-second-level -->
                         </li>
@@ -151,7 +151,7 @@
       <div id= "page-wrapper"class="container-fluid">
                 <div class="row">
                     <div class="col-lg-12">
-                        <h1 class="page-header text-center" style="font-family:avenir">SORRY</h1>
+                        <h1 class="page-header text-center">SORRY</h1>
                     </div>
                 </div>
                 <div class= "row text-center">
