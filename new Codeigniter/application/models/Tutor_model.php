@@ -92,12 +92,20 @@ class Tutor_model extends CI_Model {
         $headers = 'Bcc: ' .$email. "\r\n";
         mail('', $subject, $message, $headers);
     }
-    function get_tutor_history($tutor_id){
+    function get_tutor_history($tutor_id,$limit, $start){
+         $this->db->limit($limit, $start);
         $this->db->where('tutor_id', $tutor_id);
         $this->db->where('tutor_revision IS NOT', NULL);
         //$this->db->where('tutor_id', $tutor_id);
         $query = $this->db->get('sentence_correct');
         return $query;
+    }
+    function record_count($tutor_id){
+        $this->db->where('tutor_id', $tutor_id);
+        $this->db->where('tutor_revision IS NOT', NULL);
+        //$this->db->where('tutor_id', $tutor_id);
+        $query = $this->db->get('sentence_correct');
+        return $query->num_rows();
     }
     function tutor_list(){
         $this->db->select('*');
@@ -109,7 +117,7 @@ class Tutor_model extends CI_Model {
     function tutor_points($tutor_id){
         $this->db->select_sum('req_points');
         $this->db->where('tutor_id',$tutor_id);
-        //$this->db->where('tutor_revision IS NOT', NULL);
+        $this->db->where('tutor_revision IS NOT', NULL);
         $query = $this->db->get('sentence_correct');
         return $query;
     }
@@ -129,5 +137,6 @@ class Tutor_model extends CI_Model {
         $this->db->set('req_points',$points);
         $this->db->update('sentence_correct');
     }
+    
 }
 	

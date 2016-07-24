@@ -55,8 +55,9 @@ function humanTiming ($time)
         <!-- Page Content -->
         <div id="page-wrapper">
             <div class="row">
+               <?php $user = $this->ion_auth->user($user_id)->row(); ?>
                 <div class="col-lg-12">
-                    <h1 class="page-header text-center" style="font-family:avenir">TUTOR HISTORY</h1>
+                    <h1 class="page-header text-center" style="font-family:avenir">TUTOR HISTORY FOR <?= $user->first_name.' '.$user->last_name; ?></h1>
                 </div>
                 
                 <!-- /.col-lg-12 -->
@@ -109,8 +110,11 @@ function humanTiming ($time)
         
                     </div>
                     </div>
-                <?= $this->pagination->create_links(); ?>
-                Total Points Earned: <?= $total_points/2 ?>
+               <?php echo $this->pagination->create_links(); ?><br>
+                
+                Total Points Earned: <?php
+                foreach($tutor_points as $row){ echo $row->req_points/2;}
+               // echo print_r($tutor_points); ?>
             </div>
             <!-- /.row -->
            

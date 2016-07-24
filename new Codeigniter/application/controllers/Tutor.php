@@ -238,22 +238,26 @@ class Tutor extends CI_Controller {
 			redirect('auth/login', 'refresh');
 		}
         $this->load->model('tutor_model');
-        $data = new stdClass();
+        //$data = new stdClass();
         $this->load->library('pagination');
-        $config['base_url']='http://quickcorrections.com/qc/login3/tutor/tutor_history';
-        $config['per_page']=3;
-        $config['num_links']=3;
-        $config['total_rows']=$data->content->num_rows();
-        $this->pagination->initialize($config);
         
+        $config = array();
+        
+        
+        $page = ($this->uri->segment(3)) ? $this->uri->segment(3) : 0;
+        $this->load->model('user_model');
+        $config=$this->user_model->paging();
+        $config["base_url"] = base_url() . "tutor/tutor_history";
+        $config["per_page"] = 5;
+        $config["uri_segment"] = 3;
         if(isset($_POST['user_id'])){ $user = $this->ion_auth->user($_POST['user_id'])->row();}
         else {$user = $this->ion_auth->user()->row();}
-        $data->points= $user->points;
-        $data->content = $this->tutor_model->get_tutor_history($user->id);
-        $this->db->where('tutor_id', $tutor_id);
-        $this->db->where('tutor_revision IS NOT', NULL);
-        //$this->db->where('tutor_id', $tutor_id);
-        $data->content2 = $this->db->get('sentence_correct');
+        $config["total_rows"] = $this->tutor_model->record_count($user->id);
+        $this->pagination->initialize($config);
+        $data['points']= $user->points;
+        $data['content'] = $this->tutor_model->get_tutor_history($user->id,$config["per_page"], $page);
+        $data['user_id'] = $user->id;
+        $data['tutor_points']=$this->tutor_model->tutor_points($user->id)->result();
         $this->load->view('html/header',$data);
         $this->load->view('tutor/tutor_history',$data);
         $this->load->view('html/footer'); 
