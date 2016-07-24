@@ -37,7 +37,7 @@
                     <div class="form-group col-md-8">
                           <form action = "../add_revision" method = "POST">
                         <label><p><h2>Student's file &nbsp; <button>download</button></h2></p></label>
-                        <label><p><h2>Tutor Answer:</h2></p></label>
+                        <label><p><h2>Tutor's Answer:</h2></p></label>
                         <textarea name="tutor_revision" class="form-control" rows="5" autofocus></textarea>
                         <input type="hidden" name="request_id" value="<?= $request->request_id; ?>">
 
