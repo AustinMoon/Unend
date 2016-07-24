@@ -236,7 +236,6 @@ class Tutor extends CI_Controller {
 		}
         $this->load->model('tutor_model');
         $data = new stdClass();
-        $data->content = $this->tutor_model->get_tutor_history($user->id);
         $this->load->library('pagination');
         $config['base_url']='http://quickcorrections.com/qc/login3/tutor/tutor_history';
         $config['per_page']=3
@@ -247,7 +246,11 @@ class Tutor extends CI_Controller {
         if(isset($_POST['user_id'])){ $user = $this->ion_auth->user($_POST['user_id'])->row();}
         else {$user = $this->ion_auth->user()->row();}
         $data->points= $user->points;
-        
+        $data->content = $this->tutor_model->get_tutor_history($user->id);
+        $this->db->where('tutor_id', $tutor_id);
+        $this->db->where('tutor_revision IS NOT', NULL);
+        //$this->db->where('tutor_id', $tutor_id);
+        $data->content2 = $this->db->get('sentence_correct');
         $this->load->view('html/header',$data);
         $this->load->view('tutor/tutor_history',$data);
         $this->load->view('html/footer'); 
