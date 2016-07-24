@@ -138,12 +138,12 @@ class User extends CI_Controller {
     }
     
     public function edited_pro($request_id){
-        {
+        
             $data = new stdClass();
             $user = $this->ion_auth->user()->row();
             $data->points= $user->points;
             $this->load->view('html/header',$data);
-        }
+        
         $this->load->model('tutor_model');
         $data = new stdClass();
         $data->request = $this->tutor_model->get_request_info($request_id)->row();
@@ -327,20 +327,20 @@ class User extends CI_Controller {
 
     }
     public function userpage(){
-        {
         $data = new stdClass();
+        $this->load->model('user_model');
+        $this->load->library('pagination');
         $user = $this->ion_auth->user()->row();
+        $config=$this->user_model->paging();
+        $page = ($this->uri->segment(3)) ? $this->uri->segment(3) : 0;
+        $config["base_url"] = base_url() . "user/userpage";
+        $config["per_page"] = 5;
+        $config["uri_segment"] = 3;
+        $config["total_rows"] = $this->user_model->user_record_count($user->id);
+        $this->pagination->initialize($config);
+        $data->content=$this->user_model->user_requests($user->id,$config["per_page"], $page);
         $data->points= $user->points;
         $this->load->view('html/header',$data);
-        }
-        $this->load->model('user_model');
-        $data = new stdClass();
-        $user = $this->ion_auth->user()->row();
-        $data->sc=$this->user_model->s_correct_requests($user->id);
-        $data->eq=$this->user_model->english_q_requests($user->id);
-        $data->proof=$this->user_model->proof_requests($user->id);
-        $data->pronoun=$this->user_model->pronoun_requests($user->id);
-        
         $this->load->view('user/userpage',$data);
         $this->load->view('html/footer.html');
     }
