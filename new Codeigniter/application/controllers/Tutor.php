@@ -1,27 +1,24 @@
 <?php defined('BASEPATH') OR exit('No direct script access allowed');
-
 class Tutor extends CI_Controller {
     
     //runs before every function
-	function __construct()
-	{
-		parent::__construct();
-		$this->load->database();
-		$this->load->library(array('ion_auth','form_validation'));
-		$this->load->helper(array('url','language'));
+    function __construct()
+    {
+        parent::__construct();
+        $this->load->database();
+        $this->load->library(array('ion_auth','form_validation'));
+        $this->load->helper(array('url','language'));
         $this->load->model('tutor_model');
-
-		$this->form_validation->set_error_delimiters($this->config->item('error_start_delimiter', 'ion_auth'), $this->config->item('error_end_delimiter', 'ion_auth'));
-
-		$this->lang->load('auth');
-	}
+        $this->form_validation->set_error_delimiters($this->config->item('error_start_delimiter', 'ion_auth'), $this->config->item('error_end_delimiter', 'ion_auth'));
+        $this->lang->load('auth');
+    }
     
     function index(){
         if (!$this->ion_auth->logged_in() || !$this->ion_auth->in_group(4))
-		{
-			// redirect them to the login page
-			redirect('auth/login', 'refresh');
-		}
+        {
+            // redirect them to the login page
+            redirect('auth/login', 'refresh');
+        }
         {$data = new stdClass();
             $user = $this->ion_auth->user()->row();
             $data->points= $user->points;
@@ -53,10 +50,10 @@ class Tutor extends CI_Controller {
     
     function edit($request_id){
         if (!$this->ion_auth->logged_in() || !$this->ion_auth->in_group(4))
-		{
-			// redirect them to the login page
-			redirect('auth/login', 'refresh');
-		}
+        {
+            // redirect them to the login page
+            redirect('auth/login', 'refresh');
+        }
         if($this->tutor_model->role_exists($request_id)){
         
         $data = new stdClass();
@@ -72,10 +69,10 @@ class Tutor extends CI_Controller {
     /*function uploaded($request_id){
         $request=get_request_info($request_id)->row();
         if (!$this->ion_auth->logged_in() || !$this->ion_auth->in_group(4) || $request->type != 'Uploded File' )
-		{
-			// redirect them to the login page
-			redirect('auth/login', 'refresh');
-		}
+        {
+            // redirect them to the login page
+            redirect('auth/login', 'refresh');
+        }
     }*/
     
     function add_revision(){
@@ -100,9 +97,9 @@ class Tutor extends CI_Controller {
         $this->db->update('users');
         $message='
         Hello, tutor responded to your request #'.$_POST['request_id'].'.
+        
         Answer: '.$TR;
-        mail($user->email, 'QuickCorrections: Your Request # '.$_POST['request_id'].' is Finished', $message);
-
+        mail($user->email, 'QuickCorrections: Your Request # '.$_POST['request_id'].' was complete', $message);
        {
            $data = new stdClass();
            $user = $this->ion_auth->user()->row();
@@ -135,7 +132,6 @@ class Tutor extends CI_Controller {
         Answer: '.$TR;
         mail($user->email, 'QuickCorrections: Your Request # '.$_POST['request_id'].' is Finished', $message);
         mail($user->email, 'New pronunciation', 'http://quickcorrections.com/qc/login3/tutor/'. $a .'/'. $row->request_id);
-
         {
             $data = new stdClass();
             $user = $this->ion_auth->user()->row();
@@ -147,17 +143,15 @@ class Tutor extends CI_Controller {
         $this->load->view('html/footer.html');
         
     }
-
         
  
    
-
     function tutor_english_question($request_id){
         if (!$this->ion_auth->logged_in() || !$this->ion_auth->in_group(4))
-		{
-			// redirect them to the login page
-			redirect('auth/login', 'refresh');
-		}
+        {
+            // redirect them to the login page
+            redirect('auth/login', 'refresh');
+        }
         if($this->tutor_model->role_exists($request_id))
         {
             {
@@ -177,9 +171,9 @@ class Tutor extends CI_Controller {
         
         if (!$this->ion_auth->logged_in() || !$this->ion_auth->in_group(4))
         {
-			// redirect them to the login page
-			redirect('auth/login', 'refresh');
-		}
+            // redirect them to the login page
+            redirect('auth/login', 'refresh');
+        }
         if($this->tutor_model->role_exists($request_id))
         {
         $data = new stdClass();
@@ -194,10 +188,8 @@ class Tutor extends CI_Controller {
         }
     }
     
-
     function tutor_submit(){
         
-
     }
     
     function setting(){
@@ -207,16 +199,15 @@ class Tutor extends CI_Controller {
         $this->load->view('html/header',$data);
         $this->load->view('tutor/setting.html');
         $this->load->view('html/footer'); 
-
         
     }
     
     function uploaded($request_id){
          if (!$this->ion_auth->logged_in() || !$this->ion_auth->in_group(4))
-		{
-			// redirect them to the login page
-			redirect('auth/login', 'refresh');
-		}
+        {
+            // redirect them to the login page
+            redirect('auth/login', 'refresh');
+        }
         
         if($this->tutor_model->role_exists($request_id))
         {
@@ -233,10 +224,10 @@ class Tutor extends CI_Controller {
     
     function tutor_history(){
     if (!$this->ion_auth->logged_in() || !$this->ion_auth->in_group(4))
-		{
-			// redirect them to the login page
-			redirect('auth/login', 'refresh');
-		}
+        {
+            // redirect them to the login page
+            redirect('auth/login', 'refresh');
+        }
         $this->load->model('tutor_model');
         //$data = new stdClass();
         $this->load->library('pagination');
@@ -261,14 +252,13 @@ class Tutor extends CI_Controller {
         $this->load->view('html/header',$data);
         $this->load->view('tutor/tutor_history',$data);
         $this->load->view('html/footer'); 
-
     }
        function proofread_answer($request_id){
         if (!$this->ion_auth->logged_in())
-		{
-			//redirect them to the login page
-			redirect('auth/login', 'refresh');
-		}
+        {
+            //redirect them to the login page
+            redirect('auth/login', 'refresh');
+        }
         
         $user = $this->ion_auth->user()->row();
         if ($user->points <=20){
@@ -277,12 +267,12 @@ class Tutor extends CI_Controller {
         
         if ($this->input->post('submit'))
         {
-			
+            
          if (!$this->upload->do_proofread_answer($request_id)) {
             $error = array('error' => $this->upload->display_errors()); 
             $this->load->view('user/upload/upload_form', $error); 
          }
-			
+            
          else { 
             {$data = new stdClass();
             $user = $this->ion_auth->user()->row();
