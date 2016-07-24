@@ -82,12 +82,23 @@
             </div>
             
         </div>
+        
         <div class="row">
             <div class="col-md-3">
                 Tutor
             </div>
                 <div class="col-md-9">
                     <?= $request->tutor_revision; ?>
+            </div>
+            
+        </div>
+        
+        <div class="row">
+            <div class="col-md-3">
+                Tutor's Comments: 
+            </div>
+                <div class="col-md-9">
+                    <i><?= $request->tutor_comments; ?></i>
             </div>
             
         </div>
