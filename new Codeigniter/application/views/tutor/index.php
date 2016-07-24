@@ -1,8 +1,6 @@
 <?php
-
 function humanTiming ($time)
 {
-
     $time = time() - $time; // to get the time since that moment
     $time = ($time<1)? 1 : $time;
     $tokens = array (
@@ -14,13 +12,11 @@ function humanTiming ($time)
         60 => 'minute',
         1 => 'second'
     );
-
     foreach ($tokens as $unit => $text) {
         if ($time < $unit) continue;
         $numberOfUnits = floor($time / $unit);
         return $numberOfUnits.' '.$text.(($numberOfUnits>1)?'s':'');
     }
-
 }
 ?>
 <?php date_default_timezone_set("America/New_York"); ?>

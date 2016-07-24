@@ -1,25 +1,23 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
-
 /**
  * User_model class.
  * 
  * @extends CI_Model
  */
 class Tutor_model extends CI_Model {
-
-	/**
-	 * __construct function.
-	 * 
-	 * @access public
-	 * @return void
-	 */
-	public function __construct() {
-		
-		parent::__construct();
-		$this->load->database();
+    /**
+     * __construct function.
+     * 
+     * @access public
+     * @return void
+     */
+    public function __construct() {
         
-	}
+        parent::__construct();
+        $this->load->database();
+        
+    }
     
     public function open_requests(){
         
@@ -83,11 +81,10 @@ class Tutor_model extends CI_Model {
             
         }
        substr($email, 0, -1);
-        $subject='QuickCorrections: You got new request';
+        $subject='QuickCorrections: You have receive a new request';
         $message='
         You have received a new request! 
         Please Click http://quickcorrections.com/qc/login3/tutor/
-
         Thank you so much!';
         $headers = 'Bcc: ' .$email. "\r\n";
         mail('', $subject, $message, $headers);
@@ -146,4 +143,3 @@ class Tutor_model extends CI_Model {
     }
     
 }
-	

@@ -65,7 +65,7 @@
                         </div>
                       
                     </div>
-                    <a href="<?= base_url('user') ?>"><button class="btn btn-danger">Go to Main Page</button></a>
+                    <a href="<?= base_url('user') ?>"><button class="btn btn-danger col-lg-offset-4">Go to Main Page</button></a>
                     <!-- /.col-lg-4 -->
                     
                 </div>
