@@ -68,7 +68,7 @@
                         <h4 ><i><hr/>Step 2. Let us know if you need anything! (optional)</i></h4>
                         
                         <!-- <div id="textarea_feedback"></div>-->
-                        <textarea class="form-control"  id="c" rows="2"placeholder="Leave comment here... here..." name="optional" maxlength="750" name="comment"></textarea>
+                        <textarea class="form-control"  id="c" rows="2"placeholder="Leave comment here..." maxlength="750" name="comment"></textarea>
                         
                       
 

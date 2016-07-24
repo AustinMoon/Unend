@@ -82,8 +82,11 @@ class Tutor extends CI_Controller {
         $this->load->model('tutor_model');
         $TR= $_POST['tutor_revision'];
         $this->db->set('tutor_revision', $TR);
+        $TC = $_POST['tutor_comments'];
+        $this->db->set('tutor_comments', $TC);
         $this->db->set('revision_finish_date', time());
         $this->db->where('request_id',$_POST['request_id']);
+        
         $this->db->update('sentence_correct');
         
         $req=$this->tutor_model->get_request_info($_POST['request_id'])->row();
@@ -238,8 +241,8 @@ class Tutor extends CI_Controller {
         $data = new stdClass();
         $this->load->library('pagination');
         $config['base_url']='http://quickcorrections.com/qc/login3/tutor/tutor_history';
-        $config['per_page']=3
-        $config['num_links']=3
+        $config['per_page']=3;
+        $config['num_links']=3;
         $config['total_rows']=$data->content->num_rows();
         $this->pagination->initialize($config);
         
