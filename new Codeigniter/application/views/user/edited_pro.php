@@ -63,7 +63,7 @@
                 Previous file 
             </div>
             <div class="col-md-9">
-                    <?= $request->text; ?>
+                    <a href="http://quickcorrections.com/qc/login3/uploads/<?php echo $request->text; ?>" download>Click here to download</a>
                     <br/>
                     <img src="http://quickcorrections.com/qc/img/arrow.png">
             </div>
@@ -76,8 +76,8 @@
                 Edited file
             </div>
                 <div class="col-md-9">
-                    <?= $request->tutor_revision; ?>
-                    <a href="http://quickcorrections.com/qc/login3/uploads/<?php echo $request->text; ?>" download>Click here to download</a>
+                   
+                    <a href="http://quickcorrections.com/qc/login3/uploads/<?php echo $request->tutor_revision; ?>" download>Click here to download</a>
             </div>
             
         </div>

@@ -58,10 +58,12 @@
          }
 			
          else { 
-            {$data = new stdClass();
-            $user = $this->ion_auth->user()->row();
-            $data->points= $user->points;
-            $this->load->view('html/header',$data);}
+            {
+                $data = new stdClass();
+                $user = $this->ion_auth->user()->row();
+                $data->points= $user->points;
+                $this->load->view('html/header',$data);
+            }
              $data = array('upload_data' => $this->upload->data()); 
              $this->load->model('user_model');
              $user = $this->ion_auth->user()->row();
@@ -88,10 +90,12 @@
 			
          else 
          {
-          {$data = new stdClass();
-            $user = $this->ion_auth->user()->row();
-            $data->points= $user->points;
-            $this->load->view('html/header',$data);}
+          {
+              $data = new stdClass();
+              $user = $this->ion_auth->user()->row();
+              $data->points= $user->points;
+              $this->load->view('html/header',$data);
+          }
              $data = array('upload_data' => $this->upload->data()); 
              $this->load->model('user_model');
              $user = $this->ion_auth->user()->row();
@@ -117,10 +121,12 @@
 			
          else 
          {
-          {$data = new stdClass();
-            $user = $this->ion_auth->user()->row();
-            $data->points= $user->points;
-            $this->load->view('html/header',$data);}
+          {
+              $data = new stdClass();
+              $user = $this->ion_auth->user()->row();
+              $data->points= $user->points;
+              $this->load->view('html/header',$data);
+          }
              $data = array('upload_data' => $this->upload->data()); 
              $this->load->model('user_model');
              $this->load->model('tutor_model');

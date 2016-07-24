@@ -82,8 +82,11 @@ class Tutor extends CI_Controller {
         $this->load->model('tutor_model');
         $TR= $_POST['tutor_revision'];
         $this->db->set('tutor_revision', $TR);
+        $TC = $_POST['tutor_comments'];
+        $this->db->set('tutor_comments', $TC);
         $this->db->set('revision_finish_date', time());
         $this->db->where('request_id',$_POST['request_id']);
+        
         $this->db->update('sentence_correct');
         
         $req=$this->tutor_model->get_request_info($_POST['request_id'])->row();
@@ -234,13 +237,27 @@ class Tutor extends CI_Controller {
 			// redirect them to the login page
 			redirect('auth/login', 'refresh');
 		}
+        $this->load->model('tutor_model');
+        //$data = new stdClass();
+        $this->load->library('pagination');
         
-        $data = new stdClass();
+        $config = array();
+        
+        
+        $page = ($this->uri->segment(3)) ? $this->uri->segment(3) : 0;
+        $this->load->model('user_model');
+        $config=$this->user_model->paging();
+        $config["base_url"] = base_url() . "tutor/tutor_history";
+        $config["per_page"] = 5;
+        $config["uri_segment"] = 3;
         if(isset($_POST['user_id'])){ $user = $this->ion_auth->user($_POST['user_id'])->row();}
         else {$user = $this->ion_auth->user()->row();}
-        $data->points= $user->points;
-        $this->load->model('tutor_model');
-        $data->content = $this->tutor_model->get_tutor_history($user->id);
+        $config["total_rows"] = $this->tutor_model->record_count($user->id);
+        $this->pagination->initialize($config);
+        $data['points']= $user->points;
+        $data['content'] = $this->tutor_model->get_tutor_history($user->id,$config["per_page"], $page);
+        $data['user_id'] = $user->id;
+        $data['tutor_points']=$this->tutor_model->tutor_points($user->id)->result();
         $this->load->view('html/header',$data);
         $this->load->view('tutor/tutor_history',$data);
         $this->load->view('html/footer'); 

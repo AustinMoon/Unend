@@ -274,7 +274,7 @@ class User extends CI_Controller {
 			redirect('auth/login', 'refresh');
 		}
         $user = $this->ion_auth->user()->row();
-        if ($user->points <=20){
+        if ($user->points <=50){
             redirect('user/pay', 'refresh');
         }
         
