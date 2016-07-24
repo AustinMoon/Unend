@@ -157,6 +157,7 @@ class User_model extends CI_Model {
     }
     public function user_requests($user_id,$limit, $start){
          $this->db->limit($limit, $start);
+        $this->db->order_by('request_date', 'DESC');
         $this->db->where('user_id',$user_id);
         //$this->db->where('type','Sentence Correction');
         $query = $this->db->get('sentence_correct');
