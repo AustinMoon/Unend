@@ -15,22 +15,16 @@ class Tutor extends CI_Controller {
     
     function index(){
         if (!$this->ion_auth->logged_in() || !$this->ion_auth->in_group(4))
-<<<<<<< HEAD
+
         {
             // redirect them to the login page
             redirect('auth/login', 'refresh');
         }
-        {$data = new stdClass();
-=======
-		{
-			// redirect them to the login page
-			redirect('auth/login', 'refresh');
-		}
+        {
         $data = new stdClass();
->>>>>>> 3a445ed6e64ec61bcb2f46232470a6afdbcddd52
             $user = $this->ion_auth->user()->row();
             $data->points= $user->points;
-            $this->load->view('html/header',$data);
+            $this->load->view('html/header',$data);}
                
         $this->load->model('tutor_model');
         $this->load->model('user_model');
