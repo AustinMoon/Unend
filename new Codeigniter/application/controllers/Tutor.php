@@ -22,16 +22,25 @@ class Tutor extends CI_Controller {
 			// redirect them to the login page
 			redirect('auth/login', 'refresh');
 		}
-        {$data = new stdClass();
+        $data = new stdClass();
             $user = $this->ion_auth->user()->row();
             $data->points= $user->points;
-            $this->load->view('html/header',$data);}
+            $this->load->view('html/header',$data);
                
         $this->load->model('tutor_model');
-        $data = new stdClass();
+        $this->load->model('user_model');
+        $this->load->library('pagination');
+        $user = $this->ion_auth->user()->row();
+        $config=$this->user_model->paging();
+        $page = ($this->uri->segment(3)) ? $this->uri->segment(3) : 0;
+        $config["base_url"] = base_url() . "tutor/index";
+        $config["per_page"] = 5;
+        $config["uri_segment"] = 3;
+        $config["total_rows"] = $this->tutor_model->tutor_open_requests_count($user->id);
+        $this->pagination->initialize($config);
         $user = $this->ion_auth->user()->row();
         $data->content= $this->tutor_model->open_requests();
-        $data->assigned_reuests= $this->tutor_model->assigned_requests($user->id);
+        $data->assigned_requests= $this->tutor_model->assigned_requests($user->id,$config["per_page"], $page);
         $data->group = $this->ion_auth->get_users_groups(5)->result(); 
         $this->load->view('tutor/index',$data);
         $this->load->view('html/footer.html',$data);

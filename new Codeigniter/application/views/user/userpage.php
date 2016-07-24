@@ -48,7 +48,7 @@
         <div id="page-wrapper">
             <div class="row">
                 <div class="col-lg-12">
-                    <h1 class="page-header text-center">USER PAGE</h1>
+                    <h1 class="page-header text-center">USER HISTORY PAGE</h1>
                 </div>
                 
                 <!-- /.col-lg-12 -->
@@ -57,7 +57,7 @@
             <div class="row">
                
                 <div class="panel panel-default">
-                     <div class="panel-heading">Sentence Correction</div>
+                     <div class="panel-heading">List of Requests</div>
     <div class="panel-body">
         <table class="table table-hover">
     <thead>
@@ -65,6 +65,7 @@
         <th>Request ID</th>
         <th>TEXT</th>
         <th>Tutor</th>
+        <th>Request Date</th>
         <th>Request Date</th>
         <th>Select</th>
         
@@ -74,7 +75,7 @@
 
         <?php 
         
-        foreach ($sc->result() as $row)
+        foreach ($content->result() as $row)
 {
             echo '<tr>';
             echo '<td>';
@@ -89,8 +90,21 @@
             echo '</td><td>';
             echo date('m/d/Y', $row->request_date);
             echo '</td><td>';
+            echo $row->type;
+            echo '</td><td>';
             if(!empty($row->tutor_revision)){
-            echo '<a href="http://quickcorrections.com/qc/login3/user/edited_request/'. $row->request_id .'"><button class="btn btn-primary" type="button">open</button></a>';}
+            $a='';
+            if($row->type=='English Question')
+            {$a='edited_eq';}
+            else if ($row->type=='Sentence Correction' || $row->type==NULL)
+            {$a='edited_request';}
+            else if ($row->type=='Uploded File')
+             {$a='uploaded';}
+            else if($row->type=='Pronunciation')
+            {$a='edited_pro';}
+            else if($row->type=='Proofread')
+            {$a='edited_proof';}
+            echo '<a href="http://quickcorrections.com/qc/login3/user/'. $a .'/'. $row->request_id .'"><button class="btn btn-primary" type="button">open</button></a>';}
             else{ echo 'In progress..';}
             echo '</td><td>';
         }
@@ -98,147 +112,16 @@
     </tbody></table>
                     </div>
                     </div>
+                 <?php echo $this->pagination->create_links(); ?><br>
             </div>
             <!-- /.row -->
              <!-- /.row -->
-            <div class="row">
-               
-                <div class="panel panel-default">
-                     <div class="panel-heading">Question about English</div>
-                    <div class="panel-body">
-                        <table class="table table-hover">
-                    <thead>
-                      <tr>
-                        <th>Request ID</th>
-                        <th>TEXT</th>
-                        <th>Tutor</th>
-                        <th>Assign time</th>
-                        <th>Select</th>
-                        
-                      </tr>
-                    </thead>
-                <tbody>
-       <?php 
-        
-        foreach ($eq->result() as $row)
-{
-            echo '<tr>';
-            echo '<td>';
-            echo $row->request_id;
-            echo '</td><td>';
-            echo $row->text;
-            echo '</td><td>';
-            if(!empty($row->tutor_id)){
-            $user = $this->ion_auth->user($row->tutor_id)->row();
-            echo $user->email;}
-            else {echo 'not assigned yet';}
-            echo '</td><td>';
-            echo date('m/d/Y', $row->request_date);
-            echo '</td><td>';
-            if(!empty($row->tutor_revision)){
-            echo '<a href="http://quickcorrections.com/qc/login3/user/edited_eq/'. $row->request_id .'"><button class="btn btn-primary" type="button">open</button></a>';}
-            else{ echo 'in progress..';}
-            echo '</td><td>';
-        }
-            ?>
-            </tbody></table>
-                    </div>
-                    </div>
-            </div>
-            <!-- /.row -->
-             <!-- /.row -->
-            <div class="row">
-               
-                <div class="panel panel-default">
-                     <div class="panel-heading">Pronunciation</div>
-                    <div class="panel-body">
-                        <table class="table table-hover">
-                    <thead>
-                      <tr>
-                        <th>Request ID</th>
-                        <th>TEXT</th>
-                        <th>Tutor</th>
-                        <th>Assign time</th>
-                        <th>Select</th>
-                      </tr>
-                         <?php foreach ($pronoun->result() as $row)
-{
-            echo '<tr>';
-            echo '<td>';
-            echo $row->request_id;
-            echo '</td><td>';
-            echo $row->text;
-            echo '</td><td>';
-            if(!empty($row->tutor_id)){
-            $user = $this->ion_auth->user($row->tutor_id)->row();
-            echo $user->email;}
-            else {echo 'not assigned yet';}
-            echo '</td><td>';
-            echo date('m/d/Y', $row->request_date);
-            echo '</td><td>';
-            if(!empty($row->tutor_revision))
-            {
-            echo '<a href="http://quickcorrections.com/qc/login3/user/edited_pro/'. $row->request_id .'">
-            <button class="btn btn-primary" type="button">open</button></a>';
-            }
-            else{ echo 'in progress..';}
-            echo '</td><td>';
-        } ?>
-                    </thead>
-                <tbody>
-      
-            </tbody></table>
-                    </div>
-                    </div>
-            </div>
-            <!-- /.row -->
-             <!-- /.row -->
-            <div class="row">
-               
-                <div class="panel panel-default">
-                     <div class="panel-heading">Proofreading</div>
-                    <div class="panel-body">
-                        <table class="table table-hover">
-                    <thead>
-                      <tr>
-                        <th>Request ID</th>
-                        <th>TEXT</th>
-                        <th>Tutor</th>
-                        <th>Assign time</th>
-                        <th>Select</th>
-                      </tr>
-                           <?php foreach ($proof->result() as $row)
-{
-            echo '<tr>';
-            echo '<td>';
-            echo $row->request_id;
-            echo '</td><td>';
-            echo $row->text;
-            echo '</td><td>';
-            if(!empty($row->tutor_id)){
-            $user = $this->ion_auth->user($row->tutor_id)->row();
-            echo $user->email;}
-            else {echo 'not assigned yet';}
-            echo '</td><td>';
-            echo date('m/d/Y', $row->request_date);
-            echo '</td><td>';
-            if(!empty($row->tutor_revision)){
-            echo '<a href="http://quickcorrections.com/qc/login3/user/edited_proof/'. $row->request_id .'"><button class="btn btn-primary" type="button">open</button></a>';}
-            else{ echo 'in progress..';}
-            echo '</td><td>';
-        } ?>
-                    </thead>
-                <tbody>
-     
-             </tbody></table>
-                    </div>
-                    </div>
-            </div>
-            <!-- /.row -->
+         
         </div>
+
         <!-- /#page-wrapper -->
 
-    </div>
+  
     <!-- /#wrapper -->
 
     <!-- jQuery -->

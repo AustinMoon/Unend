@@ -155,9 +155,10 @@ class User_model extends CI_Model {
         $query = $this->db->get('sentence_correct');
         return $query;
     }
-    public function s_correct_requests($user_id){
+    public function user_requests($user_id,$limit, $start){
+         $this->db->limit($limit, $start);
         $this->db->where('user_id',$user_id);
-        $this->db->where('type','Sentence Correction');
+        //$this->db->where('type','Sentence Correction');
         $query = $this->db->get('sentence_correct');
         return $query;
     }
@@ -240,6 +241,12 @@ class User_model extends CI_Model {
 $config['anchor_class'] = 'follow_link';
         
         return $config;
+    }
+    function user_record_count($user_id){
+        $this->db->where('user_id', $user_id);
+        //$this->db->where('tutor_revision IS NOT', NULL);
+        $query = $this->db->get('sentence_correct');
+        return $query->num_rows();
     }
     
 	

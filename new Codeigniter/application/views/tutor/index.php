@@ -131,7 +131,7 @@ function humanTiming ($time)
     <tbody>
         <?php 
         
-        foreach ($assigned_reuests->result() as $row)
+        foreach ($assigned_requests->result() as $row)
 {
             echo '<tr>';
             echo '<td>';
@@ -168,6 +168,7 @@ function humanTiming ($time)
 }?>
              </tbody></table>
                     </div>
+                     <?php echo $this->pagination->create_links(); ?><br>
                     </div>
             </div>
             <!-- /.row -->

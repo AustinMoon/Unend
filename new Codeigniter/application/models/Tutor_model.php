@@ -37,8 +37,8 @@ class Tutor_model extends CI_Model {
         return $query;
     }
     
-    public function assigned_requests ($id){
-        
+    public function assigned_requests ($id,$limit, $start){
+        $this->db->limit($limit, $start);
         $this->db->where('is_assigned', 1);
         //$this->db->where('type !=', 'Proofread');
         $this->db->order_by('request_date', 'DESC');
@@ -136,6 +136,13 @@ class Tutor_model extends CI_Model {
         $this->db->set('tutor_id',$tutor_id);
         $this->db->set('req_points',$points);
         $this->db->update('sentence_correct');
+    }
+    function tutor_open_requests_count($tutor_id){
+        $this->db->where('tutor_id', $tutor_id);
+        $this->db->where('is_assigned', 1);
+        $this->db->where('tutor_revision', NULL);
+        $query = $this->db->get('sentence_correct');
+        return $query->num_rows();
     }
     
 }
