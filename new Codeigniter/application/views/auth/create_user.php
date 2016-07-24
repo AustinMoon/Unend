@@ -70,6 +70,7 @@
    
     <div class="form-group">
 					<input type="submit" class="btn btn-danger" value="Create a User">
+
 				</div>
 				</div>
 			</form>
