@@ -62,12 +62,7 @@
                         <input style="display:inline" type = "file" name = "userfile" size = "20" /> 
                         
                         </div>
-
-
-                
-
-
-                    </br>
+                        
                         <h4><hr/>Click Upload button</h4>
                         <input class="btn btn-danger " type = "submit" value = "Upload"  /> 
                     </div>
