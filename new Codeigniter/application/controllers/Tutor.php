@@ -264,7 +264,8 @@ class Tutor extends CI_Controller {
         $this->load->view('tutor/tutor_history',$data);
         $this->load->view('html/footer'); 
     }
-       function proofread_answer($request_id){
+       
+    function proofread_answer($request_id){
         if (!$this->ion_auth->logged_in())
         {
             //redirect them to the login page
@@ -282,13 +283,19 @@ class Tutor extends CI_Controller {
             $this->load->view('user/upload/upload_form', $error); 
          }
             
-         else { 
-            {$data = new stdClass();
-            $user = $this->ion_auth->user()->row();
-            $data->points= $user->points;
-            $this->load->view('html/header',$data);}
+         else 
+         { 
+            {
+                $data = new stdClass();
+                $user = $this->ion_auth->user()->row();
+                $data->points= $user->points;
+                $data->req_id=$request_id;
+                $this->db->where('request_id', $request_id);
+                $data->add=$this->db->get('sentence_correct')->row();
+                $this->load->view('html/header',$data);
+            
+            }
             $data = array('upload_data' => $this->upload->data()); 
-    
             $this->load->view('user/upload/upload_success', $data); 
             $this->load->view('html/footer.html');
          } 
