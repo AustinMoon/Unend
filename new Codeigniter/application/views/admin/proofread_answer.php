@@ -52,7 +52,11 @@
                        <!-- <h4 ><i> <?php echo $error;?> </i></h4>-->
                       
                        <h4> Upload fixed file </h4>
+<<<<<<< HEAD
                         <h4>Student comments: <i><?= $a->additional; ?></i></h4>
+=======
+                        <h4>Student comments: <i><?= $add->additional; ?></i></h4>
+>>>>>>> 109162718c76870dae0d3ea152be1d1414295778
 
                         <div class="panel panel-red">
 

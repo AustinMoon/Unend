@@ -31,6 +31,8 @@ class Admin extends CI_Controller {
         $config=$this->user_model->paging();
         $config['base_url'] = 'http://quickcorrections.com/qc/login3/admin/requests/';
         $config['per_page'] = 10;
+        $this->db->where('is_assigned',1);
+        $this->db->order_by('assign_date', 'ASC');
         $data->all_requests=$this->db->get('sentence_correct',$config['per_page']);
         $config['total_rows'] = $this->db->get('sentence_correct')->num_rows();
         $this->pagination->initialize($config);
@@ -82,6 +84,11 @@ class Admin extends CI_Controller {
 
 }
     function proofreading_orders(){
+        if (!$this->ion_auth->is_admin())
+		{
+			// redirect them to the login page
+			redirect('auth/login', 'refresh');
+		}
         {$data = new stdClass();
             $user = $this->ion_auth->user()->row();
             $data->points= $user->points;
@@ -97,6 +104,11 @@ class Admin extends CI_Controller {
     
    
     function tutor_list(){
+        if (!$this->ion_auth->is_admin())
+		{
+			// redirect them to the login page
+			redirect('auth/login', 'refresh');
+		}
         $this->load->library('ion_auth');
         $data = new stdClass();
         $this->load->model('tutor_model');
