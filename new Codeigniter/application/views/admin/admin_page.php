@@ -32,7 +32,8 @@ function humanTiming ($time)
                         </li>
                         
                         <li>
-                            <a href="http://quickcorrections.com/qc/login3/tutor/tutor_history"><i class=""></i> <b>Tutor History</b></a>
+                            <?php $user = $this->ion_auth->user()->row(); ?>
+                            <a href="http://quickcorrections.com/qc/login3/tutor/tutor_history/<?= $user->id; ?>d"><i class=""></i> <b>Tutor History</b></a>
                             
                             <!-- /.nav-second-level -->
                         </li>

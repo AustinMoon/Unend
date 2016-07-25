@@ -235,31 +235,37 @@ class Tutor extends CI_Controller {
     }
     
     function tutor_history($tutor_id){
+        $tutor_id=substr($tutor_id, 0, -1);
     if (!$this->ion_auth->logged_in() || !$this->ion_auth->in_group(4))
         {
             // redirect them to the login page
             redirect('auth/login', 'refresh');
         }
+        $user = $this->ion_auth->user()->row();
+        
         $this->load->model('tutor_model');
         //$data = new stdClass();
         $this->load->library('pagination');
-        
+        if ($user->id != $tutor_id && !$this->ion_auth->is_admin())
+        {
+            // redirect them to the login page
+            redirect('auth/login', 'refresh');
+        }
         $config = array();
         
         
-        $page = ($this->uri->segment(4)) ? $this->uri->segment(4) : 0;
+        //$page = ($this->uri->segment(4)) ? $this->uri->segment(4) : 1;
         $this->load->model('user_model');
         $config=$this->user_model->paging();
-        $config["base_url"] = base_url() . "tutor/tutor_history/".$tutor_id;
+        $config["base_url"] = base_url() . "tutor/tutor_history/".$tutor_id."d";
         $config["per_page"] = 5;
         //$config["uri_segment"] = 3;
-        $user = $this->ion_auth->user()->row();
         $config["total_rows"] = $this->tutor_model->record_count($tutor_id);
         $this->pagination->initialize($config);
         $data['points']= $user->points;
-        $data['content'] = $this->tutor_model->get_tutor_history($tutor_id,$config["per_page"], $page);
-        $data['user_id'] = $user->id;
-        $data['tutor_points']=$this->tutor_model->tutor_points($user->id)->result();
+        $data['content'] = $this->tutor_model->get_tutor_history($tutor_id,$config["per_page"], $this->uri->segment(4));
+        $data['user_id'] = $tutor_id;
+        $data['tutor_points']=$this->tutor_model->tutor_points($tutor_id)->result();
         $this->load->view('html/header',$data);
         $this->load->view('tutor/tutor_history',$data);
         $this->load->view('html/footer'); 

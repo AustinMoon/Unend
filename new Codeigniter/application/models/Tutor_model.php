@@ -90,7 +90,8 @@ class Tutor_model extends CI_Model {
         mail('', $subject, $message, $headers);
     }
     function get_tutor_history($tutor_id,$limit, $start){
-         $this->db->limit($limit, $start);
+        $this->db->limit($limit, $start);
+        $this->db->order_by('request_date', 'DESC');
         $this->db->where('tutor_id', $tutor_id);
         $this->db->where('tutor_revision IS NOT', NULL);
         //$this->db->where('tutor_id', $tutor_id);

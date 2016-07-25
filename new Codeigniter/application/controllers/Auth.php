@@ -501,8 +501,10 @@ class Auth extends CI_Controller {
             // check to see if we are creating the user
             // redirect them back to the admin page
             $this->session->set_flashdata('message', $this->ion_auth->messages());
-            
-            redirect("auth", 'refresh');
+            //redirect("auth", 'refresh');
+            $this->load->view('html/header');
+            $this->load->view('auth/create_success');
+            $this->load->view('html/footer.html');
         }
         else
         {
@@ -906,7 +908,7 @@ class Auth extends CI_Controller {
             $user = $this->ion_auth->user()->row();
             $data = new stdClass();
             $data->text=$_POST['sentence'];
-            $data->text=$_POST['comment'];
+            //$data->text=$_POST['comment'];
             $data->request_date= time();
             $data->type='English Question';
             $data->user_id =$user->id;

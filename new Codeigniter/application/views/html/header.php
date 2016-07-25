@@ -83,7 +83,7 @@
                         </li>
 
                         <div clas="row">
-                      	<h5 style="float:right; padding-right:30px; color:#E6858F">Welcome! Your Points : <?=$points ?></h5>
+                      	<h5 style="float:right; padding-right:30px; color:#E6858F">Welcome! Your Points : <?php if ($this->ion_auth->logged_in()){echo $points;} ?></h5>
                       	</div>
 
                        

@@ -32,7 +32,9 @@ function humanTiming ($time)
                         </li>
                         
                         <li>
-                            <a href="http://quickcorrections.com/qc/login3/tutor/tutor_history"><i class=""></i> <b>Tutor History</b></a>
+                            
+                            <?php $user = $this->ion_auth->user()->row(); ?>
+                            <a href="http://quickcorrections.com/qc/login3/tutor/tutor_history/<?= $user->id; ?>d"><i class=""></i> <b>Tutor History</b></a>
                             
                             <!-- /.nav-second-level -->
                         </li>
@@ -86,7 +88,7 @@ function humanTiming ($time)
 {
             $user = $this->ion_auth->user($row->user_id)->row();
             
-            echo '<form action="http://quickcorrections.com/qc/login3/tutor/tutor_history/'.$row->user_id.'" method="post">';
+            echo '<form action="http://quickcorrections.com/qc/login3/tutor/tutor_history/'.$row->user_id.'d" method="post">';
             echo '<input type="hidden" name ="user_id" value= "'. $row->user_id .'">';
             echo '<tr><td>';
             echo $row->user_id;
