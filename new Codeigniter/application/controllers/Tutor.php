@@ -297,7 +297,7 @@ class Tutor extends CI_Controller {
                 $data->points= $user->points;
                 $data->req_id=$request_id;
                 $this->db->where('request_id', $request_id);
-                $data->add=$this->db->get('sentence_correct')->row();
+                $data->a=$this->db->get('sentence_correct')->row();
                 $this->load->view('html/header',$data);
             
             }
@@ -305,21 +305,9 @@ class Tutor extends CI_Controller {
             $this->load->view('user/upload/upload_success', $data); 
             $this->load->view('html/footer.html');
          } 
-          } 
-        
-    else
-        {
-        $data = new stdClass();
-        $user = $this->ion_auth->user()->row();
-        $data->points= $user->points;
-        $data->req_id=$request_id;
-        $this->db->where('request_id', $request_id);
-        $data->add=$this->db->get('sentence_correct')->row();
-        $this->load->view('html/header', $data);
-        $this->load->view('admin/proofread_answer', $data);
-        $this->load->view('html/footer.html');
         } 
         
+   
+        
     }
-  
 }

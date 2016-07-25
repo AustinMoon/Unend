@@ -54,19 +54,17 @@
                        <!-- <h4 ><i> <?php echo $error;?> </i></h4>-->
                       
                        <h4> Upload fixed file </h4>
+
                         <h4>Student comments: <i><?= $add->additional; ?></i></h4>
+                        
+                         <textarea class="form-control"  id="text" rows="5" placeholder="Leave comments for student here..." name="tutor_comment" maxlength="750" autofocus></textarea>
 
                         <div class="panel panel-red">
 
                         <input style="display:inline" type = "file" name = "userfile" size = "20" /> 
                         
                         </div>
-
-
-                
-
-
-                    </br>
+                        
                         <h4><hr/>Click Upload button</h4>
                         <input class="btn btn-danger " type = "submit" value = "Upload"  /> 
                     </div>
