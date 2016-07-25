@@ -71,6 +71,7 @@ function humanTiming ($time)
         <th>User</th>
         <th>Request Date</th>
         <th>Request Type</th>
+        <th>Points Count</th>
         <th>Select</th>
         
       </tr>
@@ -92,9 +93,11 @@ function humanTiming ($time)
             $user = $this->ion_auth->user($row->user_id)->row();
             echo $user->email;
             echo '</td><td>';
-            echo humanTiming($row->request_date). ' ago';
+            echo date('m/d/Y', $row->request_date);
             echo '</td><td>';
             echo $row->type;
+            echo '</td><td>';
+            echo $row->req_points/2;
             echo '</td><td>';
             $tutor = $this->ion_auth->user()->row();
             echo '<a href="http://quickcorrections.com/qc/login3/tutor/assign/'. $tutor->id .'/'. $row->request_id .'"><button class="btn btn-primary" type="button">Assign this request</button></a>';
@@ -120,6 +123,7 @@ function humanTiming ($time)
         <th>User</th>
         <th>Assign time</th>
         <th>Request Type</th>
+        <th>Points Count</th>
         <th>Select</th>
         
       </tr>
@@ -134,6 +138,7 @@ function humanTiming ($time)
             echo $row->request_id;
             echo '</td><td>';
             if($row->type=='Pronunciation'){echo'<a href="http://quickcorrections.com/qc/login3/uploads/'.$row->text.'" download>click here to download</a>';}
+            else if ($row->type=='Proofread'){echo'<a href="http://quickcorrections.com/qc/login3/uploads/'.$row->text.'" download>click here to download</a>';}
             else{
             if(strlen($row->text)>10){echo substr($row->text, 0, 10).'...';}
             else {echo $row->text;}}
@@ -142,10 +147,12 @@ function humanTiming ($time)
             echo $user->email;
             echo '</td><td>';
             if ($row->assign_date >0){
-            echo humanTiming($row->assign_date). ' ago';}
+            echo date('m/d/Y', $row->assign_date);}
             else { echo '---';}
             echo '</td><td>';
             echo $row->type;
+            echo '</td><td>';
+            echo $row->req_points/2;
             echo '</td><td>';
             $a='';
             if($row->type=='English Question')
@@ -158,7 +165,7 @@ function humanTiming ($time)
             {$a='tutor_pronunciation';}
             else if($row->type=='Proofread')
             {$a='proofread_answer';}
-            echo '<a href="http://quickcorrections.com/qc/login3/tutor/'. $a .'/'. $row->request_id .'"><button class="btn btn-primary" type="button">open</button></a>';
+            echo '<a href="http://quickcorrections.com/qc/login3/tutor/'. $a .'/'. $row->request_id .'"><button class="btn btn-primary" type="button">Answer</button></a>';
             echo '</td></tr>';
        
 }?>

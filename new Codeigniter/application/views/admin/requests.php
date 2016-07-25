@@ -29,7 +29,7 @@ function humanTiming ($time)
         <div id="page-wrapper">
             <div class="row">
                 <div class="col-lg-12">
-                    <h1 class="page-header text-center" style="font-family:avenir">Requests List</h1>
+                    <h1 class="page-header text-center" style="font-family:avenir">Open Requests List</h1>
                 </div>
                 
                 <!-- /.col-lg-12 -->
@@ -62,8 +62,12 @@ function humanTiming ($time)
             echo '<td>';
             echo $row->request_id;
             echo '</td><td>';
+            if($row->type=='Proofread' || $row->type=='Pronunciation'){
+                echo 'Downloadable File';
+            }
+            else{
             if(strlen($row->text)>10){echo substr($row->text, 0, 10).'...';}
-            else {echo $row->text;}
+            else {echo $row->text;}}
             echo '</td><td>';
             $user = $this->ion_auth->user($row->user_id)->row();
             echo $user->email;
@@ -77,7 +81,7 @@ function humanTiming ($time)
             echo 'Not Assigned Yet';}
             echo '</td><td>';
             if ($row->assign_date >0){
-            echo humanTiming($row->assign_date). ' ago';}
+            echo date('m/d/Y', $row->assign_date);}
             else { echo '---';}
             echo '</td><td>';
             echo '<a href="send_email/'.$row->request_id .'"><button type="submit" class="btn btn-danger" value="Send Email">Send Email</button></a>';

@@ -90,12 +90,16 @@
 			
          else 
          {
-          {
+             $user = $this->ion_auth->user()->row();
+             $this->load->model('tutor_model');
               $data = new stdClass();
-              $user = $this->ion_auth->user()->row();
+             $req=$this->tutor_model->get_request_info($request_id)->row();
+             $new_points=$user->points - $req->req_points;
+             $this->db->where('id',$req->user_id);
+             $this->db->set('points', $new_points);
+             $this->db->update('users');
               $data->points= $user->points;
               $this->load->view('html/header',$data);
-          }
              $data = array('upload_data' => $this->upload->data()); 
              $this->load->model('user_model');
              $user = $this->ion_auth->user()->row();
@@ -121,17 +125,17 @@
 			
          else 
          {
-          {
+          
               $data = new stdClass();
               $user = $this->ion_auth->user()->row();
               $data->points= $user->points;
               $this->load->view('html/header',$data);
-          }
              $data = array('upload_data' => $this->upload->data()); 
              $this->load->model('user_model');
              $this->load->model('tutor_model');
              $user = $this->ion_auth->user()->row();
-             $new_points=$user->points;$new_points-=120;
+             $new_points=$user->points;
+             $new_points-=120;
              $this->user_model->upload_pronunciation_answer($request_id,$this->upload->data('file_name'));
              $req=$this->tutor_model->get_request_info($request_id)->row();
              $this->db->where('id',$req->user_id);

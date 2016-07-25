@@ -11,6 +11,7 @@ class Tutor extends CI_Controller {
         $this->load->model('tutor_model');
         $this->form_validation->set_error_delimiters($this->config->item('error_start_delimiter', 'ion_auth'), $this->config->item('error_end_delimiter', 'ion_auth'));
         $this->lang->load('auth');
+        
     }
     
     function index(){
@@ -233,7 +234,7 @@ class Tutor extends CI_Controller {
         }   
     }
     
-    function tutor_history(){
+    function tutor_history($tutor_id){
     if (!$this->ion_auth->logged_in() || !$this->ion_auth->in_group(4))
         {
             // redirect them to the login page
@@ -246,18 +247,17 @@ class Tutor extends CI_Controller {
         $config = array();
         
         
-        $page = ($this->uri->segment(3)) ? $this->uri->segment(3) : 0;
+        $page = ($this->uri->segment(4)) ? $this->uri->segment(4) : 0;
         $this->load->model('user_model');
         $config=$this->user_model->paging();
-        $config["base_url"] = base_url() . "tutor/tutor_history";
+        $config["base_url"] = base_url() . "tutor/tutor_history/".$tutor_id;
         $config["per_page"] = 5;
-        $config["uri_segment"] = 3;
-        if(isset($_POST['user_id'])){ $user = $this->ion_auth->user($_POST['user_id'])->row();}
-        else {$user = $this->ion_auth->user()->row();}
-        $config["total_rows"] = $this->tutor_model->record_count($user->id);
+        //$config["uri_segment"] = 3;
+        $user = $this->ion_auth->user()->row();
+        $config["total_rows"] = $this->tutor_model->record_count($tutor_id);
         $this->pagination->initialize($config);
         $data['points']= $user->points;
-        $data['content'] = $this->tutor_model->get_tutor_history($user->id,$config["per_page"], $page);
+        $data['content'] = $this->tutor_model->get_tutor_history($tutor_id,$config["per_page"], $page);
         $data['user_id'] = $user->id;
         $data['tutor_points']=$this->tutor_model->tutor_points($user->id)->result();
         $this->load->view('html/header',$data);
@@ -272,9 +272,7 @@ class Tutor extends CI_Controller {
         }
         
         $user = $this->ion_auth->user()->row();
-        if ($user->points <=20){
-            redirect('user/pay', 'refresh');
-        }
+        
         
         if ($this->input->post('submit'))
         {
