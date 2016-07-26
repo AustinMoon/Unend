@@ -6,35 +6,35 @@
                     <ul class="nav" id="side-menu">
                         
                         <li>
-                            <a ><i class=""></i> <h4>Services</h4></a>
+                            <a ><i class=""></i> <h5 style="margin-top:-2px; margin-bottom:-5px">Services</h5></a>
                         </li>
                                 
                                 <li>
-                                    <a href="<?= base_url('/user/sen_correct_student') ?>"><h5>&nbsp;>&nbsp;&nbsp;&nbsp;Sentence Correction</h5></a>
+                                    <a href="<?= base_url('/user/sen_correct_student') ?>"><h5 style="margin-top:-2px; margin-bottom:-5px">&nbsp;-&nbsp;&nbsp;&nbsp;Sentence Correction</h5></a>
                                 </li>
                                 <li>
-                                    <a href="<?= base_url('auth/english_question') ?>"><h5>&nbsp;>&nbsp;&nbsp;&nbsp;Question about English</h5></a>
+                                    <a href="<?= base_url('auth/english_question') ?>"><h5 style="margin-top:-2px; margin-bottom:-5px">&nbsp;-&nbsp;&nbsp;&nbsp;Question about English</h5></a>
                                 </li>
                                 <li>
-                                    <a href="http://quickcorrections.com/qc/login3/auth/pronunciation"><h5 >&nbsp;>&nbsp;&nbsp;&nbsp;Pronunciation</h5></a>
+                                    <a href="http://quickcorrections.com/qc/login3/auth/pronunciation"><h5 style="margin-top:-2px; margin-bottom:-5px">&nbsp;-&nbsp;&nbsp;&nbsp;Pronunciation</h5></a>
                                 </li>
                                 <li>
-                                    <a href="<?= base_url('auth/proofread') ?>"> <h5>&nbsp;>&nbsp;&nbsp;&nbsp;Proofreading</h5></a>
+                                    <a href="<?= base_url('auth/proofread') ?>"> <h5 style="margin-top:-2px; margin-bottom:-5px">&nbsp;-&nbsp;&nbsp;&nbsp;Proofreading</h5></a>
                                 </li>
                                
                             <!-- /.nav-second-level -->
                         
                        
-                        <li>
-                            <a href="#"><i class=""></i> <h4>Information</h4></a>
+                        <li  style="background-color:#EDF1F2">
+                            <a href="#"><i class=""></i> <h5 style="margin-top:-2px; margin-bottom:-5px">Information</h5></a>
                             
                             <!-- /.nav-second-level -->
                         </li>
                         <li>
-                            <a href="http://quickcorrections.com/qc/login3/user/userpage"><i class=""></i> <h4>Your Answer</h4></a>
+                            <a href="http://quickcorrections.com/qc/login3/user/userpage"><i class=""></i> <h5 style="margin-top:-2px; margin-bottom:-5px">Your Answer</h5></a>
                         </li>
                         <li>
-                            <a href="http://quickcorrections.com/qc/login3/user/payment"><i class=""></i><h4> Buy Point</h4></a>
+                            <a href="http://quickcorrections.com/qc/login3/user/payment"><i class=""></i><h5 style="margin-top:-2px; margin-bottom:-5px"> Buy Point</h5></a>
                         </li>
                     
                     </ul>
@@ -46,8 +46,8 @@
         <!-- Page Content -->
         <div class="container-fluid" id="page-wrapper">
              <div class="row" >
-                 <div class="col-lg-12 page-header text-center">
-                    <h1 style="font-size:50px">ACCOUNT SETTING</h1>
+                 <div class="col-lg-12">
+                    <h3 class="page-header"><i>ACCOUNT SETTING</i></h3>
                 </div>
             </div>
             <div class="row" >

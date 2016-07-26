@@ -6,35 +6,35 @@
                     <ul class="nav" id="side-menu">
                         
                         <li>
-                            <a ><i class=""></i> <h4>Services</h4></a>
+                            <a ><i class=""></i> <h5 style="margin-top:-2px; margin-bottom:-5px">Services</h5></a>
                         </li>
                                 
-                                <li>
-                                    <a href="#"><h5>&nbsp;>&nbsp;&nbsp;&nbsp;Sentence Correction</h5></a>
+                                <li style="background-color:#EDF1F2">
+                                    <a href="#"><h5 style="margin-top:-2px; margin-bottom:-5px">&nbsp;-&nbsp;&nbsp;&nbsp;Sentence Correction</h5></a>
                                 </li>
                                 <li>
-                                    <a href="<?= base_url('auth/english_question') ?>"><h5>&nbsp;>&nbsp;&nbsp;&nbsp;Question about English</h5></a>
+                                    <a href="<?= base_url('auth/english_question') ?>"><h5 style="margin-top:-2px; margin-bottom:-5px">&nbsp;-&nbsp;&nbsp;&nbsp;Question about English</h5></a>
                                 </li>
                                 <li>
-                                    <a href="http://quickcorrections.com/qc/login3/auth/pronunciation"><h5 >&nbsp;>&nbsp;&nbsp;&nbsp;Pronunciation</h5></a>
+                                    <a href="http://quickcorrections.com/qc/login3/auth/pronunciation"><h5 style="margin-top:-2px; margin-bottom:-5px">&nbsp;-&nbsp;&nbsp;&nbsp;Pronunciation</h5></a>
                                 </li>
                                 <li>
-                                    <a href="<?= base_url('auth/proofread') ?>"> <h5>&nbsp;>&nbsp;&nbsp;&nbsp;Proofreading</h5></a>
+                                    <a href="<?= base_url('auth/proofread') ?>"> <h5 style="margin-top:-2px; margin-bottom:-5px">&nbsp;-&nbsp;&nbsp;&nbsp;Proofreading</h5></a>
                                 </li>
                                
                             <!-- /.nav-second-level -->
                         
                        
                         <li>
-                            <a href="http://quickcorrections.com/qc/login3/auth/change_password"><i class=""></i> <h4>Information</h4></a>
+                            <a href="http://quickcorrections.com/qc/login3/auth/change_password"><i class=""></i> <h5 style="margin-top:-2px; margin-bottom:-5px">Information</h5></a>
                             
                             <!-- /.nav-second-level -->
                         </li>
                         <li>
-                            <a href="http://quickcorrections.com/qc/login3/user/userpage"><i class=""></i> <h4>Your Answer</h4></a>
+                            <a href="http://quickcorrections.com/qc/login3/user/userpage"><i class=""></i> <h5 style="margin-top:-2px; margin-bottom:-5px">Your Answer</h5></a>
                         </li>
                         <li>
-                            <a href="http://quickcorrections.com/qc/login3/user/payment"><i class=""></i><h4> Buy Point</h4></a>
+                            <a href="http://quickcorrections.com/qc/login3/user/payment"><i class=""></i><h5 style="margin-top:-2px; margin-bottom:-5px"> Buy Point</h5></a>
                         </li>
                     
                     </ul>
@@ -47,7 +47,7 @@
         <div id= "page-wrapper"class="container-fluid">
                 <div class="row">
                     <div class="col-lg-12">
-                        <h1 class="page-header text-center" >SENTENCE CORRECTION</h1>
+                        <h3 class="page-header" ><i>SENTENCE CORRECTION</i></h3>
                     </div>
                     <!-- /.col-lg-12 -->
                 </div>
@@ -66,6 +66,7 @@
 
                     
                         <h4 ><i><hr/>Step 2. Let us know if you need anything! (optional)</i></h4>
+                        <h5><i>(Ex. "for my homework", "for my email", "for my resume", "for my English test", and more)<br/></i></h5>
                         
                         <!-- <div id="textarea_feedback"></div>-->
                         <textarea class="form-control"  id="c" rows="2"placeholder="Leave comment here..." maxlength="750" name="comment"></textarea>
