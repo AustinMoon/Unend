@@ -288,7 +288,7 @@ class User extends CI_Controller {
             $data->text=$_POST['sentence'];
             $points=str_word_count($_POST['sentence']);
             $data->req_points=$points *1.5;
-            $data->additional=$_POST['optional'];
+            $data->additional=$_POST['comment'];
             $this->db->insert('sentence_correct', $data);
             $data->user_id =$user->id;
           
@@ -347,5 +347,12 @@ class User extends CI_Controller {
     public function pay(){
         $this->load->view('user/pay');
     }
-	
+    
+	function save_rating($request_id){
+        $this->load->model('tutor_model');
+        $stars=$this->input->post('star');
+        $feedback=$this->input->post('feedback');
+        $this->tutor_model->add_rating($request_id,$stars,$feedback);
+        echo'dd';
+    }
 }

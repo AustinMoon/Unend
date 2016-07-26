@@ -142,5 +142,11 @@ class Tutor_model extends CI_Model {
         $query = $this->db->get('sentence_correct');
         return $query->num_rows();
     }
+    function add_rating($req_id,$stars,$feedback){
+        $this->db->where('request_id',$req_id);
+        $this->db->set('rating_stars',$stars);
+        $this->db->set('additional',$feedback);
+        $this->db->update('sentence_correct');
+    }
     
 }
