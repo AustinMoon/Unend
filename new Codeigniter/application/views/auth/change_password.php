@@ -46,8 +46,8 @@
         <!-- Page Content -->
         <div class="container-fluid" id="page-wrapper">
              <div class="row" >
-                 <div class="col-lg-12 page-header text-center">
-                    <h1 style="font-size:50px">ACCOUNT SETTING</h1>
+                 <div class="col-lg-12">
+                    <h3 class="page-header"><i>ACCOUNT SETTING</i></h3>
                 </div>
             </div>
             <div class="row" >

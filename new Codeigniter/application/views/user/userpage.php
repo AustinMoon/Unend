@@ -48,7 +48,7 @@
         <div id="page-wrapper">
             <div class="row">
                 <div class="col-lg-12">
-                    <h1 class="page-header text-center">USER HISTORY PAGE</h1>
+                    <h3 class="page-header"><i>USER HISTORY PAGE</i></h3>
                 </div>
                 
                 <!-- /.col-lg-12 -->

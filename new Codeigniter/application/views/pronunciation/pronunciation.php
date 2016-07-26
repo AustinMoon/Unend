@@ -53,7 +53,7 @@
       <div id= "page-wrapper"class="container-fluid">
                 <div class="row">
                     <div class="col-lg-12">
-                        <h1 class="page-header text-center" style="font-family:avenir">PRONUNCIATION</h1>
+                        <h3 class="page-header"><i>PRONUNCIATION</i></h3>
                     </div>
                 </div>
                 
@@ -68,8 +68,8 @@
               <div class= "row">
                     <div class="form-group col-sm-12">
                     <div class="col-sm-8" style="position:relative">
-                    <h4 ><i>Step 1. Please record your speaking with your laptop or desktop.<br/>
-                    * You can record up to 45 seconds, and we will charge you 120 points.</i></h4>
+                    <h4 ><i>Step 1. Please record your speaking with your laptop or desktop.<br/></i></h4>
+                    <h5><i>* You can record up to 45 seconds, and we will charge you 120 points.</i></h5>
               
                     <iframe src="http://vocaroo.com/?minimal" width="525" height="450" frameborder="0"></iframe><br>Powered by <a href="http://vocaroo.com" title="Voice Recorder">Vocaroo Voice Recorder</a>
                     
@@ -81,8 +81,8 @@
                         <input type = "file" name = "userfile" size = "20" /> 
                     </div>     
                     
-                    <h4 ><i><hr/>Step 4. Press Upload button below.<br/>
-              * We will respond to you as Quickly as possible.<br/> Please check your email as well. Thank you so much!</i></h4>      
+                    <h4 ><i><hr/>Step 4. Press Upload button below.<br/></i></h4>
+                    <h5><i>* We will respond to you as Quickly as possible.<br/> Please check your email as well. Thank you so much!</i></h5>      
                     <input type ="submit" value="Upload" href="" class="btn btn-danger" />
                 </div>
             </div>
