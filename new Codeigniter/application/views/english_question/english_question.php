@@ -65,7 +65,7 @@
                         
                         <textarea class="form-control"  id="word_count" rows="5"placeholder="Type Your Question..." name="sentence" maxlength="750" autofocus></textarea>
 
-                        <h5 style="display:inline; color:#918C8C">Basic Service Charge 80 points + 1 word with 2 point</h5>
+                        <h5 style="display:inline; color:#918C8C">Basic Service Charge 80 points + 1 word with 2 points</h5>
                         <h5 class="pull-right" >Total word count: <span id="display_count">0</span></h5>
 
                     </div>
