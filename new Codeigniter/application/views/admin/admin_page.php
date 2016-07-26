@@ -74,10 +74,11 @@ function humanTiming ($time)
     <thead>
       <tr>
         <th>Request ID</th>
-        <th>FILE</th>
+        <th>File</th>
+        <th>Student's Comment</th>
         <th>User</th>
         <th>Request Date</th>
-        <th>points Count</th>
+        <th>Points Count</th>
         <th>Select Tutor</th>
         <th>Select</th>
         
@@ -95,6 +96,8 @@ function humanTiming ($time)
             echo '<input type="hidden" name ="req_id" value= "'. $row->request_id .'">';
             echo '</td><td>';
             echo'<a href="http://quickcorrections.com/qc/login3/uploads/'.$row->text.'" download>click here to download</a>';
+            echo '</td><td>';
+            echo $row->additional;
             echo '</td><td>';
             $user = $this->ion_auth->user($row->user_id)->row();
             echo $user->email;
