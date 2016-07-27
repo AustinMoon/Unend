@@ -114,8 +114,9 @@ function humanTiming ($time)
 }?>
              </tbody></table>
                     </div>
+                      
                     </div>
-                Total Points Earned: <?= $total_points/2 ?>
+              <?php echo $this->pagination->create_links(); ?><br>
             </div>
             <!-- /.row -->
            

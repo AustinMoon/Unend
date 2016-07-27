@@ -1269,6 +1269,7 @@ class Ion_auth_model extends CI_Model
 		else
 		{
 			//default selects
+            $this->order_by('created_on', 'desc');
 			$this->db->select(array(
 			    $this->tables['users'].'.*',
 			    $this->tables['users'].'.id as id',

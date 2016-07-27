@@ -107,12 +107,14 @@
                    </div></div>
                 <!-- /.col-lg-6 -->
             </div>
+           <?php $user = $this->ion_auth->user()->row();
+            if($user->id==$request->user_id && $request->rating_stars== NULL ){ echo'
             <div class= "row">
                     
                 <div class="col-lg-6 col-lg-offset-4">
                    <div class="rate">
                        <div class="stars">
-  <form action="http://quickcorrections.com/qc/login3/user/save_rating/<?= $request->request_id; ?>" method="post">
+  <form action="http://quickcorrections.com/qc/login3/user/save_rating/'. $request->request_id .'" method="post">
     <input class="star star-5" id="star-5" type="radio" value="5" name="star"/>
     <label class="star star-5" for="star-5"></label>
     <input class="star star-4" id="star-4" type="radio" value="4" name="star"/>
@@ -135,7 +137,7 @@
                     <hr/>
                     <button type="submit" href="" class="btn btn-danger btn-lg" >Submit</button>
                 </div>   
-      </form>  </div>
+      </form>  </div>' ;}?>
             <!-- /.row -->
         </div>
         <!-- /#page-wrapper -->

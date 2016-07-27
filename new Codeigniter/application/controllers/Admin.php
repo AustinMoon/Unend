@@ -112,7 +112,16 @@ class Admin extends CI_Controller {
         $this->load->library('ion_auth');
         $data = new stdClass();
         $this->load->model('tutor_model');
-        $data->content=$this->tutor_model->tutor_list();
+        $this->load->model('user_model');
+        $this->load->library('pagination');
+        $config=$this->user_model->paging();
+        $page = ($this->uri->segment(3)) ? $this->uri->segment(3) : 0;
+        $config["base_url"] = base_url() . "admin/tutor_list";
+        $config["per_page"] = 5;
+        $config["uri_segment"] = 3;
+        $config["total_rows"] = $this->tutor_model->number_of_tutors();
+        $this->pagination->initialize($config);
+        $data->content=$this->tutor_model->tutor_list($config["per_page"], $page);
         $user = $this->ion_auth->user()->row();
         $data->points= $user->points;
         $this->load->view('html/header',$data);

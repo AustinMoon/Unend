@@ -105,7 +105,8 @@ class Tutor_model extends CI_Model {
         $query = $this->db->get('sentence_correct');
         return $query->num_rows();
     }
-    function tutor_list(){
+    function tutor_list($limit, $start){
+        $this->db->limit($limit, $start);
         $this->db->select('*');
         $this->db->from('users_groups');
         $this->db->where('group_id',4); 
@@ -147,6 +148,11 @@ class Tutor_model extends CI_Model {
         $this->db->set('rating_stars',$stars);
         $this->db->set('additional',$feedback);
         $this->db->update('sentence_correct');
+    }
+    function number_of_tutors(){
+        $this->db->where('group_id',4);
+        $query = $this->db->get('users_groups');
+        return $query->num_rows();
     }
     
 }
