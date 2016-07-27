@@ -61,7 +61,7 @@
                         
 
                         
-                        <h5 style="display:inline; color:#918C8C" >1 word = 1.5 point</h5>
+                        <h5 style="display:inline; color:#918C8C" >1 word = 1.5 points</h5>
                          <h5 class="pull-right" >Total word count: <span id="display_count">0</span></h5>
 
                     
@@ -69,7 +69,9 @@
                         <h5><i>(Ex. "for my homework", "for my email", "for my resume", "for my English test", and more)<br/></i></h5>
                         
                         <!-- <div id="textarea_feedback"></div>-->
-                        <textarea class="form-control"  id="c" rows="2"placeholder="Leave comment here..." maxlength="750" name="comment"></textarea>
+                        <textarea class="form-control"  id="c" rows="2"placeholder="Leave comment here..." maxlength="200" name="comment"></textarea>
+                        <h5 style="display:inline; color:#918C8C" >1 word = free</h5>
+                       
                         
                       
 

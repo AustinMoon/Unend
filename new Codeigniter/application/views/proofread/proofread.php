@@ -85,8 +85,7 @@
                        
                             <textarea class="form-control"  id="text" rows="5" placeholder="Type Sentence here..." name="comment" maxlength="750" autofocus></textarea>
                         
-                            <h5 style="display:inline; color:#918C8C"> 1 word = free / Limit = 750 words</h5>
-                        <h5 class="pull-right" id="count_message"></h5></form>
+                           <h5 style="display:inline; color:#918C8C" >1 word = free</h5>
 
                         <h4 ><i><hr/>Step 4. Great! You done! Please put the upload button!</i></h4>
 
@@ -120,5 +119,42 @@ $('#text').keyup(function() {
   var text_remaining = text_max - text_length;
   
   $('#count_message').html(text_remaining + ' /750');
+});
+</script>
+
+<script>
+$(document).ready(function() {
+  $("#word_count").on('keyup', function() {
+    var text = this.value;
+    var regex = [/DAV/g, /MAC/g];
+
+    function countWords() {
+      var count = [];
+      regex.forEach(function(reg) {
+        var m = text.match(reg);
+
+        if (m) {
+          count = count.concat(m);
+        }
+      });
+      var acronyms = count.length;
+      var wordsFromAcronyms = count.join().replace(/,/g,'').length;
+      var rawWords = text.match(/\S+/g).length;
+      
+      return rawWords - acronyms + wordsFromAcronyms;
+    }
+
+
+    var words = countWords();
+    if (words > 200) {
+      // Split the string on first 200 words and rejoin on spaces
+      var trimmed = $(this).val().split(/\s+/, 200).join(" ");
+      // Add a space at the end to keep new typing making new words
+      $(this).val(trimmed + " ");
+    } else {
+      $('#display_count').text(words);
+      $('#word_left').text(200 - words);
+    }
+  });
 });
 </script>
