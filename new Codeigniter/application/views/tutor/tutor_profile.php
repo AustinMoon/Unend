@@ -56,8 +56,8 @@
                 <div class= "row">
                     <div class="form-group col-sm-12">
                     <div class="col-sm-8" style="position:relative">
-                        <h3 ><i>Tutor's email : </i></h3>
-                        <h4 ><i>Tutor's rate :</i></h4>
+                        <h3 ><i>Tutor's email : <?= $tutor_email ?></i></h3>
+                        <h4 ><i>Tutor's rate : <?= $average ?></i></h4>
 
                         <h4 ><i>Tutor's feedback :</i></h4>
                         <!-- list of tutor's feedback-->

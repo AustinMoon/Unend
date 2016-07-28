@@ -1,29 +1,5 @@
 <!DOCTYPE html>
-<?php
 
-function humanTiming ($time)
-{
-    date_default_timezone_set("America/New_York");
-    $time = time() - $time; // to get the time since that moment
-    $time = ($time<1)? 1 : $time;
-    $tokens = array (
-        31536000 => 'year',
-        2592000 => 'month',
-        604800 => 'week',
-        86400 => 'day',
-        3600 => 'hour',
-        60 => 'minute',
-        1 => 'second'
-    );
-
-    foreach ($tokens as $unit => $text) {
-        if ($time < $unit) continue;
-        $numberOfUnits = floor($time / $unit);
-        return $numberOfUnits.' '.$text.(($numberOfUnits>1)?'s':'');
-    }
-
-}
- ?>
 
         <!-- Page Content -->
         <div id="page-wrapper">
@@ -76,7 +52,7 @@ function humanTiming ($time)
             echo '</td><td>';
             if(!empty($row->tutor_id))
             {$user = $this->ion_auth->user($row->tutor_id)->row();
-            echo $user->email;}
+            echo '<a href="http://quickcorrections.com/qc/login3/tutor/tutor_profile/'.$user->id.'">'.$user->email.'</a>';}
             else{
             echo 'Not Assigned Yet';}
             echo '</td><td>';

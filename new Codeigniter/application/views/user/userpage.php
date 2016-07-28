@@ -66,7 +66,7 @@
         <th>TEXT</th>
         <th>Tutor</th>
         <th>Request Date</th>
-        <th>Request Date</th>
+        <th>Request Type</th>
         <th>Select</th>
         
       </tr>
@@ -85,7 +85,7 @@
             echo '</td><td>';
             if(!empty($row->tutor_id)){
             $user = $this->ion_auth->user($row->tutor_id)->row();
-            echo $user->email;}
+            echo '<a href="http://quickcorrections.com/qc/login3/tutor/tutor_profile/'.$user->id.'">'.$user->email.'</a>';}
             else {echo 'not assigned yet';}
             echo '</td><td>';
             echo date('m/d/Y', $row->request_date);

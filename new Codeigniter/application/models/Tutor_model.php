@@ -90,6 +90,7 @@ class Tutor_model extends CI_Model {
         mail('', $subject, $message, $headers);
     }
     function get_tutor_history($tutor_id,$limit, $start){
+        //$this->db->where('assign_date <=', strtotime('12/22/2013'));
         $this->db->limit($limit, $start);
         $this->db->order_by('request_date', 'DESC');
         $this->db->where('tutor_id', $tutor_id);
@@ -99,6 +100,7 @@ class Tutor_model extends CI_Model {
         return $query;
     }
     function record_count($tutor_id){
+        //$this->db->where('assign_date <=', strtotime('12/22/2013'));
         $this->db->where('tutor_id', $tutor_id);
         $this->db->where('tutor_revision IS NOT', NULL);
         //$this->db->where('tutor_id', $tutor_id);
@@ -154,5 +156,9 @@ class Tutor_model extends CI_Model {
         $query = $this->db->get('users_groups');
         return $query->num_rows();
     }
+     function calculate_rate_average($tutor_id){
+$query = $this->db->select('AVG(rating_stars) as rating_stars')->from('sentence_correct')->where('tutor_id',$tutor_id)->get();
+return $query->row()->rating_stars;
+}
     
 }
