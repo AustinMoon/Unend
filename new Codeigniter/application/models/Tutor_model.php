@@ -89,8 +89,9 @@ class Tutor_model extends CI_Model {
         $headers = 'Bcc: ' .$email. "\r\n";
         mail('', $subject, $message, $headers);
     }
-    function get_tutor_history($tutor_id,$limit, $start){
-        //$this->db->where('assign_date <=', strtotime('12/22/2013'));
+    function get_tutor_history($tutor_id,$limit, $start,$from,$to){
+        $this->db->where('assign_date >=', $from);
+        $this->db->where('assign_date <=', $to);
         $this->db->limit($limit, $start);
         $this->db->order_by('request_date', 'DESC');
         $this->db->where('tutor_id', $tutor_id);
@@ -99,8 +100,9 @@ class Tutor_model extends CI_Model {
         $query = $this->db->get('sentence_correct');
         return $query;
     }
-    function record_count($tutor_id){
-        //$this->db->where('assign_date <=', strtotime('12/22/2013'));
+    function record_count($tutor_id,$from,$to){
+        $this->db->where('assign_date >=', $from);
+        $this->db->where('assign_date <=', $to);
         $this->db->where('tutor_id', $tutor_id);
         $this->db->where('tutor_revision IS NOT', NULL);
         //$this->db->where('tutor_id', $tutor_id);

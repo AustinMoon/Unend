@@ -39,17 +39,29 @@
                 <!-- /.col-lg-12 -->
             </div>
             <!-- /.row -->
-            <div class="row">
-       <div class='col-sm-6'>
+            <div class="row"><form action="http://quickcorrections.com/qc/login3/tutor/tutor_history/<?= $user->id ?>d" method="post">
+       <div class='col-md-3'>
             <div class="form-group">
                 <div class='input-group date' id='datetimepicker1'>
-                    <input type='text' class="form-control" />
-                    <span class="input-group-addon">
-                        <span class="glyphicon glyphicon-calendar"></span>
-                    </span>
+                  from  <input type="datetime-local" name="from" id="datepicker" value="1999-08-08T12:00" class="form-control" />
+                </div>
+            </div>
+           
+        </div>
+                <div class='col-md-3'>
+            <div class="form-group">
+                <div class='input-group date' id='datetimepicker1'>
+                   to <input type="datetime-local" name="to" id="datepicker" value="1999-08-08T12:00" class="form-control" />
                 </div>
             </div>
         </div>
+                <div class='col-md-3'>
+            <div class="form-group">
+                <div class='input-group date' id='datetimepicker1'>
+                  <button type="submit" name="submit" value="submit">submit</button>
+                </div>
+            </div>
+        </div></form>
             </div>
             <div class="row">
                
@@ -121,13 +133,14 @@
     <!-- Metis Menu Plugin JavaScript -->
     <script src="../css/bower_components/metisMenu/dist/metisMenu.min.js"></script>
 
+
     <!-- Custom Theme JavaScript -->
     <script src="../css/dist/js/sb-admin-2.js"></script>
- <script type="text/javascript">
-            $(function () {
-                $('#datetimepicker1').datetimepicker();
-            });
-        </script>
+   <script>
+  $( function() {
+    $( "#datepicker" ).datepicker();
+  } );
+  </script>
 
 </body>
 

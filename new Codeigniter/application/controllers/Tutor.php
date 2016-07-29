@@ -257,18 +257,29 @@ class Tutor extends CI_Controller {
         //$page = ($this->uri->segment(4)) ? $this->uri->segment(4) : 1;
         $this->load->model('user_model');
         $config=$this->user_model->paging();
+        if ($this->input->post('submit')){
+            $date = new DateTime(substr($_POST['from'], 0, -6));
+            $from = strtotime($date->format('m-d-Y'));
+            $date = new DateTime(substr($_POST['to'], 0, -6));
+            $to = strtotime($date->format('m-d-Y'));
+        }
+        else {
+            $from=0;
+            $to=934171200;
+        }
         $config["base_url"] = base_url() . "tutor/tutor_history/".$tutor_id."d";
         $config["per_page"] = 5;
         //$config["uri_segment"] = 3;
-        $config["total_rows"] = $this->tutor_model->record_count($tutor_id);
+        $config["total_rows"] = $this->tutor_model->record_count($tutor_id,$from,$to);
         $this->pagination->initialize($config);
         $data['points']= $user->points;
-        $data['content'] = $this->tutor_model->get_tutor_history($tutor_id,$config["per_page"], $this->uri->segment(4));
+        $data['content'] = $this->tutor_model->get_tutor_history($tutor_id,$config["per_page"], $this->uri->segment(4),$from,$to);
         $data['user_id'] = $tutor_id;
         $data['tutor_points']=$this->tutor_model->tutor_points($tutor_id)->result();
         $this->load->view('html/header',$data);
         $this->load->view('tutor/tutor_history',$data);
         $this->load->view('html/footer'); 
+        
     }
        
     function proofread_answer($request_id){

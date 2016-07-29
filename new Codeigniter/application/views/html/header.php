@@ -13,15 +13,10 @@
 	
 
     
-     <script type="text/javascript" src="http://quickcorrections.com/qc/css/bower_components/jquery/jquery.min.js"></script>
-  <script type="text/javascript" src="http://quickcorrections.com/qc/css/bower_components/moment/min/moment.min.js"></script>
-  <script type="text/javascript" src="http://quickcorrections.com/qc/css/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-  <script type="text/javascript" src="http://quickcorrections.com/qc/css/bower_components/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js"></script>
-  <link rel="stylesheet" href="http://quickcorrections.com/qc/css/bower_components/bootstrap/dist/css/bootstrap.min.css" />
-  <link rel="stylesheet" href="http://quickcorrections.com/qc/css/bower_components/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css" />
-    
     
 	<!-- css -->
+    <link rel="stylesheet" type="text/css" media="screen"
+     href="http://tarruda.github.com/bootstrap-datetimepicker/assets/css/bootstrap-datetimepicker.min.css">
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
 	<link href="http://quickcorrections.com/qc/css/bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="http://quickcorrections.com/qc/css/font-awesome.css" rel="stylesheet">
@@ -45,7 +40,8 @@
 
     <!-- Metis Menu Plugin JavaScript -->
     <script src="http://quickcorrections.com/qc/css/bower_components/metisMenu/dist/metisMenu.min.js"></script>
-    
+    <script src="http://quickcorrections.com/qc/css/js/bootstrap-datetimepicker.min.js"></script>
+
     <!-- Custom Theme JavaScript -->
     <script src="http://quickcorrections.com/qc/css/dist/js/sb-admin-2.js"></script>
 
