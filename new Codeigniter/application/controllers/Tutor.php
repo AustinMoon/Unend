@@ -316,7 +316,19 @@ class Tutor extends CI_Controller {
             $this->load->view('user/upload/upload_success', $data); 
             $this->load->view('html/footer.html');
          } 
-        } 
+        }
+        
+        else   
+        {
+            $data = new stdClass();
+            $user = $this->ion_auth->user()->row();
+            $data->points= $user->points;
+            $data->req_id=$request_id;
+            $this->load->view('html/header',$data);
+            $this->load->view('tutor/tutor_proof');
+            $this->load->view('html/footer.html');
+
+        }
     }
     
     function tutor_profile($tutor_id){

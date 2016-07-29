@@ -35,18 +35,17 @@
                 </div>
                 <div class= "row">
                     <div class="form-group col-md-8">
-                          <form action = "../add_revision" method = "POST">
-                        <label><p><h2>Student's file &nbsp; <button>download</button></h2></p></label>
+                      <label><p><h2>Student's file &nbsp; <a href="http://quickcorrections.com/qc/login3/uploads/"><button>download</button></a></button></h2></p></label>
                         <label><p><h2>Tutor's Answer:</h2></p></label>
                         <textarea name="tutor_revision" class="form-control" rows="5" autofocus></textarea>
-                        <input type="hidden" name="request_id" value="<?= $request->request_id; ?>">
+                        <input type="hidden" name="request_id" value="<?= $req_id; ?>">
 
                     </div>
                 </div>
                 <div class"row">
                     <div class="">
                     <button type="submit" class="btn btn-danger">Submit</button>
-                    </div></form>
+                    </div>
 
                 </div>
                 <!--
