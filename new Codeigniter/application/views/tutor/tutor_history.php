@@ -43,7 +43,7 @@
        <div class='col-md-3'>
             <div class="form-group">
                 <div class='input-group date' id='datetimepicker1'>
-                  from  <input type="datetime-local" name="from" id="datepicker" value="1999-08-08T12:00" class="form-control" />
+                  from  <input type="datetime-local" name="from" id="datepicker" value="2016-08-08T12:00" class="form-control" />
                 </div>
             </div>
            
@@ -51,7 +51,7 @@
                 <div class='col-md-3'>
             <div class="form-group">
                 <div class='input-group date' id='datetimepicker1'>
-                   to <input type="datetime-local" name="to" id="datepicker" value="1999-08-08T12:00" class="form-control" />
+                   to <input type="datetime-local" name="to" id="datepicker" value="2016-08-08T12:00" class="form-control" />
                 </div>
             </div>
         </div>
