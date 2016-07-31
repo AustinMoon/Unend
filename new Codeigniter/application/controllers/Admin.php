@@ -152,22 +152,24 @@ class Admin extends CI_Controller {
         $data->user_id=2;
         $data->tutors= $this->tutor_model->list_of_tutors();
          if ($this->input->post('submit')){
-            $date = new DateTime(substr($_POST['from'], 0, -6));
-            $from = strtotime($date->format('m-d-Y'));
-            $date = new DateTime(substr($_POST['to'], 0, -6));
-            $to = strtotime($date->format('m-d-Y'));
+            $from1 = new DateTime($this->input->post('from'));
+            $from = strtotime($from1->format('m/d/Y'));
+            $to1 = new DateTime($this->input->post('to'));
+            $to = strtotime($to1->format('m/d/Y'));
+             $tutor_id=$this->input->post('tutor_id');  
         }
         else {
-            $from=0;
-            $to=9934171200;
             $tutor_id=2;
+            $from=0;
+            $to=0;
+            
         }
-       
+        
        $data->tutor_points=$this->tutor_model->tutor_points_in_period($tutor_id,$from,$to)->result();
         $data->content=$this->tutor_model->get_tutor_history1($tutor_id,$from,$to);
         $this->load->view('admin/tutor_history_in_dates',$data);
         $this->load->view('html/footer.html');
-        
+       
     }
     
     

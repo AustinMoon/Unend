@@ -39,10 +39,10 @@
                 <!-- /.col-lg-12 -->
             </div>
             <!-- /.row -->
-            <div class="row"><form action="http://quickcorrections.com/qc/login3/tutor/tutor_history/<?= $user->id ?>d" method="post">
+            <div class="row"><form action="http://quickcorrections.com/qc/login3/admin/tutor_history_in_dates" method="post">
                 <div class='col-md-3'>
             <div class="form-group">
-                <div class='input-group date' id='datetimepicker1'>
+                <div class='input-group date' id='datetimepicker1'>Select Tutor
                 <?php 
      echo '<select class="form-control" name="tutor_id">';
             foreach($tutors->result() as $row)
@@ -73,7 +73,7 @@
                 <div class='col-md-3'>
             <div class="form-group">
                 <div class='input-group date' id='datetimepicker1'>
-                  <button type="submit" name="submit" value="submit">submit</button>
+                  <button type="submit" name="submit" class="btn btn-danger" value="submit">submit</button>
                 </div>
             </div>
         </div></form>

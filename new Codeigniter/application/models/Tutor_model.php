@@ -160,18 +160,19 @@ $query = $this->db->select('AVG(rating_stars) as rating_stars')->from('sentence_
 return $query->row()->rating_stars;
 }
     function tutor_points_in_period($tutor_id,$from,$to){
-        $this->db->select_sum('req_points');
-        $this->db->where('assign_date >=', $from);
-        $this->db->where('assign_date <=', $to);
+        
+        $this->db->where('revision_finish_date >=', $from);
+        $this->db->where('revision_finish_date <=', $to);
         $this->db->where('tutor_id',$tutor_id);
         $this->db->where('tutor_revision IS NOT', NULL);
+        $this->db->select_sum('req_points');
         $query = $this->db->get('sentence_correct');
         return $query;
     }
     function get_tutor_history1($tutor_id,$from,$to){
-        $this->db->where('assign_date >=', $from);
-        $this->db->where('assign_date <=', $to);
-        $this->db->order_by('request_date', 'DESC');
+        $this->db->where('revision_finish_date >=', $from);
+        $this->db->where('revision_finish_date <=', $to);
+        $this->db->order_by('revision_finish_date', 'DESC');
         $this->db->where('tutor_id', $tutor_id);
         $this->db->where('tutor_revision IS NOT', NULL);
         //$this->db->where('tutor_id', $tutor_id);

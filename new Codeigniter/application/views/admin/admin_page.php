@@ -38,6 +38,11 @@ function humanTiming ($time)
                             <!-- /.nav-second-level -->
                         </li>
                         <li>
+                            <a href="http://quickcorrections.com/qc/login3/admin/tutor_history_in_dates"><i class=""></i> <b>See Tutor History with Conditions</b></a>
+                            
+                            <!-- /.nav-second-level -->
+                        </li>
+                        <li>
                             <a href="http://quickcorrections.com/qc/login3/tutor/setting"><i class=""></i> <b>Password</b></a>
                             
                             <!-- /.nav-second-level -->
@@ -51,7 +56,6 @@ function humanTiming ($time)
             </div>
             <!-- /.navbar-static-side -->
         </nav>
-
 
         <!-- Page Content -->
         <div id="page-wrapper">
