@@ -136,5 +136,39 @@ class Admin extends CI_Controller {
         $this->tutor_model->assign_to_tutor($req_id,$tutor_id,$points);
     }
     
+    function tutor_history_in_dates(){
+        if (!$this->ion_auth->is_admin())
+		{
+			// redirect them to the login page
+			redirect('auth/login', 'refresh');
+		}
+        
+        $data = new stdClass();
+            $user = $this->ion_auth->user()->row();
+            $data->points= $user->points;
+            $this->load->view('html/header',$data);
+        $this->load->model('tutor_model');
+        $data = new stdClass();
+        $data->user_id=2;
+        $data->tutors= $this->tutor_model->list_of_tutors();
+         if ($this->input->post('submit')){
+            $date = new DateTime(substr($_POST['from'], 0, -6));
+            $from = strtotime($date->format('m-d-Y'));
+            $date = new DateTime(substr($_POST['to'], 0, -6));
+            $to = strtotime($date->format('m-d-Y'));
+        }
+        else {
+            $from=0;
+            $to=9934171200;
+            $tutor_id=2;
+        }
+       
+       $data->tutor_points=$this->tutor_model->tutor_points_in_period($tutor_id,$from,$to)->result();
+        $data->content=$this->tutor_model->get_tutor_history1($tutor_id,$from,$to);
+        $this->load->view('admin/tutor_history_in_dates',$data);
+        $this->load->view('html/footer.html');
+        
+    }
+    
     
 }

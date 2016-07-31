@@ -39,7 +39,45 @@
                 <!-- /.col-lg-12 -->
             </div>
             <!-- /.row -->
+            <div class="row"><form action="http://quickcorrections.com/qc/login3/tutor/tutor_history/<?= $user->id ?>d" method="post">
+                <div class='col-md-3'>
+            <div class="form-group">
+                <div class='input-group date' id='datetimepicker1'>
+                <?php 
+     echo '<select class="form-control" name="tutor_id">';
+            foreach($tutors->result() as $row)
+            { 
+                $tutor = $this->ion_auth->user($row->user_id)->row();
+              echo '<option value="'.$row->user_id.'">'.$tutor->email.'</option>';
+            }
+            
+            echo '</select>';
+    
+    ?>
+                </div></div></div>
+       <div class='col-md-3'>
+            <div class="form-group">
+                <div class='input-group date' id='datetimepicker1'>
+                  from  <input type="datetime-local" name="from" id="datepicker" value="1999-08-08T12:00" class="form-control" />
+                </div>
+            </div>
            
+        </div>
+                <div class='col-md-3'>
+            <div class="form-group">
+                <div class='input-group date' id='datetimepicker1'>
+                   to <input type="datetime-local" name="to" id="datepicker" value="1999-08-08T12:00" class="form-control" />
+                </div>
+            </div>
+        </div>
+                <div class='col-md-3'>
+            <div class="form-group">
+                <div class='input-group date' id='datetimepicker1'>
+                  <button type="submit" name="submit" value="submit">submit</button>
+                </div>
+            </div>
+        </div></form>
+            </div>
             <div class="row">
                
                 <div class="panel panel-default">
@@ -87,9 +125,9 @@
         
                     </div>
                     </div>
-               <?php echo $this->pagination->create_links(); ?><br>
+             
                 
-                Total Points Earned: <?php
+                Total Points Earned In This Period: <?php
                 foreach($tutor_points as $row){ echo $row->req_points/2;}
                // echo print_r($tutor_points); ?>
             </div>
