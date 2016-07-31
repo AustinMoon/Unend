@@ -39,7 +39,34 @@
                 <!-- /.col-lg-12 -->
             </div>
             <!-- /.row -->
+<<<<<<< HEAD
            
+=======
+            <div class="row"><form action="http://quickcorrections.com/qc/login3/tutor/tutor_history/<?= $user->id ?>d" method="post">
+       <div class='col-md-3'>
+            <div class="form-group">
+                <div class='input-group date' id='datetimepicker1'>
+                  from  <input type="datetime-local" name="from" id="datepicker" value="2016-08-08T12:00" class="form-control" />
+                </div>
+            </div>
+           
+        </div>
+                <div class='col-md-3'>
+            <div class="form-group">
+                <div class='input-group date' id='datetimepicker1'>
+                   to <input type="datetime-local" name="to" id="datepicker" value="2016-08-08T12:00" class="form-control" />
+                </div>
+            </div>
+        </div>
+                <div class='col-md-3'>
+            <div class="form-group">
+                <div class='input-group date' id='datetimepicker1'>
+                  <button type="submit" name="submit" value="submit">submit</button>
+                </div>
+            </div>
+        </div></form>
+            </div>
+>>>>>>> 5284cc317485b3e7ace0532228fea0f0860dc448
             <div class="row">
                
                 <div class="panel panel-default">
