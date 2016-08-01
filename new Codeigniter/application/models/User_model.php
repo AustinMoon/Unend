@@ -174,7 +174,8 @@ class User_model extends CI_Model {
             'type'      => 'Proofread',
             'additional'=> $a,
 		);
-		
+        
+
 		return $this->db->insert('sentence_correct', $data);
         
     }

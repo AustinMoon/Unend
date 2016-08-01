@@ -143,15 +143,13 @@ class Tutor_model extends CI_Model {
     
     function assign_to_tutor($req_id,$tutor_id,$points){
         date_default_timezone_set("America/New_York");
-        $this->db->where('request_id',$req_id);
-        $this->db->set('is_assigned',1);
-        $this->db->set('assign_date',time());
-        $this->db->set('tutor_id',$tutor_id);
-        $this->db->set('req_points',$points);
+        $this->db->where('request_id', $req_id);
+        $this->db->set('is_assigned', 1);
+        $this->db->set('assign_date', time());
+        $this->db->set('tutor_id', $tutor_id);
+        $this->db->set('req_points', $points);
         $this->db->update('sentence_correct');
         
-<<<<<<< HEAD
-=======
         $subject = 'New Proofread Request!';
         $message = ' You have received a new request! 
         Please Click http://quickcorrections.com/qc/login3/tutor/
@@ -160,7 +158,6 @@ class Tutor_model extends CI_Model {
         $to = $user->email;
         mail($to, $subject, $message);
         
->>>>>>> 557e7531865bc405a8e32fbfdbca5a59fcdeb5bd
     }
     
     function tutor_open_requests_count($tutor_id){
