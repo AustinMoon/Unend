@@ -5,7 +5,7 @@
             <div class="container-fluid">
                 <div class="row" >
                     <div class="col-lg-12 page-header text-center">
-                        <h1 style=" font-size:50px">Welcome to Quickcorrections</h1>
+                        <h1 style=" font-size:50px">Welcome to Quickcorrections!</h1>
                         
                     </div>
                 </div>
@@ -15,7 +15,7 @@
                         <div class="col-sm-6 col-sm-offset-3">
                             <div class="panel panel-red">
                                 <div class="panel-heading text-center">
-                                    <h2> Thank you <br/> Check your email to activate your account! </h2>
+                                    <h2> Thank you! <br/> Check your email to activate your account! </h2>
                                 </div>
                             </div>
                             <a href="<?= base_url('auth/login') ?>"><button class="btn btn-danger col-sm-offset-5">Go to Signin</button></a>
