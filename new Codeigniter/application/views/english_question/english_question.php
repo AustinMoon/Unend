@@ -72,7 +72,7 @@
                 </div>
                 <div class"row">
                     <div class="">
-                    <h4 ><i><hr/>Step 2. Are you done? Put the submit button below. Thank you!</i></h4>
+                    <h4 ><i><hr/>Step 2. Are you done? Click on the button below. Thank you!</i></h4>
 
                     <button href="" class="btn btn-danger">Submit</a>
                     </div>

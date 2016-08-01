@@ -68,21 +68,23 @@
               <div class= "row">
                     <div class="form-group col-sm-12">
                     <div class="col-sm-8" style="position:relative">
-                    <h4 ><i>Step 1. Please record your speaking with your laptop or desktop.<br/></i></h4>
-                    <h5><i>* You can record up to 45 seconds, and we will charge you 120 points.</i></h5>
+                    <h4 ><i>Step 1. Please record your speaking.<br/></i></h4>
+                    <h5><i>* Please record your speaking up to 45 seconds, and we will charge you 120 points.</i></h5>
+                    <h5><i>* If you already have your own recording file, please go to Step 3 below.</i></h5>
               
                     <iframe src="http://vocaroo.com/?minimal" width="525" height="450" frameborder="0"></iframe><br>Powered by <a href="http://vocaroo.com" title="Voice Recorder">Vocaroo Voice Recorder</a>
                     
-                    <h4 ><i><hr/>Step 2. Download file as mp3</i></h4>
+                    <h4 ><i><hr/>Step 2. Download file as Mp3</i></h4>
                     
-                    <h4 ><i><hr/> Step 3. Select your recorded file, and upload it on our system.</i></h4>
+                    <h4 ><i><hr/> Step 3. Select your recording, and upload it on our system.</i></h4>
                         
                     <div class="panel panel-red">
                         <input type = "file" name = "userfile" size = "20" /> 
                     </div>     
                     
                     <h4 ><i><hr/>Step 4. Press Upload button below.<br/></i></h4>
-                    <h5><i>* We will respond to you as Quickly as possible.<br/> Please check your email as well. Thank you so much!</i></h5>      
+                    <h5><i>* We will respond to you as Quickly as possible.</i></h5>
+                    <h5><i>* Please check your email as well. Thank you so much!</i></h5>      
                     <input type ="submit" value="Upload" href="" class="btn btn-danger" />
                 </div>
             </div>

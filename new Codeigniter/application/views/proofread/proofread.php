@@ -68,7 +68,7 @@
 
                       
                         <h4 ><i>Step 1. Prepare your paper with MS Word format.</i></h4>
-                        <h4 ><i><hr/>Step 2. Select your file on our system.</i></h4>
+                        <h4 ><i><hr/>Step 2. Select and upload your file on our system.</i></h4>
 
                         <div class="panel panel-red">
 
@@ -87,7 +87,7 @@
                         
                            <h5 style="display:inline; color:#918C8C" >1 word = free</h5>
 
-                        <h4 ><i><hr/>Step 4. Great! You done! Please put the upload button!</i></h4>
+                        <h4 ><i><hr/>Step 4. Great! You done! Please click on the upload button!</i></h4>
 
                          <input class="btn btn-danger " type = "submit" value = "Upload"  /> 
                     </div>
