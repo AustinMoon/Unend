@@ -355,4 +355,16 @@ class User extends CI_Controller {
         $this->tutor_model->add_rating($request_id,$stars,$feedback);
         echo'dd';
     }
+    
+    function tip($tip_id){
+        $data = new stdClass();
+        $user = $this->ion_auth->user()->row();
+        $data->points= $user->points;
+        $this->load->model('user_model');
+        $data->request=$this->user_model->tip($tip_id)->row();
+        $this->load->view('html/header',$data);
+        $this->load->view('user/tip',$data);
+        $this->load->view('html/footer.html');
+        
+    }
 }
