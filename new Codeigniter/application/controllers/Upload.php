@@ -40,6 +40,12 @@
              $this->user_model->upload_file($user->id,$this->upload->data('file_name'));
              $this->load->view('sen_correct/sen_correct_success',$data);
              $this->load->view('html/footer.html');
+             
+             $subject = 'New Proofread Request!';
+             $message = ' You have received a new request! 
+             Please Click http://quickcorrections.com/qc/login3/admin/proofreading_orders 
+             Thank you so much!';
+             mail('quickcorrectinos@gmail.com', $subject, $message);
                 
          } 
       } 

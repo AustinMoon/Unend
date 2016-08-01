@@ -81,14 +81,14 @@ class Tutor_model extends CI_Model {
         $email='';
         $this->db->where('group_id', '4');
         $query = $this->db->get('users_groups');
-        foreach ($query->result() as $row){
+        foreach ($query->result() as $row)
+        {
             $tutor  = $this->ion_auth->user($row->user_id)->row();
             $email  .=$tutor->email;
-            $email  .=',';
-             
-            
+            $email  .=',';   
         }
-       substr($email, 0, -1);
+        
+        substr($email, 0, -1);
         $subject='QuickCorrections: You have receive a new request!';
         $message='
         You have received a new request! 
@@ -143,13 +143,17 @@ class Tutor_model extends CI_Model {
     
     function assign_to_tutor($req_id,$tutor_id,$points){
         date_default_timezone_set("America/New_York");
-        $this->db->where('request_id',$req_id);
-        $this->db->set('is_assigned',1);
-        $this->db->set('assign_date',time());
-        $this->db->set('tutor_id',$tutor_id);
-        $this->db->set('req_points',$points);
+        $this->db->where('request_id', $req_id);
+        $this->db->set('is_assigned', 1);
+        $this->db->set('assign_date', time());
+        $this->db->set('tutor_id', $tutor_id);
+        $this->db->set('req_points', $points);
         $this->db->update('sentence_correct');
+<<<<<<< HEAD
 
+=======
+        
+>>>>>>> 7b7134ffd012a8b30ea36cdae340bdc431ef1e97
         $subject = 'New Proofread Request!';
         $message = ' You have received a new request! 
         Please Click http://quickcorrections.com/qc/login3/tutor/
@@ -157,6 +161,10 @@ class Tutor_model extends CI_Model {
         $user = $this->ion_auth->user($tutor_id)->row();
         $to = $user->email;
         mail($to, $subject, $message);
+<<<<<<< HEAD
+=======
+        
+>>>>>>> 7b7134ffd012a8b30ea36cdae340bdc431ef1e97
     }
     
     function tutor_open_requests_count($tutor_id){
@@ -206,6 +214,7 @@ class Tutor_model extends CI_Model {
         $query = $this->db->get('sentence_correct');
         return $query;
     }
+    
     function add_post($title,$content){
         
         $this->load->helper('date');
@@ -218,6 +227,7 @@ class Tutor_model extends CI_Model {
 		
 		return $this->db->insert('posts', $data);
     }
+    
     function list_of_posts(){
         $query = $this->db->get('posts');
         return $query;
