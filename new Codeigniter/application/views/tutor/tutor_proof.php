@@ -35,8 +35,13 @@
                 </div>
                 <div class= "row">
                     <div class="form-group col-md-8">
-                      <label><p><h2>Student's file &nbsp; <a href="http://quickcorrections.com/qc/login3/uploads/"><button>download</button></a></button></h2></p></label>
-                        <label><p><h2>Tutor's Answer:</h2></p></label>
+                      
+                        <h2>Student's File: &nbsp; <a href="http://quickcorrections.com/qc/login3/uploads/"><button>Download</button></a></h2>
+                        
+                        <h2>Tutor's Answer:</h2>
+                        
+                        
+                        <h3>Tutor Comments:</h3>
                         <textarea name="tutor_revision" class="form-control" rows="5" autofocus></textarea>
                         <input type="hidden" name="request_id" value="<?= $req_id; ?>">
 

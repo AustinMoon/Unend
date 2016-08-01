@@ -300,7 +300,7 @@ class User extends CI_Controller {
               
               $this->load->view('sen_correct/sen_correct_success',$data);
               $this->load->view('html/footer.html');
-                $this->tutor_model->send_email_to_tutors();
+            $this->tutor_model->send_email_to_tutors();
           }
         }
         else
