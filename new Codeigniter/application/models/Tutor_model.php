@@ -81,14 +81,14 @@ class Tutor_model extends CI_Model {
         $email='';
         $this->db->where('group_id', '4');
         $query = $this->db->get('users_groups');
-        foreach ($query->result() as $row){
+        foreach ($query->result() as $row)
+        {
             $tutor  = $this->ion_auth->user($row->user_id)->row();
             $email  .=$tutor->email;
-            $email  .=',';
-             
-            
+            $email  .=',';   
         }
-       substr($email, 0, -1);
+        
+        substr($email, 0, -1);
         $subject='QuickCorrections: You have receive a new request!';
         $message='
         You have received a new request! 
@@ -207,6 +207,7 @@ class Tutor_model extends CI_Model {
         $query = $this->db->get('sentence_correct');
         return $query;
     }
+    
     function add_post($title,$content){
         
         $this->load->helper('date');
@@ -219,6 +220,7 @@ class Tutor_model extends CI_Model {
 		
 		return $this->db->insert('posts', $data);
     }
+    
     function list_of_posts(){
         $query = $this->db->get('posts');
         return $query;
