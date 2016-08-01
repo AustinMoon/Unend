@@ -46,44 +46,32 @@
         <!-- Page Content -->
         <div id= "page-wrapper"class="container-fluid">
                 <div class="row">
-                    <div class="col-lg-12">
-                        <h1 class="page-header text-center" style="font-family:avenir">THANK YOU!</h1>
+                    <div class="col-sm-12">
+                        <h1 class="page-header text-center">THANK YOU!</h1>
                     </div>
                     <!-- /.col-lg-12 -->
                 </div>
 
                 <div class= "row">
-                    
-                <div class="col-lg-6 col-lg-offset-3">
-                    <div class="panel panel-red">
-                        <div class="panel-heading text-center">
-                            <h2>
-                           We've received your inquiry. Once we are done, we will let you know. 
-                           Please check your email as well.
-                       </br>
-                    </h2>
+                    <div class="col-sm-12">
+                        <div class="col-sm-6 col-sm-offset-3">
+                            <div class="panel panel-red">
+                                <div class="panel-heading text-center">
+                                    <h2>
+                                   We've received your inquiry. Once we are done, we will let you know. 
+                                   Please check your email as well.
+                                    </br>
+                                    </h2>
+                                </div>
+                              
+                            </div>
+                            <a href="<?= base_url('user') ?>"><button class="btn btn-danger col-sm-offset-5">Go to Main Page</button></a>
+                            <!-- /.col-lg-4 -->
                         </div>
-                      
                     </div>
-                                        <a href="<?= base_url('user') ?>"><button class="btn btn-danger col-lg-offset-4">Go to Main Page</button></a>
-
-                    <!-- /.col-lg-4 -->
-                    
                 </div>
-                    
-              </div>
-
-               
-
-
-                
-                <!-- /.row -->
         </div>
-            <!-- /.container-fluid -->
-        
-        <!-- /#page-wrapper -->
 
-    </div>
     <!-- /#wrapper -->
 
     <!-- jQuery -->
