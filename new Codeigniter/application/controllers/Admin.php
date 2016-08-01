@@ -89,10 +89,13 @@ class Admin extends CI_Controller {
 			// redirect them to the login page
 			redirect('auth/login', 'refresh');
 		}
-        {$data = new stdClass();
+        {
+            $data = new stdClass();
             $user = $this->ion_auth->user()->row();
             $data->points= $user->points;
-            $this->load->view('html/header',$data);}
+            $this->load->view('html/header',$data);
+        }
+        
         $this->load->model('tutor_model');
         $data = new stdClass();
         $data->content= $this->tutor_model->open_proofread();
@@ -130,10 +133,10 @@ class Admin extends CI_Controller {
     }
     function assign_proofread(){
         $this->load->model('tutor_model');
-        $req_id= $_POST['req_id'];
-        $tutor_id= $_POST['tutor_id'];
-        $points= $_POST['points'];
-        $this->tutor_model->assign_to_tutor($req_id,$tutor_id,$points);
+        $req_id = $_POST['req_id'];
+        $tutor_id = $_POST['tutor_id'];
+        $points = $_POST['points'];
+        $this->tutor_model->assign_to_tutor($req_id, $tutor_id, $points);
     }
     
     function tutor_history_in_dates(){

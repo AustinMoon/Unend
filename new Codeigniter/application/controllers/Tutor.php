@@ -314,6 +314,7 @@ class Tutor extends CI_Controller {
             $user = $this->ion_auth->user()->row();
             $data->points= $user->points;
             $data->req_id=$request_id;
+            $data->info = $this->tutor_model->get_request_info($request_id);
             $this->load->view('html/header',$data);
             $this->load->view('tutor/tutor_proof');
             $this->load->view('html/footer.html');
