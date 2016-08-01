@@ -172,5 +172,44 @@ class Admin extends CI_Controller {
        
     }
     
+    function daily_english_tip(){
+        if ( !$this->ion_auth->is_admin())
+        {
+            // redirect them to the login page
+            redirect('auth/login', 'refresh');
+        }
+        if ($this->input->post('submit'))
+        {
+            $this->load->model('tutor_model');
+            $this->tutor_model->add_post($this->input->post('title'),$this->input->post('content'));
+                
+        }
+        else
+        {
+        $this->load->view('html/header');
+        $this->load->view('admin/daily_posting');
+        $this->load->view('html/footer.html');
+        }
+    }
+    
+    function list_of_posts(){
+      $data = new stdClass();
+        $this->load->model('tutor_model');
+        $data->content = $this->tutor_model->list_of_posts();
+        $this->load->view('html/header');
+        $this->load->view('admin/daily_english',$data);
+        $this->load->view('html/footer.html');
+    }
+    
+    function korean_proofreading(){
+        
+        {$data = new stdClass();
+            $user = $this->ion_auth->user()->row();
+            $data->points= $user->points;
+            $this->load->view('html/header',$data);}
+        $this->load->view('proofread/korean_proofread');
+        $this->load->view('html/footer.html');
+    }
+    
     
 }

@@ -9,9 +9,33 @@
                 <div class="col-md-8 col-md-offset-2" >
                    <!-- table-->
                     <div class="text-center">
-                        <h1></h1>
-                        <h1>Please enjoy our service! <br/></h1>
-                        <h1></h1>
+                        <div class="panel-body">
+        <table class="table table-hover">
+    <thead>
+      <tr>
+        <th>post ID</th>
+        <th>Content</th>
+        <th>Post Date</th>
+      </tr>
+    </thead>
+    <tbody>
+
+        <?php 
+        
+        foreach ($content->result() as $row)
+{
+            echo '<tr>';
+            echo '<td>';
+            echo $row->post_id;
+            echo '</td><td>';
+            echo $row->content;
+            echo '</td><td>';
+            echo date('m/d/Y', $row->request_date);
+            echo '</td><td>';
+        }
+            ?>
+    </tbody></table>
+                    </div>
                         <a href="<?= base_url('auth/login') ?>"><button  class="btn btn-danger">Click Here! </button></a>
                         <h1></h1>
                     </div>

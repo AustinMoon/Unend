@@ -136,6 +136,7 @@ class Tutor_model extends CI_Model {
         $this->db->set('tutor_id',$tutor_id);
         $this->db->set('req_points',$points);
         $this->db->update('sentence_correct');
+        
     }
     function tutor_open_requests_count($tutor_id){
         $this->db->where('tutor_id', $tutor_id);
@@ -177,6 +178,22 @@ return $query->row()->rating_stars;
         $this->db->where('tutor_revision IS NOT', NULL);
         //$this->db->where('tutor_id', $tutor_id);
         $query = $this->db->get('sentence_correct');
+        return $query;
+    }
+    function add_post($title,$content){
+        
+        $this->load->helper('date');
+        date_default_timezone_set("America/New_York");
+		$data = array(
+			'title'   => $title,
+			'content'      => $content,
+			'request_date' => date('Y-m-d H:i:s')
+		);
+		
+		return $this->db->insert('posts', $data);
+    }
+    function list_of_posts(){
+        $query = $this->db->get('posts');
         return $query;
     }
 }

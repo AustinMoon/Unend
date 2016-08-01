@@ -5,15 +5,18 @@
                 </div>
             </div>
             
-            <div class="row text-center" >
-                <div class="col-md-8 col-md-offset-2" >
+            <div class="row" >
+                <div class="col-md-8 col-md-offset-2" ><form action="daily_english_tip" method="post">
                     <h4 ><i>Title </i></h4>
-                    <textarea class="form-control"  id="word_count" rows="1" placeholder="Type here..." name="sentence" maxlength="150" autofocus></textarea>
+                    <textarea class="form-control"  id="word_count" rows="1" placeholder="Type here..." name="title" maxlength="150" autofocus></textarea>
 
                     <h4 ><i>Type Daily English Tip below </i></h4>
-                    <textarea class="form-control"  id="word_count" rows="5" placeholder="Type here..." name="sentence" maxlength="750"></textarea>
+                    <textarea class="form-control"  id="word_count" rows="5" placeholder="Type here..." name="content" maxlength="750"></textarea>
+                    <h4></h4>
+                    <button href="" name="submit" value="submit" class="btn btn-danger">Submit</button>
+                    <h1></h1>
         <!-- /#page-wrapper -->
-                </div>
+                </div></form>
             </div>
          </div>
     
