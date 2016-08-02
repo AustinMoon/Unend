@@ -112,6 +112,13 @@
              $this->user_model->upload_proofread_answer($request_id,$this->upload->data('file_name'));
              $this->load->view('sen_correct/sen_correct_success',$data);
              $this->load->view('html/footer.html');
+             
+             $subject = 'Proofread Finished!';
+             $message = 'Your request for Proofreading has been finished! Please check your answers: http://quickcorrections.com/qc/login3/user/userpage
+             Thank you so much!';
+             $user = $this->ion_auth->user()->row();
+             $to = $user->email;
+             mail($to, $subject, $message);
          } 
        }
        
