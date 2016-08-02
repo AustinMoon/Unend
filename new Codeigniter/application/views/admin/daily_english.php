@@ -24,14 +24,17 @@
         
         foreach ($content->result() as $row)
 {
+           
             echo '<tr>';
             echo '<td>';
+             echo '<a href="http://quickcorrections.com/qc/login3/user/tip/'.$row->post_id.'" >';
             echo $row->post_id;
             echo '</td><td>';
+            echo '<a href="http://quickcorrections.com/qc/login3/user/tip/'.$row->post_id.'" >';
             echo $row->content;
             echo '</td><td>';
             echo date('m/d/Y', $row->request_date);
-            echo '</td><td>';
+            echo '</a></td><td>';
         }
             ?>
     </tbody></table>

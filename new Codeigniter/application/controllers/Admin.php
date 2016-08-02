@@ -185,6 +185,8 @@ class Admin extends CI_Controller {
         {
             $this->load->model('tutor_model');
             $this->tutor_model->add_post($this->input->post('title'),$this->input->post('content'));
+            
+            redirect('admin/list_of_posts', 'refresh');
                 
         }
         else
@@ -197,9 +199,12 @@ class Admin extends CI_Controller {
     
     function list_of_posts(){
       $data = new stdClass();
+        $data = new stdClass();
+            $user = $this->ion_auth->user()->row();
+            $data->points= $user->points;
+            $this->load->view('html/header',$data);
         $this->load->model('tutor_model');
         $data->content = $this->tutor_model->list_of_posts();
-        $this->load->view('html/header');
         $this->load->view('admin/daily_english',$data);
         $this->load->view('html/footer.html');
     }

@@ -251,5 +251,10 @@ $config['anchor_class'] = 'follow_link';
         return $query->num_rows();
     }
     
+    function tip($tip_id){
+        $this->db->where('post_id',$tip_id);
+        $query= $this->db->get('posts');
+        return $query;
+    }
 	
 }
