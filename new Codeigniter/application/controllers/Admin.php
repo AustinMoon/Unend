@@ -131,12 +131,14 @@ class Admin extends CI_Controller {
         $this->load->view('admin/tutor_list',$data);
         $this->load->view('html/footer.html');
     }
+    
     function assign_proofread(){
         $this->load->model('tutor_model');
         $req_id = $_POST['req_id'];
         $tutor_id = $_POST['tutor_id'];
         $points = $_POST['points'];
         $this->tutor_model->assign_to_tutor($req_id, $tutor_id, $points);
+        
     }
     
     function tutor_history_in_dates(){
@@ -147,20 +149,22 @@ class Admin extends CI_Controller {
 		}
         
         $data = new stdClass();
-            $user = $this->ion_auth->user()->row();
-            $data->points= $user->points;
-            $this->load->view('html/header',$data);
+        $user = $this->ion_auth->user()->row();
+        $data->points= $user->points;
+        $this->load->view('html/header',$data);
         $this->load->model('tutor_model');
         $data = new stdClass();
         $data->user_id=2;
         $data->tutors= $this->tutor_model->list_of_tutors();
-         if ($this->input->post('submit')){
+        
+        if ($this->input->post('submit')){
             $from1 = new DateTime($this->input->post('from'));
             $from = strtotime($from1->format('m/d/Y'));
             $to1 = new DateTime($this->input->post('to'));
             $to = strtotime($to1->format('m/d/Y'));
              $tutor_id=$this->input->post('tutor_id');  
         }
+        
         else {
             $tutor_id=2;
             $from=0;

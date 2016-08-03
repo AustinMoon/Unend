@@ -1030,8 +1030,6 @@ class Auth extends CI_Controller {
                  $this->load->view('html/header',$data);
             }
              
-            
-             
              $data = array('upload_data' => $this->upload->data()); 
              $this->load->view('user/upload/upload_success', $data); 
              $this->load->view('html/footer.html');
