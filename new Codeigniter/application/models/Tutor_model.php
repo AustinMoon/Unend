@@ -149,11 +149,7 @@ class Tutor_model extends CI_Model {
         $this->db->set('tutor_id', $tutor_id);
         $this->db->set('req_points', $points);
         $this->db->update('sentence_correct');
-<<<<<<< HEAD
-
-=======
         
->>>>>>> 7b7134ffd012a8b30ea36cdae340bdc431ef1e97
         $subject = 'New Proofread Request!';
         $message = ' You have received a new request! 
         Please Click http://quickcorrections.com/qc/login3/tutor/
@@ -161,10 +157,7 @@ class Tutor_model extends CI_Model {
         $user = $this->ion_auth->user($tutor_id)->row();
         $to = $user->email;
         mail($to, $subject, $message);
-<<<<<<< HEAD
-=======
         
->>>>>>> 7b7134ffd012a8b30ea36cdae340bdc431ef1e97
     }
     
     function tutor_open_requests_count($tutor_id){
