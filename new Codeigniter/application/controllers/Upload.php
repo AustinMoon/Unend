@@ -104,6 +104,12 @@
              $this->db->where('id', $req->user_id);
              $this->db->set('points', $new_points);
              $this->db->update('users');
+             
+             $tutor_points =$user->points + $req->req_points/2;
+             $this->db->where('id', $req->tutor_id);
+             $this->db->set('points', $tutor_points);
+             $this->db->update('users');
+             
              $data->points= $user->points;
              $this->load->view('html/header',$data);
              $data = array('upload_data' => $this->upload->data()); 
