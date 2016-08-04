@@ -195,7 +195,12 @@ class Admin extends CI_Controller {
         }
         else
         {
-        $this->load->view('html/header');
+            {
+            $data = new stdClass();
+            $user = $this->ion_auth->user()->row();
+            $data->points= $user->points;
+            $this->load->view('html/header',$data);
+            }
         $this->load->view('admin/daily_posting');
         $this->load->view('html/footer.html');
         }
@@ -203,10 +208,12 @@ class Admin extends CI_Controller {
     
     function list_of_posts(){
       $data = new stdClass();
-        $data = new stdClass();
+        {
+            $data = new stdClass();
             $user = $this->ion_auth->user()->row();
             $data->points= $user->points;
             $this->load->view('html/header',$data);
+        }
         $this->load->model('tutor_model');
         $data->content = $this->tutor_model->list_of_posts();
         $this->load->view('admin/daily_english',$data);

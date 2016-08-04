@@ -1,86 +1,30 @@
-
-
-      
-       <div class="navbar-default sidebar" role="navigation">
-                <div class="sidebar-nav navbar-collapse">
-                    <ul class="nav" id="side-menu">
-                        
-                        <li>
-                            <a ><i class=""></i> <h5 style="margin-top:-2px; margin-bottom:-5px">Services</h5></a>
-                        </li>
-                                
-                                <li>
-                                    <a href="<?= base_url('/user/sen_correct_student') ?>"><h5 style="margin-top:-2px; margin-bottom:-5px">&nbsp;-&nbsp;&nbsp;&nbsp;Sentence Correction</h5></a>
-                                </li>
-                                <li>
-                                    <a href="<?= base_url('auth/english_question') ?>"><h5 style="margin-top:-2px; margin-bottom:-5px">&nbsp;-&nbsp;&nbsp;&nbsp;Question about English</h5></a>
-                                </li>
-                                <li>
-                                    <a href="http://quickcorrections.com/qc/login3/auth/pronunciation"><h5 style="margin-top:-2px; margin-bottom:-5px">&nbsp;-&nbsp;&nbsp;&nbsp;Pronunciation</h5></a>
-                                </li>
-                                <li>
-                                    <a href="<?= base_url('auth/proofread') ?>"> <h5 style="margin-top:-2px; margin-bottom:-5px">&nbsp;-&nbsp;&nbsp;&nbsp;Proofreading</h5></a>
-                                </li>
-                               
-                            <!-- /.nav-second-level -->
-                        
-                       
-                        <li>
-                            <a href="http://quickcorrections.com/qc/login3/auth/change_password"><i class=""></i> <h5 style="margin-top:-2px; margin-bottom:-5px">Information</h5></a>
-                            
-                            <!-- /.nav-second-level -->
-                        </li>
-                        <li>
-                            <a href="http://quickcorrections.com/qc/login3/user/userpage"><i class=""></i> <h5 style="margin-top:-2px; margin-bottom:-5px">Your Answer</h5></a>
-                        </li>
-                        <li>
-                            <a href="http://quickcorrections.com/qc/login3/user/payment"><i class=""></i><h5 style="margin-top:-2px; margin-bottom:-5px"> Buy Point</h5></a>
-                        </li>
-                    
-                    </ul>
-                </div>
-                <!-- /.sidebar-collapse -->
-            </div>
-            <!-- /.navbar-static-side -->
-        </nav>
-        <!-- Page Content -->
-        <div id="page-wrapper">
+    <div class="container-fluid">
             <div class="row">
                 <div class="col-lg-12">
-                    <h1 class="page-header text-center" style="font-family:avenir">Daily Tip</h1>
+                    <h1 class="page-header text-center">Daily Tip</h1>
                 </div>
                 <!-- /.col-lg-12 -->
             </div>
             <!-- /.row -->
             <div class="row">
-               
+                <div class="col-md-8 col-md-offset-2" >
+
                 <!-- /.col-lg-6 -->
                <div class="panel panel-default">
-                     <div class="panel-heading"> Tip# <?= $request->post_id; ?></div>
-    <div class="panel-body">
-        <div class="row">
-            <div class="col-md-3">
-                Title
-            </div>
-            <div class="col-md-9">
-                    <?= $request->title; ?>
-                    <br/>
-                   
-            </div>
-            
-        </div>
-        
-       
-        <div class="row">
-            <div class="col-md-3">
-                Content
-            </div>
-                <div class="col-md-9">
-                    <?= $request->content; ?>
-            </div>
-            
-        </div>
-        
+                     <div class="panel-heading">
+                        <h5 style="float:right">Day# <?= $request->post_id; ?></h5>
+                      <h3><?= $request->title; ?></h3>
+                      </div>
+            <div class="panel-body">
+                      
+                <div class="row">
+                    
+                        <div class="col-md-9">
+                            <h4><?= $request->content; ?></h4>
+                    </div>
+                    
+                </div>
+                
         
                    </div></div>
                 <!-- /.col-lg-6 -->
