@@ -33,43 +33,37 @@
                     </div>
                     <!-- /.col-lg-12 -->
                 </div>
+           
+                    
+           <?php //echo $error;?> 
+      <?php echo form_open_multipart('upload/do_proofread_answer/'.$req_id);?> 
+		
+      
                 <div class= "row">
+                   
                     <div class="form-group col-md-8">
-                      <label><p><h2>Student's file &nbsp; <a href="http://quickcorrections.com/qc/login3/uploads/"><button>download</button></a></button></h2></p></label>
-                        <label><p><h2>Tutor's Answer:</h2></p></label>
-                        <textarea name="tutor_revision" class="form-control" rows="5" autofocus></textarea>
-                        <input type="hidden" name="request_id" value="<?= $req_id; ?>">
+                        
 
+                       <!-- <h4 ><i> <?php echo $error;?> </i></h4>-->
+                      
+                       <h4> Upload fixed file </h4>
+
+                        <h4>Student comments: <i><?= $req_id; ?></i></h4>
+                        
+                         <textarea class="form-control"  id="text" rows="5" placeholder="Leave comments for student here..." name="tutor_comments" maxlength="750" autofocus></textarea>
+
+                        <div class="panel panel-red">
+
+                        <input style="display:inline" type = "file" name = "userfile" size = "20" /> 
+                        
+                        </div>
+                        
+                        <h4><hr/>Click Upload button</h4>
+                        <input class="btn btn-danger " type = "submit" value = "Upload"  /> 
                     </div>
-                </div>
-                <div class"row">
-                    <div class="">
-                    <button type="submit" class="btn btn-danger">Submit</button>
-                    </div>
-
-                </div>
-                <!--
-                <div class= "row">
-                    <div class="form-group col-md-8">
-                          <form action = "../add_revision" method = "POST">
-                        <label><h2>Student Comments</h2></label>
-                        <textarea name="tutor_revision" class="form-control" rows="5" autofocus disabled><?= $request->additional; ?></textarea>
-                        <input type="hidden" name="request_id" value="<?= $request->request_id; ?>">
-
-                    </div>
-                </div>
-                -->
-
-
-
-              
-                <!-- /.row -->
-        </div>
-            <!-- /.container-fluid -->
-        
-        <!-- /#page-wrapper -->
-
-    </div>
+           </div>
+</div>
+               
     <!-- /#wrapper -->
 
     <!-- jQuery -->
@@ -83,7 +77,3 @@
 
     <!-- Custom Theme JavaScript -->
     <script src="../css/dist/js/sb-admin-2.js"></script>
-
-</body>
-
-</html>

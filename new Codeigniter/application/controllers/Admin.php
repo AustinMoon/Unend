@@ -89,10 +89,13 @@ class Admin extends CI_Controller {
 			// redirect them to the login page
 			redirect('auth/login', 'refresh');
 		}
-        {$data = new stdClass();
+        {
+            $data = new stdClass();
             $user = $this->ion_auth->user()->row();
             $data->points= $user->points;
-            $this->load->view('html/header',$data);}
+            $this->load->view('html/header',$data);
+        }
+        
         $this->load->model('tutor_model');
         $data = new stdClass();
         $data->content= $this->tutor_model->open_proofread();
@@ -128,12 +131,14 @@ class Admin extends CI_Controller {
         $this->load->view('admin/tutor_list',$data);
         $this->load->view('html/footer.html');
     }
+    
     function assign_proofread(){
         $this->load->model('tutor_model');
-        $req_id= $_POST['req_id'];
-        $tutor_id= $_POST['tutor_id'];
-        $points= $_POST['points'];
-        $this->tutor_model->assign_to_tutor($req_id,$tutor_id,$points);
+        $req_id = $_POST['req_id'];
+        $tutor_id = $_POST['tutor_id'];
+        $points = $_POST['points'];
+        $this->tutor_model->assign_to_tutor($req_id, $tutor_id, $points);
+        
     }
     
     function tutor_history_in_dates(){
@@ -144,20 +149,22 @@ class Admin extends CI_Controller {
 		}
         
         $data = new stdClass();
-            $user = $this->ion_auth->user()->row();
-            $data->points= $user->points;
-            $this->load->view('html/header',$data);
+        $user = $this->ion_auth->user()->row();
+        $data->points= $user->points;
+        $this->load->view('html/header',$data);
         $this->load->model('tutor_model');
         $data = new stdClass();
         $data->user_id=2;
         $data->tutors= $this->tutor_model->list_of_tutors();
-         if ($this->input->post('submit')){
+        
+        if ($this->input->post('submit')){
             $from1 = new DateTime($this->input->post('from'));
             $from = strtotime($from1->format('m/d/Y'));
             $to1 = new DateTime($this->input->post('to'));
             $to = strtotime($to1->format('m/d/Y'));
              $tutor_id=$this->input->post('tutor_id');  
         }
+        
         else {
             $tutor_id=2;
             $from=0;
@@ -170,6 +177,52 @@ class Admin extends CI_Controller {
         $this->load->view('admin/tutor_history_in_dates',$data);
         $this->load->view('html/footer.html');
        
+    }
+    
+    function daily_english_tip(){
+        if ( !$this->ion_auth->is_admin())
+        {
+            // redirect them to the login page
+            redirect('auth/login', 'refresh');
+        }
+        if ($this->input->post('submit'))
+        {
+            $this->load->model('tutor_model');
+            $this->tutor_model->add_post($this->input->post('title'),$this->input->post('content'));
+            
+            redirect('admin/list_of_posts', 'refresh');
+                
+        }
+        else
+        {
+        $this->load->view('html/header');
+        $this->load->view('admin/daily_posting');
+        $this->load->view('html/footer.html');
+        }
+    }
+    
+    function list_of_posts(){
+      $data = new stdClass();
+        $data = new stdClass();
+            $user = $this->ion_auth->user()->row();
+            $data->points= $user->points;
+            $this->load->view('html/header',$data);
+        $this->load->model('tutor_model');
+        $data->content = $this->tutor_model->list_of_posts();
+        $this->load->view('admin/daily_english',$data);
+        $this->load->view('html/footer.html');
+    }
+    
+    function korean_proofreading(){
+        
+        {
+            $data = new stdClass();
+            $user = $this->ion_auth->user()->row();
+            $data->points= $user->points;
+            $this->load->view('html/header',$data);
+        }
+        $this->load->view('proofread/korean_proofread');
+        $this->load->view('html/footer.html');
     }
     
     

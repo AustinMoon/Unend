@@ -111,11 +111,11 @@ function humanTiming ($time)
             
             echo'<input type="number" class="form-control" name="points">';
             echo '</td><td>';
-             echo '<select class="form-control" name="tutor_id">';
+            echo '<select class="form-control" name="tutor_id">';
             foreach($tutors->result() as $row)
             { 
                 $tutor = $this->ion_auth->user($row->user_id)->row();
-              echo '<option value="'.$row->user_id.'">'.$tutor->email.'</option>';
+                echo '<option value="'.$row->user_id.'">'.$tutor->email.'</option>';
             }
             
             echo '</select>';

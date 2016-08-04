@@ -55,9 +55,9 @@
                       
                        <h4> Upload fixed file </h4>
 
-                        <h4>Student comments: <i><?= $add->additional; ?></i></h4>
+                        <h4>Student comments: <i><?= $info->additional; ?></i></h4>
                         
-                         <textarea class="form-control"  id="text" rows="5" placeholder="Leave comments for student here..." name="tutor_comment" maxlength="750" autofocus></textarea>
+                         <textarea class="form-control"  id="text" rows="5" placeholder="Leave comments for student here..." name="tutor_comments" maxlength="750" autofocus></textarea>
 
                         <div class="panel panel-red">
 
