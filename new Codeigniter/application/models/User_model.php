@@ -155,6 +155,7 @@ class User_model extends CI_Model {
         $query = $this->db->get('sentence_correct');
         return $query;
     }
+    
     public function user_requests($user_id,$limit, $start){
          $this->db->limit($limit, $start);
         $this->db->order_by('request_date', 'DESC');
@@ -166,13 +167,17 @@ class User_model extends CI_Model {
     
     public function upload_file($user_id, $link){
         date_default_timezone_set("America/New_York");
-        if (!empty($_POST['comment'])){$a=$_POST['comment'];}else{$a='';}
+        if (!empty($_POST['comment'])){
+            $a=$_POST['comment'];
+        }
+        else{$a='';}
         $data = array(
 			'user_id'   => $user_id,
             'text'      => $link,
             'request_date'  => time(),
             'type'      => 'Proofread',
             'additional'=> $a,
+            'req_points'=> $_POST['points']
 		);
         
 
@@ -218,6 +223,7 @@ class User_model extends CI_Model {
         $query = $this->db->get('sentence_correct');
         return $query;
     }
+    
     function paging(){
         $config['num_links'] = 3;
         $config['full_tag_open'] = '<ul class="pagination">';

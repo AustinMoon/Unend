@@ -99,9 +99,9 @@
              $user = $this->ion_auth->user()->row();
              $this->load->model('tutor_model');
              $data = new stdClass();
-             $req=$this->tutor_model->get_request_info($request_id)->row();
-             $new_points=$user->points - $req->req_points;
-             $this->db->where('id',$req->user_id);
+             $req = $this->tutor_model->get_request_info($request_id)->row();
+             $new_points = $user->points - $req->req_points;
+             $this->db->where('id', $req->user_id);
              $this->db->set('points', $new_points);
              $this->db->update('users');
              $data->points= $user->points;

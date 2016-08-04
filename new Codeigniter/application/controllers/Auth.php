@@ -1028,7 +1028,7 @@ class Auth extends CI_Controller {
                  $user = $this->ion_auth->user()->row();
                  $data->points= $user->points;
                  $this->load->view('html/header',$data);
-            }
+             }
              
              $data = array('upload_data' => $this->upload->data()); 
              $this->load->view('user/upload/upload_success', $data); 

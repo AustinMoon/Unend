@@ -215,10 +215,12 @@ class Admin extends CI_Controller {
     
     function korean_proofreading(){
         
-        {$data = new stdClass();
+        {
+            $data = new stdClass();
             $user = $this->ion_auth->user()->row();
             $data->points= $user->points;
-            $this->load->view('html/header',$data);}
+            $this->load->view('html/header',$data);
+        }
         $this->load->view('proofread/korean_proofread');
         $this->load->view('html/footer.html');
     }

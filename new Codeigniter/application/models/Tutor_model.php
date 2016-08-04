@@ -141,7 +141,7 @@ class Tutor_model extends CI_Model {
         return $query;
     }
     
-    function assign_to_tutor($req_id,$tutor_id,$points){
+    function assign_to_tutor($req_id, $tutor_id, $points){
         date_default_timezone_set("America/New_York");
         $this->db->where('request_id', $req_id);
         $this->db->set('is_assigned', 1);

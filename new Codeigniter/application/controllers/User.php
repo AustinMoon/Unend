@@ -293,19 +293,21 @@ class User extends CI_Controller {
             $data->user_id =$user->id;
           
             if ($this->db->affected_rows() == 1) {
-            {$data = new stdClass();
-            $user = $this->ion_auth->user()->row();
-            $data->points= $user->points;
-            $this->load->view('html/header',$data);}
-              
-              $this->load->view('sen_correct/sen_correct_success',$data);
-              $this->load->view('html/footer.html');
-            $this->tutor_model->send_email_to_tutors();
+            {
+                $data = new stdClass();
+                $user = $this->ion_auth->user()->row();
+                $data->points= $user->points;
+                $this->load->view('html/header',$data);
+            }
+                $this->load->view('sen_correct/sen_correct_success',$data);
+                $this->load->view('html/footer.html');
+                $this->tutor_model->send_email_to_tutors();
           }
         }
+        
         else
         {
-             $data = new stdClass();
+            $data = new stdClass();
             $user = $this->ion_auth->user()->row();
             $data->points= $user->points;
             $this->load->view('html/header',$data);
