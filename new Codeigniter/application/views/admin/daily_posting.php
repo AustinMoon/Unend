@@ -5,13 +5,16 @@
                 </div>
             </div>
             
-            <div class="row text-center" >
+            <div class="row" >
                 <div class="col-md-8 col-md-offset-2" >
                     <h4 ><i>Title </i></h4>
                     <textarea class="form-control"  id="word_count" rows="1" placeholder="Type here..." name="sentence" maxlength="150" autofocus></textarea>
 
                     <h4 ><i>Type Daily English Tip below </i></h4>
                     <textarea class="form-control"  id="word_count" rows="5" placeholder="Type here..." name="sentence" maxlength="750"></textarea>
+                    <h4></h4>
+                    <button href="" class="btn btn-danger">Submit</button>
+                    <h1></h1>
         <!-- /#page-wrapper -->
                 </div>
             </div>
