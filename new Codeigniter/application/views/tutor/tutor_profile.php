@@ -59,7 +59,17 @@
                         <h3 ><i>Tutor's email : <?= $tutor_email ?></i></h3>
                         <h4 ><i>Tutor's rate : <?= $average ?></i></h4>
 
-                        <h4 ><i>Tutor's feedback :</i></h4>
+                        <h4 ><i>Tutor's feedback : </i></h4>
+                        <ul>
+                        <?php 
+        
+                        foreach ($content->result() as $row)
+                        {
+                            echo '<li>'.$row->tutor_comments.'</li>';
+                            
+                        }
+            ?>
+                            </ul>
                         <!-- list of tutor's feedback-->
 
 

@@ -222,7 +222,14 @@ class Tutor_model extends CI_Model {
     }
     
     function list_of_posts(){
+        $this->db->order_by('request_date', 'DESC');
         $query = $this->db->get('posts');
+        return $query;
+    }
+    function tutor_feedback($tutor_id){
+        $this->db->where('tutor_id',$tutor_id);
+        $this->db->where('tutor_comments IS NOT', NULL);
+        $query = $this->db->get('sentence_correct');
         return $query;
     }
 }

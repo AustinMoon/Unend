@@ -330,6 +330,7 @@ class Tutor extends CI_Controller {
         $data->average=$this->tutor_model->calculate_rate_average($tutor_id);
         $user = $this->ion_auth->user()->row();
         $data->points= $user->points;
+        $data->content= $this->tutor_model->tutor_feedback($tutor_id);
         $this->load->view('html/header',$data);
         $this->load->view('tutor/tutor_profile',$data);
         $this->load->view('html/footer'); 
