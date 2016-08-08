@@ -195,25 +195,60 @@ class Admin extends CI_Controller {
         }
         else
         {
-            {
-            $data = new stdClass();
-            $user = $this->ion_auth->user()->row();
-            $data->points= $user->points;
-            $this->load->view('html/header',$data);
-            }
+        
+        $data = new stdClass();
+        $user = $this->ion_auth->user()->row();
+        $data->points= $user->points;
+        $this->load->view('html/header',$data);
         $this->load->view('admin/daily_posting');
         $this->load->view('html/footer.html');
         }
     }
     
+    function edit_english_tip($tip_id){
+        if ($this->input->post('submit'))
+        {
+            $this->load->model('tutor_model');
+            $this->tutor_model->edit_post($tip_id,$this->input->post('title'),$this->input->post('content'));
+            
+            redirect('admin/list_of_posts', 'refresh');
+                
+        }
+        else
+        {
+        
+        $data = new stdClass();
+        $user = $this->ion_auth->user()->row();
+        $data->points= $user->points;
+        $this->load->view('html/header',$data);
+        $this->load->model('tutor_model');
+        $data= $this->tutor_model->tip_info($tip_id)->row();
+        $this->load->view('admin/edit_english_tip',$data);
+    }
+    }
+    
     function list_of_posts(){
       $data = new stdClass();
-        {
-            $data = new stdClass();
-            $user = $this->ion_auth->user()->row();
-            $data->points= $user->points;
-            $this->load->view('html/header',$data);
-        }
+        
+        $data = new stdClass();
+        $user = $this->ion_auth->user()->row();
+        $data->points= $user->points;
+        $this->load->view('html/header',$data);
+        
+        $this->load->model('user_model');
+        $this->load->library('pagination');
+        $user = $this->ion_auth->user()->row();
+        $config=$this->user_model->paging();
+        $page = ($this->uri->segment(3)) ? $this->uri->segment(3) : 0;
+        $config["base_url"] = base_url() . "admin/list_of_posts";
+        $config["per_page"] = 5;
+        $config["uri_segment"] = 3;
+        $config["total_rows"] = $this->tutor_model->list_of_posts_count($user->id);
+        $this->pagination->initialize($config);
+        $user = $this->ion_auth->user()->row();
+        $data->content= $this->tutor_model->open_requests();
+        $data->assigned_requests= $this->tutor_model->assigned_requests($user->id,$config["per_page"], $page);
+        
         $this->load->model('tutor_model');
         $data->content = $this->tutor_model->list_of_posts();
         $this->load->view('admin/daily_english',$data);

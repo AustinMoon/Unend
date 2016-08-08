@@ -217,9 +217,16 @@ class Tutor_model extends CI_Model {
 			'content'      => $content,
 			'request_date' => time()
 		);
-		
 		return $this->db->insert('posts', $data);
     }
+    function edit_post($tip_id,$title,$content){
+        $this->db->where('post_id',$tip_id);
+        $this->db->set('title', $title);
+        $this->db->set('content', $content);
+        $this->db->update('posts');
+        
+            
+        }
     
     function list_of_posts(){
         $this->db->order_by('request_date', 'DESC');
@@ -230,6 +237,11 @@ class Tutor_model extends CI_Model {
         $this->db->where('tutor_id',$tutor_id);
         $this->db->where('tutor_comments IS NOT', NULL);
         $query = $this->db->get('sentence_correct');
+        return $query;
+    }
+    function tip_info($tip_id){
+        $this->db->where('post_id',$tip_id);
+        $query = $this->db->get('posts');
         return $query;
     }
 }

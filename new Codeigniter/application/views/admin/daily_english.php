@@ -16,6 +16,10 @@
         <th>post ID</th>
         <th>Content</th>
         <th>Post Date</th>
+          <?php if ($this->ion_auth->is_admin())
+    echo'<th>Edit</th>';
+          ?>
+          
       </tr>
     </thead>
     <tbody>
@@ -34,6 +38,9 @@
             echo $row->content;
             echo '</td><td>';
             echo date('m/d/Y', $row->request_date);
+            echo '</td><td>';
+            if ($this->ion_auth->is_admin()){
+            echo '<a href="http://quickcorrections.com/qc/login3/admin/edit_english_tip/'.$row->post_id.'"><button class="btn btn-danger" type="button">Edit</button></a>';}
             echo '</a></td><td>';
         }
             ?>
