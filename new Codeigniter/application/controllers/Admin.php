@@ -228,13 +228,18 @@ class Admin extends CI_Controller {
     }
     
     function list_of_posts(){
+        if (!$this->ion_auth->logged_in())
+
+        {
+            // redirect them to the login page
+            redirect('auth/login', 'refresh');
+        }
       $data = new stdClass();
-        
+        $this->load->model('tutor_model');
         $data = new stdClass();
         $user = $this->ion_auth->user()->row();
         $data->points= $user->points;
         $this->load->view('html/header',$data);
-        
         $this->load->model('user_model');
         $this->load->library('pagination');
         $user = $this->ion_auth->user()->row();
@@ -243,14 +248,11 @@ class Admin extends CI_Controller {
         $config["base_url"] = base_url() . "admin/list_of_posts";
         $config["per_page"] = 5;
         $config["uri_segment"] = 3;
-        $config["total_rows"] = $this->tutor_model->list_of_posts_count($user->id);
+        $config["total_rows"] = $this->tutor_model->list_of_posts_count();
         $this->pagination->initialize($config);
         $user = $this->ion_auth->user()->row();
         $data->content= $this->tutor_model->open_requests();
-        $data->assigned_requests= $this->tutor_model->assigned_requests($user->id,$config["per_page"], $page);
-        
-        $this->load->model('tutor_model');
-        $data->content = $this->tutor_model->list_of_posts();
+        $data->content = $this->tutor_model->list_of_posts($config["per_page"], $page);
         $this->load->view('admin/daily_english',$data);
         $this->load->view('html/footer.html');
     }

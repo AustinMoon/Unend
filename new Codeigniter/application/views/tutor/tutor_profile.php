@@ -65,7 +65,7 @@
         
                         foreach ($content->result() as $row)
                         {
-                            echo '<li>'.$row->tutor_comments.'</li>';
+                            echo '<li>'.$row->tutor_comments .'</li>';
                             
                         }
             ?>

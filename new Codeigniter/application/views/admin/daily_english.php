@@ -46,7 +46,7 @@
             ?>
     </tbody></table>
                     </div>
-                        <a href="<?= base_url('auth/login') ?>"><button  class="btn btn-danger">Click Here! </button></a>
+                        <?php echo $this->pagination->create_links(); ?><br>
                         <h1></h1>
                     </div>
         <!-- /#page-wrapper -->

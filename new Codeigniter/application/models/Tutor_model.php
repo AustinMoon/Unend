@@ -228,7 +228,8 @@ class Tutor_model extends CI_Model {
             
         }
     
-    function list_of_posts(){
+    function list_of_posts($limit, $start){
+        $this->db->limit($limit, $start);
         $this->db->order_by('request_date', 'DESC');
         $query = $this->db->get('posts');
         return $query;
@@ -236,6 +237,7 @@ class Tutor_model extends CI_Model {
     function tutor_feedback($tutor_id){
         $this->db->where('tutor_id',$tutor_id);
         $this->db->where('tutor_comments IS NOT', NULL);
+        $this->db->where('tutor_comments !=', '');
         $query = $this->db->get('sentence_correct');
         return $query;
     }
@@ -243,5 +245,9 @@ class Tutor_model extends CI_Model {
         $this->db->where('post_id',$tip_id);
         $query = $this->db->get('posts');
         return $query;
+    }
+    function list_of_posts_count(){
+        $query = $this->db->get('posts');
+        return $query->num_rows();
     }
 }
