@@ -238,6 +238,7 @@ class Tutor_model extends CI_Model {
         $this->db->where('tutor_id',$tutor_id);
         $this->db->where('tutor_comments IS NOT', NULL);
         $this->db->where('tutor_comments !=', '');
+        $this->db->limit(10);
         $query = $this->db->get('sentence_correct');
         return $query;
     }
