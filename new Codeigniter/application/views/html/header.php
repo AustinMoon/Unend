@@ -159,12 +159,6 @@ label.star:before {
 	<main id="site-content" role="main">
 		
 		<?php if (isset($_SESSION)) : ?>
-			<div class="container">
-				<div class="row">
-					<div class="col-md-12">
-						
-					</div>
-				</div><!-- .row -->
-			</div><!-- .container -->
+			
 		<?php endif; ?>
 		
