@@ -59,7 +59,7 @@
                 </div>
             
            <?php //echo $error;?> 
-      <?php echo form_open_multipart('user/spanish_proofreading)';?> 
+      <?php echo form_open_multipart('user/spanish_proofreading') ;?> 
 		
       
                 <div class= "row">
