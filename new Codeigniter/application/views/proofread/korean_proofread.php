@@ -59,7 +59,7 @@
                 </div>
             
            <?php //echo $error;?> 
-      <?php echo form_open_multipart('upload/do_upload');?> 
+      <?php echo form_open_multipart('user/korean_proofreading');?> 
 		
       
                 <div class= "row">

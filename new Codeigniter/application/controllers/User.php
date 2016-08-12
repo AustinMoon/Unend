@@ -378,9 +378,10 @@ class User extends CI_Controller {
         $this->load->view('html/footer.html');
         
     }
+    
     function arabic_proofreading(){
-        
-        if ($this->input->post('submit')){
+        if ($this->input->post('submit'))
+        {
             $config['upload_path']          = './uploads/';
                 $config['allowed_types']        = 'gif|jpg|png';
                 $config['max_size']             = 100;
@@ -389,43 +390,189 @@ class User extends CI_Controller {
 
                 $this->load->library('upload', $config);
 
-                if ( ! $this->upload->do_upload('userfile'))
+                if (!$this->upload->do_upload('userfile'))
                 {
-                        $error = array('error' => $this->upload->display_errors());
-
-                        $data = new stdClass();
-                        $user = $this->ion_auth->user()->row();
-                        $data->points= $user->points;
-                        $this->load->view('html/header',$data);
-                        $this->load->view('proofread/arabic_proofread',$error);
-                        $this->load->view('html/footer.html');
+                    $error = array('error' => $this->upload->display_errors());
+                    $data = new stdClass();
+                    $user = $this->ion_auth->user()->row();
+                    $data->points= $user->points;
+                    $this->load->view('html/header',$data);
+                    $this->load->view('proofread/arabic_proofread',$error);
+                    $this->load->view('html/footer.html');
                 }
+            
                 else
                 {
-                        $this->load->model('user_model');
-                        $data = $this->upload->data();
-                        $this->user_model->proofread_language($_POST['user_id'],$data['file_name'],'Arabic Proofread');
-                        $data = new stdClass();
-                        $user = $this->ion_auth->user()->row();
-                        $data->points= $user->points;
-                        $this->load->view('html/header',$data);
-
-                        $this->load->view('sen_correct/sen_correct_success');
+                    $this->load->model('user_model');
+                    $data = $this->upload->data();
+                    $this->user_model->proofread_language($_POST['user_id'],$data['file_name'],'Arabic Proofread');
+                    $data = new stdClass();
+                    $user = $this->ion_auth->user()->row();
+                    $data->points= $user->points;
+                    $this->load->view('html/header',$data);
+                    $this->load->view('sen_correct/sen_correct_success');
                     $this->load->view('html/footer.html');
                     
                 }
-            
-            
-    }
-        else{
-        $data = new stdClass();
-        $user = $this->ion_auth->user()->row();
-        $data->points= $user->points;
-        $this->load->view('html/header',$data);
-        $this->load->view('proofread/arabic_proofread');
-        $this->load->view('html/footer.html');
+        }
+        
+        else
+        {
+            $data = new stdClass();
+            $user = $this->ion_auth->user()->row();
+            $data->points= $user->points;
+            $this->load->view('html/header',$data);
+            $this->load->view('proofread/arabic_proofread');
+            $this->load->view('html/footer.html');
             
         }
-}
+    }
+    
+    function chinese_proofreading(){
+        if ($this->input->post('submit'))
+        {
+            $config['upload_path']          = './uploads/';
+                $config['allowed_types']        = 'gif|jpg|png';
+                $config['max_size']             = 100;
+                $config['max_width']            = 1024;
+                $config['max_height']           = 768;
+
+                $this->load->library('upload', $config);
+
+                if (!$this->upload->do_upload('userfile'))
+                {
+                    $error = array('error' => $this->upload->display_errors());
+                    $data = new stdClass();
+                    $user = $this->ion_auth->user()->row();
+                    $data->points= $user->points;
+                    $this->load->view('html/header',$data);
+                    $this->load->view('proofread/chinese_proofread',$error);
+                    $this->load->view('html/footer.html');
+                }
+            
+                else
+                {
+                    $this->load->model('user_model');
+                    $data = $this->upload->data();
+                    $this->user_model->proofread_language($_POST['user_id'],$data['file_name'],'Chinese Proofread');
+                    $data = new stdClass();
+                    $user = $this->ion_auth->user()->row();
+                    $data->points= $user->points;
+                    $this->load->view('html/header',$data);
+                    $this->load->view('sen_correct/sen_correct_success');
+                    $this->load->view('html/footer.html');
+                    
+                }
+        }
+        
+        else
+        {
+            $data = new stdClass();
+            $user = $this->ion_auth->user()->row();
+            $data->points= $user->points;
+            $this->load->view('html/header',$data);
+            $this->load->view('proofread/chinese_proofread');
+            $this->load->view('html/footer.html');
+            
+        }
+    }
+    
+    function korean_proofreading(){
+        if ($this->input->post('submit'))
+        {
+            $config['upload_path']          = './uploads/';
+                $config['allowed_types']        = 'gif|jpg|png';
+                $config['max_size']             = 100;
+                $config['max_width']            = 1024;
+                $config['max_height']           = 768;
+
+                $this->load->library('upload', $config);
+
+                if (!$this->upload->do_upload('userfile'))
+                {
+                    $error = array('error' => $this->upload->display_errors());
+                    $data = new stdClass();
+                    $user = $this->ion_auth->user()->row();
+                    $data->points= $user->points;
+                    $this->load->view('html/header',$data);
+                    $this->load->view('proofread/korean_proofread',$error);
+                    $this->load->view('html/footer.html');
+                }
+            
+                else
+                {
+                    $this->load->model('user_model');
+                    $data = $this->upload->data();
+                    $this->user_model->proofread_language($_POST['user_id'],$data['file_name'],'Korean Proofread');
+                    $data = new stdClass();
+                    $user = $this->ion_auth->user()->row();
+                    $data->points= $user->points;
+                    $this->load->view('html/header',$data);
+                    $this->load->view('sen_correct/sen_correct_success');
+                    $this->load->view('html/footer.html');
+                    
+                }
+        }
+        
+        else
+        {
+            $data = new stdClass();
+            $user = $this->ion_auth->user()->row();
+            $data->points= $user->points;
+            $this->load->view('html/header',$data);
+            $this->load->view('proofread/korean_proofread');
+            $this->load->view('html/footer.html');
+            
+        }
+    }
+    
+    function spanish_proofreading(){
+        if ($this->input->post('submit'))
+        {
+            $config['upload_path']          = './uploads/';
+                $config['allowed_types']        = 'gif|jpg|png';
+                $config['max_size']             = 100;
+                $config['max_width']            = 1024;
+                $config['max_height']           = 768;
+
+                $this->load->library('upload', $config);
+
+                if (!$this->upload->do_upload('userfile'))
+                {
+                    $error = array('error' => $this->upload->display_errors());
+                    $data = new stdClass();
+                    $user = $this->ion_auth->user()->row();
+                    $data->points= $user->points;
+                    $this->load->view('html/header',$data);
+                    $this->load->view('proofread/spanish_proofread',$error);
+                    $this->load->view('html/footer.html');
+                }
+            
+                else
+                {
+                    $this->load->model('user_model');
+                    $data = $this->upload->data();
+                    $this->user_model->proofread_language($_POST['user_id'],$data['file_name'],'Spanish Proofread');
+                    $data = new stdClass();
+                    $user = $this->ion_auth->user()->row();
+                    $data->points= $user->points;
+                    $this->load->view('html/header',$data);
+                    $this->load->view('sen_correct/sen_correct_success');
+                    $this->load->view('html/footer.html');
+                    
+                }
+        }
+        
+        else
+        {
+            $data = new stdClass();
+            $user = $this->ion_auth->user()->row();
+            $data->points= $user->points;
+            $this->load->view('html/header',$data);
+            $this->load->view('proofread/spanish_proofread');
+            $this->load->view('html/footer.html');
+            
+        }
+    }
     
 }
