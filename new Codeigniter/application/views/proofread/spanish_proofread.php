@@ -37,7 +37,7 @@
                             <a href="http://quickcorrections.com/qc/login3/user/payment"><i class=""></i><h5 style="margin-top:-2px; margin-bottom:-5px"> Buy Point</h5></a>
                         </li>
                         <li>
-                            <a href="http://quickcorrections.com/qc/login3/user/payment"><i class=""></i><h5 style="margin-top:-2px; margin-bottom:-5px">Korean</h5></a>
+                            <a href="http://quickcorrections.com/qc/login3/user/payment"><i class=""></i><h5 style="margin-top:-2px; margin-bottom:-5px">Spanish</h5></a>
                         </li>
                     
                     </ul>
@@ -53,7 +53,7 @@
         <div id= "page-wrapper"class="container-fluid">
                 <div class="row">
                     <div class="col-lg-12">
-                        <h3 class="page-header"><i>Korean Special</i></h3>
+                        <h3 class="page-header"><i>Spanish Special</i></h3>
                     </div>
                     <!-- /.col-lg-12 -->
                 </div>
@@ -70,9 +70,9 @@
                        <!-- <h4 ><i> <?php echo $error;?> </i></h4>-->
 
                       
-                        <h4 ><i>* 한글로 작성하신 글을 저희 bilingual 튜터가 영어로 번역해 드립니다.</i></h4>
-                        <h5><i>(미국 동부 시간 기준 (US EST) 월요일부터 금요일 09:00-18:00 사이에 접수해 주시면 더욱 빠릅니다.)</i></h5>
-                        <h4 ><i><hr/>Step 1. 작성하신 글을 MS 워드로 저장하셔서 아래에 첨부해 주세요.</i></h4>
+                        <h4 ><i>* Nuestro tutor bilingüe traducirá su sentencia en Inglés Español.</i></h4>
+                         <h5><i>(Hora del Este EE.UU. (US EST) de lunes a viernes de 09:00 a las 18:00 recibimos entre nosotros es mucho más rápido.)</i></h5>
+                        <h4 ><i><hr/>Step 1. Seleccione y coloque el archivo en nuestro sistema (formato MS Word).</i></h4>
 
                         <div class="panel panel-red">
 
@@ -84,14 +84,14 @@
 
                     <h5 style="color:#918C8C"> </h5>
                         
-                         <h4><i><hr/>Step 2. 어떤 용도로 언제까지 번역본이 필요하신지 간단히 메모해 주세요.</i></h4>
+                         <h4><i><hr/>Step 2. Háganos saber si necesita cualquier cosa! (Por ejemplo la fecha, etc debido.</i></h4>
                         <form action="do_upload" method="post">
                        
                             <textarea class="form-control"  id="text" rows="5" placeholder="Type Sentence here..." name="comment" maxlength="750" autofocus></textarea>
                         
                            <h5 style="display:inline; color:#918C8C" >1 word = free</h5>
 
-                        <h4 ><i><hr/>Step 3. 아래 버튼을 눌러 제출해 주세요! 곧 이메일로 연락을 드리겠습니다. 감사합니다! </i></h4>
+                        <h4 ><i><hr/>Step 3.  Gran! Lo has hecho! Por favor, compruebe en el botón de subida! </i></h4>
 
                          <input class="btn btn-danger " type = "submit" value = "Upload"  /> 
                     </div>
