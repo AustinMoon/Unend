@@ -383,7 +383,7 @@ class User extends CI_Controller {
         if ($this->input->post('submit'))
         {
             $config['upload_path']          = './uploads/';
-                $config['allowed_types']        = 'gif|jpg|png';
+                $config['allowed_types']        = '*';
                 $config['max_size']             = 100;
                 $config['max_width']            = 1024;
                 $config['max_height']           = 768;
@@ -432,7 +432,7 @@ class User extends CI_Controller {
         if ($this->input->post('submit'))
         {
             $config['upload_path']          = './uploads/';
-                $config['allowed_types']        = 'gif|jpg|png';
+                $config['allowed_types']        = '*';
                 $config['max_size']             = 100;
                 $config['max_width']            = 1024;
                 $config['max_height']           = 768;
@@ -454,7 +454,7 @@ class User extends CI_Controller {
                 {
                     $this->load->model('user_model');
                     $data = $this->upload->data();
-                    $this->user_model->proofread_language($_POST['user_id'],$data['file_name'],'Chinese Proofread');
+                    $this->user_model->proofread_language($_POST['user_id'], $data['file_name'], 'Chinese Proofread');
                     $data = new stdClass();
                     $user = $this->ion_auth->user()->row();
                     $data->points= $user->points;
@@ -481,7 +481,7 @@ class User extends CI_Controller {
         if ($this->input->post('submit'))
         {
             $config['upload_path']          = './uploads/';
-                $config['allowed_types']        = 'gif|jpg|png';
+                $config['allowed_types']        = '*';
                 $config['max_size']             = 100;
                 $config['max_width']            = 1024;
                 $config['max_height']           = 768;
@@ -503,7 +503,7 @@ class User extends CI_Controller {
                 {
                     $this->load->model('user_model');
                     $data = $this->upload->data();
-                    $this->user_model->proofread_language($_POST['user_id'],$data['file_name'],'Korean Proofread');
+                    $this->user_model->proofread_language($_POST['user_id'], $data['file_name'], 'Korean Proofread');
                     $data = new stdClass();
                     $user = $this->ion_auth->user()->row();
                     $data->points= $user->points;
@@ -530,7 +530,7 @@ class User extends CI_Controller {
         if ($this->input->post('submit'))
         {
             $config['upload_path']          = './uploads/';
-                $config['allowed_types']        = 'gif|jpg|png';
+                $config['allowed_types']        = '*';
                 $config['max_size']             = 100;
                 $config['max_width']            = 1024;
                 $config['max_height']           = 768;
