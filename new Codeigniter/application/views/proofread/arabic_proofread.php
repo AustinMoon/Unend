@@ -59,7 +59,7 @@
                 </div>
             
            <?php //echo $error;?> 
-      <?php echo form_open_multipart('upload/do_upload');?> 
+      <?php echo form_open_multipart('user/arabic_proofreading');?> 
 		
       
                 <div class= "row">
@@ -67,12 +67,14 @@
                     <div class="form-group col-md-8">
                         
 
-                       <!-- <h4 ><i> <?php echo $error;?> </i></h4>-->
+                      
 
                       
                         <h4 ><i>* Our bilingual tutor will translate your Arabic sentence into English.</i></h4>
                          <h5><i>(Please submit your sentence(s) during our office hours (9:00-18:00, Monday through Friday, US EST))</i></h5>
+                        <p class="bg-danger"><?php if(isset($error)) {print_r($error);} ?></p>
                         <h4 ><i><hr/>Step 1. Select and attach your file on our System (MS Word format).</i></h4>
+                       
 
                         <div class="panel panel-red">
 
@@ -92,8 +94,8 @@
                            <h5 style="display:inline; color:#918C8C" >1 word = free</h5>
 
                         <h4 ><i><hr/>Step 3. Great! You done! Please check on the upload button! </i></h4>
-
-                         <input class="btn btn-danger " type = "submit" value = "Upload"  /> 
+                                <input type="hidden" name="user_id" value="<?php $user = $this->ion_auth->user()->row(); echo $user->id; ?>">
+                         <input class="btn btn-danger " type = "submit" name="submit" value = "Upload"  /> 
                     </div>
         </div>
         </div>

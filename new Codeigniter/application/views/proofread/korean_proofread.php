@@ -59,7 +59,7 @@
                 </div>
             
            <?php //echo $error;?> 
-      <?php echo form_open_multipart('upload/do_upload');?> 
+      <?php echo form_open_multipart('user/korean_proofreading');?> 
 		
       
                 <div class= "row">
@@ -93,7 +93,7 @@
 
                         <h4 ><i><hr/>Step 3. 아래 버튼을 눌러 제출해 주세요! 곧 이메일로 연락을 드리겠습니다. 감사합니다! </i></h4>
 
-                         <input class="btn btn-danger " type = "submit" value = "Upload"  /> 
+                         <input class="btn btn-danger " type = "submit" name="submit" value = "Upload"  /> 
                     </div>
         </div>
         </div>

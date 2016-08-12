@@ -59,7 +59,7 @@
                 </div>
             
            <?php //echo $error;?> 
-      <?php echo form_open_multipart('upload/do_upload');?> 
+      <?php echo form_open_multipart('user/spanish_proofreading') ;?> 
 		
       
                 <div class= "row">
@@ -93,7 +93,7 @@
 
                         <h4 ><i><hr/>Step 3.  Gran! Lo has hecho! Por favor, compruebe en el botón de subida! </i></h4>
 
-                         <input class="btn btn-danger " type = "submit" value = "Upload"  /> 
+                         <input class="btn btn-danger " type = "submit" name="submit"  value = "Upload"  /> 
                     </div>
         </div>
         </div>

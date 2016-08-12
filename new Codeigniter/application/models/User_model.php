@@ -262,5 +262,19 @@ $config['anchor_class'] = 'follow_link';
         $query= $this->db->get('posts');
         return $query;
     }
+    function proofread_language($user_id,$link,$type){
+        $data = array(
+			'user_id'   => $user_id,
+            'text'      => $link,
+            'request_date'  => time(),
+            'type'      => $type
+            
+            
+		);
+        
+
+		return $this->db->insert('sentence_correct', $data);
+        
+    }
 	
 }
