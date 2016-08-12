@@ -405,9 +405,14 @@ class User extends CI_Controller {
                         $this->load->model('user_model');
                         $data = $this->upload->data();
                         $this->user_model->proofread_language($_POST['user_id'],$data['file_name'],'Arabic Proofread');
+                        $data = new stdClass();
+                        $user = $this->ion_auth->user()->row();
+                        $data->points= $user->points;
+                        $this->load->view('html/header',$data);
 
-                        //$this->load->view('upload_success', $data);
-                    echo $data['file_name'];
+                        $this->load->view('sen_correct/sen_correct_success');
+                    $this->load->view('html/footer.html');
+                    
                 }
             
             
