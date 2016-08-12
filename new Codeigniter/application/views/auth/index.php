@@ -1,3 +1,32 @@
+
+ <div class="navbar-default sidebar" role="navigation">
+                <div class="sidebar-nav navbar-collapse">
+                    <ul class="nav" id="side-menu">
+                        <li>
+                            <a href="http://quickcorrections.com/qc/login3/tutor/"><i class=""></i> <b>Tutor Page</b></a>
+                        </li>
+                        
+                        <li>
+                            
+                            <?php $user = $this->ion_auth->user()->row(); ?>
+                            <a href="http://quickcorrections.com/qc/login3/tutor/tutor_history/<?= $user->id; ?>d"><i class=""></i> <b>Tutor History</b></a>
+                            
+                            <!-- /.nav-second-level -->
+                        </li>
+                        <li>
+                            <a href="http://quickcorrections.com/qc/login3/admin/daily_english_tip"><i class=""></i> <b>Post Daily Tip</b></a>
+                            
+                            <!-- /.nav-second-level -->
+                        </li>
+                        
+                        
+                    
+                    </ul>
+                </div>
+                <!-- /.sidebar-collapse -->
+            </div>
+            <!-- /.navbar-static-side -->
+        </nav>
 <?php date_default_timezone_set("America/New_York"); ?>
         <!-- Page Content -->
         <div class="container-fluid" id="page-wrapper">
