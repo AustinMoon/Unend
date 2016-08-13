@@ -33,8 +33,10 @@ class Tutor_model extends CI_Model {
     }
     
     public function open_proofread(){
-        $this->db->where('is_assigned', 0);
-        $this->db->where('type', 'Proofread');
+        //$this->db->where('is_assigned', 0);
+        //$this->db->where('type', 'Proofread');
+        //$this->db->or_where('type', 'Arabic Proofread');
+        $this->db->where("(type = 'Arabic Proofread' OR type = 'Proofread') AND is_assigned = '0'");
         $this->db->order_by('request_date', 'DESC');
         $query = $this->db->get('sentence_correct');
         return $query;
