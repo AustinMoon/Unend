@@ -370,7 +370,9 @@ class User extends CI_Controller {
     function tip($tip_id){
         $data = new stdClass();
         $user = $this->ion_auth->user()->row();
+         if(isset($user)){
         $data->points= $user->points;
+         }
         $this->load->model('user_model');
         $data->request=$this->user_model->tip($tip_id)->row();
         $this->load->view('html/header',$data);
@@ -380,6 +382,11 @@ class User extends CI_Controller {
     }
     
     function arabic_proofreading(){
+         if (!$this->ion_auth->logged_in())
+		{
+			// redirect them to the login page
+			redirect('auth/login', 'refresh');
+		}
         if ($this->input->post('submit'))
         {
             $config['upload_path']          = './uploads/';
@@ -429,6 +436,11 @@ class User extends CI_Controller {
     }
     
     function chinese_proofreading(){
+         if (!$this->ion_auth->logged_in())
+		{
+			// redirect them to the login page
+			redirect('auth/login', 'refresh');
+		}
         if ($this->input->post('submit'))
         {
             $config['upload_path']          = './uploads/';
@@ -478,6 +490,11 @@ class User extends CI_Controller {
     }
     
     function korean_proofreading(){
+         if (!$this->ion_auth->logged_in())
+		{
+			// redirect them to the login page
+			redirect('auth/login', 'refresh');
+		}
         if ($this->input->post('submit'))
         {
             $config['upload_path']          = './uploads/';
@@ -527,6 +544,11 @@ class User extends CI_Controller {
     }
     
     function spanish_proofreading(){
+         if (!$this->ion_auth->logged_in())
+		{
+			// redirect them to the login page
+			redirect('auth/login', 'refresh');
+		}
         if ($this->input->post('submit'))
         {
             $config['upload_path']          = './uploads/';
