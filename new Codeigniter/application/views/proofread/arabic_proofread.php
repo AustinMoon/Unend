@@ -94,8 +94,8 @@
                            <h5 style="display:inline; color:#918C8C" >1 word = free</h5>
 
                         <h4 ><i><hr/>Step 3. Great! You done! Please check on the upload button! </i></h4>
-                                <input type="hidden" name="user_id" value="<?php $user = $this->ion_auth->user()->row(); echo $user->id; ?>">
-                         <input class="btn btn-danger " type = "submit" name="submit" value = "Upload"  /> 
+                            <input type="hidden" name="user_id" value="<?php $user = $this->ion_auth->user()->row(); echo $user->id; ?>">
+                            <input class="btn btn-danger " type = "submit" name="submit" value = "Upload"  /> 
                     </div>
         </div>
         </div>
