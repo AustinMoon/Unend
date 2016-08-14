@@ -80,6 +80,7 @@ function humanTiming ($time)
         <th>Request ID</th>
         <th>File</th>
         <th>Student's Comment</th>
+        <th>Proofread Type</th>
         <th>User</th>
         <th>Request Date</th>
         <th>Points Count</th>
@@ -102,6 +103,8 @@ function humanTiming ($time)
             echo'<a href="http://quickcorrections.com/qc/login3/uploads/'.$row->text.'" download>click here to download</a>';
             echo '</td><td>';
             echo $row->additional;
+            echo '</td><td>';
+            echo $row->type;
             echo '</td><td>';
             $user = $this->ion_auth->user($row->user_id)->row();
             echo $user->email;
