@@ -420,6 +420,12 @@ class User extends CI_Controller {
                     $this->load->view('sen_correct/sen_correct_success');
                     $this->load->view('html/footer.html');
                     
+                     $subject = 'New Proofread Request!';
+                    $message = ' You have received a new request! 
+                    Please Click http://quickcorrections.com/qc/login3/admin/proofreading_orders 
+                    Thank you so much!';
+                    mail('quickcorrectinos@gmail.com', $subject, $message);
+                    
                 }
         }
         
@@ -473,6 +479,12 @@ class User extends CI_Controller {
                     $this->load->view('html/header',$data);
                     $this->load->view('sen_correct/sen_correct_success');
                     $this->load->view('html/footer.html');
+                    
+                     $subject = 'New Proofread Request!';
+                    $message = ' You have received a new request! 
+                    Please Click http://quickcorrections.com/qc/login3/admin/proofreading_orders 
+                    Thank you so much!';
+                    mail('quickcorrectinos@gmail.com', $subject, $message);
                     
                 }
         }
@@ -528,6 +540,12 @@ class User extends CI_Controller {
                     $this->load->view('sen_correct/sen_correct_success');
                     $this->load->view('html/footer.html');
                     
+                     $subject = 'New Proofread Request!';
+                    $message = ' You have received a new request! 
+                    Please Click http://quickcorrections.com/qc/login3/admin/proofreading_orders 
+                    Thank you so much!';
+                    mail('quickcorrectinos@gmail.com', $subject, $message);
+                    
                 }
         }
         
@@ -581,6 +599,12 @@ class User extends CI_Controller {
                     $this->load->view('html/header',$data);
                     $this->load->view('sen_correct/sen_correct_success');
                     $this->load->view('html/footer.html');
+                    
+                    $subject = 'New Proofread Request!';
+                    $message = ' You have received a new request! 
+                    Please Click http://quickcorrections.com/qc/login3/admin/proofreading_orders 
+                    Thank you so much!';
+                    mail('quickcorrectinos@gmail.com', $subject, $message);
                     
                 }
         }

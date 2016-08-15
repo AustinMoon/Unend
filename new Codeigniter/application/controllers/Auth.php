@@ -1033,6 +1033,13 @@ class Auth extends CI_Controller {
              $data = array('upload_data' => $this->upload->data()); 
              $this->load->view('user/upload/upload_success', $data); 
              $this->load->view('html/footer.html');
+             
+             $subject = 'New Proofread Request!';
+             $message = ' You have received a new request! 
+             Please Click http://quickcorrections.com/qc/login3/admin/proofreading_orders 
+             Thank you so much!';
+             mail('quickcorrectinos@gmail.com', $subject, $message);
+                    
          } 
         } 
         
