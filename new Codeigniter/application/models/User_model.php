@@ -250,6 +250,7 @@ $config['anchor_class'] = 'follow_link';
         
         return $config;
     }
+    
     function user_record_count($user_id){
         $this->db->where('user_id', $user_id);
         //$this->db->where('tutor_revision IS NOT', NULL);
@@ -262,7 +263,8 @@ $config['anchor_class'] = 'follow_link';
         $query= $this->db->get('posts');
         return $query;
     }
-    function proofread_language($user_id,$link,$type){
+    
+    function proofread_language($user_id, $link, $type){
         $data = array(
 			'user_id'   => $user_id,
             'text'      => $link,
@@ -271,10 +273,9 @@ $config['anchor_class'] = 'follow_link';
             
             
 		);
-        
-
-		return $this->db->insert('sentence_correct', $data);
-        
+		return $this->db->insert('sentence_correct', $data);  
     }
+    
+    
 	
 }

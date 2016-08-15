@@ -53,9 +53,9 @@ class Admin extends CI_Controller {
         $tutor = $this->ion_auth->user($data->tutor_id)->row();
         $message='request no ';
         $message.=$data->request_id;
-            $message.=' is in your account for ';
+        $message.=' is in your account for ';
         $message.= $this->humanTiming($data->assign_date);
-            $message.=' .Please finish it ASAP';
+        $message.=' .Please finish it ASAP';
         mail($tutor->email, 'My Subject', $message);
         echo 'Email sent successfully';
         
