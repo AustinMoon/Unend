@@ -228,17 +228,14 @@ class Admin extends CI_Controller {
     }
     
     function list_of_posts(){
-        if (!$this->ion_auth->logged_in())
-
-        {
-            // redirect them to the login page
-            redirect('auth/login', 'refresh');
-        }
+        
       $data = new stdClass();
         $this->load->model('tutor_model');
         $data = new stdClass();
         $user = $this->ion_auth->user()->row();
+        if(isset($user)){
         $data->points= $user->points;
+        }
         $this->load->view('html/header',$data);
         $this->load->model('user_model');
         $this->load->library('pagination');
