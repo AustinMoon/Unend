@@ -62,7 +62,7 @@
       <?php echo form_open_multipart('user/arabic_proofreading');?> 
 		
       
-                <div class= "row">
+              <!--  <div class= "row">
                    
                     <div class="form-group col-md-8">
                         
@@ -99,6 +99,11 @@
                     </div>
         </div>
         </div>
+    </div>-->
+    <div class="text-center">
+      <img src="http://quickcorrections.com/qc/img/tempo.jpg">
+
+    </div>
     </div>
 		<?php endif; ?>
 
