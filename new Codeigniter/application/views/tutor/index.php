@@ -137,8 +137,12 @@ function humanTiming ($time)
             echo '<td>';
             echo $row->request_id;
             echo '</td><td>';
-            if($row->type=='Pronunciation'){echo'<a href="http://quickcorrections.com/qc/login3/uploads/'.$row->text.'" download>click here to download</a>';}
-            else if ($row->type=='Proofread'){echo'<a href="http://quickcorrections.com/qc/login3/uploads/'.$row->text.'" download>click here to download</a>';}
+            if($row->type=='Pronunciation'){echo'<a href="http://quickcorrections.com/qc/login3/uploads/'.$row->text.'" download>Click here to download</a>';}
+            else if($row->type=='Proofread'){echo'<a href="http://quickcorrections.com/qc/login3/uploads/'.$row->text.'" download>Click here to download</a>';}
+            else if($row->type=='Arabic Proofread'){echo'<a href="http://quickcorrections.com/qc/login3/uploads/'.$row->text.'" download>Click here to download</a>';}
+            else if($row->type=='Spanish Proofread'){echo'<a href="http://quickcorrections.com/qc/login3/uploads/'.$row->text.'" download>Click here to download</a>';}
+            else if($row->type=='Korean Proofread'){echo'<a href="http://quickcorrections.com/qc/login3/uploads/'.$row->text.'" download>Click here to download</a>';}
+            else if($row->type=='Chinese Proofread'){echo'<a href="http://quickcorrections.com/qc/login3/uploads/'.$row->text.'" download>Click here to download</a>';}
             else{
             if(strlen($row->text)>10){echo substr($row->text, 0, 10).'...';}
             else {echo $row->text;}}
