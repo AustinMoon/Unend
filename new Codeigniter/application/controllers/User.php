@@ -495,6 +495,10 @@ class User extends CI_Controller {
 			// redirect them to the login page
 			redirect('auth/login', 'refresh');
 		}
+        $user = $this->ion_auth->user()->row();
+        if ($user->points <=20){
+            redirect('user/pay', 'refresh');
+        }
         if ($this->input->post('submit'))
         {
             $config['upload_path']          = './uploads/';

@@ -229,7 +229,6 @@ class Admin extends CI_Controller {
     
     function list_of_posts(){
         
-      $data = new stdClass();
         $this->load->model('tutor_model');
         $data = new stdClass();
         $user = $this->ion_auth->user()->row();
@@ -254,16 +253,19 @@ class Admin extends CI_Controller {
         $this->load->view('html/footer.html');
     }
     
-    function korean_proofreading(){
+   
+    
+    function admin_panel(){
+        $this->load->model('tutor_model');
+        $data = new stdClass();
+        $data->users= $this->tutor_model->all_users()->result();
         
-        {
-            $data = new stdClass();
-            $user = $this->ion_auth->user()->row();
-            $data->points= $user->points;
-            $this->load->view('html/header',$data);
-        }
-        $this->load->view('proofread/korean_proofread');
+        $user = $this->ion_auth->user()->row();
+        $data->points= $user->points;
+        $this->load->view('html/header',$data);
+        $this->load->view('auth/index',$data);
         $this->load->view('html/footer.html');
+        
     }
     
     
