@@ -62,15 +62,15 @@
       <?php echo form_open_multipart('user/chinese_proofreading');?> 
 		
       
-                <div class= "row">
+               <!--<div class= "row">
                    
-                    <div class="form-group col-md-8">
+                    <div class="form-group col-md-8">-->
                         
 
                        <!-- <h4 ><i> <?php echo $error;?> </i></h4>-->
 
                       
-                         <h4 ><i>* 我們的雙語教師將你的中國句子翻譯成英語.</i></h4>
+                        <!-- <h4 ><i>* 我們的雙語教師將你的中國句子翻譯成英語.</i></h4>
                         <h5><i>(請在我們的辦公時間提交你的句子（是）（9:00-18：00，週一至週五，美國東部時間）)</i></h5>
                         <h4 ><i><hr/>Step 1. 選擇並貼在我們的系統文件（MS Word格式）.</i></h4>
 
@@ -92,12 +92,21 @@
                            <h5 style="display:inline; color:#918C8C" >1 word = free</h5>
 
                         <h4 ><i><hr/>Step 3. 太好了！你完成了！請上傳按鈕查看！ </i></h4>
+                            
+                            <input type="hidden" name="user_id" value="<?php $user = $this->ion_auth->user()->row(); echo $user->id; ?>">
 
                          <input class="btn btn-danger " type = "submit" name="submit" value = "Upload"  /> 
                     </div>
         </div>
         </div>
+    </div>-->
+    <div class="text-center">
+      <img src="http://quickcorrections.com/qc/img/tempo.jpg">
+
     </div>
+    </div>
+
+
 		<?php endif; ?>
 
 

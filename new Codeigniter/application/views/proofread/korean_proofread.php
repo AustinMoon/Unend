@@ -92,8 +92,8 @@
                            <h5 style="display:inline; color:#918C8C" >1 word = free</h5>
 
                         <h4 ><i><hr/>Step 3. 아래 버튼을 눌러 제출해 주세요! 곧 이메일로 연락을 드리겠습니다. 감사합니다! </i></h4>
-<input type="hidden" name="user_id" value="<?php $user = $this->ion_auth->user()->row(); echo $user->id; ?>">
-                         <input class="btn btn-danger " type = "submit" name="submit" value = "Upload"  /> 
+                            <input type="hidden" name="user_id" value="<?php $user = $this->ion_auth->user()->row(); echo $user->id; ?>">
+                            <input class="btn btn-danger " type = "submit" name="submit" value = "Upload"  /> 
                     </div>
         </div>
         </div>

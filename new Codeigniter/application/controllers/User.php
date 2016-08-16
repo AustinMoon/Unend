@@ -390,15 +390,15 @@ class User extends CI_Controller {
         if ($this->input->post('submit'))
         {
             $config['upload_path']          = './uploads/';
-                $config['allowed_types']        = '*';
-                $config['max_size']             = 100;
-                $config['max_width']            = 1024;
-                $config['max_height']           = 768;
+            $config['allowed_types']        = '*';
+            $config['max_size']             = 100;
+            $config['max_width']            = 1024;
+            $config['max_height']           = 768;
 
-                $this->load->library('upload', $config);
+            $this->load->library('upload', $config);
 
-                if (!$this->upload->do_upload('userfile'))
-                {
+            if (!$this->upload->do_upload('userfile'))
+            {
                     $error = array('error' => $this->upload->display_errors());
                     $data = new stdClass();
                     $user = $this->ion_auth->user()->row();
@@ -406,7 +406,7 @@ class User extends CI_Controller {
                     $this->load->view('html/header',$data);
                     $this->load->view('proofread/arabic_proofread',$error);
                     $this->load->view('html/footer.html');
-                }
+            }
             
                 else
                 {
@@ -419,6 +419,12 @@ class User extends CI_Controller {
                     $this->load->view('html/header',$data);
                     $this->load->view('sen_correct/sen_correct_success');
                     $this->load->view('html/footer.html');
+                    
+                     $subject = 'New Proofread Request!';
+                    $message = ' You have received a new request! 
+                    Please Click http://quickcorrections.com/qc/login3/admin/proofreading_orders 
+                    Thank you so much!';
+                    mail('quickcorrectinos@gmail.com', $subject, $message);
                     
                 }
         }
@@ -473,6 +479,12 @@ class User extends CI_Controller {
                     $this->load->view('html/header',$data);
                     $this->load->view('sen_correct/sen_correct_success');
                     $this->load->view('html/footer.html');
+                    
+                     $subject = 'New Proofread Request!';
+                    $message = ' You have received a new request! 
+                    Please Click http://quickcorrections.com/qc/login3/admin/proofreading_orders 
+                    Thank you so much!';
+                    mail('quickcorrectinos@gmail.com', $subject, $message);
                     
                 }
         }
@@ -532,6 +544,12 @@ class User extends CI_Controller {
                     $this->load->view('sen_correct/sen_correct_success');
                     $this->load->view('html/footer.html');
                     
+                     $subject = 'New Proofread Request!';
+                    $message = ' You have received a new request! 
+                    Please Click http://quickcorrections.com/qc/login3/admin/proofreading_orders 
+                    Thank you so much!';
+                    mail('quickcorrectinos@gmail.com', $subject, $message);
+                    
                 }
         }
         
@@ -585,6 +603,12 @@ class User extends CI_Controller {
                     $this->load->view('html/header',$data);
                     $this->load->view('sen_correct/sen_correct_success');
                     $this->load->view('html/footer.html');
+                    
+                    $subject = 'New Proofread Request!';
+                    $message = ' You have received a new request! 
+                    Please Click http://quickcorrections.com/qc/login3/admin/proofreading_orders 
+                    Thank you so much!';
+                    mail('quickcorrectinos@gmail.com', $subject, $message);
                     
                 }
         }

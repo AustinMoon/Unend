@@ -1,10 +1,11 @@
        <div class="container-fluid">
             <div class="row" >
-                 <div class="col-lg-12 page-header text-center">
-                    <h1>Daily English Tip</h1>
+                 <div class="col-lg-12 page-header">
+
+                    <h1><i>Daily Tip</i></h1>
                 </div>
             </div>
-            
+
             <div class="row text-center" >
                 <div class="col-md-8 col-md-offset-2" >
                    <!-- table-->
@@ -13,9 +14,9 @@
         <table class="table table-hover">
     <thead>
       <tr>
-        <th>post ID</th>
+        <th>No.</th>
+        <th>Date</th>
         <th>Content</th>
-        <th>Post Date</th>
           <?php if ($this->ion_auth->is_admin())
     echo'<th>Edit</th>';
           ?>
@@ -34,10 +35,11 @@
              echo '<a href="http://quickcorrections.com/qc/login3/user/tip/'.$row->post_id.'" >';
             echo $row->post_id;
             echo '</td><td>';
+            
+            echo date('m/d/Y', $row->request_date);
+            echo '</td><td>';
             echo '<a href="http://quickcorrections.com/qc/login3/user/tip/'.$row->post_id.'" >';
             echo $row->content;
-            echo '</td><td>';
-            echo date('m/d/Y', $row->request_date);
             echo '</td><td>';
             if ($this->ion_auth->is_admin()){
             echo '<a href="http://quickcorrections.com/qc/login3/admin/edit_english_tip/'.$row->post_id.'"><button class="btn btn-danger" type="button">Edit</button></a>';}
