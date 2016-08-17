@@ -18,14 +18,10 @@
       <tr>
         <th>No.</th>
         <th>Date</th>
-<<<<<<< HEAD
         <th>Content</th>
-          
-          <?php if ($this->ion_auth->is_admin()) 
-=======
         <th>Title</th>
+          
           <?php if ($this->ion_auth->is_admin())
->>>>>>> 8f946e1282c452d3ddb27811bb2dca784ce3150a
     echo'<th>Edit</th>';
           ?>
           
@@ -34,32 +30,27 @@
     <tbody>
 
         <?php 
-        
-<<<<<<< HEAD
-        foreach ($content->result() as $row)
-        {
            echo '<tr>';
-=======
-        foreach ($title->result() as $row)
-{
+            foreach ($title->result() as $row){
            
             echo '<tr>';
->>>>>>> 8f946e1282c452d3ddb27811bb2dca784ce3150a
             echo '<td>';
             echo '<a href="http://quickcorrections.com/qc/login3/user/tip/'.$row->post_id.'" >';
             echo $row->post_id;
             echo '</td><td>';
-            
             echo date('m/d/Y', $row->request_date);
             echo '</td><td>';
             echo '<a href="http://quickcorrections.com/qc/login3/user/tip/'.$row->post_id.'" >';
             echo $row->title;
             echo '</td><td>';
-            if ($this->ion_auth->is_admin()){
-            echo '<a href="http://quickcorrections.com/qc/login3/admin/edit_english_tip/'.$row->post_id.'"><button class="btn btn-danger" type="button">Edit</button></a>';}
+            if ($this->ion_auth->is_admin())
+            {
+            echo '<a href="http://quickcorrections.com/qc/login3/admin/edit_english_tip/'.$row->post_id.'"><button class="btn btn-danger" type="button">Edit</button></a>';
+            }
             echo '</a></td><td>';
-        }
-            ?>
+            }
+        
+        ?>
     </tbody></table>
                     </div>
                         <?php echo $this->pagination->create_links(); ?><br>
@@ -80,6 +71,3 @@
 
     <!-- Custom Theme JavaScript -->
     <script src="../css/dist/js/sb-admin-2.js"></script>
-
-</body>
-</html>
