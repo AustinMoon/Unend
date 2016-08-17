@@ -20,7 +20,7 @@
                 <div class="row">
                     
                         <div class="col-md-9">
-                            <h5><?= $request->content; ?></h5>
+                            <h5><?= nl2br($request->content); ?></h5>
                     </div>
                     
                 </div>
