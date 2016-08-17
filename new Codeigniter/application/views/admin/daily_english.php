@@ -2,7 +2,7 @@
             <div class="row" >
                  <div class="col-lg-12 page-header">
 
-                    <h1><i>Daily Tip</i></h1>
+                    <h3><i>Daily Tip</i></h3>
                 </div>
             </div>
 
