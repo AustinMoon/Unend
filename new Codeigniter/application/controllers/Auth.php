@@ -45,7 +45,18 @@ class Auth extends CI_Controller {
 			$this->data['message'] = (validation_errors()) ? validation_errors() : $this->session->flashdata('message');
 
 			//list the users
-			$this->data['users'] = $this->ion_auth->users()->result();
+            $this->load->model('tutor_model');
+            
+            $this->load->model('user_model');
+            $this->load->library('pagination');
+            $config=$this->user_model->paging();
+            $page = ($this->uri->segment(3)) ? $this->uri->segment(3) : 0;
+            $config["base_url"] = base_url() . "auth/index";
+            $config["per_page"] = 10;
+            $config["uri_segment"] = 3;
+            $config["total_rows"] = $this->tutor_model->list_of_users_count();
+            $this->pagination->initialize($config);       
+			$this->data['users'] = $this->tutor_model->all_users($config["per_page"], $page)->result();
 			foreach ($this->data['users'] as $k => $user)
 			{
 				$this->data['users'][$k]->groups = $this->ion_auth->get_users_groups($user->id)->result();

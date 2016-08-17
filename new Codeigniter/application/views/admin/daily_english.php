@@ -2,7 +2,7 @@
             <div class="row" >
                  <div class="col-lg-12 page-header">
 
-                    <h1><i>Daily Tip</i></h1>
+                    <h3><i>Daily Tip</i></h3>
                 </div>
             </div>
 
@@ -18,9 +18,14 @@
       <tr>
         <th>No.</th>
         <th>Date</th>
+<<<<<<< HEAD
         <th>Content</th>
           
           <?php if ($this->ion_auth->is_admin()) 
+=======
+        <th>Title</th>
+          <?php if ($this->ion_auth->is_admin())
+>>>>>>> 8f946e1282c452d3ddb27811bb2dca784ce3150a
     echo'<th>Edit</th>';
           ?>
           
@@ -30,9 +35,16 @@
 
         <?php 
         
+<<<<<<< HEAD
         foreach ($content->result() as $row)
         {
            echo '<tr>';
+=======
+        foreach ($title->result() as $row)
+{
+           
+            echo '<tr>';
+>>>>>>> 8f946e1282c452d3ddb27811bb2dca784ce3150a
             echo '<td>';
             echo '<a href="http://quickcorrections.com/qc/login3/user/tip/'.$row->post_id.'" >';
             echo $row->post_id;
@@ -41,7 +53,7 @@
             echo date('m/d/Y', $row->request_date);
             echo '</td><td>';
             echo '<a href="http://quickcorrections.com/qc/login3/user/tip/'.$row->post_id.'" >';
-            echo $row->content;
+            echo $row->title;
             echo '</td><td>';
             if ($this->ion_auth->is_admin()){
             echo '<a href="http://quickcorrections.com/qc/login3/admin/edit_english_tip/'.$row->post_id.'"><button class="btn btn-danger" type="button">Edit</button></a>';}

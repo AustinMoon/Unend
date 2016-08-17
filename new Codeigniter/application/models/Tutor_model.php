@@ -253,4 +253,13 @@ class Tutor_model extends CI_Model {
         $query = $this->db->get('posts');
         return $query->num_rows();
     }
+    function list_of_users_count(){
+        $query = $this->db->get('users');
+        return $query->num_rows();
+    }
+    function all_users($limit, $start){
+        $this->db->limit($limit, $start);
+        $query = $this->db->get('users');
+        return $query;
+    }
 }
