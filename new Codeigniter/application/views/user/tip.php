@@ -1,4 +1,15 @@
     <div class="container-fluid">
+        
+        
+        <form class="navbar-form" role="search" action="http://quickcorrections.com/qc/login3/admin/list_of_posts/search/search_keyword" method = "post">
+            <div class="input-group">
+                <input type="text" class="form-control" placeholder="Search" name = "keyword"size="15px; ">
+                <div class="input-group-btn">
+                    <button class="btn btn-default " type="submit" value = "Search"><i class="glyphicon glyphicon-search"></i></button>
+                </div>
+            </div>
+        </form>
+        
             <div class="row">
                 <div class="col-lg-12">
                     <h1 class="page-header text-center">Daily Tip</h1>

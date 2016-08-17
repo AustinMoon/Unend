@@ -381,6 +381,7 @@ class User extends CI_Controller {
         
     }
     
+    
     function arabic_proofreading(){
          if (!$this->ion_auth->logged_in())
 		{

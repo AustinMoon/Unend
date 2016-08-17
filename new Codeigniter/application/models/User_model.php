@@ -264,6 +264,13 @@ $config['anchor_class'] = 'follow_link';
         return $query;
     }
     
+    function search($keyword)
+    {
+        $this->db->like('content', $keyword);
+        $query = $this->db->get('posts');
+        return $query->result();
+    }
+    
     function proofread_language($user_id, $link, $type){
         $data = array(
 			'user_id'   => $user_id,

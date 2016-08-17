@@ -11,13 +11,16 @@
                    <!-- table-->
                     <div class="text-center">
                         <div class="panel-body">
+
+                            
         <table class="table table-hover">
     <thead>
       <tr>
         <th>No.</th>
         <th>Date</th>
         <th>Content</th>
-          <?php if ($this->ion_auth->is_admin())
+          
+          <?php if ($this->ion_auth->is_admin()) 
     echo'<th>Edit</th>';
           ?>
           
@@ -28,11 +31,10 @@
         <?php 
         
         foreach ($content->result() as $row)
-{
-           
-            echo '<tr>';
+        {
+           echo '<tr>';
             echo '<td>';
-             echo '<a href="http://quickcorrections.com/qc/login3/user/tip/'.$row->post_id.'" >';
+            echo '<a href="http://quickcorrections.com/qc/login3/user/tip/'.$row->post_id.'" >';
             echo $row->post_id;
             echo '</td><td>';
             
@@ -51,7 +53,7 @@
                         <?php echo $this->pagination->create_links(); ?><br>
                         <h1></h1>
                     </div>
-        <!-- /#page-wrapper -->
+          
             </div>
         </div>
     </div>

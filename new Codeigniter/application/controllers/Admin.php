@@ -227,6 +227,14 @@ class Admin extends CI_Controller {
     }
     }
     
+    function search_keyword()
+    {
+        $keyword = $this->input->post('keyword');
+        $data['results'] = $this->user_model->search($keyword);
+        $this->load->view('daily_english.php',$data);
+    }
+    
+
     function list_of_posts(){
         
       $data = new stdClass();
