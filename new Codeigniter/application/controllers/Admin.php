@@ -238,7 +238,6 @@ class Admin extends CI_Controller {
         $this->load->view('html/header',$data);
         $this->load->model('user_model');
         $this->load->library('pagination');
-        $user = $this->ion_auth->user()->row();
         $config=$this->user_model->paging();
         $page = ($this->uri->segment(3)) ? $this->uri->segment(3) : 0;
         $config["base_url"] = base_url() . "admin/list_of_posts";
@@ -246,8 +245,6 @@ class Admin extends CI_Controller {
         $config["uri_segment"] = 3;
         $config["total_rows"] = $this->tutor_model->list_of_posts_count();
         $this->pagination->initialize($config);
-        $user = $this->ion_auth->user()->row();
-        $data->title= $this->tutor_model->open_requests();
         $data->title = $this->tutor_model->list_of_posts($config["per_page"], $page);
         $this->load->view('admin/daily_english',$data);
         $this->load->view('html/footer.html');
