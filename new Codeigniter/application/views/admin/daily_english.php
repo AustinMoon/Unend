@@ -16,7 +16,7 @@
       <tr>
         <th>No.</th>
         <th>Date</th>
-        <th>Content</th>
+        <th>Title</th>
           <?php if ($this->ion_auth->is_admin())
     echo'<th>Edit</th>';
           ?>
@@ -27,7 +27,7 @@
 
         <?php 
         
-        foreach ($content->result() as $row)
+        foreach ($title->result() as $row)
 {
            
             echo '<tr>';
@@ -39,7 +39,7 @@
             echo date('m/d/Y', $row->request_date);
             echo '</td><td>';
             echo '<a href="http://quickcorrections.com/qc/login3/user/tip/'.$row->post_id.'" >';
-            echo $row->content;
+            echo $row->title;
             echo '</td><td>';
             if ($this->ion_auth->is_admin()){
             echo '<a href="http://quickcorrections.com/qc/login3/admin/edit_english_tip/'.$row->post_id.'"><button class="btn btn-danger" type="button">Edit</button></a>';}

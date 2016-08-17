@@ -247,8 +247,8 @@ class Admin extends CI_Controller {
         $config["total_rows"] = $this->tutor_model->list_of_posts_count();
         $this->pagination->initialize($config);
         $user = $this->ion_auth->user()->row();
-        $data->content= $this->tutor_model->open_requests();
-        $data->content = $this->tutor_model->list_of_posts($config["per_page"], $page);
+        $data->title= $this->tutor_model->open_requests();
+        $data->title = $this->tutor_model->list_of_posts($config["per_page"], $page);
         $this->load->view('admin/daily_english',$data);
         $this->load->view('html/footer.html');
     }
