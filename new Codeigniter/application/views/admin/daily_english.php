@@ -58,9 +58,9 @@
                         <?php echo $this->pagination->create_links(); ?><br>
                         <h1></h1>
                     </div>
-                    <form class="form-inline" role="form" action="<?php echo base_url().'admin/search'; ?>" method="post">
+                    <form class="form-inline" role="form" action="<?php echo base_url().'admin/search_keyword'; ?>" method="post">
                     <div class="form-group">
-                            <input type="search" class="form-control" name= "search" id="search">
+                            <input type="text" class="form-control" name= "search" id="search">
                         </div>
                         
                         <button type="submit" name="submit" class="btn btn-info">Search</button>
