@@ -266,9 +266,17 @@ $config['anchor_class'] = 'follow_link';
     
     function search($keyword)
     {
+        $this->db->select('*');
+        $this->db->get('posts');
         $this->db->like('content', $keyword);
-        $query = $this->db->get('posts');
-        return $query->result();
+        $query = $this->db->get();
+        
+        if($query->num_rows() > 0){
+            return $query->result(); 
+        }
+        else{
+            return $query->result();
+        }
     }
     
     function proofread_language($user_id, $link, $type){

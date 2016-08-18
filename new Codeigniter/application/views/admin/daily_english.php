@@ -16,10 +16,10 @@
         <table class="table table-hover">
     <thead>
       <tr>
-        <th>No.</th>
-        <th>Date</th>
-        <th>Content</th>
-        <th>Title</th>
+          <th>No.</th>
+          <th>Date</th>
+          <th>Content</th>
+          <th>Title</th>
           
           <?php if ($this->ion_auth->is_admin())
     echo'<th>Edit</th>';
@@ -30,9 +30,8 @@
     <tbody>
 
         <?php 
-           echo '<tr>';
-            foreach ($title->result() as $row){
-           
+        echo '<tr>';
+        foreach ($title->result() as $row){
             echo '<tr>';
             echo '<td>';
             echo '<a href="http://quickcorrections.com/qc/login3/user/tip/'.$row->post_id.'" >';
@@ -43,12 +42,15 @@
             echo '<a href="http://quickcorrections.com/qc/login3/user/tip/'.$row->post_id.'" >';
             echo $row->title;
             echo '</td><td>';
+            
             if ($this->ion_auth->is_admin())
             {
-            echo '<a href="http://quickcorrections.com/qc/login3/admin/edit_english_tip/'.$row->post_id.'"><button class="btn btn-danger" type="button">Edit</button></a>';
+                echo '<a href="http://quickcorrections.com/qc/login3/admin/edit_english_tip/'.$row->post_id.'"><button class="btn btn-danger" type="button">Edit</button></a>';
             }
             echo '</a></td><td>';
             }
+        
+        
         
         ?>
     </tbody></table>
@@ -56,7 +58,15 @@
                         <?php echo $this->pagination->create_links(); ?><br>
                         <h1></h1>
                     </div>
-          
+                    <form class="form-inline" role="form" action="<?php echo base_url().'admin/search'; ?>" method="post">
+                    <div class="form-group">
+                            <input type="search" class="form-control" name= "search" id="search">
+                        </div>
+                        
+                        <button type="submit" name="submit" class="btn btn-info">Search</button>
+                    </form></br>
+
+                
             </div>
         </div>
     </div>
