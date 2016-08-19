@@ -259,6 +259,7 @@ class Tutor_model extends CI_Model {
     }
     function all_users($limit, $start){
         $this->db->limit($limit, $start);
+        $this->db->order_by('created_on', 'DESC');
         $query = $this->db->get('users');
         return $query;
     }
