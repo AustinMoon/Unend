@@ -208,6 +208,7 @@ class Admin extends CI_Controller {
     function edit_english_tip($tip_id){
         if ($this->input->post('submit'))
         {
+            
             $this->load->model('tutor_model');
             $this->tutor_model->edit_post($tip_id,$this->input->post('title'),$this->input->post('content'));
             
