@@ -235,6 +235,7 @@ class Admin extends CI_Controller {
         if(isset($user)){
         $data->points= $user->points;
         }
+         
         $this->load->view('html/header',$data);
         $this->load->model('user_model');
         $this->load->library('pagination');
@@ -248,6 +249,9 @@ class Admin extends CI_Controller {
         $data->title = $this->tutor_model->list_of_posts($config["per_page"], $page);
         $this->load->view('admin/daily_english',$data);
         $this->load->view('html/footer.html');
+        $keyword = $this->input->post('search');
+        
+       
     }
     
     function search_keyword()
@@ -258,6 +262,8 @@ class Admin extends CI_Controller {
         if(isset($keyword) and !empty($keyword)){
             $data['posts'] = $this->user_model->search($keyword);
             $this->load->view('daily_english', $data);
+            $this->load->view('html/footer.html');
+
         }
         else{
             redirect($this->index());
