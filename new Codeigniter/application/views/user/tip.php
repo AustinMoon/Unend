@@ -1,4 +1,9 @@
-    <div class="container-fluid">
+    <?php
+function make_links_clickable($text){
+    return preg_replace('!(((f|ht)tp(s)?://)[-a-zA-Zа-яА-Я()0-9@:%_+.~#?&;//=]+)!i', '<a href="$1">$1</a>', $text);
+}
+?>
+<div class="container-fluid">
         
         
         <!--<form class="navbar-form" role="search" action="http://quickcorrections.com/qc/login3/admin/list_of_posts/search/search_keyword" method = "post">
@@ -31,7 +36,9 @@
                 <div class="row">
                     
                         <div class="col-md-9">
-                            <p><?= nl2br($request->content); ?></p>
+
+                            <h5><?= make_links_clickable(nl2br($request->content)); ?></h5>
+
                     </div>
                     
                 </div>
