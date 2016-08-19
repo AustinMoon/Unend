@@ -32,7 +32,7 @@
                     Content
                 </div>
                 <div class="col-md-9">
-                    <?= $request->content; ?>
+                    <p><?= $request->content; ?></p>
                 </div>
             
          </div>
