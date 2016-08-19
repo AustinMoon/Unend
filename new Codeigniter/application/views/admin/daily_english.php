@@ -7,6 +7,7 @@
             </div>
 
             <div class="row text-center" >
+                <!--<img src="http://quickcorrections.com/qc/img/bg.png" style="height:100%; left:0; position:absolute">-->
                 <div class="col-md-8 col-md-offset-2" >
                    <!-- table-->
                     <div class="text-center">
@@ -68,6 +69,7 @@
                 
             </div>
         </div>
+    </div>
     </div>
     
      <script src="../css/bower_components/jquery/dist/jquery.min.js"></script>
