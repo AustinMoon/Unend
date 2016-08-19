@@ -18,7 +18,6 @@
       <tr>
           <th>No.</th>
           <th>Date</th>
-          <th>Content</th>
           <th>Title</th>
           
           <?php if ($this->ion_auth->is_admin())
@@ -55,7 +54,7 @@
         ?>
     </tbody></table>
                     </div>
-                        <?php echo $this->pagination->create_links(); ?><br>
+                      <!--  <?php echo $this->pagination->create_links(); ?><br>
                         <h1></h1>
                     </div>
                     <form class="form-inline" role="form" action="<?php echo base_url().'admin/search_keyword'; ?>" method="post">
@@ -65,7 +64,7 @@
                         
                         <button type="submit" name="submit" class="btn btn-info">Search</button>
                     </form></br>
-
+                    -->
                 
             </div>
         </div>

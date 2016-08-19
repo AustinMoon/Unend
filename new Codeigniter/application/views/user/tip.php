@@ -36,7 +36,11 @@ function make_links_clickable($text){
                 <div class="row">
                     
                         <div class="col-md-9">
+<<<<<<< HEAD
                             <h5><?= make_links_clickable(nl2br($request->content)); ?></h5>
+=======
+                            <p><?= nl2br($request->content); ?></p>
+>>>>>>> 08d8ef9269ab25aa882af531c1ca9e91b9971422
                     </div>
                     
                 </div>
