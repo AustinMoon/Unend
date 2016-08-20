@@ -5,10 +5,13 @@
                     <h3><i>Daily Tip</i></h3>
                 </div>
             </div>
-
+        </div>
             <div class="row text-center" >
-                <!--<img src="http://quickcorrections.com/qc/img/bg.png" style="height:100%; left:0; position:absolute">-->
-                <div class="col-md-8 col-md-offset-2" >
+                <div class="col-sm-2" >
+                    <img class="hidden-sm hidden-xs text-left" src="http://quickcorrections.com/qc/img/bg.png" style="height: 480px; float:left">
+                </div>
+               
+                <div class="col-md-8" >
                    <!-- table-->
                     <div class="text-center">
                         <div class="panel-body">
@@ -70,7 +73,7 @@
             </div>
         </div>
     </div>
-    </div>
+    
     
      <script src="../css/bower_components/jquery/dist/jquery.min.js"></script>
 

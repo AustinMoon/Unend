@@ -21,9 +21,13 @@ function make_links_clickable($text){
                 </div>
                 <!-- /.col-lg-12 -->
             </div>
+            </div>
             <!-- /.row -->
             <div class="row">
-                <div class="col-md-6 col-md-offset-3" >
+                <div class="col-sm-2" >
+                    <img class="hidden-sm hidden-xs text-left" src="http://quickcorrections.com/qc/img/bg.png" style="height: 480px; float:left">
+                </div>
+                <div class="col-md-8" >
 
                 <!-- /.col-lg-6 -->
                <div class="panel panel-default">
@@ -53,7 +57,7 @@ function make_links_clickable($text){
         </div>
         <!-- /#page-wrapper -->
 
-    </div>
+    
     <!-- /#wrapper -->
 
     <!-- jQuery -->
