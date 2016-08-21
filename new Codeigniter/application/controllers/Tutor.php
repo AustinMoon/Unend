@@ -110,7 +110,10 @@ class Tutor extends CI_Controller {
         $message='
         Hello, our tutor has responded to your request #'.$_POST['request_id'].'.
         
-        Answer: '.$TR;
+        Answer: '.$TR.'.
+
+        Please check your answer in detail: http://quickcorrections.com/qc/login3/user/userpage';
+
         mail($user->email, 'QuickCorrections: Your Request # '.$_POST['request_id'].' was completed', $message);
        {
            $data = new stdClass();

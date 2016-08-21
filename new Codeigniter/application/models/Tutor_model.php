@@ -91,7 +91,7 @@ class Tutor_model extends CI_Model {
         }
         
         substr($email, 0, -1);
-        $subject='QuickCorrections: You have receive a new request!';
+        $subject='QuickCorrections: You have received a new request!';
         $message='
         You have received a new request! 
         Please Click http://quickcorrections.com/qc/login3/tutor/
