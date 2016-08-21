@@ -282,7 +282,7 @@ $config['anchor_class'] = 'follow_link';
         $this->db->select('*');
         $this->db->get('posts');
         $this->db->like('content', $keyword);
-        $query = $this->db->get();
+        $query = $this->db->get('posts');
         
         if($query->num_rows() > 0){
             return $query->result(); 

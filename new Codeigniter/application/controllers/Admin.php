@@ -258,11 +258,11 @@ class Admin extends CI_Controller {
     function search_keyword()
     {
         $this->load->model('user_model');
-        $keyword = $this->input->post('search');
-        
-        if(isset($keyword) and !empty($keyword)){
-            $data['posts'] = $this->user_model->search($keyword);
-            $this->load->view('daily_english', $data);
+        $data = $this->input->post('search');
+
+        if(isset($data) and !empty($data)){
+            $data = $_POST['posts'];//= $this->user_model->search($keyword);
+            $this->load->view('admin/search_keyword', $data);
             $this->load->view('html/footer.html');
 
         }
