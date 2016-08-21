@@ -1,19 +1,16 @@
-       <div class="container-fluid">
             <div class="row" >
-                 <div class="col-lg-12 page-header">
-
-                    <h3><i>Daily Tip</i></h3>
-                </div>
+                
             </div>
-        </div>
-            <div class="row text-center" >
+            <div class="row " >
                 <div class="col-sm-2" >
                     <img class="hidden-sm hidden-xs text-left" src="http://quickcorrections.com/qc/img/bg.png" style="height: 480px; float:left">
+                </div>
+                 <div class="col-md-10">
+                    <h3 class="page-header"><i>Daily Tip</i></h3>
                 </div>
                
                 <div class="col-md-8" >
                    <!-- table-->
-                    <div class="text-center">
                         <div class="panel-body">
 
                             
@@ -70,7 +67,6 @@
                     </form></br>
                     -->
                 
-            </div>
         </div>
     </div>
     
