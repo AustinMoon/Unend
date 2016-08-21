@@ -47,7 +47,7 @@
         <div id="page-wrapper">
             <div class="row">
                 <div class="col-lg-12">
-                    <h1 class="page-header text-center" style="font-family:avenir">ANSWER</h1>
+                    <h3 class="page-header"><i>ANSWER</i></h3>
                 </div>
                 <!-- /.col-lg-12 -->
             </div>
@@ -57,54 +57,57 @@
                 <!-- /.col-lg-6 -->
                <div class="panel panel-default">
                      <div class="panel-heading"> Request # <?= $request->request_id; ?></div>
-    <div class="panel-body">
-        <div class="row">
-            <div class="col-md-3">
-                Student 
-            </div>
-            <div class="col-md-9">
-                    <?= $request->text; ?>
-                    <br/>
-                    <img src="http://quickcorrections.com/qc/img/arrow.png">
-            </div>
-            
-        </div>
-        
-        <div class="row">
-            <div class="col-md-3">
-                Fixed
-            </div>
-                <div class="col-md-9">
-                    <?= $outpot; ?>
-                    <br/>
-                    <img src="http://quickcorrections.com/qc/img/arrow.png">
+                        <div class="panel-body">
+                            <div class="row">
+                                <div class="col-md-3">
+                                    Student 
+                                </div>
+                                <div class="col-md-9">
+                                        <?= $request->text; ?>
+                                        <br/>
+                                        <img src="http://quickcorrections.com/qc/img/arrow.png">
+                                </div>
+                                
+                            </div>
+                            
+                            <div class="row">
+                                <div class="col-md-3">
+                                    Corrected
+                                </div>
+                                    <div class="col-md-9">
+                                        <?= $outpot; ?>
+                                        <br/>
+                                        <img src="http://quickcorrections.com/qc/img/arrow.png">
 
-            </div>
+                                    </div>
             
-        </div>
+                            </div>
         
-        <div class="row">
-            <div class="col-md-3">
-                Tutor
-            </div>
-                <div class="col-md-9">
-                    <?= $request->tutor_revision; ?>
-            </div>
-            
-        </div>
+                            <div class="row">
+                                <div class="col-md-3">
+                                    Tutor
+                                </div>
+                                    <div class="col-md-9">
+                                        <?= $request->tutor_revision; ?>
+                                </div>
+                                
+                            </div>
+                            
+                            <div class="row">
+                                <hr/>
+                                <div class="col-md-3">
+                                
+                                    Tutor's Comments: 
+                                </div>
+                                    <div class="col-md-9">
+                                        <i><?= $request->tutor_comments; ?></i>
+                                </div>
+                                
+                            </div>
         
-        <div class="row">
-            <div class="col-md-3">
-                Tutor's Comments: 
-            </div>
-                <div class="col-md-9">
-                    <i><?= $request->tutor_comments; ?></i>
-            </div>
-            
-        </div>
         
-        
-                   </div></div>
+                        </div>
+                </div>
                 <!-- /.col-lg-6 -->
             </div>
            <?php $user = $this->ion_auth->user()->row();
@@ -138,6 +141,7 @@
                     <button type="submit" href="" class="btn btn-danger btn-lg" >Submit</button>
                 </div>   
       </form>  </div>' ;}?>
+        <h1></h1>
             <!-- /.row -->
         </div>
         <!-- /#page-wrapper -->

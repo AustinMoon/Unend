@@ -47,7 +47,7 @@
         <div id="page-wrapper">
             <div class="row">
                 <div class="col-lg-12">
-                    <h1 class="page-header text-center" style="font-family:avenir">ENGLISH QUESTION ANSWER</h1>
+                    <h3 class="page-header "><i>ANSWER</i></h3>
                 </div>
                 <!-- /.col-lg-12 -->
             </div>
@@ -57,32 +57,33 @@
                 <!-- /.col-lg-6 -->
                <div class="panel panel-default">
                      <div class="panel-heading"> Request # <?= $request->request_id; ?></div>
-    <div class="panel-body">
-        <div class="row">
-            <div class="col-md-3">
-                Question 
-            </div>
-            <div class="col-md-9">
-                    <?= $request->text; ?>
-                    <br/>
-                    <img src="http://quickcorrections.com/qc/img/arrow.png">
-            </div>
-            
-        </div>
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-md-3">
+                        Question 
+                    </div>
+                    <div class="col-md-9">
+                            <?= $request->text; ?>
+                            <br/>
+                            <img src="http://quickcorrections.com/qc/img/arrow.png">
+                    </div>
+                    
+                </div>
+                
+               
+                <div class="row">
+                    <div class="col-md-3">
+                        Answer
+                    </div>
+                    <div class="col-md-9">
+                        <?= $request->tutor_revision; ?>
+                    </div>
+                    
+                </div>
         
-       
-        <div class="row">
-            <div class="col-md-3">
-                Answer
-            </div>
-                <div class="col-md-9">
-                    <?= $request->tutor_revision; ?>
-            </div>
-            
-        </div>
         
-        
-                   </div></div>
+                   </div>
+                </div>
                 <!-- /.col-lg-6 -->
             </div>
             <?php $user = $this->ion_auth->user()->row();
