@@ -375,6 +375,7 @@ class User extends CI_Controller {
          }
         $this->load->model('user_model');
         $data->request=$this->user_model->tip($tip_id)->row();
+        $data->next_tip=$this->user_model->next_tip($tip_id)->row();
         $this->load->view('html/header',$data);
         $this->load->view('user/tip',$data);
         $this->load->view('html/footer.html');

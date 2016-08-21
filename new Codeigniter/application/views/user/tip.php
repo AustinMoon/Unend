@@ -18,6 +18,7 @@ function make_links_clickable($text){
             <div class="row">
                 <div class="col-lg-12">
                     <h3 class="page-header"><i>Daily Tip</i></h3>
+                    <button type="button"><?= $next_tip->id; ?></button><button type="button">Next</button>
                 </div>
                 <!-- /.col-lg-12 -->
             </div>
