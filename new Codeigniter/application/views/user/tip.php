@@ -17,8 +17,7 @@ function make_links_clickable($text){
             <div class="row">
 
                 <div class="col-lg-12">
-                    <h3 class="page-header"><i>Daily Tip</i></h3><?php if(isset($next_tip)){ ?>
-                    <a href="http://quickcorrections.com/qc/login3/user/tip/<?= $next_tip->post_id; ?>"><button type="button">Next</button></a> <?php }  if(isset($previous_tip)){ ?><a href="http://quickcorrections.com/qc/login3/user/tip/<?= $previous_tip->post_id; ?>"><button type="button">Previous</button></a><?php } ?>
+                    <h3 class="page-header"><i>Daily Tip</i></h3>
                 </div>
 
                 <!-- /.col-lg-12 -->
@@ -39,20 +38,32 @@ function make_links_clickable($text){
                         <h5 style="float:right">Day# <?= $request->post_id; ?></h5>
                       <h4 style="margin-top:10px"><?= $request->title; ?></h4>
                       </div>
-            <div class="panel-body">
-                      
-                <div class="row">
-                    
-                        <div class="col-md-9">
+                        <div class="panel-body">
+                                  
+                            <div class="row">
+                                
+                                    <div class="col-md-9">
 
-                            <p><?= make_links_clickable(nl2br($request->content)); ?></p>
+                                        <p><?= make_links_clickable(nl2br($request->content)); ?></p>
 
-                    </div>
-                    
+                                        
+                                     </div>
+
+                                
+                            </div>
+                        </div>
+
                 </div>
-                
-        
-                   </div></div>
+                <div class="text-center">
+                            <?php if(isset($previous_tip)){ ?>
+                                    <a href="http://quickcorrections.com/qc/login3/user/tip/<?= $previous_tip->post_id; ?>"><button class="btn btn-danger  btn-outline" type="button"><- Previous</button></a><?php } ?>
+                                    <a href="http://quickcorrections.com/qc/login3/admin/list_of_posts"><button class="btn btn-danger" type="button">List</button></a>
+                              <?php   if(isset($next_tip)){ ?>
+                                 <a href="http://quickcorrections.com/qc/login3/user/tip/<?= $next_tip->post_id; ?>"><button class="btn btn-danger  btn-outline" type="button">Next -></button></a> <?php }  
+                                 
+                                    ?>
+                            </div>
+
                 <!-- /.col-lg-6 -->
             </div>
             
