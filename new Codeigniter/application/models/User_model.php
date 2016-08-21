@@ -264,9 +264,17 @@ $config['anchor_class'] = 'follow_link';
         return $query;
     }
     function next_tip($tip_id){
-        $this->db->where('post_id',$tip_id);
+        $this->db->where('post_id >',$tip_id);
+        $this->db->limit(1); 
         $query= $this->db->get('posts');
-        return $query->next_row();
+        return $query;
+    }
+    function previous_tip($tip_id){
+        $this->db->where('post_id <',$tip_id);
+         $this->db->order_by('post_id', 'DESC');
+        $this->db->limit(1); 
+        $query= $this->db->get('posts');
+        return $query;
     }
     
     function search($keyword)

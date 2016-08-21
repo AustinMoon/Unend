@@ -15,14 +15,12 @@ function make_links_clickable($text){
         </form>-->
         
             <div class="row">
-<<<<<<< HEAD
+
                 <div class="col-lg-12">
-                    <h3 class="page-header"><i>Daily Tip</i></h3>
-                    <button type="button"><?= $next_tip->id; ?></button><button type="button">Next</button>
+                    <h3 class="page-header"><i>Daily Tip</i></h3><?php if(isset($next_tip)){ ?>
+                    <a href="http://quickcorrections.com/qc/login3/user/tip/<?= $next_tip->post_id; ?>"><button type="button">Next</button></a> <?php }  if(isset($previous_tip)){ ?><a href="http://quickcorrections.com/qc/login3/user/tip/<?= $previous_tip->post_id; ?>"><button type="button">Previous</button></a><?php } ?>
                 </div>
-=======
-               
->>>>>>> 52d14b17de95cc1de6b0d8df677ba8dd3706038a
+
                 <!-- /.col-lg-12 -->
             </div>
         
