@@ -32,7 +32,7 @@ class Admin extends CI_Controller {
         $config['base_url'] = 'http://quickcorrections.com/qc/login3/admin/requests/';
         $config['per_page'] = 10;
         $this->db->where('is_assigned',1);
-        $this->db->order_by('assign_date', 'ASC');
+        $this->db->order_by('assign_date', 'DESC');
         $data->all_requests=$this->db->get('sentence_correct',$config['per_page']);
         $config['total_rows'] = $this->db->get('sentence_correct')->num_rows();
         $this->pagination->initialize($config);
