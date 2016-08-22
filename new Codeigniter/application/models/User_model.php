@@ -280,7 +280,6 @@ $config['anchor_class'] = 'follow_link';
     function search($keyword)
     {
         $this->db->select('*');
-        $this->db->get('posts');
         $this->db->like('content', $keyword);
         $query = $this->db->get('posts');
         
