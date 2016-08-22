@@ -62,9 +62,10 @@
         ?>
     </tbody></table>
                     </div>
-                      <!--  <?php echo $this->pagination->create_links(); ?><br>
+                      <?php echo $this->pagination->create_links(); ?><br>
                         <h1></h1>
                     </div>
+                <!--
                     <form class="form-inline" role="form" action="<?php echo base_url().'admin/search_keyword'; ?>" method="post">
                     <div class="form-group">
                             <input type="text" class="form-control" name= "search" id="search">
