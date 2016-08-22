@@ -31,7 +31,7 @@
 
         <?php 
         echo '<tr>';
-        foreach ($title->result() as $row){
+        foreach ($title as $row){
             echo '<tr>';
             echo '<td>';
             echo '<a href="http://quickcorrections.com/qc/login3/user/tip/'.$row->post_id.'" >';
@@ -55,16 +55,10 @@
         ?>
     </tbody></table>
                     </div>
-                       <?php echo $this->pagination->create_links(); ?><br>
+                       
                         <h1></h1>
                     </div>
-                    <form class="form-inline" role="form" action="<?php echo base_url().'admin/search_keyword'; ?>" method="post">
-                    <div class="form-group">
-                            <input type="text" class="form-control" name= "search" id="search">
-                        </div>
-                        
-                        <button type="submit" name="submit" class="btn btn-info">Search</button>
-                    </form>
+                    
                     
                 
         </div>

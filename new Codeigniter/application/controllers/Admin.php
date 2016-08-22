@@ -257,11 +257,17 @@ class Admin extends CI_Controller {
     
     function search_keyword()
     {
+        $data = new stdClass();
+        $user = $this->ion_auth->user()->row();
+        if(isset($user)){
+        $data->points= $user->points;
+        }
+         
+        $this->load->view('html/header',$data);
         $this->load->model('user_model');
-        $data = $this->input->post('search');
-
-        if(isset($data) and !empty($data)){
-            $data = $_POST['posts'];//= $this->user_model->search($keyword);
+        $keyword = $this->input->post('search');
+        if(isset($keyword) and !empty($keyword)){
+            $data->title= $this->user_model->search($keyword);
             $this->load->view('admin/search_keyword', $data);
             $this->load->view('html/footer.html');
 
