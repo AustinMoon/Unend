@@ -2,7 +2,7 @@
 
 class Admin extends CI_Controller {
     
-    //runs before every function
+//runs before every function
 	function __construct()
 	{
 		parent::__construct();

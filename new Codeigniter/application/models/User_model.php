@@ -246,7 +246,7 @@ class User_model extends CI_Model {
         $config['num_tag_close'] = '</li>';
 // $config['display_pages'] = FALSE;
 // 
-$config['anchor_class'] = 'follow_link';
+        $config['anchor_class'] = 'follow_link';
         
         return $config;
     }
