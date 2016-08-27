@@ -910,12 +910,14 @@ class Auth extends CI_Controller {
 			redirect('auth/login', 'refresh');
 		}
         $user = $this->ion_auth->user()->row();
-        if ($user->points <=50){
-            redirect('user/pay', 'refresh');
-        }
+        
         
         if (isset($_POST['sentence']))
         {
+            $points=str_word_count($_POST['sentence']);$points *=2;$points+=80;
+            if ($user->points <=$points){
+            redirect('user/pay', 'refresh');
+        }
             $user = $this->ion_auth->user()->row();
             $data = new stdClass();
             $data->text=$_POST['sentence'];
@@ -923,7 +925,7 @@ class Auth extends CI_Controller {
             $data->request_date= time();
             $data->type='English Question';
             $data->user_id =$user->id;
-            $points=str_word_count($_POST['sentence']);$points *=2;$points+=80;
+            
             $data->req_points=$points;
             
             $this->db->insert('sentence_correct', $data);
