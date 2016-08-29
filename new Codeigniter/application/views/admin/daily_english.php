@@ -5,14 +5,7 @@
                 <div class="col-sm-2" >
                     <img class="hidden-sm hidden-xs text-left" src="http://quickcorrections.com/qc/img/bg.png" style="height: 480px; float:left">
                 </div>
-                <form class="form-inline" role="form" action="http://quickcorrections.com/qc/login3/admin/search_keyword" method="post">
-                    <div class="form-group">
-                            <input type="text" class="form-control" name="search" id="search">
-                        </div>
-                        
-                        <button type="submit" name="submit" class="btn btn-danger">Search</button>
-                    </form>
-                 <div class="col-md-10">
+                                 <div class="col-md-10">
                     <h3 class="page-header"><i>Daily Tip</i></h3>
                 </div>
                
@@ -61,10 +54,21 @@
         
         ?>
     </tbody></table>
+
                     </div>
                       <?php echo $this->pagination->create_links(); ?><br>
                         <h1></h1>
                     </div>
+                  
+                      <!-- real serachbar
+                      <form class="form-inline" role="form" action="http://quickcorrections.com/qc/login3/admin/search_keyword" method="post">
+                    <div class="form-group">
+                            <input type="text" class="form-control" name="search" id="search" autofocus>
+                        </div>
+                        
+                        <button type="submit" name="submit" class="btn btn-danger">Search</button>
+                    </form>-->
+
                 <!--
                     <form class="form-inline" role="form" action="<?php echo base_url().'admin/search_keyword'; ?>" method="post">
                     <div class="form-group">
