@@ -273,20 +273,22 @@ class User extends CI_Controller {
 			// redirect them to the login page
 			redirect('auth/login', 'refresh');
 		}
-        $user = $this->ion_auth->user()->row();
-        if ($user->points <=50){
-            redirect('user/pay', 'refresh');
-        }
+        
+        
         
         if(isset($_POST['sentence'])){
-            
+            $user = $this->ion_auth->user()->row();
+            $points=str_word_count($_POST['sentence']);
+            if($user->points <= $points){
+                redirect('user/pay', 'refresh');
+            }
             $data = new stdClass();
             //$data->type='sentence';
             $data->user_id= $user->id;
             $data->type='Sentence Correction';
             $data->request_date= time();
             $data->text=$_POST['sentence'];
-            $points=str_word_count($_POST['sentence']);
+            
             $data->req_points=$points *1.5;
             $data->additional=$_POST['comment'];
             $this->db->insert('sentence_correct', $data);
@@ -294,7 +296,7 @@ class User extends CI_Controller {
           
             if ($this->db->affected_rows() == 1) {
             {$data = new stdClass();
-            $user = $this->ion_auth->user()->row();
+            
             $data->points= $user->points;
             $this->load->view('html/header',$data);}
               
